@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% set is_reg = mode == "register" %}
+{% block title %}{{ 'Registrácia' if is_reg else 'Prihlásenie' }}{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <form class="auth-card" method="post">
+    <h1>{{ 'Registrácia' if is_reg else 'Prihlásenie' }} <small>/ {{ 'Регистрация' if is_reg else 'Вход' }}</small></h1>
+    <p class="meta">{{ 'Stačí meno a heslo, žiadny e-mail. / Достаточно логина и пароля.' if is_reg else 'Vitaj späť! / С возвращением!' }}</p>
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+    <label>Meno <span class="ru">/ Логин</span>
+      <input name="username" required minlength="3" maxlength="32" autocomplete="username" autofocus
+             value="{{ request.form.username or '' }}">
+    </label>
+    <label>Heslo <span class="ru">/ Пароль</span>
+      <input name="password" type="password" required {{ 'minlength=6' if is_reg }}
+             autocomplete="{{ 'new-password' if is_reg else 'current-password' }}">
+    </label>
+    {% if is_reg %}
+    <label>Heslo znova <span class="ru">/ Повторите пароль</span>
+      <input name="password2" type="password" required minlength="6" autocomplete="new-password">
+    </label>
+    {% endif %}
+    <button type="submit" class="btn primary block">{{ 'Vytvoriť účet' if is_reg else 'Prihlásiť sa' }}</button>
+    <p class="meta center">
+      {% if is_reg %}Máte účet? <a href="{{ url_for('auth.login', next=request.args.get('next')) }}">Prihláste sa</a>
+      {% elif config.ALLOW_REGISTRATION %}Nemáte účet? <a href="{{ url_for('auth.register', next=request.args.get('next')) }}">Registrácia</a>{% endif %}
+    </p>
+  </form>
+</div>
+{% endblock %}

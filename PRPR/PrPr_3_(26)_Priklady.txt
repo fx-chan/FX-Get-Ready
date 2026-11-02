@@ -1,0 +1,511 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*----------------------------------------------------------*/
+/*     FUNKCIE   */
+
+
+int maxi(int a, int b);
+void oddelovac(); /* procedura (bez parametra a navratovej hodnoty) - nepotrebuje return */
+void vypis(int i); /* procedura (s parametrom a bez navratovej hodnoty) */
+int scitaj(void);
+
+
+int main()
+{
+    int x;
+    x = scitaj();
+    printf ("sucet je: %d \n", x);
+    oddelovac();
+    vypis(x);
+    return 0;
+}
+
+
+/* procedura (bez parametra a navratovej hodnoty) */
+/* nepotrebuje return */
+void oddelovac() {
+    int i;
+    for(i=1;i<=20;i++)
+        printf("*");
+    printf("\n");
+}
+
+/* s parametrom a bez navratovej hodnoty */
+void vypis(int i)
+{
+    /* Nemôžeme vypísat aké hodnoty sme scítali, iba ich sucet */
+    printf("hodnota je: %d \n", i);
+}
+
+
+/* funkcia bez parametra s navratovou hodnotou */
+int scitaj(void)
+{
+   int a, b;
+   scanf(" %d %d", &a, &b);
+   oddelovac();
+   printf("MAX hodnota je: %d \n", maxi(a,b));
+   oddelovac();
+   return (a + b);
+}
+
+int maxi(int a, int b)
+{
+    if (a>b)
+       return(a);
+    else
+       return(b);
+
+  /* return (a > b ? a : b); */
+}
+
+
+
+/*----------------------------------------------------------*/
+#include <stdio.h>
+#include <stdlib.h>
+/* Výpis nacítaných hodnôt aj súctu vo funkcii */
+void scitaj(int i, int j)
+{
+    printf("sucet %d a %d je: %d", i, j, i+j);
+}
+
+/* Funkcia s parametrami a s návratovou hodnotou */
+int scitaj_1(int i, int j)
+{
+    int sucet;
+    sucet = i+j;
+    return sucet;
+}
+
+void oddelovac();
+void vypis(int i);
+int scitaj(void);
+
+int main()
+{
+    int x, a, b;
+    scanf(" %d %d", &a,&b);
+
+    x = scitaj_1(a,b);
+    printf("sucet %d a %d je: %d \n", a, b, x);
+
+    scitaj(a,b);  /* Varianta 2 */
+
+    return 0;
+}
+
+
+
+/* s parametrom a bez navratovej hodnoty */
+void vypis(int i)
+{
+    /* Nemôžeme vypísat aké hodnoty sme scítali, iba ich sucet */
+    printf("hodnota je: %d \n", i);
+}
+
+void oddelovac() {
+    int i;
+    for(i=1;i<=20;i++)
+        printf("*");
+    printf("\n");
+}
+
+
+int maxi(int a, int b)
+{
+    if (a>b)
+       return(a);
+    else
+       return(b);
+
+  /* return (a > b ? a : b); */
+}
+
+/* funkcia bez parametra s navratovou hodnotou */
+int scitaj(void)
+{
+   int a, b;
+   scanf(" %d %d", &a, &b);
+   oddelovac();
+   printf("MAX hodnota je: %d \n", maxi(a,b));
+   oddelovac();
+   return (a + b);
+}
+
+
+
+
+
+
+/*----------------------------------------------------------*/
+
+int main()
+{
+    printf("Zadaj znaky a potom stlac Enter: ");
+    fflush(stdin);
+
+    int input = 0;
+    while ((input = getchar()) != '\n') {
+        putchar(input);
+          /* fflush(stdin); */ 
+    }
+
+    /*
+    while((input = getc(stdin)) != '\n') {
+       putc(input,stdout);
+     */  /* fflush(stdin); */
+    /*}*/
+    
+    
+    printf("\n");
+    return 0;
+}
+
+
+
+/*----------------------------------------------------------*/
+/* Práca so subormi */
+
+int main() {
+    FILE* fw;
+    int i;
+
+    fw = fopen("vystup.txt", "w");
+    for (i = 1; i <= 10; i++)
+        fprintf(fw, "%d\n", i);
+    fclose(fw);
+    return 0;
+}
+
+
+
+/*----------------------------------------------------------*/
+/* ! vytvor si txt najprv */
+
+int main() {
+    FILE* fr;
+    double x, y, z;
+
+    fr = fopen("vstup.txt", "r");
+    fscanf(fr, " %lf %lf %lf", &x, &y, &z);
+    printf("%lf\n", x + y + z);
+    fclose(fr);
+    return 0;
+}
+
+
+/*----------------------------------------------------------*/
+
+int main() {
+    FILE* fr;
+    double x, y, z;
+
+    fr = fopen("vstup.txt", "r");
+    if (fscanf(fr, "%lf %lf %lf\n", &x, &y, &z) == 3)
+        printf("%lf \n", x + y + z);
+    else
+        printf("Subor neobsahuje 3 realne cisla\n.");
+    fclose(fr);
+    return 0;
+}
+
+/*----------------------------------------------------------*/
+/* ! vytvor si txt najprv */
+/* Spracovanie suborov */
+/* znak */
+
+int main() {
+    FILE* fr, * fw;
+    int c;
+
+    fr = fopen("vstuptext.txt", "r");
+    fw = fopen("vystuptext_kopia.txt", "w");
+
+    c = getc(fr);
+    putc(c, fw);
+    /* putc(getc(fr), fw); */
+
+    fclose(fr);
+    fclose(fw);
+    return 0;
+}
+
+
+/* po riadoku */
+
+int main() {
+    FILE* fr;
+    int c;
+
+    fr = fopen("vstuptext.txt", "r");
+    while ((c = getc(fr)) != '\n')
+        putchar(c);
+    putchar(c);    /*  vypis \n */
+    fclose(fr);
+    return 0;
+}
+
+/* cely subor */
+
+int main() {
+    FILE* fr, * fw;
+    int c;
+
+    fr = fopen("vstuptext.txt", "r");
+    fw = fopen("vystuptext_kopia.txt", "w");
+
+    while ((c = getc(fr)) != EOF)
+        putc(c, fw);
+
+    fclose(fr);
+    fclose(fw);
+    return 0;
+}
+
+/* cely subor v2 (podmieneny operator ,) */
+
+int main() {
+    FILE* fr, * fw;
+    int c;
+
+    fr = fopen("vstuptext.txt", "r");
+    fw = fopen("vystuptext_kopia.txt", "w");
+
+    while (c = getc(fr), feof(fr) == 0)
+        putc(c, fw);
+
+    fclose(fr);
+    fclose(fw);
+    return 0;
+}
+
+
+
+/*----------------------------------------------------------*/
+/* ! vytvor si txt najprv */
+/* riadok s najvacsou dlzkou + konverzia znakov  */
+
+int main() {
+    FILE* fr;
+    int c, dlzka, max_dlzka;
+
+    if ((fr = fopen("vstuptext1.txt", "r")) == NULL) {
+        printf("Subor sa nepodarilo otvorit.\n");
+        return 0;
+    }
+
+    dlzka = max_dlzka = 0;
+    while ((c = getc(fr)) != EOF) {
+        dlzka++;
+        if (c >= 'a' && c <= 'z')
+            c += 'A' - 'a';
+        putchar(c);
+        if (c == '\n') {
+            if (max_dlzka < dlzka)
+                max_dlzka = dlzka;
+            dlzka = 0;
+        }
+    }
+
+    if (max_dlzka < dlzka)
+        max_dlzka = dlzka;
+
+    printf("Max. dlzka: %d\n", max_dlzka);
+    if (fclose(fr) == EOF)
+        printf("Subor sa nepodarilo zatvorit\n");
+    return 0;
+}
+
+/*----------------------------------------------------------*/
+
+
+int main() {
+    double x, suma;
+    int i;
+    FILE* fr;
+
+    if ((fr = fopen("vstupcisla.txt", "r")) == NULL) {
+        printf("Subor vstupcisla.txt, sa nepodarilo otvorit.\n");
+        return 0;
+    }
+
+    suma = 0.0;
+    i = 0;
+    while (feof(fr) == 0) {
+        fscanf(fr, "%lf", &x);
+        printf("%.3lf\n", x);
+        suma += x;
+        i++;
+    }
+
+    if (fclose(fr) == EOF) {
+        printf("Subor vstupcisla.txt sa nepodarilo zatvorit.\n");
+        return 0;
+    }
+
+    printf("Priemer cisel je: %.3lf\n", suma / i);
+    return 0;
+}
+
+/*----------------------------------------------------------*/
+/* explicitne pretypovanie */
+
+int main()
+{
+    int x, y, z;
+
+    printf("Zadajte 3 cele cisla: ");
+    scanf("%d %d %d", &x, &y, &z);
+
+    printf("Priemer: %.2f\n", (float)(x + y + z) / 3);
+
+    return 0;
+}
+
+
+/*----------------------------------------------------------*/
+/* BONUS */
+
+int main() {
+    fprintf(stdout, "Zapis do stdout. ");
+    /* fflush(stdout); */
+    fprintf(stderr, "Zapis do stderr. ");
+    fprintf(stdout, "Dalsi zapis do stdout.");
+    /* fflush(stdout); */
+    fprintf(stdout, "\n");
+
+    return 0;
+}
+
+/*----------------------------------------------------------*/
+
+int main() {
+
+    FILE* f;
+    int i = 10;
+    double d = 3.14;
+
+    f = fopen("vystup.dat", "wb+");
+
+    fwrite(&i, sizeof(i), 1, f);
+    fwrite(&d, sizeof(d), 1, f);
+    fflush(f);
+
+    printf("Pozicia v subore je %ld\n", ftell(f));
+
+     /*
+    int fseek(FILE *f, long posunutie, int pociatok)
+    http://www.cplusplus.com/reference/cstdio/fseek/
+    https://en.cppreference.com/w/c/io/fseek
+    */
+    
+	/* posun na zaciatok suboru */
+    fseek(f, 0, SEEK_END);
+    /* http://www.cplusplus.com/reference/cstdio/ftell/ */
+    printf("Pozicia v subore je %ld\n", ftell(f));
+
+    /* posun na zaciatok suboru */
+    fseek(f, -ftell(f), SEEK_CUR);
+    printf("Pozicia v subore je %ld\n", ftell(f));
+    fseek(f, 0, SEEK_SET);
+    printf("Pozicia v subore je %ld\n", ftell(f));
+
+    /* nacitanie suboru */
+    i = 0;
+    d = 0.0;
+    fread(&i, sizeof(i), 1, f);
+    fread(&d, sizeof(d), 1, f);
+    printf("V subore boli ulozene cisla %d a %.2f\n", i, d);
+
+    fclose(f);
+    return 0;
+}
+
+
+/*----------------------------------------------------------*/
+
+
+int main() {
+    FILE* fr;
+    fr = fopen("vystup.dat", "r");
+    char c;
+    printf("V subore su ulozene nasledovnujuce znaky:\n");
+    while ((c = getc(fr)) != EOF) {
+        printf("%c", c);
+    }
+    printf("\n");
+    fclose(fr);
+
+    return 0;
+}
+
+
+/*----------------------------------------------------------*/
+
+/* xxd vystup.dat -> hexadecimalny mode  */
+/* xxd -b vystup.dat -> binarny mod      */
+/*  Win -> PSPad, Notepad++              */
+
+int main(void)
+{
+    FILE* f;
+    f = fopen("vystup.dat", "wb");
+
+    int n = 100;
+    for (int i = 0; i < n; i++)
+        fwrite(&i, sizeof(int), 1, f);
+    fclose(f);
+
+    return 0;
+}
+
+/*----------------------------------------------------------*/
+
+int main() {
+    FILE* f;
+
+    f = fopen("vystup.dat", "rb");
+
+    int n = 100;
+    for (int i = 0; i < n; i++) {
+        int b;
+        fread(&b, sizeof(int), 1, f);
+        printf("%d\n", b);
+    }
+
+    fclose(f);
+
+    return 0;
+}
+
+/*----------------------------------------------------------*/
+
+/* #include<assert.h> */
+/* #define NDEBUG */
+int main() {
+    FILE* fr, * fw;
+    int c;
+
+    if ((fr = fopen("vstup.txt", "r")) == NULL) {
+        printf("Subor sa nepodarilo otvorit.\n");
+        return 0;
+    }
+    if ((fw = fopen("vystup_kopia.txt", "w")) == NULL) {
+        printf("Subor sa nepodarilo otvorit.\n");
+        return 0;
+    }
+
+    /* assert(fr != NULL && fw != NULL); */
+
+    while ((c = getc(fr)) != EOF)
+        putc(c, fw);
+
+    if (fclose(fr) == EOF)
+        printf("Subor sa nepodarilo zatvorit.\n");
+    if (fclose(fw) == EOF)
+        printf("Subor sa nepodarilo zatvorit.\n");
+    return 0;
+}
+
+

@@ -1,0 +1,12 @@
+{
+  "title": "2D pole reťazcov",
+  "difficulty": "easy",
+  "limits": {
+    "time": 2,
+    "memory_kb": 65536
+  },
+  "checker": "lines",
+  "public_tests": [
+    "01"
+  ]
+}

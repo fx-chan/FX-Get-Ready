@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Predmety{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Príprava na písomky a skúšky · Подготовка к контрольным</p>
+  <h1>Uč sa programovať <span class="grad">krok za krokom</span></h1>
+  <p class="hero-sub">Teória s interaktívnymi otázkami, mini úlohy priamo v lekcii a úlohy z cvičení
+    s automatickou kontrolou. <br><span class="ru">Теория, мини-задания и задачи с автопроверкой.</span></p>
+  {% if not g.user %}
+  <p class="hero-cta">
+    <a class="btn primary" href="{{ url_for('auth.register') }}">Vytvoriť účet / Создать аккаунт</a>
+    <span class="meta">Na spúšťanie kódu je potrebné prihlásenie.</span>
+  </p>
+  {% endif %}
+</section>
+
+<h2 class="section-title">Predmety <small>/ Предметы</small></h2>
+<div class="cards">
+  {% for s in subjects %}
+  {% set st = stats[s.slug] %}
+  <a class="card subject-card" href="{{ url_for('main.subject', subject_slug=s.slug) }}">
+    <div class="card-icon">C</div>
+    <h3>{{ s.title }}</h3>
+    <p>{{ s.summary }}</p>
+    <div class="card-foot">
+      <span class="meta">{{ s.blocks|length }} blokov · {{ st.total }} úloh</span>
+      {% if g.user %}<span class="meta strong">{{ st.done }}/{{ st.total }}</span>{% endif %}
+    </div>
+    {% if g.user %}<div class="bar"><span style="width: {{ st.pct }}%"></span></div>{% endif %}
+  </a>
+  {% else %}
+  <p>Zatiaľ žiadne predmety. / Пока нет предметов.</p>
+  {% endfor %}
+</div>
+{% endblock %}

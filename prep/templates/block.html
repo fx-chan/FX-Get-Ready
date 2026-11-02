@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% from "_macros.html" import code_widget with context %}
+{% block title %}{{ block.title }}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+{% endblock %}
+{% block crumbs %}
+<nav class="crumbs">
+  <a href="{{ url_for('main.index') }}">Predmety</a><span>›</span>
+  <a href="{{ url_for('main.subject', subject_slug=subject.slug) }}">{{ subject.title }}</a><span>›</span>
+  {{ block.title }}
+</nav>
+{% endblock %}
+{% block content %}
+<div class="lesson-layout">
+  <article class="lesson">
+    <header class="page-head">
+      <h1>{{ block.title }}</h1>
+      {% if block.summary %}<p class="lead">{{ block.summary }}</p>{% endif %}
+      <div class="tl-meta">
+        {% if block.lecture %}<span class="pill">📖 {{ block.lecture }}</span>{% endif %}
+        <a class="pill accent" href="#ulohy">💻 {{ block.tasks|length }} úloh <span class="ru">/ задач</span> ↓</a>
+      </div>
+    </header>
+
+    {% for kind, item in segments %}
+      {% if kind == "md" %}
+        <div class="prose">{{ item }}</div>
+      {% elif kind == "quiz" %}
+        <div class="quiz" data-quiz>
+          <div class="quiz-label">❓ Otázka <span class="ru">/ Вопрос</span></div>
+          <div class="prose quiz-q">{{ item.question }}</div>
+          <div class="quiz-options">
+            {% for text, ok in item.options %}
+            <button type="button" class="quiz-opt" data-ok="{{ '1' if ok else '0' }}">{{ text }}</button>
+            {% endfor %}
+          </div>
+          {% if item.explanation %}<p class="quiz-expl" hidden>💡 {{ item.explanation }}</p>{% endif %}
+        </div>
+      {% elif kind == "drill" %}
+        {% set solved_drill = task_key(subject, block, item) in solved %}
+        <section class="drill{{ ' solved' if solved_drill }}" id="{{ item.slug }}">
+          <div class="drill-head">
+            <span class="drill-label">✏️ Mini úloha <span class="ru">/ Мини-задание</span></span>
+            <h3>{{ item.title }}</h3>
+            <span class="drill-done" title="Vyriešené">✓</span>
+          </div>
+          <div class="prose drill-desc">{{ render_md(item.description_md) }}</div>
+          {{ code_widget(subject, block, item, compact=True) }}
+        </section>
+      {% endif %}
+    {% endfor %}
+
+    <nav class="pager">
+      {% if prev_block %}<a class="btn ghost" href="{{ url_for('main.block', subject_slug=subject.slug, block_slug=prev_block.slug) }}">← {{ prev_block.title }}</a>{% else %}<span></span>{% endif %}
+      {% if next_block %}<a class="btn ghost" href="{{ url_for('main.block', subject_slug=subject.slug, block_slug=next_block.slug) }}">{{ next_block.title }} →</a>{% endif %}
+    </nav>
+  </article>
+
+  <aside class="side" id="ulohy">
+    <div class="side-card">
+      <h2>Úlohy <small>/ Задачи</small></h2>
+      {% if g.user %}
+      <div class="progress-line"><span>{{ progress.done }} / {{ progress.total }} hotovo</span><span>{{ progress.pct }}%</span></div>
+      <div class="bar"><span style="width: {{ progress.pct }}%"></span></div>
+      {% endif %}
+      <ul class="task-list">
+        {% for t in block.tasks %}
+        <li class="{{ 'solved' if task_key(subject, block, t) in solved }}">
+          <a href="{{ url_for('main.task', subject_slug=subject.slug, block_slug=block.slug, task_slug=t.slug) }}">
+            <span class="check"></span><span class="t-title">{{ t.title }}</span>
+          </a>
+          <span class="badge {{ t.difficulty }}">{{ t.difficulty }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if block.drills %}
+      <h3 class="side-sub">Mini úlohy v lekcii</h3>
+      <ul class="task-list mini">
+        {% for d in block.drills %}
+        <li class="{{ 'solved' if task_key(subject, block, d) in solved }}">
+          <a href="#{{ d.slug }}"><span class="check"></span><span class="t-title">{{ d.title }}</span></a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </aside>
+</div>
+{% endblock %}
+{% block scripts %}
+{% include "_codemirror.html" %}
+{% endblock %}

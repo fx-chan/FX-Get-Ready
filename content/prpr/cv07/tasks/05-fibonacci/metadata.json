@@ -1,0 +1,13 @@
+{
+  "title": "7.5 Rekurzívny Fibonacci",
+  "difficulty": "easy",
+  "limits": {
+    "time": 2,
+    "memory_kb": 65536
+  },
+  "checker": "lines",
+  "public_tests": [
+    "01"
+  ],
+  "source": "P6 (extra)"
+}

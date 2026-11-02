@@ -1,0 +1,428 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+
+typedef struct complex
+{
+	float real;
+	float imag;
+} COMPLEX;
+
+COMPLEX add(COMPLEX n1, COMPLEX n2)
+{
+	  COMPLEX temp;
+
+	  temp.real = n1.real + n2.real;
+	  temp.imag = n1.imag + n2.imag;
+
+	  return temp;
+}
+
+int main()
+{
+	COMPLEX n1, n2, temp;
+
+	printf("Zadaj realnu a imaginarnu cast prveho cisla \n");
+	scanf("%f %f", &n1.real, &n1.imag);
+
+	n2 = n1;
+
+	/* printf("Zadaj realnu a imaginarnu cast druheho cisla \n");   */
+	/* scanf("%f %f", &n2.real, &n2.imag);   */
+
+   printf("\nn1 => %.1f + %.1fi", n1.real, n1.imag);
+   printf("\nn2 => %.1f + %.1fi", n2.real, n2.imag);
+
+   n1.real = 88;
+   n1.imag = 99;
+
+   printf("\nn1 => %.1f + %.1fi", n1.real, n1.imag);
+   printf("\nn2 => %.1f + %.1fi", n2.real, n2.imag);
+
+	temp = add(n1, n2);
+	printf("\nSucet = %.1f + %.1fi", temp.real, temp.imag);
+
+return 0;
+}
+
+
+//.....................................................
+//.....................................................
+
+
+typedef struct {
+	char meno[30];
+	int rocnik;
+} STUDENT;
+
+STUDENT* vytvor(void) {
+	STUDENT* p_student;
+	p_student = (STUDENT*)malloc(sizeof(STUDENT));
+	return p_student;
+}
+
+void zapis(STUDENT student, int r) {
+	student.rocnik = r;
+}
+
+void zapis2(STUDENT* student, int r) {
+	(*student).rocnik = r;
+}
+
+int main(void) {
+	STUDENT s = { "Peter Kovac", 0 },b;
+	STUDENT* p_s = &s;
+	zapis(s, 2);
+	printf("Student [%d rocnika]: %s\n", s.rocnik, s.meno);
+	zapis2(&s, 3);
+	printf("Student [%d rocnika]: %s\n", s.rocnik, s.meno);
+
+	/* ------------------------ */
+	printf("Student [%d rocnika]: %s\n", b.rocnik, b.meno);
+	b = s;
+	printf("Student [%d rocnika]: %s\n", b.rocnik, b.meno);
+
+	/* ------------------------ */
+	s.rocnik = 122;
+	printf("Student [%d rocnika]: %s\n", s.rocnik, s.meno);
+	printf("Student [%d rocnika]: %s\n", b.rocnik, b.meno);
+
+	strcpy(s.meno,"Jano Zelenka");
+	printf("Student [%d rocnika]: %s\n", s.rocnik, s.meno);
+	printf("Student [%d rocnika]: %s\n", b.rocnik, b.meno);
+
+
+	(*p_s).rocnik = 155;
+	printf("Student [%d rocnika]: %s\n", s.rocnik, s.meno);
+	printf("Student [%d rocnika]: %s\n", b.rocnik, b.meno);
+
+	/*  *p_s.rocnik = 1455;   */ /* chyba */
+	/*  printf("Student [%d rocnika]: %s\n", s.rocnik, s.meno);  */
+
+	p_s->rocnik = 1335;
+	printf("Student [%d rocnika]: %s\n", s.rocnik, s.meno);
+
+	return(0);
+}
+
+//.....................................................
+//.....................................................
+
+
+typedef struct student
+{
+	char meno[30];
+	int rocnik;
+	/* char meno[30] = "";   */
+	/* int rocnik = 0;   */
+} STUDENT, *P_STUDENT;
+
+STUDENT *vytvor1(void)
+{
+	STUDENT *p;
+	p = (STUDENT *) malloc(sizeof(STUDENT));
+	if (p == NULL)
+		printf("Malo pamate.\n");
+	return p;
+}
+
+void vytvor2(STUDENT **p)
+{
+	*p = (STUDENT *) malloc(sizeof(STUDENT));
+	if (*p == NULL)
+		printf("Malo pamate.\n");
+}
+
+void vypis(STUDENT *p_student){
+	printf("\nVF: %s je zapisany do %d. rocnika\n", p_student->meno, p_student->rocnik);
+	}
+
+
+int main(void)
+{
+	STUDENT s = {"", 0};
+	STUDENT s2 = s;
+
+	P_STUDENT p_s = &s;
+
+	/*   P_STUDENT p_s = NULL;   */
+	/*   vytvor2(&p_s);     */
+	/*   p_s = vytvor1();   */
+
+	vypis(&s);
+	vypis(&s2);
+	vypis(p_s);
+
+	scanf(" %s", s.meno);
+	scanf(" %d", &(s.rocnik));
+	printf("\nMM: %s je zapisany do %d. rocnika\n", s.meno, s.rocnik);
+	printf("\nMM: %s je zapisany do %d. rocnika\n", s2.meno, s2.rocnik);
+	/*  if (s2 == s)   */
+	/*	  printf("Su rovnake");    */
+	vypis(&s);
+	vypis(&s2);
+	vypis(p_s);
+
+	return 0;
+}
+
+
+
+//.....................................................
+//.....................................................
+
+//stat. VS dyn. struct
+
+typedef struct {
+	char meno[30];
+	int rocnik;
+} STUDENT, *P_STUDENT;
+
+int main() {
+	STUDENT s;
+	P_STUDENT  p_s;
+	STUDENT l, * p_l = &l;
+	p_s = (P_STUDENT)malloc(sizeof(STUDENT));
+
+	s.rocnik = 2;
+	printf("\n s.rocnik -  %d", s.rocnik);
+	(*p_s).rocnik = 3;
+	printf("\n s.rocnik -  %d", (*p_s).rocnik);
+	p_s->rocnik = 4;
+	printf("\n p_s.rocnik -  %d", (*p_s).rocnik);
+
+	l.rocnik = 2;
+	printf("\n l.rocnik -  %d", l.rocnik);
+	(*p_l).rocnik = 3;
+	printf("\n l.rocnik -  %d", l.rocnik);
+	p_l->rocnik = 35;
+	printf("\n l.rocnik -  %d", l.rocnik);
+	return(0);
+}
+//.....................................................
+//.....................................................
+
+
+//kopirovanie struct
+
+typedef struct str_dyn_pole{
+	int *p_pole;
+	int velkost;
+} STR_DYN_POLE;
+
+int main()
+{
+	STR_DYN_POLE a = {NULL, 0};
+	STR_DYN_POLE b = {NULL, 0};
+	int i;
+	a.velkost = 10;
+	a.p_pole = (int*)malloc(a.velkost*sizeof(int));
+	for( i=0; i<a.velkost; i++)
+		a.p_pole[i] = i;
+
+	/* kopirovani  V1 */
+	b = a;
+
+	/* kopirovani  V2 */
+	/* b.velkost = a.velkost; */
+	/* b.p_pole = (int*)malloc(b.velkost * sizeof(int)); */
+	/* for (i = 0; i < a.velkost; i++) */
+	/* 	    b.p_pole[i] = a.p_pole[i];  */
+
+   /* porovnanie vypisu */
+   printf("\npole a: ");
+   for( i=0; i<a.velkost; i++)
+		printf("%d,", a.p_pole[i]);
+
+   printf("\npole b: ");
+   for( i=0; i<b.velkost; i++)
+		printf("%d,", b.p_pole[i]);
+
+	free(a.p_pole);
+	a.p_pole = NULL;
+
+	printf("\npole a: ");
+	for( i=0; a.p_pole != NULL && i<a.velkost; i++)
+		printf("%d,", a.p_pole[i]);
+
+   printf("\npole b: ");
+   for( i=0;  b.p_pole != NULL && i<b.velkost; i++)
+		printf("%d,", b.p_pole[i]);
+
+return(0);
+
+}
+
+//.....................................................
+//.....................................................
+
+
+
+
+/*
+//enum
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef enum {
+	MODRA, CERVENA, ZELENA, ZLTA
+} FARBY;
+
+//enum farby {MODRA=1, CERVENA=1, ZELENA, ZLTA=43};
+
+int main(void)
+{
+	FARBY c, d;
+	c = MODRA;
+	d = CERVENA;
+
+	char* nazvy[] = { "Modra", "Cervena", "Zelena", "Zlta" };
+	printf("Farba: %s \n", nazvy[c]);
+
+	return 0;
+}
+*/
+
+
+//.....................................................
+//.....................................................
+
+/*
+//enum
+#include<stdio.h>
+enum mesiace { Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec };
+//enum stavy {Success, Fail, Error};
+//enum mesiace{Jan=1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
+//enum mena{Michal, Anna, Jan, Zuzana};
+
+int main()
+{
+	int i;
+	for (i = Jan; i <= Dec; i++)
+		printf("%d ", i);
+	printf("\n");
+	return 0;
+}
+*/
+
+//.....................................................
+//.....................................................
+
+
+/*
+//union
+#include <stdio.h>
+
+union bod {
+	int x, y;
+};
+
+int main()
+{
+	union bod b;
+	b.x = 1;
+	printf("x = 1:\n x = %d, y = %d\n\n", b.x, b.y);
+	b.y = 2;
+	printf("y = 2:\n x = %d, y = %d\n\n", b.x, b.y);
+	return 0;
+}
+*/
+
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef union {
+	char c;
+	int i;
+	float f;
+} ZIF;
+
+int main(void)
+{
+	ZIF a, *p_a = &a;
+
+	a.c = '#';
+	printf("%c\n", a.c);
+	printf("%d\n", a.i);
+	printf("%f\n", a.f);
+
+	p_a->i = 1;
+	printf("%c\n", a.c);
+	printf("%d\n", a.i);
+	printf("%f\n", a.f);
+
+	a.f = 2.3;
+	printf("%c\n", a.c);
+	printf("%d\n", a.i);
+	printf("%f\n", a.f);
+
+
+	printf("sizeof(char) = %ld, sizeof(int) = %ld, sizeof(float) = %ld ,sizeof(double) = %ld\n",
+		sizeof(char), sizeof(int), sizeof(float), sizeof(double));
+	printf("sizeof(ZIF) = %ld\n", sizeof(ZIF));
+
+	return 0;
+}
+*/
+
+//.....................................................
+//.....................................................
+
+/*
+//union
+#include <stdio.h>
+typedef enum {
+	ZNAK, CELE, REALNE
+} TYP;
+
+typedef union {
+	char c;
+	int i;
+	double f;
+} ZIF;
+
+typedef struct {
+	TYP typ;
+	ZIF polozka;
+} PRVOK;
+
+int main(void)
+{
+	int i;
+        PRVOK pole[10];
+	char* nazvy[] = { "ZNAK", "CELE", "REALNE"};
+
+	pole[0].typ = CELE;
+	pole[0].polozka.i = 10;
+
+	pole[1].typ = ZNAK;
+	pole[1].polozka.c = 's';
+
+	pole[2].typ = REALNE;
+	pole[2].polozka.f = 2.3;
+
+	for( i = 0; i<10; i++)
+		switch (pole[i].typ) {
+		case 0: printf("\nPrvok[%d]: typ: %d, polozka %c ",  i, pole[i].typ, pole[i].polozka.c); break;
+		case 1: printf("\nPrvok[%d]: typ: %d, polozka %d ",  i, pole[i].typ, pole[i].polozka.i); break;
+		case 2: printf("\nPrvok[%d]: typ: %d, polozka %lf ", i, pole[i].typ, pole[i].polozka.f); break;
+		default :printf("\nPrvok[%d]: typ: [-], polozka [-] ", i);
+		}
+
+	for ( i = 0; i < 10; i++)
+		switch (pole[i].typ) {
+		case 0: printf("\nPrvok[%d]: typ: %s, polozka %c ",  i, nazvy[pole[i].typ], pole[i].polozka.c); break;
+		case 1: printf("\nPrvok[%d]: typ: %s, polozka %d ",  i, nazvy[pole[i].typ], pole[i].polozka.i); break;
+		case 2: printf("\nPrvok[%d]: typ: %s, polozka %lf ", i, nazvy[pole[i].typ], pole[i].polozka.f); break;
+		default:printf("\nPrvok[%d]: typ: [-], polozka [-] ", i);
+		}
+
+	return 0;
+}
+*/
+
+
+	

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ subject.title }}{% endblock %}
+{% block crumbs %}
+<nav class="crumbs"><a href="{{ url_for('main.index') }}">Predmety</a><span>›</span>{{ subject.title }}</nav>
+{% endblock %}
+{% block content %}
+<header class="page-head">
+  <h1>{{ subject.title }}</h1>
+  <p class="lead">{{ subject.summary }}</p>
+</header>
+<ol class="timeline">
+  {% for b in subject.blocks %}
+  {% set p = progress[b.slug] %}
+  <li class="{{ 'complete' if p.total and p.done == p.total }}">
+    <a class="tl-card" href="{{ url_for('main.block', subject_slug=subject.slug, block_slug=b.slug) }}">
+      <span class="tl-num">{{ loop.index }}</span>
+      <div class="tl-body">
+        <h3>{{ b.title }}</h3>
+        {% if b.summary %}<p>{{ b.summary }}</p>{% endif %}
+        <div class="tl-meta">
+          {% if b.lecture %}<span class="pill">📖 {{ b.lecture }}</span>{% endif %}
+          <span class="pill">✏️ {{ b.drills|length }} mini úloh</span>
+          <span class="pill">💻 {{ b.tasks|length }} úloh</span>
+          {% if g.user %}<span class="pill accent">{{ p.done }}/{{ p.total }}</span>{% endif %}
+        </div>
+        {% if g.user %}<div class="bar"><span style="width: {{ p.pct }}%"></span></div>{% endif %}
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}

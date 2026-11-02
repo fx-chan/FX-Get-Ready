@@ -1,0 +1,13 @@
+{
+  "title": "2.4 Veľké písmená a ASCII",
+  "difficulty": "easy",
+  "limits": {
+    "time": 2,
+    "memory_kb": 65536
+  },
+  "checker": "lines",
+  "public_tests": [
+    "01"
+  ],
+  "source": "CV_2_zadanie_2026.pdf"
+}

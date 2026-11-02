@@ -1,0 +1,24 @@
+{% macro code_widget(subject, block, task, compact=False, initial=None) -%}
+<div class="code-widget{{ ' compact' if compact }}"
+     data-key="{{ task_key(subject, block, task) }}"
+     data-submit-url="{{ url_for('main.submit', subject_slug=subject.slug, block_slug=block.slug, task_slug=task.slug) }}"
+     data-run-url="{{ url_for('main.run', subject_slug=subject.slug, block_slug=block.slug, task_slug=task.slug) }}"
+     data-logged-in="{{ '1' if g.user else '0' }}"
+     data-login-url="{{ url_for('auth.login', next=request.path) }}">
+  <div class="toolbar">
+    <button type="button" class="btn ghost sm js-reset" title="Vrátiť šablónu / Сбросить к шаблону">↺ Šablóna</button>
+    <span class="spacer"></span>
+    {% if not compact %}<button type="button" class="btn secondary js-run">▶ Spustiť <span class="ru">/ Запустить</span></button>{% endif %}
+    <button type="button" class="btn primary js-submit">{{ '✓ Skontrolovať' if compact else 'Odoslať' }} <span class="ru">/ {{ 'Проверить' if compact else 'Отправить' }}</span></button>
+  </div>
+  <textarea class="js-source">{{ initial if initial is not none else task.template }}</textarea>
+  <textarea class="js-template" hidden>{{ task.template }}</textarea>
+  {% if not compact %}
+  <details class="stdin-box">
+    <summary>Vlastný vstup (stdin) <span class="ru">/ Свой ввод</span></summary>
+    <textarea class="js-stdin" rows="4" spellcheck="false" placeholder="napr. 10 8"></textarea>
+  </details>
+  {% endif %}
+  <div class="result js-result" aria-live="polite"></div>
+</div>
+{%- endmacro %}

@@ -1,0 +1,13 @@
+{
+  "title": "Príklad 2 — Histogram cifier (6 b.)",
+  "difficulty": "hard",
+  "limits": {
+    "time": 2,
+    "memory_kb": 65536
+  },
+  "checker": "lines",
+  "public_tests": [
+    "01"
+  ],
+  "source": "photo_2026-11-02 (Počítačový test A_1_1)"
+}
