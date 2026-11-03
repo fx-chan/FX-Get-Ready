@@ -1,0 +1,1 @@
+Načítajte `n` (1 ≤ n ≤ 20) a vytvorte **zubaté** dynamické pole: riadok `i` má `i + 1` prvkov. Doplňte alokáciu riadkov, ich naplnenie (krajné prvky sú 1, ostatné súčet dvoch prvkov nad nimi) a korektné uvoľnenie pamäte.

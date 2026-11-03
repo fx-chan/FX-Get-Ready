@@ -85,5 +85,37 @@ int main(void) { int a = 5; zvys(a); printf("%d", a); }
 > Funkcia dostala kópiu hodnoty. Na zmenu originálu treba ukazovateľ (Cvičenie 5).
 :::
 
+### Bloky a rozsah platnosti / Блоки и область видимости
+
+Blok je časť kódu v `{ }`. Premenná definovaná v bloku platí **od miesta definície po koniec
+bloku**. Vnútorný blok môže definovať premennú s rovnakým menom — tá potom **zakryje** vonkajšiu.
+
+```c
+int x = 1;                 // globálna
+int main(void) {
+    int x = 2;             // lokálna v main, zakryje globálnu
+    {
+        int x = 3;         // vnútorný blok
+        printf("%d\n", x); // 3
+    }
+    printf("%d\n", x);     // 2
+    for (int i = 0; i < 3; i++) { }
+    // i tu už neexistuje
+    return 0;
+}
+```
+
+- `main` je tiež funkcia: vracia `int` (0 = úspech) a môže mať parametre `int argc, char *argv[]`,
+- `return` ukončí funkciu okamžite (aj uprostred cyklu),
+- funkciu definovanú až za miestom volania treba vopred deklarovať prototypom — inak GCC 15 hlási chybu.
+
+::: quiz
+Čo vypíše `int a = 1; { int a = 5; a++; } printf("%d", a);`?
+- [x] 1
+- [ ] 5
+- [ ] 6
+> Vnútorné `a` je iná premenná, ktorá zanikne na konci bloku. Vonkajšie `a` ostáva 1.
+:::
+
 ::: drill d3-function
 ::: drill d3-void

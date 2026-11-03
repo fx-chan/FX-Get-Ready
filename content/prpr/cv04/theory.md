@@ -44,8 +44,43 @@ fclose(f);                            // zatvoriť = zapísať buffer a uvoľni�
 | `fprintf(f, "%d\n", x)` | ako `printf` |
 | `fgets(buf, n, f)` | celý riadok (max `n-1` znakov), na konci vráti `NULL` |
 | `rewind(f)` | späť na začiatok súboru |
+| `ftell(f)` | aktuálna pozícia v súbore (v bajtoch od začiatku) |
+| `fseek(f, posun, odkial)` | presun pozície; `odkial` = `SEEK_SET` (začiatok), `SEEK_CUR` (aktuálna), `SEEK_END` (koniec) |
+| `feof(f)` | nenulové, ak sa už **pokúsilo** čítať za koncom súboru |
+| `ungetc(c, f)` | vráti prečítaný znak späť do bufferu — ďalšie čítanie ho dostane znova |
+| `remove("a.txt")`, `rename("a.txt", "b.txt")` | zmazanie / premenovanie súboru (0 = úspech) |
+| `tmpfile()` | dočasný súbor, ktorý sa po zatvorení sám zmaže |
 
-Binárne súbory sa otvárajú s `"rb"`/`"wb"` a čítajú/zapisujú cez `fread`/`fwrite`.
+Všetky režimy `fopen`: `"r"` čítanie, `"w"` zápis (vytvorí / vyprázdni), `"a"` pripisovanie na koniec,
+`"r+"` čítanie aj zápis (súbor musí existovať), `"w+"`, `"a+"`. Binárne súbory sa otvárajú s
+`"rb"`/`"wb"` a čítajú/zapisujú cez `fread`/`fwrite`.
+
+**Buffer**: výstup sa neposiela na disk po každom znaku, ale zbiera sa vo vyrovnávacej pamäti.
+Zapíše sa pri `fclose`, `fflush(f)` alebo keď je buffer plný. Preto treba súbor vždy zatvoriť —
+a skontrolovať, že `fclose(f) == 0`.
+
+```c
+fseek(f, 0, SEEK_END);          // na koniec súboru
+long velkost = ftell(f);        // pozícia na konci = veľkosť súboru v bajtoch
+rewind(f);                      // späť na začiatok
+
+int c = getc(f);
+if (c >= '0' && c <= '9') {
+    ungetc(c, f);               // vráť cifru späť, nech ju prečíta fscanf
+    fscanf(f, "%d", &x);
+}
+```
+
+> `while (!feof(f)) { fscanf(...); }` je častá chyba — `feof` je pravda až **po** neúspešnom čítaní,
+> takže posledný záznam sa spracuje dvakrát. Testujte návratovú hodnotu čítacej funkcie.
+
+::: quiz
+Ako zistíme veľkosť súboru `f` v bajtoch?
+- [ ] `sizeof(f)`
+- [x] `fseek(f, 0, SEEK_END);` a potom `ftell(f)`
+- [ ] `feof(f)`
+> `sizeof(f)` je veľkosť ukazovateľa `FILE *`, nie súboru.
+:::
 
 ::: quiz
 Čo spraví `fopen("vystup.txt", "w")`, ak súbor už existuje?

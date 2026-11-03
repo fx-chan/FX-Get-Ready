@@ -9,7 +9,7 @@ Od najvyššej po najnižšiu (výber):
 | aditívne | `+ -` |
 | relačné | `< <= > >=` |
 | rovnosť | `== !=` |
-| logické | `&&`, potom `\|\|` |
+| logické | `&&`, potom `||` |
 | podmienený | `? :` |
 | priradenie | `= += -= *= /= %=` |
 
@@ -83,6 +83,27 @@ for (int i = 1; i <= n; i++) sucet += i;
 - `break` — okamžite ukončí cyklus
 - `continue` — preskočí zvyšok tela a pokračuje ďalšou iteráciou
 
+**Operátor čiarka** `,` vyhodnotí výrazy zľava doprava, výsledkom je hodnota **posledného**.
+Najčastejšie sa používa vo `for`, keď treba viac premenných:
+
+```c
+for (i = 0, j = n - 1; i < j; i++, j--)   // dva indexy idú proti sebe
+    { int t = a[i]; a[i] = a[j]; a[j] = t; }
+
+x = (a = 2, a + 3);                        // x == 5
+```
+
+Odporúčania: `for` keď poznáme počet opakovaní, `while` keď opakujeme kým platí podmienka,
+`do-while` keď sa telo musí vykonať aspoň raz. Nemeňte riadiacu premennú `for` v tele cyklu.
+
+::: quiz
+Akú hodnotu má `x` po `x = (1, 2, 3);`?
+- [ ] 1
+- [ ] 6
+- [x] 3
+> Operátor čiarka vráti hodnotu posledného výrazu. (Bez zátvoriek by `x = 1, 2, 3;` priradilo 1 — priradenie má vyššiu prioritu ako čiarka.)
+:::
+
 ::: quiz
 Koľkokrát sa vykoná telo `for (i = 0; i < 10; i += 3)`?
 - [ ] 3
@@ -106,7 +127,14 @@ for (int i = 0; i < N; i++)
 
 - veľkosť statického poľa musí byť známa pri kompilácii (konštanta),
 - C **nekontroluje** hranice poľa: `pole[N]` je chyba, ktorú kompilátor neodhalí,
-- počet prvkov: `sizeof(p) / sizeof(p[0])`.
+- počet prvkov: `sizeof(p) / sizeof(p[0])`,
+- polia sa **nedajú** porovnať `==` ani skopírovať `=` — treba to urobiť prvok po prvku v cykle.
+
+```c
+int a[3] = {1, 2, 3}, b[3];
+// b = a;          chyba kompilácie
+for (int i = 0; i < 3; i++) b[i] = a[i];   // správne kopírovanie
+```
 
 ::: quiz
 `int a[5];` — ktorý prístup je chybný? / Какое обращение ошибочно?
