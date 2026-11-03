@@ -1,7 +1,7 @@
 {
-  "SECRET_KEY": "76bceb4d982546063db141700ce97432c11e659017bb0faf0bcf741490ecbfbf",
+  "SECRET_KEY": "replace-with-a-long-random-string",
   "COMPILER_BACKEND": "onlinecompiler",
-  "ONLINECOMPILER_KEY": "4763ba157aaf1686ba801c9be0227cdc",
+  "ONLINECOMPILER_KEY": "your-onlinecompiler.io-api-key",
   "USER_RUNS_PER_MINUTE": 6,
   "ALLOW_REGISTRATION": true
 }

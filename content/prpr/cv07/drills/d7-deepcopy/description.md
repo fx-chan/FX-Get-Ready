@@ -1,0 +1,1 @@
+Štruktúra `OSOBA` obsahuje **ukazovateľ** na meno. Doplňte funkciu `kopia` tak, aby vytvorila **hlbokú** kópiu: pre meno alokujte novú pamäť a reťazec skopírujte. Program po skopírovaní zmení meno originálu — kópia sa nesmie zmeniť.

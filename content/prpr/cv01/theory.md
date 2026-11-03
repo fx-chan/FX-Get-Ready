@@ -1,3 +1,28 @@
+## Algoritmus a paradigmy / Алгоритм и парадигмы
+
+**Algoritmus** je presný postup, ktorý po konečnom počte krokov vyrieši úlohu. Požadované vlastnosti:
+
+| vlastnosť | význam |
+|---|---|
+| jednoznačnosť | každý krok je presne definovaný |
+| determinovanosť | nasledujúci krok je jednoznačne daný |
+| rezultatívnosť | po konečnom počte krokov príde k výsledku |
+| správnosť | výsledok je vždy korektný |
+| efektívnosť | čo najmenej času a pamäte (často protichodné požiadavky) |
+
+**Paradigmy programovania**: procedurálna (C, Pascal), objektovo-orientovaná (Java, C++),
+funkcionálna (Lisp, Haskell), logická (Prolog). Jazyk C je **procedurálny**: program je postupnosť
+príkazov, ktoré sa vykonávajú v zapísanom poradí, pokiaľ riadiaca štruktúra neurčí inak; údaje sú
+v premenných, ktoré počas behu menia hodnotu.
+
+::: quiz
+Ktorá vlastnosť algoritmu hovorí, že po konečnom počte krokov musí prísť k výsledku?
+- [ ] determinovanosť
+- [x] rezultatívnosť
+- [ ] efektívnosť
+> Determinovanosť = ďalší krok je jednoznačne daný; efektívnosť = šetrí čas a pamäť.
+:::
+
 ## Od zdrojáku k programu / От исходника к программе
 
 Jazyk C je **kompilovaný**: zdrojový kód (`.c`) sa najprv preloží do strojového kódu a až potom sa spúšťa.
@@ -33,6 +58,8 @@ int main(void) {
 - `#include <stdio.h>` — pripojí hlavičkový súbor štandardného vstupu/výstupu.
 - `main` — vstupný bod programu. Vracia `int`.
 - Každý príkaz končí bodkočiarkou `;`. `\n` je koniec riadku.
+- Komentáre: `// do konca riadku` a `/* viac riadkov */`. Komentáre `/* */` sa **nedajú vnárať**:
+  `/* a /* b */ c */` skončí pri prvom `*/` a `c */` je chyba.
 
 ::: quiz
 Čo musí byť na konci (takmer) každého príkazu v C? / Чем заканчивается почти каждая инструкция?
@@ -62,6 +89,35 @@ double x = 3.1415926535;
 printf("i = %d j = %d\n", i, j);
 printf("c = %c | %d\n", c, c);   // c = b | 98  -- znak je číslo z ASCII tabuľky
 ```
+
+**Modifikátory typov**: `unsigned` (bez znamienka — uvoľnený bit zväčší kladný rozsah), `signed`
+(predvolené), `short`, `long`, `long long`. Napr. `unsigned int` (`%u`), `long long` (`%lld`).
+
+**Pravidlá pre mená**: začína písmenom alebo `_`, ďalej len písmená, číslice a `_`; rozlišujú sa
+veľké a malé písmená (`pom`, `Pom`, `POM` sú tri premenné); nesmie to byť kľúčové slovo (`int for;`
+je chyba). Mená začínajúce `_` nechajte systému.
+
+**Globálne a lokálne premenné**: premenná definovaná mimo funkcií je **globálna** — vidí ju celý
+program. Premenná definovaná v bloku `{ }` je **lokálna** — existuje len v tom bloku.
+
+```c
+int pocitadlo;          // globálna, automaticky inicializovaná na 0
+
+int main(void) {
+    int j = 5;          // lokálna v main; bez inicializácie by mala náhodnú hodnotu
+    pocitadlo++;
+    return 0;
+}
+```
+
+::: quiz
+Ktoré meno premennej je **neplatné**? / Какое имя переменной недопустимо?
+- [ ] `_pom`
+- [ ] `pocet2`
+- [x] `2pocet`
+- [ ] `PocetZnakov`
+> Meno nesmie začínať číslicou. `_pom` je platné, ale je vyhradené skôr pre systém.
+:::
 
 ::: quiz
 Akým formátom načítame `double` cez `scanf`? / Каким форматом читать `double`?
@@ -130,6 +186,37 @@ Platí `int i = 5; int k = i++ + 1;`. Aké sú hodnoty?
 - [ ] `k == 6`, `i == 5`
 > `i++` vráti pôvodnú hodnotu 5 a až potom zvýši `i` na 6.
 :::
+
+### Bitové operátory / Битовые операторы
+
+Pracujú s jednotlivými bitmi čísla (nepliesť si s logickými `&&`, `||`, `!`):
+
+| operátor | význam | príklad (4-bitovo) |
+|---|---|---|
+| `&` | AND — 1, ak sú oba bity 1 | `0011 & 0101 = 0001` |
+| `|` | OR — 1, ak je aspoň jeden bit 1 | `0011 | 0101 = 0111` |
+| `^` | XOR — 1, ak sú bity rôzne | `0011 ^ 0101 = 0110` |
+| `~` | negácia každého bitu | `~0101 = 1010` |
+| `<<` | posun doľava (= násobenie 2ⁿ) | `0101 << 2 = 10100` (5 → 20) |
+| `>>` | posun doprava (= celočíselné delenie 2ⁿ) | `0101 >> 1 = 0010` (5 → 2) |
+
+```c
+unsigned n = 5;                 // 101
+int bit = (n >> k) & 1;         // hodnota k-teho bitu
+n = n | (1u << k);              // nastav k-ty bit na 1
+n = n & ~(1u << k);             // vynuluj k-ty bit
+```
+
+::: quiz
+Akú hodnotu má `6 & 3`? / Чему равно `6 & 3`?
+- [x] 2
+- [ ] 1
+- [ ] 7
+- [ ] 9
+> `110 & 011 = 010` = 2. Pozor: `6 && 3` by bolo 1 (logické AND), `6 | 3` = 7.
+:::
+
+::: drill d1-bits
 
 ## Podmienka if / Условие if
 
