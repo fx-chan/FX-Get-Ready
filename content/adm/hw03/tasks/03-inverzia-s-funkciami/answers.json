@@ -1,0 +1,46 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\begin{bmatrix}\\frac12(e^x+e^{-x}) & \\frac12(e^x-e^{-x})\\\\ \\frac12(e^x-e^{-x}) & \\frac12(e^x+e^{-x})\\end{bmatrix}^{-1}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "cosh(x)",
+     "-sinh(x)"
+    ],
+    [
+     "-sinh(x)",
+     "cosh(x)"
+    ]
+   ],
+   "example": {
+    "value": "cosh(x) -sinh(x)\n-sinh(x) cosh(x)"
+   },
+   "vars": [
+    "x"
+   ]
+  },
+  {
+   "id": "b",
+   "prompt": "$\\begin{bmatrix}\\cos\\theta & \\sin\\theta\\\\ -\\sin\\theta & \\cos\\theta\\end{bmatrix}^{-1}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "cos(theta)",
+     "-sin(theta)"
+    ],
+    [
+     "sin(theta)",
+     "cos(theta)"
+    ]
+   ],
+   "example": {
+    "value": "cos(theta) -sin(theta)\nsin(theta) cos(theta)"
+   },
+   "vars": [
+    "theta"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\left\\{\\begin{aligned}3x - 2y &= 4 \\\\ 6x - 4y &= 9\\end{aligned}\\right.$ — počet riešení",
+   "kind": "choice",
+   "options": [
+    "nemá riešenie",
+    "má práve jedno riešenie",
+    "má nekonečne veľa riešení"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "a2",
+   "prompt": "riešenie $(x, y)$",
+   "kind": "system",
+   "A": [
+    [
+     "3",
+     "-2"
+    ],
+    [
+     "6",
+     "-4"
+    ]
+   ],
+   "b": [
+    "4",
+    "9"
+   ],
+   "example": {
+    "none": true
+   },
+   "solutions": "none"
+  },
+  {
+   "id": "b",
+   "prompt": "$\\left\\{\\begin{aligned}2x - 4y &= 1 \\\\ 4x - 8y &= 2\\end{aligned}\\right.$ — počet riešení",
+   "kind": "choice",
+   "options": [
+    "nemá riešenie",
+    "má práve jedno riešenie",
+    "má nekonečne veľa riešení"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "b2",
+   "prompt": "riešenie $(x, y)$",
+   "kind": "system",
+   "A": [
+    [
+     "2",
+     "-4"
+    ],
+    [
+     "4",
+     "-8"
+    ]
+   ],
+   "b": [
+    "1",
+    "2"
+   ],
+   "example": {
+    "value": "2*t + 1/2, t"
+   },
+   "solutions": "infinite (1 param)"
+  },
+  {
+   "id": "c",
+   "prompt": "$\\left\\{\\begin{aligned}x - 2y &= 0 \\\\ x - 4y &= 8\\end{aligned}\\right.$ — počet riešení",
+   "kind": "choice",
+   "options": [
+    "nemá riešenie",
+    "má práve jedno riešenie",
+    "má nekonečne veľa riešení"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c2",
+   "prompt": "riešenie $(x, y)$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "-2"
+    ],
+    [
+     "1",
+     "-4"
+    ]
+   ],
+   "b": [
+    "0",
+    "8"
+   ],
+   "example": {
+    "value": "-8, -4"
+   },
+   "solutions": "unique"
+  }
+ ]
+}

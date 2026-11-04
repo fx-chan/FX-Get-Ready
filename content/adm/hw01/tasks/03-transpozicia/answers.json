@@ -1,0 +1,195 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$2\\mathbf{A}^{\\top}+\\mathbf{C}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "7",
+     "2",
+     "4"
+    ],
+    [
+     "3",
+     "5",
+     "7"
+    ]
+   ],
+   "example": {
+    "value": "7 2 4\n3 5 7"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{D}^{\\top}-\\mathbf{E}^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-5",
+     "0",
+     "-1"
+    ],
+    [
+     "4",
+     "-1",
+     "1"
+    ],
+    [
+     "-1",
+     "-1",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "-5 0 -1\n4 -1 1\n-1 -1 1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(\\mathbf{D}-\\mathbf{E})^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-5",
+     "0",
+     "-1"
+    ],
+    [
+     "4",
+     "-1",
+     "1"
+    ],
+    [
+     "-1",
+     "-1",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "-5 0 -1\n4 -1 1\n-1 -1 1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{B}^{\\top}+5\\mathbf{C}^{\\top}$",
+   "kind": "matrix",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\tfrac12 \\mathbf{C}^{\\top}-\\tfrac14 \\mathbf{A}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-1/4",
+     "3/2"
+    ],
+    [
+     "9/4",
+     "0"
+    ],
+    [
+     "3/4",
+     "9/4"
+    ]
+   ],
+   "example": {
+    "value": "-1/4 3/2\n9/4 0\n3/4 9/4"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\mathbf{B}-\\mathbf{B}^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "0",
+     "-1"
+    ],
+    [
+     "1",
+     "0"
+    ]
+   ],
+   "example": {
+    "value": "0 -1\n1 0"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$(2\\mathbf{E}^{\\top}-3\\mathbf{D}^{\\top})^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "9",
+     "-13",
+     "0"
+    ],
+    [
+     "1",
+     "2",
+     "1"
+    ],
+    [
+     "-1",
+     "-4",
+     "-6"
+    ]
+   ],
+   "example": {
+    "value": "9 -13 0\n1 2 1\n-1 -4 -6"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "$(CD)\\mathbf{E}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "65",
+     "26",
+     "69"
+    ],
+    [
+     "185",
+     "69",
+     "182"
+    ]
+   ],
+   "example": {
+    "value": "65 26 69\n185 69 182"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "$\\mathbf{C}(BA)$",
+   "kind": "matrix",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "$\\operatorname{tr}(DE^{\\top})$",
+   "kind": "number",
+   "answer": "46",
+   "example": {
+    "value": "46"
+   }
+  },
+  {
+   "id": "l",
+   "prompt": "$\\operatorname{tr}(BC)$",
+   "kind": "number",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  }
+ ]
+}

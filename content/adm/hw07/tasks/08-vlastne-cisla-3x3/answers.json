@@ -1,0 +1,394 @@
+{
+ "parts": [
+  {
+   "id": "a1",
+   "prompt": "a) $\\begin{bmatrix}4 & 0 & 1 \\\\ -2 & 1 & 0 \\\\ -2 & 0 & 1\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "3",
+    "2",
+    "1"
+   ],
+   "example": {
+    "value": "3, 2, 1"
+   }
+  },
+  {
+   "id": "a21",
+   "prompt": "a) báza pre $\\lambda = 1$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "4",
+     "0",
+     "1"
+    ],
+    [
+     "-2",
+     "1",
+     "0"
+    ],
+    [
+     "-2",
+     "0",
+     "1"
+    ]
+   ],
+   "lambda": "1",
+   "example": {
+    "value": "0, 1, 0"
+   }
+  },
+  {
+   "id": "a22",
+   "prompt": "a) báza pre $\\lambda = 2$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "4",
+     "0",
+     "1"
+    ],
+    [
+     "-2",
+     "1",
+     "0"
+    ],
+    [
+     "-2",
+     "0",
+     "1"
+    ]
+   ],
+   "lambda": "2",
+   "example": {
+    "value": "-1, 2, 2"
+   }
+  },
+  {
+   "id": "a23",
+   "prompt": "a) báza pre $\\lambda = 3$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "4",
+     "0",
+     "1"
+    ],
+    [
+     "-2",
+     "1",
+     "0"
+    ],
+    [
+     "-2",
+     "0",
+     "1"
+    ]
+   ],
+   "lambda": "3",
+   "example": {
+    "value": "-1, 1, 1"
+   }
+  },
+  {
+   "id": "b1",
+   "prompt": "b) $\\begin{bmatrix}1 & 0 & -2 \\\\ 0 & 0 & 0 \\\\ -2 & 0 & 4\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "5",
+    "0",
+    "0"
+   ],
+   "example": {
+    "value": "5, 0, 0"
+   }
+  },
+  {
+   "id": "b20",
+   "prompt": "b) báza pre $\\lambda = 0$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "0",
+     "-2"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "-2",
+     "0",
+     "4"
+    ]
+   ],
+   "lambda": "0",
+   "example": {
+    "value": "0, 1, 0\n2, 0, 1"
+   }
+  },
+  {
+   "id": "b25",
+   "prompt": "b) báza pre $\\lambda = 5$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "0",
+     "-2"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "-2",
+     "0",
+     "4"
+    ]
+   ],
+   "lambda": "5",
+   "example": {
+    "value": "-1, 0, 2"
+   }
+  },
+  {
+   "id": "c1",
+   "prompt": "c) $\\begin{bmatrix}6 & 3 & -8 \\\\ 0 & -2 & 0 \\\\ 1 & 0 & -3\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "-2",
+    "-2",
+    "5"
+   ],
+   "example": {
+    "value": "-2, -2, 5"
+   }
+  },
+  {
+   "id": "c2m2",
+   "prompt": "c) báza pre $\\lambda = -2$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "6",
+     "3",
+     "-8"
+    ],
+    [
+     "0",
+     "-2",
+     "0"
+    ],
+    [
+     "1",
+     "0",
+     "-3"
+    ]
+   ],
+   "lambda": "-2",
+   "example": {
+    "value": "1, 0, 1"
+   }
+  },
+  {
+   "id": "c25",
+   "prompt": "c) báza pre $\\lambda = 5$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "6",
+     "3",
+     "-8"
+    ],
+    [
+     "0",
+     "-2",
+     "0"
+    ],
+    [
+     "1",
+     "0",
+     "-3"
+    ]
+   ],
+   "lambda": "5",
+   "example": {
+    "value": "8, 0, 1"
+   }
+  },
+  {
+   "id": "d1",
+   "prompt": "d) $\\begin{bmatrix}0 & 1 & 1 \\\\ 1 & 0 & 1 \\\\ 1 & 1 & 0\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "2",
+    "-1",
+    "-1"
+   ],
+   "example": {
+    "value": "2, -1, -1"
+   }
+  },
+  {
+   "id": "d2m1",
+   "prompt": "d) báza pre $\\lambda = -1$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "0",
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "0",
+     "1"
+    ],
+    [
+     "1",
+     "1",
+     "0"
+    ]
+   ],
+   "lambda": "-1",
+   "example": {
+    "value": "-1, 1, 0\n-1, 0, 1"
+   }
+  },
+  {
+   "id": "d22",
+   "prompt": "d) báza pre $\\lambda = 2$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "0",
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "0",
+     "1"
+    ],
+    [
+     "1",
+     "1",
+     "0"
+    ]
+   ],
+   "lambda": "2",
+   "example": {
+    "value": "1, 1, 1"
+   }
+  },
+  {
+   "id": "e1",
+   "prompt": "e) $\\begin{bmatrix}4 & 0 & -1 \\\\ 0 & 3 & 0 \\\\ 1 & 0 & 2\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "3",
+    "3",
+    "3"
+   ],
+   "example": {
+    "value": "3, 3, 3"
+   }
+  },
+  {
+   "id": "e23",
+   "prompt": "e) báza pre $\\lambda = 3$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "4",
+     "0",
+     "-1"
+    ],
+    [
+     "0",
+     "3",
+     "0"
+    ],
+    [
+     "1",
+     "0",
+     "2"
+    ]
+   ],
+   "lambda": "3",
+   "example": {
+    "value": "0, 1, 0\n1, 0, 1"
+   }
+  },
+  {
+   "id": "f1",
+   "prompt": "f) $\\begin{bmatrix}1 & -3 & 3 \\\\ 3 & -5 & 3 \\\\ 6 & -6 & 4\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "4",
+    "-2",
+    "-2"
+   ],
+   "example": {
+    "value": "4, -2, -2"
+   }
+  },
+  {
+   "id": "f2m2",
+   "prompt": "f) báza pre $\\lambda = -2$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "-3",
+     "3"
+    ],
+    [
+     "3",
+     "-5",
+     "3"
+    ],
+    [
+     "6",
+     "-6",
+     "4"
+    ]
+   ],
+   "lambda": "-2",
+   "example": {
+    "value": "1, 1, 0\n-1, 0, 1"
+   }
+  },
+  {
+   "id": "f24",
+   "prompt": "f) báza pre $\\lambda = 4$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "-3",
+     "3"
+    ],
+    [
+     "3",
+     "-5",
+     "3"
+    ],
+    [
+     "6",
+     "-6",
+     "4"
+    ]
+   ],
+   "lambda": "4",
+   "example": {
+    "value": "1, 1, 2"
+   }
+  }
+ ]
+}

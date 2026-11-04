@@ -1,0 +1,22 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det\\begin{bmatrix}2 & 5 \\\\ 3 & 1\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "-13",
+   "example": {
+    "value": "-13"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\det\\begin{bmatrix}6 & -12 \\\\ -4 & 8\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "0",
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

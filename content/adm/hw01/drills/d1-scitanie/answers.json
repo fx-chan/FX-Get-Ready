@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{A}+\\mathbf{B}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "5",
+     "-1"
+    ],
+    [
+     "2",
+     "5"
+    ]
+   ],
+   "example": {
+    "value": "5 -1\n2 5"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$3\\mathbf{A}-\\mathbf{B}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-1",
+     "-7"
+    ],
+    [
+     "10",
+     "-5"
+    ]
+   ],
+   "example": {
+    "value": "-1 -7\n10 -5"
+   }
+  }
+ ]
+}

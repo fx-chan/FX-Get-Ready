@@ -1,0 +1,82 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "reflexia podľa $y = x$ a ortogonálna projekcia na os $x$",
+   "kind": "choice",
+   "options": [
+    "áno, $T_1 \\circ T_2 = T_2 \\circ T_1$",
+    "nie (vo všeobecnosti)"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "reflexia podľa osi $x$ a reflexia podľa $y = x$",
+   "kind": "choice",
+   "options": [
+    "áno, $T_1 \\circ T_2 = T_2 \\circ T_1$",
+    "nie (vo všeobecnosti)"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "projekcia na os $x$ a projekcia na os $y$",
+   "kind": "choice",
+   "options": [
+    "áno, $T_1 \\circ T_2 = T_2 \\circ T_1$",
+    "nie (vo všeobecnosti)"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "rotácia o $\\pi/4$ a reflexia podľa osi $y$",
+   "kind": "choice",
+   "options": [
+    "áno, $T_1 \\circ T_2 = T_2 \\circ T_1$",
+    "nie (vo všeobecnosti)"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "dilatácia s faktorom $k$ a kontrakcia s faktorom $\\frac1k$",
+   "kind": "choice",
+   "options": [
+    "áno, $T_1 \\circ T_2 = T_2 \\circ T_1$",
+    "nie (vo všeobecnosti)"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "rotácia okolo osi $x$ o $\\theta_1$ a rotácia okolo osi $z$ o $\\theta_2$",
+   "kind": "choice",
+   "options": [
+    "áno, $T_1 \\circ T_2 = T_2 \\circ T_1$",
+    "nie (vo všeobecnosti)"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

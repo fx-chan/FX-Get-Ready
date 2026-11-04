@@ -1,0 +1,334 @@
+{
+ "parts": [
+  {
+   "id": "a1",
+   "prompt": "a) $\\begin{bmatrix}1 & 4 \\\\ 2 & 3\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 - 4*lambda - 5",
+   "example": {
+    "value": "lambda^2 - 4*lambda - 5"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "a2",
+   "prompt": "a) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "5",
+    "-1"
+   ],
+   "example": {
+    "value": "5, -1"
+   }
+  },
+  {
+   "id": "a3m1",
+   "prompt": "a) báza vlastného priestoru pre $\\lambda = -1$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "4"
+    ],
+    [
+     "2",
+     "3"
+    ]
+   ],
+   "lambda": "-1",
+   "example": {
+    "value": "-2, 1"
+   }
+  },
+  {
+   "id": "a35",
+   "prompt": "a) báza vlastného priestoru pre $\\lambda = 5$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "4"
+    ],
+    [
+     "2",
+     "3"
+    ]
+   ],
+   "lambda": "5",
+   "example": {
+    "value": "1, 1"
+   }
+  },
+  {
+   "id": "b1",
+   "prompt": "b) $\\begin{bmatrix}-2 & -7 \\\\ 1 & 2\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 + 3",
+   "example": {
+    "value": "lambda^2 + 3"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "b2",
+   "prompt": "b) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "-sqrt(3)*i",
+    "sqrt(3)*i"
+   ],
+   "example": {
+    "value": "-sqrt(3)*i, sqrt(3)*i"
+   }
+  },
+  {
+   "id": "c1",
+   "prompt": "c) $\\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 - 2*lambda + 1",
+   "example": {
+    "value": "lambda^2 - 2*lambda + 1"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "c2",
+   "prompt": "c) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "1"
+   ],
+   "example": {
+    "value": "1, 1"
+   }
+  },
+  {
+   "id": "d1",
+   "prompt": "d) $\\begin{bmatrix}1 & -2 \\\\ 0 & 1\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 - 2*lambda + 1",
+   "example": {
+    "value": "lambda^2 - 2*lambda + 1"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "d2",
+   "prompt": "d) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "1"
+   ],
+   "example": {
+    "value": "1, 1"
+   }
+  },
+  {
+   "id": "d31",
+   "prompt": "d) báza vlastného priestoru pre $\\lambda = 1$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "-2"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "lambda": "1",
+   "example": {
+    "value": "1, 0"
+   }
+  },
+  {
+   "id": "e1",
+   "prompt": "e) $\\begin{bmatrix}2 & 1 \\\\ 1 & 2\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 - 4*lambda + 3",
+   "example": {
+    "value": "lambda^2 - 4*lambda + 3"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "e2",
+   "prompt": "e) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "3",
+    "1"
+   ],
+   "example": {
+    "value": "3, 1"
+   }
+  },
+  {
+   "id": "e31",
+   "prompt": "e) báza vlastného priestoru pre $\\lambda = 1$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "2",
+     "1"
+    ],
+    [
+     "1",
+     "2"
+    ]
+   ],
+   "lambda": "1",
+   "example": {
+    "value": "-1, 1"
+   }
+  },
+  {
+   "id": "e33",
+   "prompt": "e) báza vlastného priestoru pre $\\lambda = 3$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "2",
+     "1"
+    ],
+    [
+     "1",
+     "2"
+    ]
+   ],
+   "lambda": "3",
+   "example": {
+    "value": "1, 1"
+   }
+  },
+  {
+   "id": "f1",
+   "prompt": "f) $\\begin{bmatrix}2 & -3 \\\\ 0 & 2\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 - 4*lambda + 4",
+   "example": {
+    "value": "lambda^2 - 4*lambda + 4"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "f2",
+   "prompt": "f) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "2",
+    "2"
+   ],
+   "example": {
+    "value": "2, 2"
+   }
+  },
+  {
+   "id": "g1",
+   "prompt": "g) $\\begin{bmatrix}2 & 0 \\\\ 0 & 2\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 - 4*lambda + 4",
+   "example": {
+    "value": "lambda^2 - 4*lambda + 4"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "g2",
+   "prompt": "g) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "2",
+    "2"
+   ],
+   "example": {
+    "value": "2, 2"
+   }
+  },
+  {
+   "id": "g32",
+   "prompt": "g) báza vlastného priestoru pre $\\lambda = 2$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "2",
+     "0"
+    ],
+    [
+     "0",
+     "2"
+    ]
+   ],
+   "lambda": "2",
+   "example": {
+    "value": "1, 0\n0, 1"
+   }
+  },
+  {
+   "id": "h1",
+   "prompt": "h) $\\begin{bmatrix}1 & 2 \\\\ -2 & -1\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 + 3",
+   "example": {
+    "value": "lambda^2 + 3"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "h2",
+   "prompt": "h) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "-sqrt(3)*i",
+    "sqrt(3)*i"
+   ],
+   "example": {
+    "value": "-sqrt(3)*i, sqrt(3)*i"
+   }
+  },
+  {
+   "id": "i1",
+   "prompt": "i) $\\begin{bmatrix}1 & 2 \\\\ 3 & 2\\end{bmatrix}$: $p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 - 3*lambda - 4",
+   "example": {
+    "value": "lambda^2 - 3*lambda - 4"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "i2",
+   "prompt": "i) vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "4",
+    "-1"
+   ],
+   "example": {
+    "value": "4, -1"
+   }
+  }
+ ]
+}

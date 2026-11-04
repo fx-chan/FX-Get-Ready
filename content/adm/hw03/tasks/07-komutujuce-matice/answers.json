@@ -1,0 +1,34 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{A}$ a $\\mathbf{B}$ komutujú práve vtedy, keď",
+   "kind": "choice",
+   "options": [
+    "$c = 0$ a $a = d$ ($b$ ľubovoľné)",
+    "$b = 0$ a $a = d$ ($c$ ľubovoľné)",
+    "$b = c = 0$",
+    "pre všetky $a, b, c, d$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{A}$ a $\\mathbf{C}$ komutujú práve vtedy, keď",
+   "kind": "choice",
+   "options": [
+    "$c = 0$ a $a = d$ ($b$ ľubovoľné)",
+    "$b = 0$ a $a = d$ ($c$ ľubovoľné)",
+    "$b = c = 0$",
+    "pre všetky $a, b, c, d$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

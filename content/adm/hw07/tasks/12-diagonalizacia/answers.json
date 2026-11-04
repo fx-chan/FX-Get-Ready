@@ -1,0 +1,510 @@
+{
+ "parts": [
+  {
+   "id": "a1",
+   "prompt": "a) $\\begin{bmatrix}1 & 0 \\\\ 6 & -1\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "-1"
+   ],
+   "example": {
+    "value": "1, -1"
+   }
+  },
+  {
+   "id": "a3",
+   "prompt": "a) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "1",
+     "0"
+    ],
+    [
+     "6",
+     "-1"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "0 1\n1 3"
+   }
+  },
+  {
+   "id": "b1",
+   "prompt": "b) $\\begin{bmatrix}-14 & 12 \\\\ -20 & 17\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "2",
+    "1"
+   ],
+   "example": {
+    "value": "2, 1"
+   }
+  },
+  {
+   "id": "b3",
+   "prompt": "b) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "-14",
+     "12"
+    ],
+    [
+     "-20",
+     "17"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "4 3\n5 4"
+   }
+  },
+  {
+   "id": "c1",
+   "prompt": "c) $\\begin{bmatrix}3 & 0 & 0 \\\\ 0 & 2 & 0 \\\\ 0 & 1 & 2\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "3",
+    "2",
+    "2"
+   ],
+   "example": {
+    "value": "3, 2, 2"
+   }
+  },
+  {
+   "id": "c22",
+   "prompt": "c) hodnosť $\\lambda\\mathbf{I} - \\mathbf{A}$ pre $\\lambda = 2$",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c23",
+   "prompt": "c) hodnosť $\\lambda\\mathbf{I} - \\mathbf{A}$ pre $\\lambda = 3$",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c3",
+   "prompt": "c) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "3",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "2",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "2"
+    ]
+   ],
+   "diagonalizable": false,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "d1",
+   "prompt": "d) $\\begin{bmatrix}2 & 0 & -2 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 3\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "3",
+    "3",
+    "2"
+   ],
+   "example": {
+    "value": "3, 3, 2"
+   }
+  },
+  {
+   "id": "d22",
+   "prompt": "d) hodnosť $\\lambda\\mathbf{I} - \\mathbf{A}$ pre $\\lambda = 2$",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d23",
+   "prompt": "d) hodnosť $\\lambda\\mathbf{I} - \\mathbf{A}$ pre $\\lambda = 3$",
+   "kind": "number",
+   "answer": "1",
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d3",
+   "prompt": "d) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "2",
+     "0",
+     "-2"
+    ],
+    [
+     "0",
+     "3",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "3"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "1 0 -2\n0 1 0\n0 0 1"
+   }
+  },
+  {
+   "id": "e1",
+   "prompt": "e) $\\begin{bmatrix}1 & 0 & 0 \\\\ 0 & 1 & 1 \\\\ 0 & 1 & 1\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "2",
+    "0"
+   ],
+   "example": {
+    "value": "1, 2, 0"
+   }
+  },
+  {
+   "id": "e3",
+   "prompt": "e) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1",
+     "1"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "0 1 0\n-1 0 1\n1 0 1"
+   }
+  },
+  {
+   "id": "f1",
+   "prompt": "f) $\\begin{bmatrix}4 & 0 & 1 \\\\ 2 & 3 & 2 \\\\ 1 & 0 & 4\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "5",
+    "3",
+    "3"
+   ],
+   "example": {
+    "value": "5, 3, 3"
+   }
+  },
+  {
+   "id": "f3",
+   "prompt": "f) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "4",
+     "0",
+     "1"
+    ],
+    [
+     "2",
+     "3",
+     "2"
+    ],
+    [
+     "1",
+     "0",
+     "4"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "0 -1 1\n1 0 2\n0 1 1"
+   }
+  },
+  {
+   "id": "g1",
+   "prompt": "g) $\\begin{bmatrix}-1 & 7 & -1 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & -1\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "-1",
+    "-1",
+    "-1"
+   ],
+   "example": {
+    "value": "-1, -1, -1"
+   }
+  },
+  {
+   "id": "g2m1",
+   "prompt": "g) hodnosť $\\lambda\\mathbf{I} - \\mathbf{A}$ pre $\\lambda = -1$",
+   "kind": "number",
+   "answer": "1",
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "g3",
+   "prompt": "g) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "-1",
+     "7",
+     "-1"
+    ],
+    [
+     "0",
+     "-1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "-1"
+    ]
+   ],
+   "diagonalizable": false,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "h1",
+   "prompt": "h) $\\begin{bmatrix}1 & -2 & 8 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & -1\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "-1",
+    "-1",
+    "1"
+   ],
+   "example": {
+    "value": "-1, -1, 1"
+   }
+  },
+  {
+   "id": "h3",
+   "prompt": "h) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "1",
+     "-2",
+     "8"
+    ],
+    [
+     "0",
+     "-1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "-1"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "1 -4 1\n1 0 0\n0 1 0"
+   }
+  },
+  {
+   "id": "i1",
+   "prompt": "i) $\\begin{bmatrix}-1 & 4 & -2 \\\\ -3 & 4 & 0 \\\\ -3 & 1 & 3\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "3",
+    "2",
+    "1"
+   ],
+   "example": {
+    "value": "3, 2, 1"
+   }
+  },
+  {
+   "id": "i3",
+   "prompt": "i) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "-1",
+     "4",
+     "-2"
+    ],
+    [
+     "-3",
+     "4",
+     "0"
+    ],
+    [
+     "-3",
+     "1",
+     "3"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "1 2 1\n1 3 3\n1 3 4"
+   }
+  },
+  {
+   "id": "j1",
+   "prompt": "j) $\\begin{bmatrix}19 & -9 & -6 \\\\ 25 & -11 & -9 \\\\ 17 & -9 & -4\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "2",
+    "1",
+    "1"
+   ],
+   "example": {
+    "value": "2, 1, 1"
+   }
+  },
+  {
+   "id": "j3",
+   "prompt": "j) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "19",
+     "-9",
+     "-6"
+    ],
+    [
+     "25",
+     "-11",
+     "-9"
+    ],
+    [
+     "17",
+     "-9",
+     "-4"
+    ]
+   ],
+   "diagonalizable": false,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "k1",
+   "prompt": "k) $\\begin{bmatrix}0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 3 & 0 & 1\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "0",
+    "0",
+    "1"
+   ],
+   "example": {
+    "value": "0, 0, 1"
+   }
+  },
+  {
+   "id": "k3",
+   "prompt": "k) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "3",
+     "0",
+     "1"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "0 -1 0\n1 0 0\n0 3 1"
+   }
+  },
+  {
+   "id": "l1",
+   "prompt": "l) $\\begin{bmatrix}5 & 0 & 0 \\\\ 1 & 5 & 0 \\\\ 0 & 1 & 5\\end{bmatrix}$: vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "5",
+    "5",
+    "5"
+   ],
+   "example": {
+    "value": "5, 5, 5"
+   }
+  },
+  {
+   "id": "l25",
+   "prompt": "l) hodnosť $\\lambda\\mathbf{I} - \\mathbf{A}$ pre $\\lambda = 5$",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "l3",
+   "prompt": "l) matica $\\mathbf{P}$ (alebo nie je diagonalizovateľná)",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "5",
+     "0",
+     "0"
+    ],
+    [
+     "1",
+     "5",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "5"
+    ]
+   ],
+   "diagonalizable": false,
+   "example": {
+    "none": true
+   }
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$p(\\lambda)$",
+   "kind": "number",
+   "answer": "lambda^2 - 4*lambda - 5",
+   "example": {
+    "value": "lambda^2 - 4*lambda - 5"
+   },
+   "vars": [
+    "lambda"
+   ]
+  },
+  {
+   "id": "b",
+   "prompt": "vlastné čísla",
+   "kind": "multiset",
+   "answer": [
+    "5",
+    "-1"
+   ],
+   "example": {
+    "value": "5, -1"
+   }
+  }
+ ]
+}

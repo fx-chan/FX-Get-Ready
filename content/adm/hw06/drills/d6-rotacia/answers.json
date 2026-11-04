@@ -1,0 +1,28 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "o $90^\\circ$",
+   "kind": "vector",
+   "answer": [
+    "0",
+    "2"
+   ],
+   "example": {
+    "value": "0, 2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "o $60^\\circ$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "sqrt(3)"
+   ],
+   "example": {
+    "value": "1, sqrt(3)"
+   }
+  }
+ ]
+}

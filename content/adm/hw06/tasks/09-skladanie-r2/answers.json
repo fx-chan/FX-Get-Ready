@@ -1,0 +1,112 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "rotácia o $90^\\circ$, potom reflexia podľa $y = x$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "-1"
+    ]
+   ],
+   "example": {
+    "value": "1 0\n0 -1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "ortogonálna projekcia na os $y$, potom kontrakcia s $k = \\frac12$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1/2"
+    ]
+   ],
+   "example": {
+    "value": "0 0\n0 1/2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "reflexia podľa osi $x$, dilatácia $k = 3$, rotácia o $60^\\circ$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "3/2",
+     "3*sqrt(3)/2"
+    ],
+    [
+     "3*sqrt(3)/2",
+     "-3/2"
+    ]
+   ],
+   "example": {
+    "value": "3/2 3*sqrt(3)/2\n3*sqrt(3)/2 -3/2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "rotácia o $60^\\circ$, projekcia na os $x$, reflexia podľa $y = x$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "0",
+     "0"
+    ],
+    [
+     "1/2",
+     "-sqrt(3)/2"
+    ]
+   ],
+   "example": {
+    "value": "0 0\n1/2 -sqrt(3)/2"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "dilatácia $k = 2$, rotácia o $45^\\circ$, reflexia podľa osi $y$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-sqrt(2)",
+     "sqrt(2)"
+    ],
+    [
+     "sqrt(2)",
+     "sqrt(2)"
+    ]
+   ],
+   "example": {
+    "value": "-sqrt(2) sqrt(2)\nsqrt(2) sqrt(2)"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "rotácia o $15^\\circ$, rotácia o $105^\\circ$, rotácia o $60^\\circ$ v smere hodinových ručičiek",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1/2",
+     "-sqrt(3)/2"
+    ],
+    [
+     "sqrt(3)/2",
+     "1/2"
+    ]
+   ],
+   "example": {
+    "value": "1/2 -sqrt(3)/2\nsqrt(3)/2 1/2"
+   }
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\lambda$",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  }
+ ]
+}

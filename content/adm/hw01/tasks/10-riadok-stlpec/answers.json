@@ -1,0 +1,149 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "2. riadok $BG$",
+   "kind": "vector",
+   "answer": [
+    "15",
+    "-13",
+    "-8"
+   ],
+   "example": {
+    "value": "15, -13, -8"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "3. stĺpec $DE$",
+   "kind": "vector",
+   "answer": [
+    "11",
+    "6",
+    "3"
+   ],
+   "example": {
+    "value": "11, 6, 3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "1. stĺpec $SE$",
+   "kind": "vector",
+   "answer": [
+    "4"
+   ],
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "3. riadok $FQ$",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "8",
+    "-2",
+    "12"
+   ],
+   "example": {
+    "value": "2, 8, -2, 12"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "1. riadok $\\mathbf{A}_3\\mathbf{B}_3$",
+   "kind": "vector",
+   "answer": [
+    "67",
+    "41",
+    "41"
+   ],
+   "example": {
+    "value": "67, 41, 41"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "2. stĺpec $\\mathbf{A}_3\\mathbf{B}_3$",
+   "kind": "vector",
+   "answer": [
+    "41",
+    "21",
+    "67"
+   ],
+   "example": {
+    "value": "41, 21, 67"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "3. riadok $\\mathbf{A}_3\\mathbf{A}_3$",
+   "kind": "vector",
+   "answer": [
+    "24",
+    "56",
+    "97"
+   ],
+   "example": {
+    "value": "24, 56, 97"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "3. stĺpec $\\mathbf{B}_3\\mathbf{A}_3\\mathbf{A}_3$",
+   "kind": "vector",
+   "answer": [
+    "648",
+    "389",
+    "1703"
+   ],
+   "example": {
+    "value": "648, 389, 1703"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "3. riadok $\\mathbf{A}_4\\mathbf{B}_4$",
+   "kind": "vector",
+   "answer": [
+    "9",
+    "0",
+    "6",
+    "3"
+   ],
+   "example": {
+    "value": "9, 0, 6, 3"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "2. riadok $\\mathbf{B}_4\\mathbf{A}_4$",
+   "kind": "vector",
+   "answer": [
+    "4",
+    "13",
+    "0",
+    "3"
+   ],
+   "example": {
+    "value": "4, 13, 0, 3"
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "1. stĺpec $\\mathbf{A}_4\\mathbf{A}_4$",
+   "kind": "vector",
+   "answer": [
+    "-1",
+    "-2",
+    "3",
+    "2"
+   ],
+   "example": {
+    "value": "-1, -2, 3, 2"
+   }
+  }
+ ]
+}

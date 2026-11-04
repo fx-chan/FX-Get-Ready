@@ -1,0 +1,64 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(\\mathbf{AB})^{-1}(\\mathbf{AC}^{-1})(\\mathbf{D}^{-1}\\mathbf{C}^{-1})^{-1}\\mathbf{D}^{-1} =$",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{B}^{-1}$",
+    "$\\mathbf{A}^{-1}$",
+    "$\\mathbf{B}^{-1}\\mathbf{C}^{-1}\\mathbf{D}$",
+    "$\\mathbf{I}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(\\mathbf{AC}^{-1})^{-1}(\\mathbf{AC}^{-1})(\\mathbf{AC}^{-1})^{-1}\\mathbf{AD}^{-1} =$",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{CD}^{-1}$",
+    "$\\mathbf{AD}^{-1}$",
+    "$\\mathbf{C}^{-1}\\mathbf{D}^{-1}$",
+    "$\\mathbf{D}^{-1}\\mathbf{C}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\mathbf{C}^{\\top}\\mathbf{B}^{-1}\\mathbf{A}^{2}\\mathbf{BAC}^{-1}\\mathbf{DA}^{-2}\\mathbf{B}^{\\top}\\mathbf{C}^{-2} = \\mathbf{C}^{\\top}$, potom $\\mathbf{D} =$",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{CA}^{-1}\\mathbf{B}^{-1}\\mathbf{A}^{-2}\\mathbf{BC}^{2}(\\mathbf{B}^{\\top})^{-1}\\mathbf{A}^{2}$",
+    "$\\mathbf{A}^{2}\\mathbf{B}^{\\top}\\mathbf{C}^{2}$",
+    "$\\mathbf{C}^{\\top}$",
+    "$\\mathbf{A}^{-2}\\mathbf{B}\\mathbf{C}^{-1}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{ABC}^{\\top}\\mathbf{DBA}^{\\top}\\mathbf{C} = \\mathbf{AB}^{\\top}$, potom $\\mathbf{D} =$",
+   "kind": "choice",
+   "options": [
+    "$(\\mathbf{C}^{\\top})^{-1}\\mathbf{B}^{-1}\\mathbf{B}^{\\top}\\mathbf{C}^{-1}(\\mathbf{A}^{\\top})^{-1}\\mathbf{B}^{-1}$",
+    "$\\mathbf{B}^{\\top}\\mathbf{B}^{-1}$",
+    "$\\mathbf{A}^{-1}\\mathbf{B}^{\\top}\\mathbf{C}^{-1}$",
+    "$(\\mathbf{C}^{\\top})^{-1}\\mathbf{B}^{\\top}(\\mathbf{A}^{\\top})^{-1}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

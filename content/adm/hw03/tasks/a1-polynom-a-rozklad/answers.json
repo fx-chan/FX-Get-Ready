@@ -1,0 +1,32 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Na čom dôkaz stojí?",
+   "kind": "choice",
+   "options": [
+    "mocniny $\\mathbf{A}$ a $\\mathbf{I}$ navzájom komutujú, takže súčin roznásobíme ako pri číslach",
+    "$\\mathbf{A}$ musí byť invertibilná",
+    "$\\mathbf{A}$ musí byť diagonálna"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(\\mathbf{A}+3\\mathbf{I})(\\mathbf{A}-3\\mathbf{I}) =$",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A}^2 - 9\\mathbf{I}$",
+    "$\\mathbf{A}^2 - 9$",
+    "$\\mathbf{A}^2 + 6\\mathbf{A} - 9\\mathbf{I}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1&*&*&*\\\\0&1&*&*\\\\0&0&1&*\\end{array}\\right]$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení",
+    "závisí od hodnôt *"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1&*&*&*\\\\0&1&*&*\\\\0&0&0&0\\end{array}\\right]$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení",
+    "závisí od hodnôt *"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1&*&*&*\\\\0&1&*&*\\\\0&0&0&1\\end{array}\\right]$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení",
+    "závisí od hodnôt *"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1&*&*&*\\\\0&1&*&*\\\\0&0&1&1\\end{array}\\right]$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení",
+    "závisí od hodnôt *"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1&0&0&*\\\\ *&1&0&*\\\\ *&*&1&*\\end{array}\\right]$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení",
+    "závisí od hodnôt *"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1&0&0&0\\\\1&0&0&1\\\\1&*&*&*\\end{array}\\right]$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení",
+    "závisí od hodnôt *"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

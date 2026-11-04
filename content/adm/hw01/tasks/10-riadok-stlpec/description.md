@@ -1,0 +1,6 @@
+**Príklady 10 a 12.** Nájdite len požadovaný riadok / stĺpec súčinu — netreba počítať celý súčin:
+$i$-ty riadok $\mathbf{AB}$ = ($i$-ty riadok $\mathbf{A}$)$\cdot\mathbf{B}$, $j$-ty stĺpec $\mathbf{AB}$ = $\mathbf{A}\cdot$($j$-ty stĺpec $\mathbf{B}$).
+
+Matice z príkladu 8: $$\mathbf{B} = \begin{bmatrix}-5 & 3 & 6 \\ 3 & 8 & 0 \\ -2 & 0 & 4\end{bmatrix},\qquad \mathbf{G} = \begin{bmatrix}5 & 1 & 0 \\ 0 & -2 & -1 \\ 1 & 0 & 3\end{bmatrix},\qquad \mathbf{D} = \begin{bmatrix}-1 & 4 & 3 & 7 \\ 2 & 1 & 7 & 5 \\ 0 & 5 & 5 & -2\end{bmatrix}$$ $$\mathbf{E} = \begin{bmatrix}1 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 1 & 0\end{bmatrix},\qquad \mathbf{S} = \begin{bmatrix}6 & -4 & 3 & 2\end{bmatrix},\qquad \mathbf{F} = \begin{bmatrix}9 & -3 \\ 5 & -4 \\ 2 & 0 \\ 8 & -3\end{bmatrix},\qquad \mathbf{Q} = \begin{bmatrix}1 & 4 & -1 & 6 \\ 8 & 7 & -3 & 3\end{bmatrix}$$
+
+Matice z príkladu 12 ($3\times3$ a $4\times4$): $$\mathbf{A_3} = \begin{bmatrix}3 & -2 & 7 \\ 6 & 5 & 4 \\ 0 & 4 & 9\end{bmatrix},\qquad \mathbf{B_3} = \begin{bmatrix}6 & -2 & 4 \\ 0 & 1 & 3 \\ 7 & 7 & 5\end{bmatrix}$$ $$\mathbf{A_4} = \begin{bmatrix}1 & 5 & -2 & 1 \\ 0 & 1 & -2 & 3 \\ 1 & 1 & 2 & 1 \\ 0 & 0 & 2 & -4\end{bmatrix},\qquad \mathbf{B_4} = \begin{bmatrix}0 & 1 & 5 & -1 \\ 2 & 1 & 2 & 1 \\ 4 & -2 & -1 & 0 \\ -1 & 2 & 1 & 3\end{bmatrix}$$

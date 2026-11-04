@@ -1,0 +1,154 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "reflexia podľa roviny $yz$, potom projekcia na rovinu $xz$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "-1 0 0\n0 0 0\n0 0 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "rotácia o $45^\\circ$ okolo osi $y$, potom dilatácia $k = \\sqrt2$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0",
+     "1"
+    ],
+    [
+     "0",
+     "sqrt(2)",
+     "0"
+    ],
+    [
+     "-1",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0 1\n0 sqrt(2) 0\n-1 0 1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "projekcia na rovinu $xy$, potom reflexia podľa roviny $yz$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "example": {
+    "value": "-1 0 0\n0 1 0\n0 0 0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "rotácia o $30^\\circ$ okolo osi $x$, rotácia o $30^\\circ$ okolo osi $z$, kontrakcia $k = \\frac14$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "sqrt(3)/8",
+     "-sqrt(3)/16",
+     "1/16"
+    ],
+    [
+     "1/8",
+     "3/16",
+     "-sqrt(3)/16"
+    ],
+    [
+     "0",
+     "1/8",
+     "sqrt(3)/8"
+    ]
+   ],
+   "example": {
+    "value": "sqrt(3)/8 -sqrt(3)/16 1/16\n1/8 3/16 -sqrt(3)/16\n0 1/8 sqrt(3)/8"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "reflexia podľa $xy$, reflexia podľa $xz$, projekcia na $yz$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "-1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "-1"
+    ]
+   ],
+   "example": {
+    "value": "0 0 0\n0 -1 0\n0 0 -1"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "rotácia o $270^\\circ$ okolo osi $x$, o $90^\\circ$ okolo osi $y$, o $180^\\circ$ okolo osi $z$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "-1"
+    ],
+    [
+     "-1",
+     "0",
+     "0"
+    ]
+   ],
+   "example": {
+    "value": "0 1 0\n0 0 -1\n-1 0 0"
+   }
+  }
+ ]
+}

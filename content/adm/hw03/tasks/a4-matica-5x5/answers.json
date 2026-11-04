@@ -1,0 +1,36 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det\\mathbf{A} =$ (výraz v $a, \\dots, h$)",
+   "kind": "number",
+   "answer": "0",
+   "example": {
+    "value": "0"
+   },
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h"
+   ]
+  },
+  {
+   "id": "b",
+   "prompt": "Záver",
+   "kind": "choice",
+   "options": [
+    "$\\det\\mathbf{A}$ je súčin nenulových čísel, teda $\\ne 0$ a $\\mathbf{A}$ je invertibilná",
+    "$\\mathbf{A}$ je singulárna, lebo má veľa núl"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

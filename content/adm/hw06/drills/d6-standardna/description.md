@@ -1,0 +1,3 @@
+Štandardná matica lineárnej transformácie má v stĺpcoch obrazy bázových vektorov:
+$[T] = [\,T(\mathbf{e}_1)\;|\;T(\mathbf{e}_2)\;|\;\dots\,]$. Nájdite ju pre
+$T(x_1, x_2) = (x_1 + 2x_2,\; 3x_1 - x_2,\; x_2)$.

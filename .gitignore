@@ -1,6 +1,16 @@
-.venv/
+# Commit only what the PythonAnywhere host needs: the app, the content, wsgi.py and requirements.
+# Everything else stays local: course PDFs (PRPR/, ADM/), tests, authoring tools, the dev server,
+# secrets (config.local.json), the database (instance/) and the virtualenv.
+/*
+!/.gitignore
+!/prep/
+!/content/
+!/wsgi.py
+!/requirements.txt
+!/config.example.json
+!/README.md
+
+# not needed on the host even inside the folders above
 __pycache__/
-.pytest_cache/
 *.pyc
-config.local.json
-instance/
+content/**/solution.c

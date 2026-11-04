@@ -1,0 +1,79 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Inverzia rotácie $\\mathbf{R}_\\theta$ je",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{R}_{-\\theta} = \\mathbf{R}_\\theta^{\\top}$",
+    "$-\\mathbf{R}_\\theta$",
+    "neexistuje"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Ktorý operátor **nie je** invertibilný?",
+   "kind": "choice",
+   "options": [
+    "ortogonálna projekcia na os $x$",
+    "reflexia podľa osi $x$",
+    "rotácia o $90^\\circ$",
+    "dilatácia s $k = 2$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\det$ matice reflexie v $\\mathbf{R}^2$ je",
+   "kind": "choice",
+   "options": [
+    "$-1$",
+    "$1$",
+    "$0$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Rotácia o $\\alpha$ a potom o $\\beta$ je",
+   "kind": "choice",
+   "options": [
+    "rotácia o $\\alpha + \\beta$ (rotácie v rovine komutujú)",
+    "rotácia o $\\alpha\\beta$",
+    "reflexia"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "matica rotácie o $120^\\circ$ (overte, že jej tretia mocnina je $\\mathbf{I}$)",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-1/2",
+     "-sqrt(3)/2"
+    ],
+    [
+     "sqrt(3)/2",
+     "-1/2"
+    ]
+   ],
+   "example": {
+    "value": "-1/2 -sqrt(3)/2\nsqrt(3)/2 -1/2"
+   }
+  }
+ ]
+}

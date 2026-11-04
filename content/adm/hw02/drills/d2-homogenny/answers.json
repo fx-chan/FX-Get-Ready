@@ -1,0 +1,29 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "riešenie $(x_1, x_2, x_3)$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "2",
+     "-1"
+    ],
+    [
+     "2",
+     "4",
+     "-2"
+    ]
+   ],
+   "b": [
+    "0",
+    "0"
+   ],
+   "example": {
+    "value": "s - 2*t, t, s"
+   },
+   "solutions": "infinite (2 param)"
+  }
+ ]
+}

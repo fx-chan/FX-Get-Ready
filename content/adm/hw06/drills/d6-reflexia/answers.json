@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "reflexia podľa osi $x$",
+   "kind": "vector",
+   "answer": [
+    "4",
+    "1"
+   ],
+   "example": {
+    "value": "4, 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "reflexia podľa priamky $y = x$",
+   "kind": "vector",
+   "answer": [
+    "-1",
+    "4"
+   ],
+   "example": {
+    "value": "-1, 4"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "ortogonálna projekcia na os $y$",
+   "kind": "vector",
+   "answer": [
+    "0",
+    "-1"
+   ],
+   "example": {
+    "value": "0, -1"
+   }
+  }
+ ]
+}

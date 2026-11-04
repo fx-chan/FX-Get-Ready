@@ -3,13 +3,13 @@
 {% block content %}
 <section class="hero">
   <p class="eyebrow">Príprava na písomky a skúšky · Подготовка к контрольным</p>
-  <h1>Uč sa programovať <span class="grad">krok za krokom</span></h1>
-  <p class="hero-sub">Teória s interaktívnymi otázkami, mini úlohy priamo v lekcii a úlohy z cvičení
+  <h1>Priprav sa <span class="grad">krok za krokom</span></h1>
+  <p class="hero-sub">Teória s interaktívnymi otázkami, mini úlohy priamo v lekcii a úlohy z cvičení a domácich úloh
     s automatickou kontrolou. <br><span class="ru">Теория, мини-задания и задачи с автопроверкой.</span></p>
   {% if not g.user %}
   <p class="hero-cta">
     <a class="btn primary" href="{{ url_for('auth.register') }}">Vytvoriť účet / Создать аккаунт</a>
-    <span class="meta">Na spúšťanie kódu je potrebné prihlásenie.</span>
+    <span class="meta">Na kontrolu riešení je potrebné prihlásenie.</span>
   </p>
   {% endif %}
 </section>
@@ -19,7 +19,7 @@
   {% for s in subjects %}
   {% set st = stats[s.slug] %}
   <a class="card subject-card" href="{{ url_for('main.subject', subject_slug=s.slug) }}">
-    <div class="card-icon">C</div>
+    <div class="card-icon">{{ s.icon }}</div>
     <h3>{{ s.title }}</h3>
     <p>{{ s.summary }}</p>
     <div class="card-foot">

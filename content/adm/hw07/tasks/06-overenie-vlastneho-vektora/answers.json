@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\begin{bmatrix}1 & 2 \\\\ 3 & 2\\end{bmatrix}$, $\\mathbf{x} = \\begin{bmatrix}1 & -1\\end{bmatrix}^{\\top}$: $\\lambda =$",
+   "kind": "number",
+   "answer": "-1",
+   "example": {
+    "value": "-1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\begin{bmatrix}4 & 0 & 1 \\\\ 2 & 3 & 2 \\\\ 1 & 0 & 4\\end{bmatrix}$, $\\mathbf{x} = \\begin{bmatrix}1 & 2 & 1\\end{bmatrix}^{\\top}$: $\\lambda =$",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\begin{bmatrix}5 & -1 \\\\ 1 & 3\\end{bmatrix}$, $\\mathbf{x} = \\begin{bmatrix}1 & 1\\end{bmatrix}^{\\top}$: $\\lambda =$",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\begin{bmatrix}2 & -1 & -1 \\\\ -1 & 2 & -1 \\\\ -1 & -1 & 2\\end{bmatrix}$, $\\mathbf{x} = \\begin{bmatrix}1 & 1 & 1\\end{bmatrix}^{\\top}$: $\\lambda =$",
+   "kind": "number",
+   "answer": "0",
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

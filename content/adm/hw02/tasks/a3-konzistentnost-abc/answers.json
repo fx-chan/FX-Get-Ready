@@ -1,0 +1,118 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "34) systém je konzistentný práve vtedy, keď $a =$",
+   "kind": "number",
+   "answer": "b + c",
+   "example": {
+    "value": "b + c"
+   },
+   "vars": [
+    "b",
+    "c"
+   ]
+  },
+  {
+   "id": "b",
+   "prompt": "34) ak je systém konzistentný, má",
+   "kind": "choice",
+   "options": [
+    "práve jedno riešenie",
+    "nekonečne veľa riešení"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "34) riešenie pre $a = 3, b = 2, c = 1$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "2",
+     "-1"
+    ],
+    [
+     "2",
+     "3",
+     "-2"
+    ],
+    [
+     "-1",
+     "-1",
+     "1"
+    ]
+   ],
+   "b": [
+    "3",
+    "2",
+    "1"
+   ],
+   "example": {
+    "value": "t - 5, 4, t"
+   },
+   "solutions": "infinite (1 param)"
+  },
+  {
+   "id": "d",
+   "prompt": "36) systém je konzistentný práve vtedy, keď $c =$",
+   "kind": "number",
+   "answer": "a + 2*b",
+   "example": {
+    "value": "a + 2*b"
+   },
+   "vars": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "e",
+   "prompt": "36) ak je systém konzistentný, má",
+   "kind": "choice",
+   "options": [
+    "práve jedno riešenie",
+    "nekonečne veľa riešení"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "36) riešenie pre $a = 1, b = 0, c = 1$",
+   "kind": "system",
+   "A": [
+    [
+     "-2",
+     "3",
+     "1"
+    ],
+    [
+     "1",
+     "1",
+     "-1"
+    ],
+    [
+     "0",
+     "5",
+     "-1"
+    ]
+   ],
+   "b": [
+    "1",
+    "0",
+    "1"
+   ],
+   "example": {
+    "value": "4*t/5 - 1/5, t/5 + 1/5, t"
+   },
+   "solutions": "infinite (1 param)"
+  }
+ ]
+}

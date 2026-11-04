@@ -1,0 +1,138 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(1, -2)$, $k = 3$",
+   "kind": "vector",
+   "answer": [
+    "3",
+    "-6"
+   ],
+   "example": {
+    "value": "3, -6"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(1, -2)$, $k = \\frac12$",
+   "kind": "vector",
+   "answer": [
+    "1/2",
+    "-1"
+   ],
+   "example": {
+    "value": "1/2, -1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(a, b)$, $k = \\frac1\\alpha$",
+   "kind": "vector",
+   "answer": [
+    "a/alpha",
+    "b/alpha"
+   ],
+   "example": {
+    "value": "a/alpha, b/alpha"
+   },
+   "vars": [
+    "a",
+    "b",
+    "alpha"
+   ]
+  },
+  {
+   "id": "d",
+   "prompt": "$(-3, 1, -2)$, $k = 2$",
+   "kind": "vector",
+   "answer": [
+    "-6",
+    "2",
+    "-4"
+   ],
+   "example": {
+    "value": "-6, 2, -4"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$(-3, 1, -2)$, $k = \\frac14$",
+   "kind": "vector",
+   "answer": [
+    "-3/4",
+    "1/4",
+    "-1/2"
+   ],
+   "example": {
+    "value": "-3/4, 1/4, -1/2"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$(a, b, c)$, $k = \\alpha$",
+   "kind": "vector",
+   "answer": [
+    "a*alpha",
+    "alpha*b",
+    "alpha*c"
+   ],
+   "example": {
+    "value": "a*alpha, alpha*b, alpha*c"
+   },
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "alpha"
+   ]
+  },
+  {
+   "id": "g",
+   "prompt": "$(-1, 2)$, faktor $3$ v smere osi $x$",
+   "kind": "vector",
+   "answer": [
+    "-3",
+    "2"
+   ],
+   "example": {
+    "value": "-3, 2"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$(-1, 2)$, faktor $\\frac14$ v smere osi $y$",
+   "kind": "vector",
+   "answer": [
+    "-1",
+    "1/2"
+   ],
+   "example": {
+    "value": "-1, 1/2"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "$(-1, 2)$, faktor $\\frac12$ v smere osi $x$",
+   "kind": "vector",
+   "answer": [
+    "-1/2",
+    "2"
+   ],
+   "example": {
+    "value": "-1/2, 2"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "$(-1, 2)$, faktor $2$ v smere osi $y$",
+   "kind": "vector",
+   "answer": [
+    "-1",
+    "4"
+   ],
+   "example": {
+    "value": "-1, 4"
+   }
+  }
+ ]
+}

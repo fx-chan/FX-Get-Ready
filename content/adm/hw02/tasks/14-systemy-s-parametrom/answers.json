@@ -1,0 +1,106 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "19 a) hodnoty $\\alpha$, pre ktoré systém **nemá riešenie**",
+   "kind": "set",
+   "answer": [
+    "-sqrt(435)/5",
+    "sqrt(435)/5"
+   ],
+   "example": {
+    "value": "-sqrt(435)/5, sqrt(435)/5"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "19 a) hodnoty $\\alpha$ s **nekonečne veľa** riešeniami",
+   "kind": "set",
+   "answer": [],
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "19 b) hodnoty $\\alpha$, pre ktoré systém **nemá riešenie**",
+   "kind": "set",
+   "answer": [
+    "-sqrt(2)",
+    "sqrt(2)"
+   ],
+   "example": {
+    "value": "-sqrt(2), sqrt(2)"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "19 b) hodnoty $\\alpha$ s **nekonečne veľa** riešeniami",
+   "kind": "set",
+   "answer": [],
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "20 a) systém je konzistentný práve vtedy, keď $c =$",
+   "kind": "number",
+   "answer": "a - b",
+   "example": {
+    "value": "a - b"
+   },
+   "vars": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "f",
+   "prompt": "20 b) systém je konzistentný práve vtedy, keď $c =$",
+   "kind": "number",
+   "answer": "a - 2*b",
+   "example": {
+    "value": "a - 2*b"
+   },
+   "vars": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "g",
+   "prompt": "21 a) riešenie $(x, y)$",
+   "kind": "vector",
+   "answer": [
+    "2*a/3 - b/9",
+    "-a/3 + 2*b/9"
+   ],
+   "example": {
+    "value": "2*a/3 - b/9, -a/3 + 2*b/9"
+   },
+   "vars": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "h",
+   "prompt": "21 b) riešenie $(x_1, x_2, x_3)$",
+   "kind": "vector",
+   "answer": [
+    "a - c/3",
+    "a - b/2",
+    "-a + b/2 + c/3"
+   ],
+   "example": {
+    "value": "a - c/3, a - b/2, -a + b/2 + c/3"
+   },
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ]
+  }
+ ]
+}

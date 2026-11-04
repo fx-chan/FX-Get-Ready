@@ -1,0 +1,74 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "d) ak $p \\ne 0$ a $q \\ne 0$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "d) ak $p \\ne 0$ a $q = 0$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "d) ak $p = 0$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "h) ak sú obe hviezdičky v 1. riadku pri $x_2, x_3$ nulové a pravá strana 1. riadku $\\ne 1$",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "h) ak je aspoň jedna z hviezdičiek pri $x_2, x_3$ v 1. riadku nenulová",
+   "kind": "choice",
+   "options": [
+    "nekonzistentný",
+    "konzistentný, jediné riešenie",
+    "konzistentný, nekonečne veľa riešení"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

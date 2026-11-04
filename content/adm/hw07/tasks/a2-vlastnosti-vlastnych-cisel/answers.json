@@ -1,0 +1,102 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "16) Ľavé vlastné vektory ($\\mathbf{x}^{\\top}\\mathbf{A} = \\mu\\mathbf{x}^{\\top}$) sú",
+   "kind": "choice",
+   "options": [
+    "vlastné vektory $\\mathbf{A}^{\\top}$; vlastné čísla $\\mu$ sú rovnaké ako pre $\\mathbf{A}$",
+    "vždy rovnaké ako pravé vlastné vektory",
+    "vlastné vektory $\\mathbf{A}^{-1}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "18) Matica $2\\times2$ má dve rôzne reálne vlastné čísla práve vtedy, keď",
+   "kind": "choice",
+   "options": [
+    "$(a-d)^2 + 4bc > 0$",
+    "$(a-d)^2 + 4bc = 0$",
+    "$ad - bc > 0$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "18) Ak $(a-d)^2 + 4bc < 0$, vlastné čísla sú",
+   "kind": "choice",
+   "options": [
+    "komplexne združené",
+    "dve rovnaké reálne",
+    "nulové"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "21) Ak $a + b = c + d$, potom $\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$ má celočíselné vlastné čísla, lebo",
+   "kind": "choice",
+   "options": [
+    "$(1, 1)$ je vlastný vektor s $\\lambda = a + b$ a druhé je $\\operatorname{tr} - (a+b) = d - b$",
+    "matica je symetrická",
+    "determinant je 0"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "22) Ak $\\mathbf{Ax} = \\lambda\\mathbf{x}$ a $\\mathbf{A}$ je invertibilná, potom",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A}^{-1}\\mathbf{x} = \\frac1\\lambda\\mathbf{x}$",
+    "$\\mathbf{A}^{-1}\\mathbf{x} = \\lambda\\mathbf{x}$",
+    "$\\mathbf{A}^{-1}\\mathbf{x} = -\\lambda\\mathbf{x}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "23) $(\\mathbf{A} - s\\mathbf{I})\\mathbf{x} =$",
+   "kind": "choice",
+   "options": [
+    "$(\\lambda - s)\\mathbf{x}$",
+    "$\\lambda\\mathbf{x} - s$",
+    "$(\\lambda + s)\\mathbf{x}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "24) Vlastné číslo matice $s\\mathbf{A}$ k vektoru $\\mathbf{x}$ je",
+   "kind": "choice",
+   "options": [
+    "$s\\lambda$",
+    "$\\lambda + s$",
+    "$\\lambda^s$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

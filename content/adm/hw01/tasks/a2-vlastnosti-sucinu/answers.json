@@ -1,0 +1,60 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Ak $\\mathbf{AB} = \\mathbf{0}$, potom",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A} = \\mathbf{0}$ alebo $\\mathbf{B} = \\mathbf{0}$",
+    "nemusí byť ani $\\mathbf{A}$, ani $\\mathbf{B}$ nulová matica",
+    "$\\mathbf{BA} = \\mathbf{0}$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Ak $\\mathbf{AB} = \\mathbf{AC}$ a $\\mathbf{A} \\ne \\mathbf{0}$, potom",
+   "kind": "choice",
+   "options": [
+    "vždy $\\mathbf{B} = \\mathbf{C}$",
+    "vo všeobecnosti $\\mathbf{B} \\ne \\mathbf{C}$ je možné (krátenie neplatí)",
+    "$\\mathbf{A} = \\mathbf{I}$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(\\mathbf{A}+\\mathbf{B})^2$ sa rovná",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A}^2 + 2\\mathbf{AB} + \\mathbf{B}^2$ vždy",
+    "$\\mathbf{A}^2 + \\mathbf{AB} + \\mathbf{BA} + \\mathbf{B}^2$",
+    "$\\mathbf{A}^2 + \\mathbf{B}^2$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Súčin dvoch symetrických matíc rovnakého rozmeru je",
+   "kind": "choice",
+   "options": [
+    "vždy symetrický",
+    "symetrický práve vtedy, keď matice komutujú",
+    "nikdy symetrický"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

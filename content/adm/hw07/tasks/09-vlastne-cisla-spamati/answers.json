@@ -1,0 +1,43 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\begin{bmatrix}3 & 0 & 0 \\\\ -2 & 7 & 0 \\\\ 4 & 8 & 1\\end{bmatrix}$",
+   "kind": "multiset",
+   "answer": [
+    "3",
+    "7",
+    "1"
+   ],
+   "example": {
+    "value": "3, 7, 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\begin{bmatrix}9 & -8 & 6 & 3 \\\\ 0 & -1 & 0 & 0 \\\\ 0 & 0 & 3 & 0 \\\\ 0 & 0 & 0 & 7\\end{bmatrix}$",
+   "kind": "multiset",
+   "answer": [
+    "9",
+    "-1",
+    "3",
+    "7"
+   ],
+   "example": {
+    "value": "9, -1, 3, 7"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "charakteristický polynóm matice z časti a) (premenná `lambda`)",
+   "kind": "number",
+   "answer": "lambda^3 - 11*lambda^2 + 31*lambda - 21",
+   "example": {
+    "value": "lambda^3 - 11*lambda^2 + 31*lambda - 21"
+   },
+   "vars": [
+    "lambda"
+   ]
+  }
+ ]
+}

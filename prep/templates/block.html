@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-{% from "_macros.html" import code_widget with context %}
+{% from "_macros.html" import code_widget, answer_widget, task_item with context %}
 {% block title %}{{ block.title }}{% endblock %}
 {% block head %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+{% if has_code %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">{% endif %}
+{% if subject.math %}{% include "_math_head.html" %}{% endif %}
 {% endblock %}
 {% block crumbs %}
 <nav class="crumbs">
@@ -11,6 +12,7 @@
   {{ block.title }}
 </nav>
 {% endblock %}
+
 {% block content %}
 <div class="lesson-layout">
   <article class="lesson">
@@ -19,7 +21,8 @@
       {% if block.summary %}<p class="lead">{{ block.summary }}</p>{% endif %}
       <div class="tl-meta">
         {% if block.lecture %}<span class="pill">📖 {{ block.lecture }}</span>{% endif %}
-        <a class="pill accent" href="#ulohy">💻 {{ block.tasks|length }} úloh <span class="ru">/ задач</span> ↓</a>
+        <a class="pill accent" href="#ulohy">💻 {{ block.basic_tasks|length }} úloh <span class="ru">/ задач</span> ↓</a>
+        {% if block.advanced_tasks %}<a class="pill aplus" href="#aplus">🏆 {{ block.advanced_tasks|length }} × A++ ↓</a>{% endif %}
       </div>
     </header>
 
@@ -46,10 +49,31 @@
             <span class="drill-done" title="Vyriešené">✓</span>
           </div>
           <div class="prose drill-desc">{{ render_md(item.description_md) }}</div>
-          {{ code_widget(subject, block, item, compact=True) }}
+          {% if item.type == "answer" %}
+            {{ answer_widget(subject, block, item, compact=True) }}
+          {% else %}
+            {{ code_widget(subject, block, item, compact=True) }}
+          {% endif %}
         </section>
       {% endif %}
     {% endfor %}
+
+    {% if block.advanced_tasks %}
+    <section class="aplus-section" id="aplus-intro">
+      <h2>🏆 A++ — úlohy vyššej úrovne <span class="ru">/ задачи повышенной сложности</span></h2>
+      <p>Úlohy označené v domácej úlohe ako <strong>A++</strong>: dôkazy, konštrukcie a analýza všetkých prípadov.
+        <span class="ru">Задачи уровня A++ из домашнего задания: доказательства, построения, разбор всех случаев.</span></p>
+      <ul class="aplus-cards">
+        {% for t in block.advanced_tasks %}
+        <li class="{{ 'solved' if task_key(subject, block, t) in solved }}">
+          <a href="{{ url_for('main.task', subject_slug=subject.slug, block_slug=block.slug, task_slug=t.slug) }}">
+            <span class="check"></span>{{ t.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
 
     <nav class="pager">
       {% if prev_block %}<a class="btn ghost" href="{{ url_for('main.block', subject_slug=subject.slug, block_slug=prev_block.slug) }}">← {{ prev_block.title }}</a>{% else %}<span></span>{% endif %}
@@ -65,15 +89,14 @@
       <div class="bar"><span style="width: {{ progress.pct }}%"></span></div>
       {% endif %}
       <ul class="task-list">
-        {% for t in block.tasks %}
-        <li class="{{ 'solved' if task_key(subject, block, t) in solved }}">
-          <a href="{{ url_for('main.task', subject_slug=subject.slug, block_slug=block.slug, task_slug=t.slug) }}">
-            <span class="check"></span><span class="t-title">{{ t.title }}</span>
-          </a>
-          <span class="badge {{ t.difficulty }}">{{ t.difficulty }}</span>
-        </li>
-        {% endfor %}
+        {% for t in block.basic_tasks %}{{ task_item(t) }}{% endfor %}
       </ul>
+      {% if block.advanced_tasks %}
+      <h3 class="side-sub aplus-title" id="aplus">🏆 A++ <small>vyššia úroveň / повышенный уровень</small></h3>
+      <ul class="task-list aplus-list">
+        {% for t in block.advanced_tasks %}{{ task_item(t) }}{% endfor %}
+      </ul>
+      {% endif %}
       {% if block.drills %}
       <h3 class="side-sub">Mini úlohy v lekcii</h3>
       <ul class="task-list mini">
@@ -89,5 +112,6 @@
 </div>
 {% endblock %}
 {% block scripts %}
-{% include "_codemirror.html" %}
+{% if has_code %}{% include "_codemirror.html" %}{% endif %}
+{% if subject.math %}{% include "_math_scripts.html" %}{% endif %}
 {% endblock %}

@@ -1,0 +1,22 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det\\begin{bmatrix}1 & 2 & 7 & -3 \\\\ 0 & 1 & -4 & 1 \\\\ 0 & 0 & 2 & 7 \\\\ 0 & 0 & 0 & 3\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\det\\begin{bmatrix}-3 & 0 & 0 & 0 \\\\ 1 & 2 & 0 & 0 \\\\ 40 & 10 & -1 & 0 \\\\ 100 & 200 & -23 & 3\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "18",
+   "example": {
+    "value": "18"
+   }
+  }
+ ]
+}

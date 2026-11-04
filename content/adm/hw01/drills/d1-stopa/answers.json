@@ -1,0 +1,22 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\operatorname{tr}(\\mathbf{D})$",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\operatorname{tr}(2\\mathbf{D}^{\\top})$",
+   "kind": "number",
+   "answer": "16",
+   "example": {
+    "value": "16"
+   }
+  }
+ ]
+}

@@ -7,11 +7,16 @@ Layout:
     content/<subject>/<block>/tasks/<task>/        practice task (own page with IDE)
     content/<subject>/<block>/drills/<drill>/      mini exercise embedded in the lesson
 
-A task or drill folder holds:
+A code task or drill folder holds:
     metadata.json  description.md  template.c  solution.c (never served)
     tests/<name>.in + <name>.out
     files/<file>                 input files every test gets in its working dir (optional)
     tests/<name>.files/<file>    input files for one test, replacing files/ (optional)
+
+An answer task (math: "type": "answer" in metadata.json) holds instead:
+    metadata.json  description.md  answers.json (parts + key, never served; see mathcheck.py)
+"level": "A++" in metadata.json puts a task into the block's advanced section.
+"math": true in subject.json renders $...$ and $$...$$ with KaTeX.
 
 Directories are ordered by name, so prefix them (cv01, cv02, 01_hello, ...).
 Only folders found by scanning are reachable, so URL slugs never touch the
@@ -53,6 +58,13 @@ class Task:
     memory_limit: int = 65536  # KB
     checker: str = "lines"  # lines | exact | tokens
     public_tests: list = field(default_factory=list)  # test names whose details are shown
+    type: str = "code"  # code | answer
+    level: str = ""  # "" | "A++"
+
+    @property
+    def parts(self):
+        """Answer tasks: parts with their keys (server side only)."""
+        return _meta(self.path / "answers.json").get("parts", [])
 
     @property
     def description_md(self):
@@ -89,6 +101,14 @@ class Block:
     def theory_md(self):
         return _read(self.path / "theory.md")
 
+    @property
+    def basic_tasks(self):
+        return [t for t in self.tasks if t.level != "A++"]
+
+    @property
+    def advanced_tasks(self):
+        return [t for t in self.tasks if t.level == "A++"]
+
     def task(self, slug):
         return next((t for t in self.tasks + self.drills if t.slug == slug), None)
 
@@ -100,6 +120,8 @@ class Subject:
     title: str
     summary: str = ""
     blocks: list = field(default_factory=list)
+    math: bool = False
+    icon: str = "C"
 
     def block(self, slug):
         return next((b for b in self.blocks if b.slug == slug), None)
@@ -144,6 +166,8 @@ def load_task(path, kind="task"):
         memory_limit=int(limits.get("memory_kb", 65536)),
         checker=meta.get("checker", "lines"),
         public_tests=list(meta.get("public_tests", [])),
+        type=meta.get("type", "code"),
+        level=meta.get("level", ""),
     )
 
 
@@ -151,7 +175,8 @@ def load_subjects(content_dir):
     subjects = []
     for s_dir in _subdirs(Path(content_dir)):
         s_meta = _meta(s_dir / "subject.json")
-        subject = Subject(s_dir.name, s_dir, s_meta.get("title", s_dir.name), s_meta.get("summary", ""))
+        subject = Subject(s_dir.name, s_dir, s_meta.get("title", s_dir.name), s_meta.get("summary", ""),
+                          math=bool(s_meta.get("math", False)), icon=s_meta.get("icon", "C"))
         for b_dir in _subdirs(s_dir):
             b_meta = _meta(b_dir / "block.json")
             block = Block(b_dir.name, b_dir, b_meta.get("title", b_dir.name), b_meta.get("summary", ""),

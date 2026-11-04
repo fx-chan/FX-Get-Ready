@@ -1,0 +1,26 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Vlastnosti",
+   "kind": "multi",
+   "options": [
+    "štvorcová",
+    "diagonálna",
+    "horná trojuholníková",
+    "symetrická",
+    "skoseno-symetrická"
+   ],
+   "answer": [
+    0,
+    4
+   ],
+   "example": {
+    "value": [
+     "0",
+     "4"
+    ]
+   }
+  }
+ ]
+}

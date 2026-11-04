@@ -20,7 +20,8 @@
         <div class="tl-meta">
           {% if b.lecture %}<span class="pill">📖 {{ b.lecture }}</span>{% endif %}
           <span class="pill">✏️ {{ b.drills|length }} mini úloh</span>
-          <span class="pill">💻 {{ b.tasks|length }} úloh</span>
+          <span class="pill">💻 {{ b.basic_tasks|length }} úloh</span>
+          {% if b.advanced_tasks %}<span class="pill aplus">🏆 {{ b.advanced_tasks|length }} × A++</span>{% endif %}
           {% if g.user %}<span class="pill accent">{{ p.done }}/{{ p.total }}</span>{% endif %}
         </div>
         {% if g.user %}<div class="bar"><span style="width: {{ p.pct }}%"></span></div>{% endif %}

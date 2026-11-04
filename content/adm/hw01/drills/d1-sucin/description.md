@@ -1,0 +1,1 @@
+$$\mathbf{A} = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix},\qquad \mathbf{B} = \begin{bmatrix}0 & 1 \\ -1 & 2\end{bmatrix}$$ Prvok $c_{ij}$ súčinu je skalárny súčin $i$-teho riadku $\mathbf{A}$ a $j$-teho stĺpca $\mathbf{B}$.

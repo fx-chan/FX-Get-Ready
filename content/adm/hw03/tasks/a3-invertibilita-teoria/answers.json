@@ -1,0 +1,61 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "10) $\\mathbf{A}^2 + 2\\mathbf{A} + \\mathbf{I} = \\mathbf{0}$. Potom $\\mathbf{A}^{-1} =$",
+   "kind": "choice",
+   "options": [
+    "$-\\mathbf{A} - 2\\mathbf{I}$",
+    "$\\mathbf{A} + 2\\mathbf{I}$",
+    "neexistuje",
+    "$-\\frac12\\mathbf{A}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "11) $p(\\mathbf{A}) = \\mathbf{0}$, kde $p$ má nenulový konštantný člen $c_0$. Prečo je $\\mathbf{A}$ invertibilná?",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A}\\,q(\\mathbf{A}) = -c_0\\mathbf{I}$, teda $\\mathbf{A}^{-1} = -\\frac{1}{c_0}q(\\mathbf{A})$",
+    "lebo $\\det\\mathbf{A} = c_0$",
+    "nemusí byť invertibilná"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "12) Môže byť $\\mathbf{A}^3 = \\mathbf{I}$, ak $\\mathbf{A}$ nie je invertibilná?",
+   "kind": "choice",
+   "options": [
+    "nie — z $\\mathbf{A}\\cdot\\mathbf{A}^2 = \\mathbf{I}$ vyplýva $\\mathbf{A}^{-1} = \\mathbf{A}^2$",
+    "áno, napr. nulová matica",
+    "áno, ak je $\\mathbf{A}$ nečtvorcová"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "13) Môže mať matica s nulovým riadkom inverznú maticu?",
+   "kind": "choice",
+   "options": [
+    "nie — $\\mathbf{AB}$ má pre každé $\\mathbf{B}$ nulový riadok, takže nikdy nie je $\\mathbf{I}$",
+    "áno, ak sú ostatné riadky nenulové",
+    "áno, ak je nulový riadok posledný"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

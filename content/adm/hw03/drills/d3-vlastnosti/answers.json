@@ -1,0 +1,32 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(\\mathbf{AB})^{-1} =$",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A}^{-1}\\mathbf{B}^{-1}$",
+    "$\\mathbf{B}^{-1}\\mathbf{A}^{-1}$",
+    "$\\mathbf{AB}^{-1}$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(3\\mathbf{A})^{-1} =$",
+   "kind": "choice",
+   "options": [
+    "$3\\mathbf{A}^{-1}$",
+    "$\\frac13\\mathbf{A}^{-1}$",
+    "$-3\\mathbf{A}$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

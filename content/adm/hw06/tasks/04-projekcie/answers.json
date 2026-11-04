@@ -1,0 +1,126 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(-2, 4)$ na os $x$",
+   "kind": "vector",
+   "answer": [
+    "-2",
+    "0"
+   ],
+   "example": {
+    "value": "-2, 0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(-2, 4)$ na os $y$",
+   "kind": "vector",
+   "answer": [
+    "0",
+    "4"
+   ],
+   "example": {
+    "value": "0, 4"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(a, b)$ na os $y$",
+   "kind": "vector",
+   "answer": [
+    "0",
+    "b"
+   ],
+   "example": {
+    "value": "0, b"
+   },
+   "vars": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "d",
+   "prompt": "$(1, -2, 4)$ na rovinu $xy$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "-2",
+    "0"
+   ],
+   "example": {
+    "value": "1, -2, 0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$(1, -2, 4)$ na rovinu $xz$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "0",
+    "4"
+   ],
+   "example": {
+    "value": "1, 0, 4"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$(1, -2, 4)$ na rovinu $yz$",
+   "kind": "vector",
+   "answer": [
+    "0",
+    "-2",
+    "4"
+   ],
+   "example": {
+    "value": "0, -2, 4"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$(a, b, c)$ na rovinu $yz$",
+   "kind": "vector",
+   "answer": [
+    "0",
+    "b",
+    "c"
+   ],
+   "example": {
+    "value": "0, b, c"
+   },
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ]
+  },
+  {
+   "id": "h",
+   "prompt": "štandardná matica projekcie na rovinu $xz$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0 0\n0 0 0\n0 0 1"
+   }
+  }
+ ]
+}

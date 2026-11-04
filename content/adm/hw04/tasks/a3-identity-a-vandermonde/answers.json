@@ -1,0 +1,94 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "34) Ktoré identity platia?",
+   "kind": "multi",
+   "options": [
+    "$\\begin{vmatrix}a_1&b_1&a_1+b_1+c_1\\\\a_2&b_2&a_2+b_2+c_2\\\\a_3&b_3&a_3+b_3+c_3\\end{vmatrix} = \\begin{vmatrix}a_1&b_1&c_1\\\\a_2&b_2&c_2\\\\a_3&b_3&c_3\\end{vmatrix}$",
+    "$\\begin{vmatrix}a_1+b_1t&a_2+b_2t&a_3+b_3t\\\\a_1t+b_1&a_2t+b_2&a_3t+b_3\\\\c_1&c_2&c_3\\end{vmatrix} = (1-t^2)\\begin{vmatrix}a_1&a_2&a_3\\\\b_1&b_2&b_3\\\\c_1&c_2&c_3\\end{vmatrix}$",
+    "$\\begin{vmatrix}a_1+b_1&a_1-b_1&c_1\\\\a_2+b_2&a_2-b_2&c_2\\\\a_3+b_3&a_3-b_3&c_3\\end{vmatrix} = -2\\begin{vmatrix}a_1&b_1&c_1\\\\a_2&b_2&c_2\\\\a_3&b_3&c_3\\end{vmatrix}$",
+    "$\\begin{vmatrix}a_1&b_1+ta_1&c_1+rb_1+sa_1\\\\a_2&b_2+ta_2&c_2+rb_2+sa_2\\\\a_3&b_3+ta_3&c_3+rb_3+sa_3\\end{vmatrix} = \\begin{vmatrix}a_1&a_2&a_3\\\\b_1&b_2&b_3\\\\c_1&c_2&c_3\\end{vmatrix}$",
+    "$\\begin{vmatrix}a_1+b_1&c_1\\\\a_2+b_2&c_2\\end{vmatrix} = \\begin{vmatrix}a_1&c_1\\\\a_2&c_2\\end{vmatrix} \\cdot \\begin{vmatrix}b_1&c_1\\\\b_2&c_2\\end{vmatrix}$"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "32) $\\begin{vmatrix}1&1&1\\\\a&b&c\\\\a^2&b^2&c^2\\end{vmatrix}$ pre $a = 1, b = 2, c = 4$ (overte vzorec $(b-a)(c-a)(c-b)$)",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "33) $\\det\\begin{bmatrix}0&0&0&a_{14}\\\\0&0&a_{23}&a_{24}\\\\0&a_{32}&a_{33}&a_{34}\\\\a_{41}&a_{42}&a_{43}&a_{44}\\end{bmatrix} =$",
+   "kind": "choice",
+   "options": [
+    "$a_{14}a_{23}a_{32}a_{41}$",
+    "$-a_{14}a_{23}a_{32}a_{41}$",
+    "0"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "35 a) Prečo je $\\det\\begin{bmatrix}-2&8&1&4\\\\3&2&5&1\\\\1&10&6&5\\\\4&-6&4&-3\\end{bmatrix} = 0$?",
+   "kind": "choice",
+   "options": [
+    "3. riadok je súčet prvých dvoch",
+    "matica má záporné prvky",
+    "4. stĺpec je nulový"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "35 b) Prečo je determinant matice $5\\times5$ s $-4$ na diagonále a 1 inde nulový?",
+   "kind": "choice",
+   "options": [
+    "súčet všetkých stĺpcov je nulový vektor",
+    "matica je symetrická",
+    "na diagonále sú rovnaké čísla"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "38) $\\det\\begin{bmatrix}a&b&b&b\\\\b&a&b&b\\\\b&b&a&b\\\\b&b&b&a\\end{bmatrix}$ (výraz v $a, b$)",
+   "kind": "number",
+   "answer": "(a - b)^3*(a + 3*b)",
+   "example": {
+    "value": "(a - b)^3*(a + 3*b)"
+   },
+   "vars": [
+    "a",
+    "b"
+   ]
+  }
+ ]
+}

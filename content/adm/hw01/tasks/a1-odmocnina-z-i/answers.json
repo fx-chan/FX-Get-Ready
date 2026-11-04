@@ -1,0 +1,37 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "nediagonálna $\\mathbf{A}$ rozmeru $2\\times2$, pre ktorú $\\mathbf{A}^2 = \\mathbf{I}_2$",
+   "kind": "power_identity",
+   "n": 2,
+   "p": 2,
+   "exclude": "diagonal",
+   "example": {
+    "value": "0 1\n1 0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "nediagonálna $\\mathbf{A}$ rozmeru $3\\times3$, pre ktorú $\\mathbf{A}^2 = \\mathbf{I}_3$ (upravte výsledok z časti a)",
+   "kind": "power_identity",
+   "n": 3,
+   "p": 2,
+   "exclude": "diagonal",
+   "example": {
+    "value": "0 1 0\n1 0 0\n0 0 1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "neidentická $\\mathbf{A}$ rozmeru $3\\times3$, pre ktorú $\\mathbf{A}^3 = \\mathbf{I}_3$",
+   "kind": "power_identity",
+   "n": 3,
+   "p": 3,
+   "exclude": "identity",
+   "example": {
+    "value": "0 0 1\n1 0 0\n0 1 0"
+   }
+  }
+ ]
+}

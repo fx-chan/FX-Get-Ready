@@ -1,0 +1,42 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\lambda = 5$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "4"
+    ],
+    [
+     "2",
+     "3"
+    ]
+   ],
+   "lambda": "5",
+   "example": {
+    "value": "1, 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\lambda = -1$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "1",
+     "4"
+    ],
+    [
+     "2",
+     "3"
+    ]
+   ],
+   "lambda": "-1",
+   "example": {
+    "value": "-2, 1"
+   }
+  }
+ ]
+}

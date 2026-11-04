@@ -1,0 +1,42 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}1 & 4 \\\\ 2 & 3\\end{bmatrix}$",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "1",
+     "4"
+    ],
+    [
+     "2",
+     "3"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "-2 1\n1 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}2 & -3 \\\\ 0 & 2\\end{bmatrix}$",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "2",
+     "-3"
+    ],
+    [
+     "0",
+     "2"
+    ]
+   ],
+   "diagonalizable": false,
+   "example": {
+    "none": true
+   }
+  }
+ ]
+}

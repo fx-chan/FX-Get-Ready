@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% from "_macros.html" import answer_widget with context %}
+{% block title %}{{ task.title }}{% endblock %}
+{% block body_class %}wide{% endblock %}
+{% block head %}{% include "_math_head.html" %}{% endblock %}
+{% block crumbs %}
+<nav class="crumbs">
+  <a href="{{ url_for('main.index') }}">Predmety</a><span>›</span>
+  <a href="{{ url_for('main.subject', subject_slug=subject.slug) }}">{{ subject.title }}</a><span>›</span>
+  <a href="{{ url_for('main.block', subject_slug=subject.slug, block_slug=block.slug) }}">{{ block.title }}</a><span>›</span>
+  {{ task.title }}
+</nav>
+{% endblock %}
+{% block content %}
+<div class="ide answer-page">
+  <section class="statement">
+    <div class="statement-head">
+      <h1>{{ task.title }}</h1>
+      <div class="tl-meta">
+        {% if task.level == "A++" %}<span class="badge aplus">A++</span>{% else %}<span class="badge {{ task.difficulty }}">{{ task.difficulty }}</span>{% endif %}
+        <span class="pill">📝 {{ task.parts|length }} {{ 'časť' if task.parts|length == 1 else 'časti' }}</span>
+        {% if key in solved %}<span class="pill ok">✓ Vyriešené</span>{% endif %}
+      </div>
+    </div>
+    <div class="prose">{{ description }}</div>
+    {% if not g.user %}
+    <div class="flash info">Na kontrolu odpovedí sa <a href="{{ url_for('auth.login', next=request.path) }}">prihláste</a>. /
+      Чтобы проверять ответы, <a href="{{ url_for('auth.login', next=request.path) }}">войдите</a>.</div>
+    {% endif %}
+  </section>
+  <section class="workspace">
+    {{ answer_widget(subject, block, task, initial=last_answers) }}
+    {% if next_task %}
+    <p class="next-link"><a href="{{ url_for('main.task', subject_slug=subject.slug, block_slug=block.slug, task_slug=next_task.slug) }}">Ďalšia úloha / Следующая: {{ next_task.title }} →</a></p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}{% include "_math_scripts.html" %}{% endblock %}

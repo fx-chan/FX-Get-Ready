@@ -1,0 +1,68 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Nájdite dve matice $\\mathbf{A}, \\mathbf{B}$, pre ktoré $(\\mathbf{A}+\\mathbf{B})(\\mathbf{A}-\\mathbf{B}) \\ne \\mathbf{A}^2 - \\mathbf{B}^2$ (zapíšte $\\mathbf{A}$, prázdny riadok, $\\mathbf{B}$)",
+   "kind": "pair_not_diff_squares",
+   "example": {
+    "value": "1 1\n0 1\n\n1 0\n1 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Kedy platí $(\\mathbf{A}+\\mathbf{B})(\\mathbf{A}-\\mathbf{B}) = \\mathbf{A}^2 - \\mathbf{B}^2$?",
+   "kind": "choice",
+   "options": [
+    "práve vtedy, keď $\\mathbf{AB} = \\mathbf{BA}$",
+    "vždy",
+    "len pre $\\mathbf{B} = \\mathbf{0}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Platná formula pre $(\\mathbf{A}+\\mathbf{B})(\\mathbf{A}-\\mathbf{B})$",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A}^2 - \\mathbf{AB} + \\mathbf{BA} - \\mathbf{B}^2$",
+    "$\\mathbf{A}^2 - 2\\mathbf{AB} - \\mathbf{B}^2$",
+    "$\\mathbf{A}^2 + \\mathbf{AB} - \\mathbf{BA} - \\mathbf{B}^2$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Platná formula pre $(\\mathbf{A}+\\mathbf{B})^3$",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A}^3 + \\mathbf{A}^2\\mathbf{B} + \\mathbf{ABA} + \\mathbf{AB}^2 + \\mathbf{BA}^2 + \\mathbf{BAB} + \\mathbf{B}^2\\mathbf{A} + \\mathbf{B}^3$",
+    "$\\mathbf{A}^3 + 3\\mathbf{A}^2\\mathbf{B} + 3\\mathbf{AB}^2 + \\mathbf{B}^3$",
+    "$\\mathbf{A}^3 + \\mathbf{B}^3$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Platná formula pre $\\mathbf{A}^3 - \\mathbf{B}^3$, ak $\\mathbf{AB} = \\mathbf{BA}$",
+   "kind": "choice",
+   "options": [
+    "$(\\mathbf{A}-\\mathbf{B})(\\mathbf{A}^2 + \\mathbf{AB} + \\mathbf{B}^2)$",
+    "$(\\mathbf{A}-\\mathbf{B})^3$",
+    "$(\\mathbf{A}-\\mathbf{B})(\\mathbf{A}^2 - \\mathbf{B}^2)$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}
