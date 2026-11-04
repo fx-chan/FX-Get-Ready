@@ -1,0 +1,90 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det\\begin{bmatrix}\\lambda - 2 & 1 \\\\ -5 & \\lambda + 4\\end{bmatrix} = 0$",
+   "kind": "set",
+   "answer": [
+    "-3",
+    "1"
+   ],
+   "example": {
+    "value": "-3, 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\det\\begin{bmatrix}\\lambda - 1 & 0 \\\\ 2 & \\lambda + 1\\end{bmatrix} = 0$",
+   "kind": "set",
+   "answer": [
+    "-1",
+    "1"
+   ],
+   "example": {
+    "value": "-1, 1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\det\\begin{bmatrix}\\lambda - 4 & 0 & 0 \\\\ 0 & \\lambda & 2 \\\\ 0 & 3 & \\lambda - 1\\end{bmatrix} = 0$",
+   "kind": "set",
+   "answer": [
+    "-2",
+    "3",
+    "4"
+   ],
+   "example": {
+    "value": "-2, 3, 4"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\det\\begin{bmatrix}\\lambda - 4 & 4 & 0 \\\\ -1 & \\lambda & 0 \\\\ 0 & 0 & \\lambda - 5\\end{bmatrix} = 0$",
+   "kind": "set",
+   "answer": [
+    "2",
+    "5"
+   ],
+   "example": {
+    "value": "2, 5"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\det\\begin{bmatrix}x & 2 \\\\ 5 & x + 3\\end{bmatrix} = 0$",
+   "kind": "set",
+   "answer": [
+    "-5",
+    "2"
+   ],
+   "example": {
+    "value": "-5, 2"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\det\\begin{bmatrix}15 & x - 4 \\\\ x + 7 & -2\\end{bmatrix} = 0$",
+   "kind": "set",
+   "answer": [
+    "-2",
+    "-1"
+   ],
+   "example": {
+    "value": "-2, -1"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$\\det\\begin{bmatrix}x - 3 & 5 & -19 \\\\ 0 & x - 1 & 6 \\\\ 0 & 0 & x - 2\\end{bmatrix} = 0$",
+   "kind": "set",
+   "answer": [
+    "1",
+    "2",
+    "3"
+   ],
+   "example": {
+    "value": "1, 2, 3"
+   }
+  }
+ ]
+}

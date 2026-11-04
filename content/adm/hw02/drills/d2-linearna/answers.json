@@ -1,0 +1,43 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\sqrt{3}\\,x_1 - 4x_2 = \\pi$",
+   "kind": "choice",
+   "options": [
+    "lineárna",
+    "nelineárna"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$x_1 x_2 + x_3 = 1$",
+   "kind": "choice",
+   "options": [
+    "lineárna",
+    "nelineárna"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$2\\sqrt{x_1} + x_2 = 0$",
+   "kind": "choice",
+   "options": [
+    "lineárna",
+    "nelineárna"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

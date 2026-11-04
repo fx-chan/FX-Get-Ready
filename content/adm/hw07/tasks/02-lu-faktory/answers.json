@@ -1,0 +1,154 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{A}_1$ Doolittle: $\\mathbf{L}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "-3/2",
+     "1",
+     "0"
+    ],
+    [
+     "2",
+     "-3",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0 0\n-3/2 1 0\n2 -3 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{A}_1$ Doolittle: $\\mathbf{U}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "2",
+     "6",
+     "2"
+    ],
+    [
+     "0",
+     "1",
+     "3"
+    ],
+    [
+     "0",
+     "0",
+     "7"
+    ]
+   ],
+   "example": {
+    "value": "2 6 2\n0 1 3\n0 0 7"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\mathbf{A}_2$ Doolittle: $\\mathbf{L}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "2/3",
+     "1",
+     "0"
+    ],
+    [
+     "-4/3",
+     "-1/4",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0 0\n2/3 1 0\n-4/3 -1/4 1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{A}_2$ Doolittle: $\\mathbf{U}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "3",
+     "-6",
+     "-3"
+    ],
+    [
+     "0",
+     "4",
+     "8"
+    ],
+    [
+     "0",
+     "0",
+     "2"
+    ]
+   ],
+   "example": {
+    "value": "3 -6 -3\n0 4 8\n0 0 2"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\mathbf{A}_3$ Crout: $\\mathbf{L}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "5",
+     "0",
+     "0"
+    ],
+    [
+     "15",
+     "-4",
+     "0"
+    ],
+    [
+     "-10",
+     "-12",
+     "2"
+    ]
+   ],
+   "example": {
+    "value": "5 0 0\n15 -4 0\n-10 -12 2"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\mathbf{A}_3$ Crout: $\\mathbf{U}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "-2/5",
+     "-4/5"
+    ],
+    [
+     "0",
+     "1",
+     "-5/4"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 -2/5 -4/5\n0 1 -5/4\n0 0 1"
+   }
+  }
+ ]
+}

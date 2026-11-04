@@ -1,0 +1,139 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\begin{bmatrix}1 & 0 \\\\ -5 & 1\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\begin{bmatrix}-5 & 1 \\\\ 1 & 0\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\begin{bmatrix}1 & 0 \\\\ 0 & \\sqrt{3}\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\begin{bmatrix}1 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & 0\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\begin{bmatrix}0 & 0 & 1 \\\\ 0 & 1 & 0 \\\\ 1 & 0 & 0\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\begin{bmatrix}1 & 0 & 0 \\\\ 0 & 1 & 9 \\\\ 0 & 0 & 1\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$\\begin{bmatrix}-1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$\\begin{bmatrix}2 & 0 & 0 & 2 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "$\\begin{bmatrix}2 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & -2 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "nie je elementárna",
+    "výmena dvoch riadkov",
+    "vynásobenie riadku nenulovým číslom",
+    "pripočítanie násobku riadku k inému riadku"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

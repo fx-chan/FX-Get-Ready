@@ -1,0 +1,111 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "17) $\\begin{bmatrix}a&b\\\\0&c\\end{bmatrix}$ a $\\begin{bmatrix}d&e\\\\0&f\\end{bmatrix}$ komutujú práve vtedy, keď",
+   "kind": "choice",
+   "options": [
+    "$\\begin{vmatrix}b&a-c\\\\e&d-f\\end{vmatrix} = 0$",
+    "$ad = cf$",
+    "$b = e$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "18) $d_1 = \\begin{vmatrix}a&b&c\\\\d&1&f\\\\g&0&1\\end{vmatrix}$, $d_2 = \\begin{vmatrix}a+\\lambda&b&c\\\\d&1&f\\\\g&0&1\\end{vmatrix}$. Vzťah:",
+   "kind": "choice",
+   "options": [
+    "$d_2 = d_1 + \\lambda$",
+    "$d_2 = \\lambda d_1$",
+    "$d_2 = d_1$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "19) Pre každú $2\\times2$ maticu platí $\\det\\mathbf{A} = \\frac12\\begin{vmatrix}\\operatorname{tr}\\mathbf{A}&1\\\\\\operatorname{tr}\\mathbf{A}^2&\\operatorname{tr}\\mathbf{A}\\end{vmatrix}$, lebo",
+   "kind": "choice",
+   "options": [
+    "$(\\operatorname{tr}\\mathbf{A})^2 - \\operatorname{tr}\\mathbf{A}^2 = 2(ad - bc)$",
+    "$\\operatorname{tr}\\mathbf{A}^2 = (\\operatorname{tr}\\mathbf{A})^2$",
+    "neplatí to vždy"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "20) Determinant matice $n\\times n$ samých jednotiek je",
+   "kind": "choice",
+   "options": [
+    "1 pre $n = 1$ a 0 pre $n \\ge 2$ (rovnaké riadky)",
+    "vždy 1",
+    "$n$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "21) maximálny počet núl v matici $3\\times3$ s nenulovým determinantom",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "22) Prečo je determinant celočíselnej matice celé číslo?",
+   "kind": "choice",
+   "options": [
+    "je to súčet súčinov prvkov so znamienkami ±1",
+    "lebo sa dá invertovať",
+    "nie je to pravda"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "23) Body $(x_i, y_i)$ sú kolineárne práve vtedy, keď $\\begin{vmatrix}x_1&y_1&1\\\\x_2&y_2&1\\\\x_3&y_3&1\\end{vmatrix} = 0$, lebo",
+   "kind": "choice",
+   "options": [
+    "determinant je dvojnásobok (orientovaného) obsahu trojuholníka s týmito vrcholmi",
+    "determinant je súčet súradníc",
+    "body sú vždy kolineárne"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "37) $\\mathbf{B}$ vznikne z $\\mathbf{A}$ ($n\\times n$) zapísaním riadkov v opačnom poradí. Potom",
+   "kind": "choice",
+   "options": [
+    "$\\det\\mathbf{B} = (-1)^{n(n-1)/2}\\det\\mathbf{A}$",
+    "$\\det\\mathbf{B} = -\\det\\mathbf{A}$",
+    "$\\det\\mathbf{B} = \\det\\mathbf{A}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

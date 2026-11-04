@@ -1,0 +1,83 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "23) $(u, v, w) = (\\sin\\alpha, \\cos\\beta, \\tan\\gamma)$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "-1",
+    "0"
+   ],
+   "example": {
+    "value": "1, -1, 0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "23) $\\alpha =$",
+   "kind": "number",
+   "answer": "pi/2",
+   "example": {
+    "value": "pi/2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "23) $\\beta =$",
+   "kind": "number",
+   "answer": "pi",
+   "example": {
+    "value": "pi"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "23) všetky $\\gamma \\in [0, 2\\pi]$",
+   "kind": "set",
+   "answer": [
+    "0",
+    "pi",
+    "2*pi"
+   ],
+   "example": {
+    "value": "0, pi, 2*pi"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "24 a) $(x^2, y^2, z^2)$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "3",
+    "2"
+   ],
+   "example": {
+    "value": "1, 3, 2"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "24 a) koľko riešení $(x, y, z)$ má systém?",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "24 b) riešenie $(x, y, z)$",
+   "kind": "vector",
+   "answer": [
+    "-13/7",
+    "91/54",
+    "-91/8"
+   ],
+   "example": {
+    "value": "-13/7, 91/54, -91/8"
+   }
+  }
+ ]
+}

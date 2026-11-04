@@ -1,0 +1,31 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{A}^{-1}$ pre $\\begin{bmatrix}3 & 1 \\\\ 5 & 2\\end{bmatrix}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "2",
+     "-1"
+    ],
+    [
+     "-5",
+     "3"
+    ]
+   ],
+   "example": {
+    "value": "2 -1\n-5 3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "inverzia $\\begin{bmatrix}4 & 1 \\\\ 8 & 2\\end{bmatrix}$",
+   "kind": "matrix",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  }
+ ]
+}

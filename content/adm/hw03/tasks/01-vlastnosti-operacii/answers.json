@@ -1,0 +1,184 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "asociatívnosť sčítania: $(\\mathbf{A}+\\mathbf{B})+\\mathbf{C} = \\mathbf{A}+(\\mathbf{B}+\\mathbf{C})$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "7",
+     "4"
+    ],
+    [
+     "0",
+     "-2"
+    ]
+   ],
+   "example": {
+    "value": "7 4\n0 -2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "asociatívnosť násobenia: $(AB)\\mathbf{C} = \\mathbf{A}(BC)$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-2",
+     "-3"
+    ],
+    [
+     "52",
+     "28"
+    ]
+   ],
+   "example": {
+    "value": "-2 -3\n52 28"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "ľavý distributívny zákon: $\\mathbf{A}(\\mathbf{B}+\\mathbf{C}) = AB+AC$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "10",
+     "3"
+    ],
+    [
+     "0",
+     "-18"
+    ]
+   ],
+   "example": {
+    "value": "10 3\n0 -18"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$(a+b)\\mathbf{C} = aC+bC$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-12",
+     "-3"
+    ],
+    [
+     "9",
+     "6"
+    ]
+   ],
+   "example": {
+    "value": "-12 -3\n9 6"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$a(BC) = (aB)\\mathbf{C} = \\mathbf{B}(aC)$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-24",
+     "-16"
+    ],
+    [
+     "64",
+     "36"
+    ]
+   ],
+   "example": {
+    "value": "-24 -16\n64 36"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\mathbf{A}(\\mathbf{B}-\\mathbf{C}) = AB-AC$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-8",
+     "1"
+    ],
+    [
+     "8",
+     "-6"
+    ]
+   ],
+   "example": {
+    "value": "-8 1\n8 -6"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$(\\mathbf{B}+\\mathbf{C})\\mathbf{A} = BA+CA$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "18",
+     "16"
+    ],
+    [
+     "-18",
+     "-26"
+    ]
+   ],
+   "example": {
+    "value": "18 16\n-18 -26"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "$(AB)^{\\top} = \\mathbf{B}^{\\top}\\mathbf{A}^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "4"
+    ],
+    [
+     "2",
+     "-12"
+    ]
+   ],
+   "example": {
+    "value": "1 4\n2 -12"
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "$(\\mathbf{A}+\\mathbf{B})^{\\top} = \\mathbf{A}^{\\top}+\\mathbf{B}^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "3",
+     "3"
+    ],
+    [
+     "3",
+     "0"
+    ]
+   ],
+   "example": {
+    "value": "3 3\n3 0"
+   }
+  },
+  {
+   "id": "l",
+   "prompt": "$(aC)^{\\top} = aC^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "16",
+     "-12"
+    ],
+    [
+     "4",
+     "-8"
+    ]
+   ],
+   "example": {
+    "value": "16 -12\n4 -8"
+   }
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(\\mathbf{A}^{\\top})^{-1}$ (rovná sa $(\\mathbf{A}^{-1})^{\\top}$)",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1/5",
+     "-1/5"
+    ],
+    [
+     "3/20",
+     "1/10"
+    ]
+   ],
+   "example": {
+    "value": "1/5 -1/5\n3/20 1/10"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(\\mathbf{A}^{-1})^{-1}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "2",
+     "-3"
+    ],
+    [
+     "4",
+     "4"
+    ]
+   ],
+   "example": {
+    "value": "2 -3\n4 4"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(ABC)^{-1}$ (rovná sa $\\mathbf{C}^{-1}\\mathbf{B}^{-1}\\mathbf{A}^{-1}$)",
+   "kind": "matrix",
+   "answer": [
+    [
+     "3/10",
+     "1/10"
+    ],
+    [
+     "-8/15",
+     "-3/20"
+    ]
+   ],
+   "example": {
+    "value": "3/10 1/10\n-8/15 -3/20"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$(ABC)^{\\top}$ (rovná sa $\\mathbf{C}^{\\top}\\mathbf{B}^{\\top}\\mathbf{A}^{\\top}$)",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-18",
+     "64"
+    ],
+    [
+     "-12",
+     "36"
+    ]
+   ],
+   "example": {
+    "value": "-18 64\n-12 36"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$(BD)^{-1}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "9",
+     "-11/2"
+    ],
+    [
+     "-13",
+     "8"
+    ]
+   ],
+   "example": {
+    "value": "9 -11/2\n-13 8"
+   }
+  }
+ ]
+}

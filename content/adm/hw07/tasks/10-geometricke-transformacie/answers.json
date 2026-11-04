@@ -1,0 +1,193 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "reflexia podľa priamky $y = x$ v $\\mathbb{R}^2$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "-1"
+   ],
+   "example": {
+    "value": "1, -1"
+   }
+  },
+  {
+   "id": "a2",
+   "prompt": "reflexia podľa $y = x$: báza pre $\\lambda = -1$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "0",
+     "1"
+    ],
+    [
+     "1",
+     "0"
+    ]
+   ],
+   "lambda": "-1",
+   "example": {
+    "value": "-1, 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "reflexia okolo osi $y$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "-1"
+   ],
+   "example": {
+    "value": "1, -1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "ortogonálna projekcia na os $x$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "0"
+   ],
+   "example": {
+    "value": "1, 0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "rotácia o $\\pi/2$ (komplexné vlastné čísla)",
+   "kind": "multiset",
+   "answer": [
+    "i",
+    "-i"
+   ],
+   "example": {
+    "value": "i, -i"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "rotácia o $\\pi$",
+   "kind": "multiset",
+   "answer": [
+    "-1",
+    "-1"
+   ],
+   "example": {
+    "value": "-1, -1"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "dilatácia s faktorom $k$",
+   "kind": "multiset",
+   "answer": [
+    "k",
+    "k"
+   ],
+   "example": {
+    "value": "k, k"
+   },
+   "vars": [
+    "k"
+   ]
+  },
+  {
+   "id": "g",
+   "prompt": "expanzia v smere osi $y$ s faktorom $k$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "k"
+   ],
+   "example": {
+    "value": "1, k"
+   },
+   "vars": [
+    "k"
+   ]
+  },
+  {
+   "id": "h",
+   "prompt": "sklz v smere osi $x$ s faktorom $k$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "1"
+   ],
+   "example": {
+    "value": "1, 1"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "$\\mathbb{R}^3$: reflexia podľa roviny $xy$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "1",
+    "-1"
+   ],
+   "example": {
+    "value": "1, 1, -1"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "$\\mathbb{R}^3$: ortogonálna projekcia na rovinu $xz$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "1",
+    "0"
+   ],
+   "example": {
+    "value": "1, 1, 0"
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "$\\mathbb{R}^3$: otočenie okolo osi $x$ o $\\pi$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "-1",
+    "-1"
+   ],
+   "example": {
+    "value": "1, -1, -1"
+   }
+  },
+  {
+   "id": "l",
+   "prompt": "$\\mathbb{R}^3$: otočenie v smere hodinových ručičiek okolo osi $x$ o $\\pi/2$",
+   "kind": "multiset",
+   "answer": [
+    "1",
+    "i",
+    "-i"
+   ],
+   "example": {
+    "value": "1, i, -i"
+   }
+  },
+  {
+   "id": "m",
+   "prompt": "$\\mathbb{R}^3$: kontrakcia s faktorom $k$",
+   "kind": "multiset",
+   "answer": [
+    "k",
+    "k",
+    "k"
+   ],
+   "example": {
+    "value": "k, k, k"
+   },
+   "vars": [
+    "k"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Prečo je $\\mathbf{X}_1 + c(\\mathbf{X}_2 - \\mathbf{X}_1)$ tiež riešením pre každé $c$?",
+   "kind": "choice",
+   "options": [
+    "lebo $\\mathbf{A}(\\mathbf{X}_2 - \\mathbf{X}_1) = \\mathbf{B} - \\mathbf{B} = \\mathbf{0}$, takže $\\mathbf{A}(\\mathbf{X}_1 + c(\\mathbf{X}_2-\\mathbf{X}_1)) = \\mathbf{B} + c\\mathbf{0} = \\mathbf{B}$",
+    "lebo $\\mathbf{A}$ je invertibilná",
+    "lebo $c$ je vždy 0 alebo 1"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Ak $\\mathbf{X}_1 + c(\\mathbf{X}_2-\\mathbf{X}_1) = \\mathbf{X}_1 + d(\\mathbf{X}_2-\\mathbf{X}_1)$, potom",
+   "kind": "choice",
+   "options": [
+    "$c = d$, lebo $(c-d)(\\mathbf{X}_2-\\mathbf{X}_1) = \\mathbf{0}$ a $\\mathbf{X}_2-\\mathbf{X}_1 \\ne \\mathbf{0}$",
+    "$c$ a $d$ môžu byť rôzne",
+    "$c = -d$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Záver",
+   "kind": "choice",
+   "options": [
+    "rôzne $c$ dávajú rôzne riešenia, teda systém s dvoma riešeniami má nekonečne veľa riešení",
+    "systém môže mať presne dve riešenia",
+    "systém nemá riešenie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

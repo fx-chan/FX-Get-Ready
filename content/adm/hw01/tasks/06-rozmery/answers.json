@@ -1,0 +1,139 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$BA$",
+   "kind": "dims",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$AB^{\\top}$",
+   "kind": "dims",
+   "answer": [
+    4,
+    4
+   ],
+   "example": {
+    "value": "4x4"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$AC+\\mathbf{D}$",
+   "kind": "dims",
+   "answer": [
+    4,
+    2
+   ],
+   "example": {
+    "value": "4x2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{E}(AC)$",
+   "kind": "dims",
+   "answer": [
+    5,
+    2
+   ],
+   "example": {
+    "value": "5x2"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\mathbf{A}-3\\mathbf{E}^{\\top}$",
+   "kind": "dims",
+   "answer": [
+    4,
+    5
+   ],
+   "example": {
+    "value": "4x5"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\mathbf{E}(5\\mathbf{B}+\\mathbf{A})$",
+   "kind": "dims",
+   "answer": [
+    5,
+    5
+   ],
+   "example": {
+    "value": "5x5"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$CD^{\\top}$",
+   "kind": "dims",
+   "answer": [
+    5,
+    4
+   ],
+   "example": {
+    "value": "5x4"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$DC$",
+   "kind": "dims",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "$BC-3\\mathbf{D}$",
+   "kind": "dims",
+   "answer": [
+    4,
+    2
+   ],
+   "example": {
+    "value": "4x2"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "$\\mathbf{D}^{\\top}(BE)$",
+   "kind": "dims",
+   "answer": [
+    2,
+    4
+   ],
+   "example": {
+    "value": "2x4"
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "$\\mathbf{B}^{\\top}\\mathbf{D}+ED$",
+   "kind": "dims",
+   "answer": [
+    5,
+    2
+   ],
+   "example": {
+    "value": "5x2"
+   }
+  },
+  {
+   "id": "l",
+   "prompt": "$BA^{\\top}+\\mathbf{D}$",
+   "kind": "dims",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  }
+ ]
+}

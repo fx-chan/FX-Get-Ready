@@ -1,0 +1,138 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(2, 3)$ podľa osi $x$",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "-3"
+   ],
+   "example": {
+    "value": "2, -3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(2, 3)$ podľa osi $y$",
+   "kind": "vector",
+   "answer": [
+    "-2",
+    "3"
+   ],
+   "example": {
+    "value": "-2, 3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(2, 3)$ podľa priamky $y = x$",
+   "kind": "vector",
+   "answer": [
+    "3",
+    "2"
+   ],
+   "example": {
+    "value": "3, 2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$(a, b)$ podľa priamky $y = x$",
+   "kind": "vector",
+   "answer": [
+    "b",
+    "a"
+   ],
+   "example": {
+    "value": "b, a"
+   },
+   "vars": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "e",
+   "prompt": "$(2, -3, 5)$ podľa roviny $xy$",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "-3",
+    "-5"
+   ],
+   "example": {
+    "value": "2, -3, -5"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$(2, -3, 5)$ podľa roviny $xz$",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "3",
+    "5"
+   ],
+   "example": {
+    "value": "2, 3, 5"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$(2, -3, 5)$ podľa roviny $yz$",
+   "kind": "vector",
+   "answer": [
+    "-2",
+    "-3",
+    "5"
+   ],
+   "example": {
+    "value": "-2, -3, 5"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$(a, b, c)$ podľa roviny $xz$",
+   "kind": "vector",
+   "answer": [
+    "a",
+    "-b",
+    "c"
+   ],
+   "example": {
+    "value": "a, -b, c"
+   },
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ]
+  },
+  {
+   "id": "i",
+   "prompt": "štandardná matica reflexie podľa roviny $yz$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "-1 0 0\n0 1 0\n0 0 1"
+   }
+  }
+ ]
+}

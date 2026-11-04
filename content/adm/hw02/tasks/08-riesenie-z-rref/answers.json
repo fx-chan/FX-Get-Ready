@@ -1,0 +1,374 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1 & -3 & 4 & 7 \\\\ 0 & 1 & 2 & 2 \\\\ 0 & 0 & 1 & 5\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "-3",
+     "4"
+    ],
+    [
+     "0",
+     "1",
+     "2"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "b": [
+    "7",
+    "2",
+    "5"
+   ],
+   "example": {
+    "value": "-37, -8, 5"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "b",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1 & -4 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 2 & 0\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "-4",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ],
+    [
+     "0",
+     "0",
+     "2"
+    ]
+   ],
+   "b": [
+    "0",
+    "0",
+    "0"
+   ],
+   "example": {
+    "value": "4*t, t, 0"
+   },
+   "solutions": "infinite (1 param)"
+  },
+  {
+   "id": "c",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1 & -3 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "-3",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "b": [
+    "0",
+    "0",
+    "1"
+   ],
+   "example": {
+    "none": true
+   },
+   "solutions": "none"
+  },
+  {
+   "id": "d",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1 & 0 & 0 & 3 \\\\ 0 & 2 & 0 & -2 \\\\ 0 & 0 & 3 & 0\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "2",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "3"
+    ]
+   ],
+   "b": [
+    "3",
+    "-2",
+    "0"
+   ],
+   "example": {
+    "value": "3, -1, 0"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "e",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1 & 0 & 0 & -1 \\\\ 0 & 1 & 0 & \\frac{1}{2} \\\\ 0 & 0 & 1 & 0\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "b": [
+    "-1",
+    "1/2",
+    "0"
+   ],
+   "example": {
+    "value": "-1, 1/2, 0"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "f",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1 & 0 & 2 & -3 \\\\ 0 & 1 & -1 & 2 \\\\ 0 & 0 & 0 & 0\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "0",
+     "2"
+    ],
+    [
+     "0",
+     "1",
+     "-1"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "b": [
+    "-3",
+    "2",
+    "0"
+   ],
+   "example": {
+    "value": "-2*t - 3, t + 2, t"
+   },
+   "solutions": "infinite (1 param)"
+  },
+  {
+   "id": "g",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1 & 0 & - \\frac{1}{3} & 4 \\\\ 0 & 1 & 3 & \\frac{4}{3} \\\\ 0 & 0 & 0 & 0\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "0",
+     "-1/3"
+    ],
+    [
+     "0",
+     "1",
+     "3"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "b": [
+    "4",
+    "4/3",
+    "0"
+   ],
+   "example": {
+    "value": "t/3 + 4, 4/3 - 3*t, t"
+   },
+   "solutions": "infinite (1 param)"
+  },
+  {
+   "id": "h",
+   "prompt": "$\\left[\\begin{array}{ccc|c}1 & 5 & 5 & -1 \\\\ 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "5",
+     "5"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "b": [
+    "-1",
+    "0",
+    "0"
+   ],
+   "example": {
+    "value": "-5*s - 5*t - 1, t, s"
+   },
+   "solutions": "infinite (2 param)"
+  },
+  {
+   "id": "i",
+   "prompt": "$\\left[\\begin{array}{cccc|c}1 & 0 & -2 & 5 & 3 \\\\ 0 & 1 & -1 & 2 & 2\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "0",
+     "-2",
+     "5"
+    ],
+    [
+     "0",
+     "1",
+     "-1",
+     "2"
+    ]
+   ],
+   "b": [
+    "3",
+    "2"
+   ],
+   "example": {
+    "value": "-5*s + 2*t + 3, -2*s + t + 2, t, s"
+   },
+   "solutions": "infinite (2 param)"
+  },
+  {
+   "id": "j",
+   "prompt": "$\\left[\\begin{array}{cccc|c}1 & 3 & -3 & 0 & 1 \\\\ 0 & 0 & 0 & 1 & 4\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "3",
+     "-3",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "b": [
+    "1",
+    "4"
+   ],
+   "example": {
+    "value": "3*s - 3*t + 1, t, s, 4"
+   },
+   "solutions": "infinite (2 param)"
+  },
+  {
+   "id": "k",
+   "prompt": "$\\left[\\begin{array}{cccc|c}1 & 0 & \\frac{2}{3} & 0 & -1 \\\\ 0 & 1 & -3 & 0 & 1 \\\\ 0 & 0 & 0 & 1 & \\frac{4}{5}\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "0",
+     "2/3",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "-3",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "b": [
+    "-1",
+    "1",
+    "4/5"
+   ],
+   "example": {
+    "value": "-2*t/3 - 1, 3*t + 1, t, 4/5"
+   },
+   "solutions": "infinite (1 param)"
+  },
+  {
+   "id": "l",
+   "prompt": "$\\left[\\begin{array}{cccc|c}1 & 0 & 0 & -3 & 1 \\\\ 0 & 1 & 0 & -1 & 7 \\\\ 0 & 0 & 1 & 2 & -1\\end{array}\\right]$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "0",
+     "0",
+     "-3"
+    ],
+    [
+     "0",
+     "1",
+     "0",
+     "-1"
+    ],
+    [
+     "0",
+     "0",
+     "1",
+     "2"
+    ]
+   ],
+   "b": [
+    "1",
+    "7",
+    "-1"
+   ],
+   "example": {
+    "value": "3*t + 1, t + 7, -2*t - 1, t"
+   },
+   "solutions": "infinite (1 param)"
+  }
+ ]
+}

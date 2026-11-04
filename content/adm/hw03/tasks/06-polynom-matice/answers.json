@@ -1,0 +1,148 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$p(x) = x - 2$, $p(\\mathbf{A}_1)$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "2",
+     "-1"
+    ]
+   ],
+   "example": {
+    "value": "1 1\n2 -1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$p(x) = 2x^2 - x + 1$, $p(\\mathbf{A}_1)$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "20",
+     "7"
+    ],
+    [
+     "14",
+     "6"
+    ]
+   ],
+   "example": {
+    "value": "20 7\n14 6"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$p(x) = x^3 - 2x + 1$, $p(\\mathbf{A}_1)$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "36",
+     "13"
+    ],
+    [
+     "26",
+     "10"
+    ]
+   ],
+   "example": {
+    "value": "36 13\n26 10"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$p(x) = x - 2$, $p(\\mathbf{A}_2)$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "0",
+     "0"
+    ],
+    [
+     "4",
+     "-1"
+    ]
+   ],
+   "example": {
+    "value": "0 0\n4 -1"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$p(x) = 2x^2 - x + 1$, $p(\\mathbf{A}_2)$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "7",
+     "0"
+    ],
+    [
+     "20",
+     "2"
+    ]
+   ],
+   "example": {
+    "value": "7 0\n20 2"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$p(x) = x^3 - 2x + 1$, $p(\\mathbf{A}_2)$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "5",
+     "0"
+    ],
+    [
+     "20",
+     "0"
+    ]
+   ],
+   "example": {
+    "value": "5 0\n20 0"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$p(x) = x^2 - 9 = (x+3)(x-3)$, $p(\\mathbf{A}_1) = (\\mathbf{A}_1+3\\mathbf{I})(\\mathbf{A}_1-3\\mathbf{I})$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "2",
+     "4"
+    ],
+    [
+     "8",
+     "-6"
+    ]
+   ],
+   "example": {
+    "value": "2 4\n8 -6"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$p(\\mathbf{A}_2) = \\mathbf{A}_2^2 - 9\\mathbf{I}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-5",
+     "0"
+    ],
+    [
+     "12",
+     "-8"
+    ]
+   ],
+   "example": {
+    "value": "-5 0\n12 -8"
+   }
+  }
+ ]
+}

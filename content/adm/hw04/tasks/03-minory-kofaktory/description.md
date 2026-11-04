@@ -1,0 +1,5 @@
+**Príklady 2, 3, 4.** Minor $M_{ij}$ = determinant po vyškrtnutí $i$-teho riadku a $j$-teho stĺpca,
+kofaktor $C_{ij} = (-1)^{i+j}M_{ij}$ (šachovnica znamienok $\begin{smallmatrix}+&-&+\\-&+&-\\+&-&+\end{smallmatrix}$).
+
+$$\text{2a: }\begin{bmatrix}1 & -2 & 3 \\ 6 & 7 & -1 \\ -3 & 1 & 4\end{bmatrix}\quad \text{2b: }\begin{bmatrix}1 & 1 & 2 \\ 3 & 3 & 6 \\ 0 & 1 & 4\end{bmatrix}\quad \text{3: }\begin{bmatrix}2 & 3 & -1 & 1 \\ -3 & 2 & 0 & 3 \\ 3 & -2 & 1 & 0 \\ 3 & -1 & 1 & 4\end{bmatrix}$$
+$$\text{4: }\mathbf{A} = \begin{bmatrix}2 & 4 & 3 \\ 3 & -1 & 6 \\ 5 & -2 & 4\end{bmatrix}\quad \mathbf{B} = \begin{bmatrix}0 & 2 & -3 & 1 \\ 1 & 4 & 2 & -1 \\ 3 & -2 & 4 & 0 \\ 4 & -1 & 1 & 0\end{bmatrix}\quad \mathbf{C} = \begin{bmatrix}-3 & 3 & 0 & 5 \\ 2 & 1 & -1 & 4 \\ 6 & -3 & 4 & 0 \\ -1 & 5 & 1 & -2\end{bmatrix}$$

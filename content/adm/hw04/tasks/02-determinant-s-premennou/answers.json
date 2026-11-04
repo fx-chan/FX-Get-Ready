@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det\\begin{bmatrix}a - 3 & 5 \\\\ -3 & a - 2\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "a^2 - 5*a + 21",
+   "example": {
+    "value": "a^2 - 5*a + 21"
+   },
+   "vars": [
+    "a"
+   ]
+  },
+  {
+   "id": "b",
+   "prompt": "$\\det\\begin{bmatrix}c & -4 & 3 \\\\ 2 & 1 & c^{2} \\\\ 4 & c - 1 & 2\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "-c^4 + c^3 - 16*c^2 + 8*c - 2",
+   "example": {
+    "value": "-c^4 + c^3 - 16*c^2 + 8*c - 2"
+   },
+   "vars": [
+    "c"
+   ]
+  },
+  {
+   "id": "c",
+   "prompt": "$\\det\\begin{bmatrix}k + 1 & k - 1 & 7 \\\\ 2 & k - 3 & 4 \\\\ 5 & k + 1 & k\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "k^3 - 8*k^2 - 10*k + 95",
+   "example": {
+    "value": "k^3 - 8*k^2 - 10*k + 95"
+   },
+   "vars": [
+    "k"
+   ]
+  }
+ ]
+}

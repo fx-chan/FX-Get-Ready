@@ -1,0 +1,76 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\begin{vmatrix}d&e&f\\\\g&h&i\\\\a&b&c\\end{vmatrix}$",
+   "kind": "number",
+   "answer": "-6",
+   "example": {
+    "value": "-6"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\begin{vmatrix}g&h&i\\\\d&e&f\\\\a&b&c\\end{vmatrix}$",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\begin{vmatrix}3a&3b&3c\\\\-d&-e&-f\\\\4g&4h&4i\\end{vmatrix}$",
+   "kind": "number",
+   "answer": "72",
+   "example": {
+    "value": "72"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\begin{vmatrix}a+d&b+e&c+f\\\\-d&-e&-f\\\\g&h&i\\end{vmatrix}$",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\begin{vmatrix}a+g&b+h&c+i\\\\d&e&f\\\\g&h&i\\end{vmatrix}$",
+   "kind": "number",
+   "answer": "-6",
+   "example": {
+    "value": "-6"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\begin{vmatrix}a&b&c\\\\d&e&f\\\\2a&2b&2c\\end{vmatrix}$",
+   "kind": "number",
+   "answer": "0",
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$\\begin{vmatrix}a&b&c\\\\2d&2e&2f\\\\g+3a&h+3b&i+3c\\end{vmatrix}$",
+   "kind": "number",
+   "answer": "-12",
+   "example": {
+    "value": "-12"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$\\begin{vmatrix}-3a&-3b&-3c\\\\d&e&f\\\\g-4d&h-4e&i-4f\\end{vmatrix}$",
+   "kind": "number",
+   "answer": "18",
+   "example": {
+    "value": "18"
+   }
+  }
+ ]
+}

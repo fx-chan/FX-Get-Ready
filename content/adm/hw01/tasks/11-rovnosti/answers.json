@@ -1,0 +1,144 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(RG)\\mathbf{H} = \\mathbf{R}(GH)$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$LP = PL$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\mathbf{E}(FK) = (EF)\\mathbf{K}$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{K}(\\mathbf{A}+\\mathbf{C}) = KA+KC$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$(QF)^{\\top} = \\mathbf{F}^{\\top}\\mathbf{Q}^{\\top}$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\mathbf{L}(ML) = \\mathbf{L}^2\\mathbf{M}$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$GC+HC = (\\mathbf{G}+\\mathbf{H})\\mathbf{C}$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$\\mathbf{R}(\\mathbf{J}+\\mathbf{T}^{\\top}) = RJ+RT^{\\top}$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "$(AK)^{\\top} = \\mathbf{A}^{\\top}\\mathbf{K}^{\\top}$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "$(\\mathbf{Q}+\\mathbf{F}^{\\top})\\mathbf{E}^{\\top} = QE^{\\top}+(EF)^{\\top}$",
+   "kind": "choice",
+   "options": [
+    "rovnosť platí",
+    "rovnosť neplatí",
+    "niektorý výraz sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

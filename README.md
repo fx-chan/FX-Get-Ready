@@ -1,12 +1,23 @@
 # Prep — príprava na písomky a skúšky
 
-Flask platform for practising for written tests (písomky) and exams (skúšky). Subject: **PRPR** (C).
+Flask platform for practising for written tests (písomky) and exams (skúšky).
+Subjects: **PRPR** (procedural programming in C) and **ADM** (algebra and discrete mathematics).
+
+**PRPR**
 
 - lessons (theory from lectures P1–P7) with **quizzes** and **mini drills** (fill in a line of code) embedded in the text,
 - practice tasks from the exercise sheets CV1–CV7 plus a **final test** block (from the sample test photo),
 - accounts (username + password, no e-mail), progress, last submitted code,
 - the server never compiles code itself: it sends the code and hidden test inputs to an external
   compiler API (default **onlinecompiler.io**) and compares stdout with the expected `.out` files.
+
+**ADM** (homework sheets 01–04, 06, 07)
+
+- lessons with formulas (KaTeX), quizzes and mini exercises, practice tasks taken from the homework sheets,
+- every block has a separate **A++** section with the advanced tasks (`"level": "A++"`),
+- answers (numbers, matrices, vectors, solution sets of systems, eigenvectors, …) are checked on the
+  server by `prep/mathcheck.py`: a small safe expression parser plus numeric comparison, so equivalent
+  forms (`1/2`, `0.5`, `sqrt(2)/2`, any parametrization of a solution set) are accepted.
 
 ## Run locally
 
@@ -17,6 +28,9 @@ copy config.example.json config.local.json         # then put your API key in it
 .venv/Scripts/python run.py                        # http://127.0.0.1:5000
 .venv/Scripts/python -m pytest -q
 ```
+
+Only the files the host needs are committed (see `.gitignore`): `prep/`, `content/` (without `solution.c`),
+`wsgi.py`, `requirements.txt`. Tests, `tools/`, `run.py`, the course PDFs and reference solutions stay local.
 
 ## Configuration
 
@@ -83,16 +97,39 @@ Question text (markdown)
 The test suite also checks that every reference solution passes, every unchanged drill template
 fails, every drill is embedded in its lesson and every quiz has exactly one right answer.
 
+### Math (answer) tasks
+
+```
+content/<subject>/subject.json      {"title", "summary", "math": true, "icon": "∑"}
+content/<subject>/<block>/tasks/<task>/
+  metadata.json   {"title", "difficulty", "type": "answer", "level": "A++" (optional)}
+  description.md  statement, $inline$ and $$display$$ TeX
+  answers.json    {"parts": [{"id", "prompt", "kind", "answer", "example", ...}]}  (never served)
+```
+
+Part kinds: `number`, `matrix`, `vector`, `dims`, `choice`, `multi`, `set`, `multiset`, `system`,
+`eigbasis`, `diagonalize`, `elem_product`, `row_equiv`, `power_identity`, `pair_not_diff_squares`
+(fields are documented in `prep/mathcheck.py`). ADM content is generated from the homework data with sympy
+(dev only, not needed on the host):
+
+```bash
+.venv/Scripts/pip install sympy
+cd tools/adm && ../../.venv/Scripts/python hw02.py      # rewrites content/adm/hw02/tasks and drills
+```
+
+Lessons (`theory.md`) are written by hand. The tests feed every part's `example` back into the checker
+(must be accepted) together with a wrong answer (must be rejected).
+
 ## PythonAnywhere
 
 1. Upload the project, create a virtualenv, `pip install -r requirements.txt`.
 2. Create `config.local.json` next to `wsgi.py` (`SECRET_KEY`, `ONLINECOMPILER_KEY`).
 3. Web tab → Manual configuration → WSGI file:
    ```python
-   import sys; sys.path.insert(0, "/home/<user>/Prep_web_proj")
+   import sys; sys.path.insert(0, "/home/<user>/FX-Get-Ready")
    from wsgi import application
    ```
-4. Static files: URL `/static/` → `/home/<user>/Prep_web_proj/prep/static`.
+4. Static files: URL `/static/` → `/home/<user>/FX-Get-Ready/prep/static`.
 5. Force HTTPS in the Web tab (login sends passwords).
 6. **Free accounts can only reach allow-listed hosts.** Check that `api.onlinecompiler.io` is on the
    PythonAnywhere allowlist (or request it); otherwise every run returns *IE*.

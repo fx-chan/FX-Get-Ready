@@ -1,0 +1,267 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\begin{bmatrix}2 & 8 \\\\ -1 & -1\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}-2 \\\\ -2\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "2",
+     "8"
+    ],
+    [
+     "-1",
+     "-1"
+    ]
+   ],
+   "b": [
+    "-2",
+    "-2"
+   ],
+   "example": {
+    "value": "3, -1"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "b",
+   "prompt": "$\\begin{bmatrix}-5 & -10 \\\\ 6 & 5\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}-10 \\\\ 9\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "-5",
+     "-10"
+    ],
+    [
+     "6",
+     "5"
+    ]
+   ],
+   "b": [
+    "-10",
+    "9"
+   ],
+   "example": {
+    "value": "8/7, 3/7"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "c",
+   "prompt": "$\\begin{bmatrix}2 & 6 & 2 \\\\ -3 & -8 & 0 \\\\ 4 & 9 & 2\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}2 \\\\ 2 \\\\ 3\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "2",
+     "6",
+     "2"
+    ],
+    [
+     "-3",
+     "-8",
+     "0"
+    ],
+    [
+     "4",
+     "9",
+     "2"
+    ]
+   ],
+   "b": [
+    "2",
+    "2",
+    "3"
+   ],
+   "example": {
+    "value": "2, -1, 2"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "d",
+   "prompt": "$\\begin{bmatrix}3 & -6 & -3 \\\\ 2 & 0 & 6 \\\\ -4 & 7 & 4\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}3 \\\\ -22 \\\\ 3\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "3",
+     "-6",
+     "-3"
+    ],
+    [
+     "2",
+     "0",
+     "6"
+    ],
+    [
+     "-4",
+     "7",
+     "4"
+    ]
+   ],
+   "b": [
+    "3",
+    "-22",
+    "3"
+   ],
+   "example": {
+    "value": "-25/2, -7, 1/2"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "e",
+   "prompt": "$\\begin{bmatrix}2 & -2 & -2 \\\\ 0 & -2 & 2 \\\\ -1 & 5 & 2\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}-4 \\\\ -2 \\\\ 6\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "2",
+     "-2",
+     "-2"
+    ],
+    [
+     "0",
+     "-2",
+     "2"
+    ],
+    [
+     "-1",
+     "5",
+     "2"
+    ]
+   ],
+   "b": [
+    "-4",
+    "-2",
+    "6"
+   ],
+   "example": {
+    "value": "-1, 1, 0"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "f",
+   "prompt": "$\\begin{bmatrix}-3 & 12 & -6 \\\\ 1 & -2 & 2 \\\\ 0 & 1 & 1\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}-33 \\\\ 7 \\\\ -1\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "-3",
+     "12",
+     "-6"
+    ],
+    [
+     "1",
+     "-2",
+     "2"
+    ],
+    [
+     "0",
+     "1",
+     "1"
+    ]
+   ],
+   "b": [
+    "-33",
+    "7",
+    "-1"
+   ],
+   "example": {
+    "value": "1, -2, 1"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "g",
+   "prompt": "$\\begin{bmatrix}0 & -3 & 0 \\\\ 0 & -1 & -1 \\\\ -1 & -3 & -1\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}-9 \\\\ -5 \\\\ -9\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "0",
+     "-3",
+     "0"
+    ],
+    [
+     "0",
+     "-1",
+     "-1"
+    ],
+    [
+     "-1",
+     "-3",
+     "-1"
+    ]
+   ],
+   "b": [
+    "-9",
+    "-5",
+    "-9"
+   ],
+   "example": {
+    "value": "-2, 3, 2"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "h",
+   "prompt": "$\\begin{bmatrix}-1 & -3 & 2 \\\\ -6 & -19 & 10 \\\\ 3 & 9 & -5\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}-9 \\\\ -59 \\\\ 28\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "-1",
+     "-3",
+     "2"
+    ],
+    [
+     "-6",
+     "-19",
+     "10"
+    ],
+    [
+     "3",
+     "9",
+     "-5"
+    ]
+   ],
+   "b": [
+    "-9",
+    "-59",
+    "28"
+   ],
+   "example": {
+    "value": "2, 3, 1"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "i",
+   "prompt": "$\\begin{bmatrix}-4 & 0 & 1 \\\\ 8 & 2 & -1 \\\\ -8 & -6 & 4\\end{bmatrix}\\mathbf{x} = \\begin{bmatrix}-5 \\\\ 15 \\\\ -46\\end{bmatrix}$",
+   "kind": "system",
+   "A": [
+    [
+     "-4",
+     "0",
+     "1"
+    ],
+    [
+     "8",
+     "2",
+     "-1"
+    ],
+    [
+     "-8",
+     "-6",
+     "4"
+    ]
+   ],
+   "b": [
+    "-5",
+    "15",
+    "-46"
+   ],
+   "example": {
+    "value": "1/5, 23/5, -21/5"
+   },
+   "solutions": "unique"
+  }
+ ]
+}

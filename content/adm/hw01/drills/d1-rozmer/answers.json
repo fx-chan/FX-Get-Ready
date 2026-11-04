@@ -1,0 +1,37 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$AB$",
+   "kind": "dims",
+   "answer": [
+    3,
+    4
+   ],
+   "example": {
+    "value": "3x4"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$BA$",
+   "kind": "dims",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\mathbf{B}^{\\top}\\mathbf{A}^{\\top}$",
+   "kind": "dims",
+   "answer": [
+    4,
+    3
+   ],
+   "example": {
+    "value": "4x3"
+   }
+  }
+ ]
+}

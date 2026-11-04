@@ -1,0 +1,29 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\begin{bmatrix}c & c & c \\\\ 1 & c & c \\\\ 1 & 1 & c\\end{bmatrix}$ — singulárna pre $c \\in$",
+   "kind": "set",
+   "answer": [
+    "0",
+    "1"
+   ],
+   "example": {
+    "value": "0, 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\begin{bmatrix}c & 1 & 0 \\\\ 1 & c & 1 \\\\ 0 & 1 & c\\end{bmatrix}$ — singulárna pre $c \\in$",
+   "kind": "set",
+   "answer": [
+    "0",
+    "-sqrt(2)",
+    "sqrt(2)"
+   ],
+   "example": {
+    "value": "0, -sqrt(2), sqrt(2)"
+   }
+  }
+ ]
+}

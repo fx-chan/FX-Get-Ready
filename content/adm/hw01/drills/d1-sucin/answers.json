@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$AB$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-2",
+     "5"
+    ],
+    [
+     "-4",
+     "11"
+    ]
+   ],
+   "example": {
+    "value": "-2 5\n-4 11"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$BA$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "3",
+     "4"
+    ],
+    [
+     "5",
+     "6"
+    ]
+   ],
+   "example": {
+    "value": "3 4\n5 6"
+   }
+  }
+ ]
+}

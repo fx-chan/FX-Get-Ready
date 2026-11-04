@@ -1,0 +1,64 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "hodnoty $a$, pre ktoré je systém **nekonzistentný**",
+   "kind": "set",
+   "answer": [
+    "-1"
+   ],
+   "example": {
+    "value": "-1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "hodnoty $a$ s **nekonečne veľa** riešeniami",
+   "kind": "set",
+   "answer": [
+    "2"
+   ],
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "riešenie $(x, y)$ pre všeobecné $a \\ne 2, a \\ne -1$",
+   "kind": "vector",
+   "answer": [
+    "1/(a + 1)",
+    "1/(a + 1)"
+   ],
+   "example": {
+    "value": "1/(a + 1), 1/(a + 1)"
+   },
+   "vars": [
+    "a"
+   ]
+  },
+  {
+   "id": "d",
+   "prompt": "riešenie pre $a = 2$",
+   "kind": "system",
+   "A": [
+    [
+     "2",
+     "1"
+    ],
+    [
+     "2",
+     "1"
+    ]
+   ],
+   "b": [
+    "1",
+    "1"
+   ],
+   "example": {
+    "value": "1/2 - t/2, t"
+   },
+   "solutions": "infinite (1 param)"
+  }
+ ]
+}

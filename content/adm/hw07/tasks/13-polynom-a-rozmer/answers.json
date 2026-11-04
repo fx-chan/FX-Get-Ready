@@ -1,0 +1,100 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(\\lambda-1)(\\lambda+3)(\\lambda-5)$: rozmer matice $n$",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(\\lambda-1)(\\lambda+3)(\\lambda-5)$: možné dimenzie vlastného priestoru pre $\\lambda = 5$",
+   "kind": "set",
+   "answer": [
+    "1"
+   ],
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\lambda^2(\\lambda-1)(\\lambda-2)^3$: $n$",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\lambda^2(\\lambda-1)(\\lambda-2)^3$: možné dimenzie pre $\\lambda = 2$",
+   "kind": "set",
+   "answer": [
+    "1",
+    "2",
+    "3"
+   ],
+   "example": {
+    "value": "1, 2, 3"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\lambda^2(\\lambda-1)(\\lambda-2)^3$: možné dimenzie pre $\\lambda = 0$",
+   "kind": "set",
+   "answer": [
+    "1",
+    "2"
+   ],
+   "example": {
+    "value": "1, 2"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\lambda^3(\\lambda^2 - 5\\lambda - 6)$: $n$",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$\\lambda^3(\\lambda^2 - 5\\lambda - 6)$: vlastné čísla",
+   "kind": "set",
+   "answer": [
+    "0",
+    "6",
+    "-1"
+   ],
+   "example": {
+    "value": "0, 6, -1"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$\\lambda^3 - 3\\lambda^2 + 3\\lambda - 1$: $n$",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "$\\lambda^3 - 3\\lambda^2 + 3\\lambda - 1$: vlastné čísla",
+   "kind": "set",
+   "answer": [
+    "1"
+   ],
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

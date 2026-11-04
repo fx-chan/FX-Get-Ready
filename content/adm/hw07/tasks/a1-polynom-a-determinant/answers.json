@@ -1,0 +1,93 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "14 a) $p(\\lambda) = \\lambda^3 - 2\\lambda^2 + \\lambda + 5$: $\\det\\mathbf{A}$",
+   "kind": "number",
+   "answer": "-5",
+   "example": {
+    "value": "-5"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "14 b) $p(\\lambda) = \\lambda^4 - \\lambda^3 + 7$: $\\det\\mathbf{A}$",
+   "kind": "number",
+   "answer": "7",
+   "example": {
+    "value": "7"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "15) $p(\\lambda) = (\\lambda-1)(\\lambda-3)^2(\\lambda-4)^3$: rozmer matice",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "15) Je táto matica invertibilná?",
+   "kind": "choice",
+   "options": [
+    "áno — 0 nie je vlastné číslo",
+    "nie",
+    "nedá sa určiť"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "15) možný počet lineárne nezávislých vlastných vektorov",
+   "kind": "set",
+   "answer": [
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "example": {
+    "value": "3, 4, 5, 6"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "17) charakteristický polynóm $\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$ (premenné `lambda, a, b, c, d`)",
+   "kind": "number",
+   "answer": "a*d - a*lambda - b*c - d*lambda + lambda^2",
+   "example": {
+    "value": "a*d - a*lambda - b*c - d*lambda + lambda^2"
+   },
+   "vars": [
+    "lambda",
+    "a",
+    "b",
+    "c",
+    "d"
+   ]
+  },
+  {
+   "id": "g",
+   "prompt": "20) Cayley–Hamilton: $\\mathbf{A}^2 - \\operatorname{tr}(\\mathbf{A})\\mathbf{A} + \\det(\\mathbf{A})\\mathbf{I}$ pre $\\mathbf{A} = \\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0"
+    ]
+   ],
+   "example": {
+    "value": "0 0\n0 0"
+   }
+  }
+ ]
+}

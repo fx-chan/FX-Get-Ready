@@ -1,0 +1,13 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det\\begin{bmatrix}3 & -2 & 4 \\\\ 5 & 1 & -2 \\\\ -1 & 3 & 6\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "156",
+   "example": {
+    "value": "156"
+   }
+  }
+ ]
+}

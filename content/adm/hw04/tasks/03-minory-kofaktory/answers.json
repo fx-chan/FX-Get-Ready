@@ -1,0 +1,187 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "2a) matica všetkých minorov $[M_{ij}]$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "29",
+     "21",
+     "27"
+    ],
+    [
+     "-11",
+     "13",
+     "-5"
+    ],
+    [
+     "-19",
+     "-19",
+     "19"
+    ]
+   ],
+   "example": {
+    "value": "29 21 27\n-11 13 -5\n-19 -19 19"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "2a) matica všetkých kofaktorov $[C_{ij}]$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "29",
+     "-21",
+     "27"
+    ],
+    [
+     "11",
+     "13",
+     "5"
+    ],
+    [
+     "-19",
+     "19",
+     "19"
+    ]
+   ],
+   "example": {
+    "value": "29 -21 27\n11 13 5\n-19 19 19"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "2b) matica všetkých kofaktorov $[C_{ij}]$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "6",
+     "-12",
+     "3"
+    ],
+    [
+     "-2",
+     "4",
+     "-1"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "example": {
+    "value": "6 -12 3\n-2 4 -1\n0 0 0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "3) $M_{32}$",
+   "kind": "number",
+   "answer": "-30",
+   "example": {
+    "value": "-30"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "3) $C_{32}$",
+   "kind": "number",
+   "answer": "30",
+   "example": {
+    "value": "30"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "3) $M_{41}$",
+   "kind": "number",
+   "answer": "-1",
+   "example": {
+    "value": "-1"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "3) $C_{41}$",
+   "kind": "number",
+   "answer": "1",
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "3) $C_{44}$",
+   "kind": "number",
+   "answer": "13",
+   "example": {
+    "value": "13"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "3) $C_{24}$",
+   "kind": "number",
+   "answer": "-5",
+   "example": {
+    "value": "-5"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "4) $\\mathbf{A}$: $M_{23}$",
+   "kind": "number",
+   "answer": "-24",
+   "example": {
+    "value": "-24"
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "4) $\\mathbf{A}$: $C_{21}$",
+   "kind": "number",
+   "answer": "-22",
+   "example": {
+    "value": "-22"
+   }
+  },
+  {
+   "id": "l",
+   "prompt": "4) $\\mathbf{B}$: $M_{42}$",
+   "kind": "number",
+   "answer": "7",
+   "example": {
+    "value": "7"
+   }
+  },
+  {
+   "id": "m",
+   "prompt": "4) $\\mathbf{B}$: $C_{31}$",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "n",
+   "prompt": "4) $\\mathbf{C}$: $M_{41}$",
+   "kind": "number",
+   "answer": "-43",
+   "example": {
+    "value": "-43"
+   }
+  },
+  {
+   "id": "o",
+   "prompt": "4) $\\mathbf{C}$: $C_{33}$",
+   "kind": "number",
+   "answer": "121",
+   "example": {
+    "value": "121"
+   }
+  }
+ ]
+}

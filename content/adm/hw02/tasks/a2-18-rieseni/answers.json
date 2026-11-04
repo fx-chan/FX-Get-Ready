@@ -1,0 +1,49 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "determinant matice koeficientov",
+   "kind": "number",
+   "answer": "-1",
+   "example": {
+    "value": "-1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "počet uhlov $\\alpha \\in [0, 2\\pi]$ so $\\sin\\alpha = 0$",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "počet uhlov $\\beta \\in [0, 2\\pi]$ s $\\cos\\beta = 0$",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "počet uhlov $\\gamma \\in [0, 2\\pi]$ s $\\tan\\gamma = 0$",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "celkový počet riešení $(\\alpha, \\beta, \\gamma)$",
+   "kind": "number",
+   "answer": "18",
+   "example": {
+    "value": "18"
+   }
+  }
+ ]
+}

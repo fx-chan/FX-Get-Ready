@@ -1,0 +1,88 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{L}, \\mathbf{M}$",
+   "kind": "choice",
+   "options": [
+    "áno, $\\mathbf{XY} = \\mathbf{YX}$",
+    "nie, $\\mathbf{XY} \\ne \\mathbf{YX}$",
+    "aspoň jeden zo súčinov sa nedá vypočítať"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{G}, \\mathbf{H}$",
+   "kind": "choice",
+   "options": [
+    "áno, $\\mathbf{XY} = \\mathbf{YX}$",
+    "nie, $\\mathbf{XY} \\ne \\mathbf{YX}$",
+    "aspoň jeden zo súčinov sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\mathbf{A}, \\mathbf{K}$",
+   "kind": "choice",
+   "options": [
+    "áno, $\\mathbf{XY} = \\mathbf{YX}$",
+    "nie, $\\mathbf{XY} \\ne \\mathbf{YX}$",
+    "aspoň jeden zo súčinov sa nedá vypočítať"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{N}, \\mathbf{P}$",
+   "kind": "choice",
+   "options": [
+    "áno, $\\mathbf{XY} = \\mathbf{YX}$",
+    "nie, $\\mathbf{XY} \\ne \\mathbf{YX}$",
+    "aspoň jeden zo súčinov sa nedá vypočítať"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\mathbf{F}, \\mathbf{Q}$",
+   "kind": "choice",
+   "options": [
+    "áno, $\\mathbf{XY} = \\mathbf{YX}$",
+    "nie, $\\mathbf{XY} \\ne \\mathbf{YX}$",
+    "aspoň jeden zo súčinov sa nedá vypočítať"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\mathbf{R}, \\mathbf{J}$",
+   "kind": "choice",
+   "options": [
+    "áno, $\\mathbf{XY} = \\mathbf{YX}$",
+    "nie, $\\mathbf{XY} \\ne \\mathbf{YX}$",
+    "aspoň jeden zo súčinov sa nedá vypočítať"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

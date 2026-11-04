@@ -1,0 +1,86 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(-3, 2)$ o $30^\\circ$",
+   "kind": "vector",
+   "answer": [
+    "-3*sqrt(3)/2 - 1",
+    "-3/2 + sqrt(3)"
+   ],
+   "example": {
+    "value": "-3*sqrt(3)/2 - 1, -3/2 + sqrt(3)"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(-3, 2)$ o $45^\\circ$",
+   "kind": "vector",
+   "answer": [
+    "-5*sqrt(2)/2",
+    "-sqrt(2)/2"
+   ],
+   "example": {
+    "value": "-5*sqrt(2)/2, -sqrt(2)/2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(-3, 2)$ o $-60^\\circ$",
+   "kind": "vector",
+   "answer": [
+    "-3/2 + sqrt(3)",
+    "1 + 3*sqrt(3)/2"
+   ],
+   "example": {
+    "value": "-3/2 + sqrt(3), 1 + 3*sqrt(3)/2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$(-3, 2)$ o $90^\\circ$",
+   "kind": "vector",
+   "answer": [
+    "-2",
+    "-3"
+   ],
+   "example": {
+    "value": "-2, -3"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$(v_1, v_2)$ o kladný uhol $\\alpha$",
+   "kind": "vector",
+   "answer": [
+    "v1*cos(alpha) - v2*sin(alpha)",
+    "v1*sin(alpha) + v2*cos(alpha)"
+   ],
+   "example": {
+    "value": "v1*cos(alpha) - v2*sin(alpha), v1*sin(alpha) + v2*cos(alpha)"
+   },
+   "vars": [
+    "v1",
+    "v2",
+    "alpha"
+   ]
+  },
+  {
+   "id": "f",
+   "prompt": "$(v_1, v_2)$ o záporný uhol $-\\alpha$",
+   "kind": "vector",
+   "answer": [
+    "v1*cos(alpha) + v2*sin(alpha)",
+    "-v1*sin(alpha) + v2*cos(alpha)"
+   ],
+   "example": {
+    "value": "v1*cos(alpha) + v2*sin(alpha), -v1*sin(alpha) + v2*cos(alpha)"
+   },
+   "vars": [
+    "v1",
+    "v2",
+    "alpha"
+   ]
+  }
+ ]
+}

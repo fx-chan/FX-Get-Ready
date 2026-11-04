@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{L}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0"
+    ],
+    [
+     "3",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0\n3 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{U}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "2",
+     "1"
+    ],
+    [
+     "0",
+     "5"
+    ]
+   ],
+   "example": {
+    "value": "2 1\n0 5"
+   }
+  }
+ ]
+}

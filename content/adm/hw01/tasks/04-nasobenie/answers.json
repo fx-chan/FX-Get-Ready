@@ -1,0 +1,184 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$AB$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "12",
+     "-3"
+    ],
+    [
+     "-4",
+     "5"
+    ],
+    [
+     "4",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "12 -3\n-4 5\n4 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$BA$",
+   "kind": "matrix",
+   "answer": null,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(3\\mathbf{E})\\mathbf{D}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "42",
+     "108",
+     "75"
+    ],
+    [
+     "12",
+     "-3",
+     "21"
+    ],
+    [
+     "36",
+     "78",
+     "63"
+    ]
+   ],
+   "example": {
+    "value": "42 108 75\n12 -3 21\n36 78 63"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$(AB)\\mathbf{C}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "3",
+     "45",
+     "9"
+    ],
+    [
+     "11",
+     "-11",
+     "17"
+    ],
+    [
+     "7",
+     "17",
+     "13"
+    ]
+   ],
+   "example": {
+    "value": "3 45 9\n11 -11 17\n7 17 13"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$CC^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "21",
+     "17"
+    ],
+    [
+     "17",
+     "35"
+    ]
+   ],
+   "example": {
+    "value": "21 17\n17 35"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$(DA)^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "0",
+     "-2",
+     "11"
+    ],
+    [
+     "12",
+     "1",
+     "8"
+    ]
+   ],
+   "example": {
+    "value": "0 -2 11\n12 1 8"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "$(\\mathbf{C}^{\\top}\\mathbf{B})\\mathbf{A}^{\\top}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "12",
+     "6",
+     "9"
+    ],
+    [
+     "48",
+     "-20",
+     "14"
+    ],
+    [
+     "24",
+     "8",
+     "16"
+    ]
+   ],
+   "example": {
+    "value": "12 6 9\n48 -20 14\n24 8 16"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "$\\operatorname{tr}(DD^{\\top})$",
+   "kind": "number",
+   "answer": "61",
+   "example": {
+    "value": "61"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "$\\operatorname{tr}(4\\mathbf{E}^{\\top}-\\mathbf{D})$",
+   "kind": "number",
+   "answer": "35",
+   "example": {
+    "value": "35"
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "$\\operatorname{tr}(\\mathbf{C}^{\\top}\\mathbf{A}^{\\top}+2\\mathbf{E}^{\\top})$",
+   "kind": "number",
+   "answer": "28",
+   "example": {
+    "value": "28"
+   }
+  },
+  {
+   "id": "l",
+   "prompt": "$\\operatorname{tr}((EC^{\\top})^{\\top}\\mathbf{A})$",
+   "kind": "number",
+   "answer": "99",
+   "example": {
+    "value": "99"
+   }
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}1 & 1 \\\\ 3 & 2\\end{bmatrix},\\ \\mathbf{B} = \\begin{bmatrix}1 & 0 \\\\ 3 & -2\\end{bmatrix}$ — líši sa",
+   "kind": "multi",
+   "options": [
+    "determinant",
+    "stopa",
+    "hodnosť",
+    "charakteristický polynóm (vlastné čísla)"
+   ],
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}4 & -1 \\\\ 2 & 4\\end{bmatrix},\\ \\mathbf{B} = \\begin{bmatrix}4 & 1 \\\\ 2 & 4\\end{bmatrix}$ — líši sa",
+   "kind": "multi",
+   "options": [
+    "determinant",
+    "stopa",
+    "hodnosť",
+    "charakteristický polynóm (vlastné čísla)"
+   ],
+   "answer": [
+    0,
+    3
+   ],
+   "example": {
+    "value": [
+     "0",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}1 & 2 & 3 \\\\ 0 & 1 & 2 \\\\ 0 & 0 & 1\\end{bmatrix},\\ \\mathbf{B} = \\begin{bmatrix}1 & 2 & 0 \\\\ \\frac{1}{2} & 1 & 0 \\\\ 0 & 0 & 1\\end{bmatrix}$ — líši sa",
+   "kind": "multi",
+   "options": [
+    "determinant",
+    "stopa",
+    "hodnosť",
+    "charakteristický polynóm (vlastné čísla)"
+   ],
+   "answer": [
+    0,
+    2,
+    3
+   ],
+   "example": {
+    "value": [
+     "0",
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}1 & 0 & 1 \\\\ 2 & 0 & 2 \\\\ 3 & 0 & 3\\end{bmatrix},\\ \\mathbf{B} = \\begin{bmatrix}1 & 1 & 0 \\\\ 2 & 2 & 0 \\\\ 0 & 1 & 1\\end{bmatrix}$ — líši sa",
+   "kind": "multi",
+   "options": [
+    "determinant",
+    "stopa",
+    "hodnosť",
+    "charakteristický polynóm (vlastné čísla)"
+   ],
+   "answer": [
+    2,
+    3
+   ],
+   "example": {
+    "value": [
+     "2",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "33) Sú $\\mathbf{A} = \\begin{bmatrix}1 & 1 & 1 \\\\ 1 & 1 & 1 \\\\ 1 & 1 & 1\\end{bmatrix}$ a $\\mathbf{B} = \\begin{bmatrix}3 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0\\end{bmatrix}$ podobné?",
+   "kind": "choice",
+   "options": [
+    "áno — $\\mathbf{A}$ je diagonalizovateľná s vlastnými číslami 3, 0, 0, teda podobná $\\mathbf{B}$",
+    "nie — majú rôznu hodnosť",
+    "nie — $\\mathbf{B}$ je diagonálna a $\\mathbf{A}$ nie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

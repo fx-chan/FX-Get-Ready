@@ -1,0 +1,1 @@
+Vyriešte $$\begin{aligned} x + y &= 1 \\ 4x + 3y &= 2 \end{aligned}$$ Zapíšte riešenie ako vektor $(x_1, x_2, \dots)$. Pri nekonečne veľa riešeniach použite parametre `t`, `s`, `u` (napr. `1+2t, t, 3`); ak systém nemá riešenie, zaškrtnite **systém nemá riešenie**. Kontroluje sa celá množina riešení, takže správna je každá platná parametrizácia.

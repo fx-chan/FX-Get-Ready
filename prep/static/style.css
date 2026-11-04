@@ -316,3 +316,60 @@ body.wide .wrap { max-width: 1480px; }
   .diff { grid-template-columns: 1fr; }
   .code-widget .CodeMirror { height: 360px; }
 }
+
+/* --- math answer tasks (ADM) --- */
+:root { --aplus: #b0397a; --aplus-soft: #fbe9f3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --aplus: #ff8fc8; --aplus-soft: #3a1a2c; } }
+:root[data-theme="dark"] { --aplus: #ff8fc8; --aplus-soft: #3a1a2c; }
+
+.badge.aplus, .pill.aplus { background: var(--aplus-soft); color: var(--aplus); border-color: transparent; font-weight: 700; }
+.aplus-title { color: var(--aplus); }
+.aplus-title small { text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--muted); }
+.aplus-section { margin: 28px 0 8px; padding: 18px 20px; border-radius: var(--radius); background: var(--aplus-soft);
+  border: 1px solid var(--border); }
+.aplus-section h2 { margin: 0 0 6px; font-size: 18px; color: var(--aplus); }
+.aplus-section p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+.aplus-cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.aplus-cards a { display: flex; gap: 9px; align-items: center; padding: 10px 12px; border-radius: var(--radius-sm);
+  background: var(--surface); border: 1px solid var(--border); color: var(--text); font-size: 14px; }
+.aplus-cards a:hover { border-color: var(--aplus); text-decoration: none; }
+.aplus-cards .check, .task-list .check { flex: none; }
+.aplus-cards li.solved .check { background: var(--ok); border-color: var(--ok); }
+
+.math[data-display="1"] { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.prose .katex { font-size: 1.05em; }
+
+.answer-widget { display: grid; gap: 12px; }
+.ans-part { padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface);
+  display: grid; gap: 8px; transition: border-color .15s, background .15s; min-width: 0; }
+.ans-part.ok { border-color: var(--ok); background: var(--ok-soft); }
+.ans-part.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.ans-part.invalid { border-color: var(--warn); background: var(--warn-soft); }
+.ans-label { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-size: 15px; }
+.ans-id { font-weight: 700; color: var(--accent); }
+.ans-prompt { flex: 1; min-width: 0; overflow-x: auto; }
+.ans-mark::after { font-weight: 800; }
+.ans-part.ok .ans-mark::after { content: "✓"; color: var(--ok); }
+.ans-part.wrong .ans-mark::after { content: "✗"; color: var(--bad); }
+.ans-part.invalid .ans-mark::after { content: "?"; color: var(--warn); }
+.ans-input { width: 100%; box-sizing: border-box; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--code-bg); color: var(--text); font-size: 14px; resize: vertical; }
+.ans-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ans-input:disabled { opacity: .5; }
+.ans-preview { min-height: 0; overflow-x: auto; color: var(--muted); }
+.ans-preview:empty { display: none; }
+.ans-none { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; cursor: pointer; }
+.ans-hint { margin: 0; font-size: 12px; color: var(--muted); }
+.ans-msg { margin: 0; font-size: 13px; color: var(--warn); }
+.ans-msg:empty { display: none; }
+.ans-options { display: grid; gap: 6px; }
+.ans-opt { display: flex; gap: 8px; align-items: flex-start; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface-2); cursor: pointer; font-size: 14px; }
+.ans-opt:hover { border-color: var(--accent); }
+.ans-opt input { margin-top: 3px; }
+.ans-toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ans-help { font-size: 13px; color: var(--muted); }
+.ans-help summary { cursor: pointer; }
+.ans-help ul { margin: 6px 0 0; padding-left: 18px; }
+.answer-widget.compact .ans-part { padding: 10px 12px; }
+.answer-page .workspace { min-width: 0; }

@@ -1,0 +1,76 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$M_{11}$",
+   "kind": "number",
+   "answer": "10*x + 10",
+   "example": {
+    "value": "10*x + 10"
+   },
+   "vars": [
+    "x"
+   ]
+  },
+  {
+   "id": "b",
+   "prompt": "$M_{31}$",
+   "kind": "number",
+   "answer": "35 - x",
+   "example": {
+    "value": "35 - x"
+   },
+   "vars": [
+    "x"
+   ]
+  },
+  {
+   "id": "c",
+   "prompt": "$M_{23}$",
+   "kind": "number",
+   "answer": "2*x",
+   "example": {
+    "value": "2*x"
+   },
+   "vars": [
+    "x"
+   ]
+  },
+  {
+   "id": "d",
+   "prompt": "$C_{12}$",
+   "kind": "number",
+   "answer": "11 - 2*x",
+   "example": {
+    "value": "11 - 2*x"
+   },
+   "vars": [
+    "x"
+   ]
+  },
+  {
+   "id": "e",
+   "prompt": "$C_{32}$",
+   "kind": "number",
+   "answer": "31 - 9*x",
+   "example": {
+    "value": "31 - 9*x"
+   },
+   "vars": [
+    "x"
+   ]
+  },
+  {
+   "id": "f",
+   "prompt": "$C_{22}$",
+   "kind": "number",
+   "answer": "11*x - 5",
+   "example": {
+    "value": "11*x - 5"
+   },
+   "vars": [
+    "x"
+   ]
+  }
+ ]
+}

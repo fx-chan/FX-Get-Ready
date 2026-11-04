@@ -1,0 +1,31 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$M_{12}$",
+   "kind": "number",
+   "answer": "21",
+   "example": {
+    "value": "21"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$C_{12}$",
+   "kind": "number",
+   "answer": "-21",
+   "example": {
+    "value": "-21"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$C_{33}$",
+   "kind": "number",
+   "answer": "19",
+   "example": {
+    "value": "19"
+   }
+  }
+ ]
+}

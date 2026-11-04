@@ -1,0 +1,120 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "10) $\\det\\mathbf{A}$",
+   "kind": "number",
+   "answer": "156",
+   "example": {
+    "value": "156"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "10) kofaktory 2. riadku $\\mathbf{A}$: $(C_{21}, C_{22}, C_{23})$",
+   "kind": "vector",
+   "answer": [
+    "24",
+    "22",
+    "-7"
+   ],
+   "example": {
+    "value": "24, 22, -7"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "10) $\\det\\mathbf{B}$",
+   "kind": "number",
+   "answer": "-4",
+   "example": {
+    "value": "-4"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "10) kofaktory 3. stĺpca $\\mathbf{B}$: $(C_{13}, C_{23}, C_{33})$",
+   "kind": "vector",
+   "answer": [
+    "21",
+    "8",
+    "-3"
+   ],
+   "example": {
+    "value": "21, 8, -3"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "11a) $\\det\\begin{bmatrix}-3 & 0 & 7 \\\\ 2 & 5 & 1 \\\\ -1 & 0 & 5\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "-40",
+   "example": {
+    "value": "-40"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "11b) $\\det\\begin{bmatrix}3 & 3 & 1 \\\\ 1 & 0 & -4 \\\\ 1 & -3 & 5\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "-66",
+   "example": {
+    "value": "-66"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "12a) $\\det\\begin{bmatrix}5 & 2 & 1 & 0 \\\\ -1 & 3 & 5 & 2 \\\\ 4 & 1 & 0 & 2 \\\\ 0 & 2 & 3 & 0\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "0",
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "12b) $\\det\\begin{bmatrix}0 & 5 & 4 & 0 \\\\ 4 & 1 & -2 & 7 \\\\ -1 & 0 & 3 & 0 \\\\ 0 & 2 & 1 & 5\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "-251",
+   "example": {
+    "value": "-251"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "12c) $\\det\\begin{bmatrix}2 & 1 & 9 & 7 \\\\ 0 & -1 & 3 & 8 \\\\ 0 & 0 & 5 & 2 \\\\ 0 & 0 & 0 & 6\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "-60",
+   "example": {
+    "value": "-60"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "12d) $\\det\\begin{bmatrix}3 & 3 & 0 & 5 \\\\ 2 & -2 & 0 & -2 \\\\ 4 & 1 & -3 & 0 \\\\ 2 & 10 & 3 & 2\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "-528",
+   "example": {
+    "value": "-528"
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "13a) $\\det\\begin{bmatrix}0 & 4 & 1 & 3 & -2 \\\\ 2 & 2 & 3 & -1 & 0 \\\\ 3 & 1 & 2 & -5 & 1 \\\\ 1 & 0 & -4 & 0 & 0 \\\\ 0 & 3 & 0 & 0 & 2\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "352",
+   "example": {
+    "value": "352"
+   }
+  },
+  {
+   "id": "l",
+   "prompt": "13b) $\\det\\begin{bmatrix}0 & 2 & 3 & 4 & -1 \\\\ 0 & 1 & 0 & 0 & -3 \\\\ 1 & 4 & 2 & 0 & -3 \\\\ 1 & 0 & 2 & 1 & 2 \\\\ 0 & 0 & 1 & -2 & 0\\end{bmatrix}$",
+   "kind": "number",
+   "answer": "75",
+   "example": {
+    "value": "75"
+   }
+  }
+ ]
+}

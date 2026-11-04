@@ -1,0 +1,49 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "výmena dvoch riadkov",
+   "kind": "number",
+   "answer": "-5",
+   "example": {
+    "value": "-5"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "jeden riadok vynásobený číslom 3",
+   "kind": "number",
+   "answer": "15",
+   "example": {
+    "value": "15"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "k riadku pripočítaný 4-násobok iného riadku",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\det(2\\mathbf{A})$",
+   "kind": "number",
+   "answer": "40",
+   "example": {
+    "value": "40"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\det(\\mathbf{A}^{-1})$",
+   "kind": "number",
+   "answer": "1/5",
+   "example": {
+    "value": "1/5"
+   }
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "a) $\\det\\mathbf{A}$ (ľavý horný blok $3\\times3$)",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "a) $\\det\\mathbf{B}$ (pravý dolný blok $3\\times3$)",
+   "kind": "number",
+   "answer": "-12",
+   "example": {
+    "value": "-12"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "a) $\\det\\mathbf{M}$",
+   "kind": "number",
+   "answer": "-24",
+   "example": {
+    "value": "-24"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "b) $\\det\\mathbf{M}$ (pozor: blok vľavo dole nie je nulový — rozviňte podľa vhodného riadku)",
+   "kind": "number",
+   "answer": "1",
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

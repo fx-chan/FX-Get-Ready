@@ -22,3 +22,96 @@
   <div class="result js-result" aria-live="polite"></div>
 </div>
 {%- endmacro %}
+
+{% set PLACEHOLDERS = {
+  "number": "napr. -7/2, sqrt(2)/2, 3a+1",
+  "dims": "napr. 3x2",
+  "matrix": "1 2 3\n4 5 6",
+  "vector": "1, -2, 3",
+  "set": "napr. 1, -3",
+  "multiset": "napr. 2, 2, 5",
+  "system": "napr. 1+2t, t, 3   (parametre t, s, u)",
+  "eigbasis": "jeden vektor na riadok, napr.\n1, 0, 2",
+  "diagonalize": "matica P (stĺpce = vlastné vektory)\n1 1\n1 -1",
+  "elem_product": "E1\n\nE2   (matice oddeľte prázdnym riadkom)",
+  "row_equiv": "matica C, napr.\n1 0 0\n0 1 0\n0 0 1",
+  "power_identity": "a b\nc d",
+  "pair_not_diff_squares": "matica A\n\nmatica B   (oddeľte prázdnym riadkom)"
+} %}
+{% set MULTILINE = ["matrix", "eigbasis", "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares"] %}
+
+{% macro answer_widget(subject, block, task, compact=False, initial=None) -%}
+{% set initial = initial or {} %}
+<div class="answer-widget{{ ' compact' if compact }}"
+     data-key="{{ task_key(subject, block, task) }}"
+     data-check-url="{{ url_for('main.check', subject_slug=subject.slug, block_slug=block.slug, task_slug=task.slug) }}"
+     data-logged-in="{{ '1' if g.user else '0' }}"
+     data-login-url="{{ url_for('auth.login', next=request.path) }}">
+  {% for raw in task.parts %}
+  {% set p = public_part(raw) %}
+  {% set prev = initial.get(p.id) or {} %}
+  <div class="ans-part" data-id="{{ p.id }}" data-kind="{{ p.kind }}">
+    <div class="ans-label">
+      {% if task.parts|length > 1 %}<span class="ans-id">{{ p.id }})</span>{% endif %}
+      <span class="ans-prompt">{{ md(p.prompt or "", subject.math, True) }}</span>
+      <span class="ans-mark" aria-hidden="true"></span>
+    </div>
+    {% if p.kind == "choice" %}
+      <div class="ans-options">
+      {% for opt in p.options %}
+        <label class="ans-opt"><input type="radio" name="{{ task.slug }}-{{ p.id }}" value="{{ loop.index0 }}"
+          {{ 'checked' if prev.value|string == loop.index0|string }}> <span>{{ md(opt, subject.math, True) }}</span></label>
+      {% endfor %}
+      </div>
+    {% elif p.kind == "multi" %}
+      {% set chosen = prev.value|map('string')|list if prev.value is sequence and prev.value is not string else [] %}
+      <div class="ans-options">
+      {% for opt in p.options %}
+        <label class="ans-opt"><input type="checkbox" value="{{ loop.index0 }}"
+          {{ 'checked' if loop.index0|string in chosen }}> <span>{{ md(opt, subject.math, True) }}</span></label>
+      {% endfor %}
+      </div>
+      <p class="ans-hint">Označte všetky platné možnosti. / Отметьте все верные варианты.</p>
+    {% elif p.kind in MULTILINE %}
+      <textarea class="ans-input js-value mono" rows="{{ 3 if compact else 4 }}" spellcheck="false"
+                placeholder="{{ PLACEHOLDERS[p.kind] }}">{{ prev.value if prev.value is string }}</textarea>
+      <div class="ans-preview" aria-hidden="true"></div>
+    {% else %}
+      <input type="text" class="ans-input js-value mono" spellcheck="false" autocomplete="off"
+             placeholder="{{ PLACEHOLDERS[p.kind] }}" value="{{ prev.value if prev.value is string }}">
+      {% if p.kind in ["vector", "system"] %}<div class="ans-preview" aria-hidden="true"></div>{% endif %}
+    {% endif %}
+    {% if p.kind in none_labels %}
+      <label class="ans-none"><input type="checkbox" class="js-none" {{ 'checked' if prev.none }}> {{ none_labels[p.kind] }}</label>
+    {% endif %}
+    {% if p.vars %}<p class="ans-hint">Premenné / переменные: {{ p.vars|join(", ") }}</p>{% endif %}
+    {% if p.hint %}<p class="ans-hint">{{ md(p.hint, subject.math, True) }}</p>{% endif %}
+    <p class="ans-msg" aria-live="polite"></p>
+  </div>
+  {% endfor %}
+  <div class="toolbar ans-toolbar">
+    <details class="ans-help">
+      <summary>Ako zapisovať odpovede? <span class="ru">/ Как записывать?</span></summary>
+      <ul>
+        <li>Zlomky a odmocniny: <code>-7/2</code>, <code>sqrt(2)/2</code> alebo <code>√2/2</code>, mocnina <code>2^3</code>, <code>pi</code>, komplexná jednotka <code>i</code>.</li>
+        <li>Matica: riadky na samostatné riadky (alebo oddelené <code>;</code>), prvky medzerou alebo čiarkou.</li>
+        <li>Vektor: <code>1, -2, 3</code>. Nekonečne veľa riešení: parametre <code>t, s, u</code>, napr. <code>1+2t, t, 3</code>.</li>
+        <li>Desatinné čísla stačia na 2–3 miesta, presný tvar je vždy správny.</li>
+      </ul>
+    </details>
+    <span class="spacer"></span>
+    <button type="button" class="btn primary js-check">✓ Skontrolovať <span class="ru">/ Проверить</span></button>
+  </div>
+  <div class="result js-result" aria-live="polite"></div>
+</div>
+{%- endmacro %}
+
+
+{% macro task_item(t) -%}
+<li class="{{ 'solved' if task_key(subject, block, t) in solved }}">
+  <a href="{{ url_for('main.task', subject_slug=subject.slug, block_slug=block.slug, task_slug=t.slug) }}">
+    <span class="check"></span><span class="t-title">{{ t.title }}</span>
+  </a>
+  {% if t.level == "A++" %}<span class="badge aplus">A++</span>{% else %}<span class="badge {{ t.difficulty }}">{{ t.difficulty }}</span>{% endif %}
+</li>
+{%- endmacro %}

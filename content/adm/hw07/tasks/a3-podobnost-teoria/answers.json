@@ -1,0 +1,96 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "34) Ak $\\mathbf{A} \\sim \\mathbf{B}$ a $\\mathbf{B} \\sim \\mathbf{C}$, potom",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{A} \\sim \\mathbf{C}$ (s maticou $\\mathbf{PQ}$)",
+    "nemusí platiť $\\mathbf{A} \\sim \\mathbf{C}$",
+    "$\\mathbf{A} = \\mathbf{C}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "35) Je štvorcová matica podobná sama sebe?",
+   "kind": "choice",
+   "options": [
+    "áno, $\\mathbf{P} = \\mathbf{I}$",
+    "nie",
+    "len diagonálna"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "36) Matica podobná nulovej matici je",
+   "kind": "choice",
+   "options": [
+    "nulová matica ($\\mathbf{P}^{-1}\\mathbf{0}\\mathbf{P} = \\mathbf{0}$)",
+    "ľubovoľná singulárna",
+    "jednotková"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "37) Môže byť nesingulárna matica podobná singulárnej?",
+   "kind": "choice",
+   "options": [
+    "nie — podobné matice majú rovnaký determinant",
+    "áno",
+    "len pre $n = 2$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "38) $p(\\lambda) = (\\lambda-1)(\\lambda-3)^2(\\lambda-4)^3$: možné dimenzie vlastného priestoru pre $\\lambda = 4$",
+   "kind": "set",
+   "answer": [
+    "1",
+    "2",
+    "3"
+   ],
+   "example": {
+    "value": "1, 2, 3"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "38 b) ak je $\\mathbf{A}$ diagonalizovateľná, dimenzia vlastného priestoru pre $\\lambda = 4$",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "39) Prečo je $\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$ s $(a-d)^2 + 4bc > 0$ diagonalizovateľná?",
+   "kind": "choice",
+   "options": [
+    "má dve rôzne reálne vlastné čísla, teda dva nezávislé vlastné vektory",
+    "je symetrická",
+    "má nenulový determinant"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}
