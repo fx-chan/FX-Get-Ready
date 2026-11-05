@@ -1,3 +1,5 @@
+> Zdroj: Anton, Rorres, *Elementary Linear Algebra*, 11. vydanie, kapitoly 1.4, 1.5 a 1.6. Čísla viet sú z tejto knihy.
+
 ## Vlastnosti maticových operácií
 
 Pre matice vhodných rozmerov a skaláry $a, b$ platí:
@@ -17,7 +19,7 @@ Nulová matica: $\mathbf{A}+\mathbf{0} = \mathbf{A}$, $\mathbf{A0} = \mathbf{0}$
 Štvorcová matica $\mathbf{A}$ je **invertibilná (regulárna)**, ak existuje $\mathbf{A}^{-1}$ s
 $\mathbf{A}\mathbf{A}^{-1} = \mathbf{A}^{-1}\mathbf{A} = \mathbf{I}$. Inak je **singulárna**. Inverzia je jednoznačná.
 
-**Vzorec pre $2\times2$:**
+**Vzorec pre $2\times2$ (veta 1.4.5):**
 $$\begin{bmatrix}a&b\\c&d\end{bmatrix}^{-1} = \frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix},\qquad ad - bc \ne 0$$
 (prvky na diagonále vymeníme, mimo diagonály zmeníme znamienko, vydelíme determinantom).
 
@@ -31,7 +33,7 @@ Je $\begin{bmatrix}2&-4\\-4&8\end{bmatrix}$ invertibilná?
 > Riadky sú lineárne závislé ($R_2 = -2R_1$), determinant je 0.
 :::
 
-**Vlastnosti** (pre invertibilné $\mathbf{A}, \mathbf{B}$ a $k \ne 0$):
+**Vlastnosti** (vety 1.4.6, 1.4.7, 1.4.9; pre invertibilné $\mathbf{A}, \mathbf{B}$ a $k \ne 0$):
 
 - $(\mathbf{A}^{-1})^{-1} = \mathbf{A}$, $(\mathbf{A}^{\top})^{-1} = (\mathbf{A}^{-1})^{\top}$,
 - $(\mathbf{AB})^{-1} = \mathbf{B}^{-1}\mathbf{A}^{-1}$ a $(\mathbf{ABC})^{-1} = \mathbf{C}^{-1}\mathbf{B}^{-1}\mathbf{A}^{-1}$ — **poradie sa otočí**,
@@ -79,7 +81,7 @@ $\mathbf{EA}$ (zľava) urobí s $\mathbf{A}$ tú istú operáciu.
 | $R_2 \to 5R_2$ | $\begin{bmatrix}1&0&0\\0&5&0\\0&0&1\end{bmatrix}$ | $R_2 \to \frac15R_2$ |
 | $R_3 \to R_3 - 2R_1$ | $\begin{bmatrix}1&0&0\\0&1&0\\-2&0&1\end{bmatrix}$ | $R_3 \to R_3 + 2R_1$ |
 
-Elementárna matica je vždy invertibilná a jej inverzia je tiež elementárna (opačná operácia).
+Vynásobenie $\mathbf{EA}$ je veta 1.5.1. Elementárna matica je vždy invertibilná a jej inverzia je tiež elementárna, je to opačná operácia (veta 1.5.2).
 Matica, ktorá vznikne **dvoma** operáciami (napr. $-1$ na diagonále a zároveň výmena), elementárna nie je.
 
 ::: drill d3-elementarna
@@ -104,7 +106,7 @@ každá invertibilná matica je **súčin elementárnych matíc**.
 
 ::: drill d3-gauss-jordan
 
-**Ekvivalentné tvrdenia** pre štvorcovú $\mathbf{A}$ ($n\times n$):
+**Ekvivalentné tvrdenia** (vety 1.5.3, 1.6.4, 2.3.8) pre štvorcovú $\mathbf{A}$ ($n\times n$):
 $\mathbf{A}$ je invertibilná $\iff$ RREF$(\mathbf{A}) = \mathbf{I}$ $\iff$ $\mathbf{Ax} = \mathbf{0}$ má len triviálne riešenie
 $\iff$ $\mathbf{Ax} = \mathbf{b}$ má jediné riešenie pre každé $\mathbf{b}$ $\iff$ $\mathbf{A}$ je súčin elementárnych matíc
 $\iff$ $\det\mathbf{A} \ne 0$.
@@ -125,10 +127,12 @@ Pri úprave $[\mathbf{A}\,|\,\mathbf{I}]$ vyšiel vľavo riadok $[0\;0\;0]$. Čo
 
 Ak je $\mathbf{A}$ **štvorcová a invertibilná**, sústava $\mathbf{Ax} = \mathbf{b}$ má jediné riešenie
 $$\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}.$$
-Výhoda: pre viac pravých strán stačí jedna inverzia. Ak $\mathbf{A}$ nie je štvorcová alebo je singulárna,
+Výhoda: pre viac pravých strán stačí jedna inverzia. Rovnako dobre môžeme naraz eliminovať $[\mathbf{A}\,|\,\mathbf{b}_1\,|\,\mathbf{b}_2]$ (kapitola 1.6). Ak $\mathbf{A}$ nie je štvorcová alebo je singulárna,
 metóda sa použiť nedá — sústava má vtedy žiadne alebo nekonečne veľa riešení (riešime elimináciou).
 
 ::: drill d3-sustava
+
+**Vety 1.6.3 a 1.6.5:** pri štvorcových maticiach stačí overiť jednu stranu: ak $\mathbf{BA} = \mathbf{I}$, potom už $\mathbf{B} = \mathbf{A}^{-1}$. Ak je súčin $\mathbf{AB}$ štvorcových matíc invertibilný, sú invertibilné aj $\mathbf{A}$ a $\mathbf{B}$.
 
 ::: quiz
 Homogénna sústava $\mathbf{Ax} = \mathbf{0}$ s invertibilnou $\mathbf{A}$ má

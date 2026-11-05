@@ -1,3 +1,5 @@
+> Zdroj: Anton, Rorres, *Elementary Linear Algebra*, 11. vydanie, kapitoly 2.1, 2.2 a 2.3. Čísla viet sú z tejto knihy.
+
 ## Determinant 2×2 a 3×3
 
 Determinant je **číslo** priradené **štvorcovej** matici. Pre nečtvorcovú maticu nie je definovaný.
@@ -6,7 +8,7 @@ $$\det\begin{bmatrix}a&b\\c&d\end{bmatrix} = \begin{vmatrix}a&b\\c&d\end{vmatrix
 
 ::: drill d4-2x2
 
-**Sarrusovo pravidlo (len $3\times3$!):** pripíšeme prvé dva stĺpce, sčítame súčiny troch diagonál zľava hore
+**Pravidlo šípok, Sarrusovo pravidlo (len $3\times3$!):** pripíšeme prvé dva stĺpce, sčítame súčiny troch diagonál zľava hore
 doprava dole a odčítame súčiny troch diagonál sprava hore doľava dole:
 
 $$\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix} =
@@ -30,7 +32,7 @@ Dá sa Sarrusovo pravidlo použiť pre maticu $4\times4$?
 
 ::: drill d4-kofaktor
 
-**Laplaceov rozvoj** podľa $i$-teho riadku alebo $j$-teho stĺpca:
+Kniha determinant **definuje** práve rozvojom (definícia 2, veta 2.1.1). **Rozvoj podľa kofaktorov (Laplaceov rozvoj)** podľa $i$-teho riadku alebo $j$-teho stĺpca:
 $$\det\mathbf{A} = \sum_{j=1}^{n} a_{ij}C_{ij} = \sum_{i=1}^{n} a_{ij}C_{ij}$$
 Výsledok nezávisí od výberu riadku/stĺpca → vyberte ten s **najviac nulami** (nulové prvky netreba počítať).
 
@@ -46,10 +48,10 @@ Pri rozvoji podľa 2. riadku matice $3\times3$ majú kofaktory $C_{21}, C_{22}, 
 
 ## Špeciálne prípady — spamäti
 
-- **trojuholníková** (aj diagonálna) matica: $\det$ = súčin prvkov na diagonále, $\det\mathbf{I} = 1$,
-- **nulový riadok/stĺpec** → $\det = 0$,
-- **dva rovnaké alebo úmerné riadky** (stĺpce) → $\det = 0$; všeobecne: lineárne závislé riadky → 0,
-- **elementárne matice**: výmena riadkov → $-1$, $kR_i$ → $k$, $R_i + kR_j$ → $1$.
+- **trojuholníková** (aj diagonálna) matica (veta 2.1.2): $\det$ = súčin prvkov na diagonále, $\det\mathbf{I} = 1$,
+- **nulový riadok/stĺpec** (veta 2.2.1) → $\det = 0$,
+- **dva rovnaké alebo úmerné riadky** (stĺpce, veta 2.2.5) → $\det = 0$; všeobecne: lineárne závislé riadky → 0,
+- **elementárne matice** (veta 2.2.4): výmena riadkov → $-1$, $kR_i$ → $k$, $R_i + kR_j$ → $1$.
 
 ::: drill d4-trojuholnikova
 
@@ -61,7 +63,7 @@ Pri rozvoji podľa 2. riadku matice $3\times3$ majú kofaktory $C_{21}, C_{22}, 
 | vynásobenie riadku číslom $k$ | vynásobí sa $k$ (pri vytknutí: $\det$ = $k\cdot$ nový) |
 | pripočítanie násobku iného riadku | **nezmení sa** |
 
-Rovnako pre stĺpce. **Metóda riadkovej redukcie:** upravíme na trojuholníkovú maticu, sledujeme výmeny a vytknuté
+Je to veta 2.2.3, rovnako platí pre stĺpce. **Metóda riadkovej redukcie:** upravíme na trojuholníkovú maticu, sledujeme výmeny a vytknuté
 čísla, determinant = (znamienko) · (vytknuté čísla) · (súčin diagonály).
 
 $$\begin{vmatrix}3&-6&9\\-2&7&-2\\0&1&5\end{vmatrix} = 3\begin{vmatrix}1&-2&3\\-2&7&-2\\0&1&5\end{vmatrix}
@@ -90,6 +92,8 @@ Pre štvorcové matice $n\times n$:
 | $\mathbf{A}$ je invertibilná $\iff \det\mathbf{A} \ne 0$ | |
 | blokovo trojuholníková: $\det\begin{bmatrix}\mathbf{A}&\mathbf{C}\\\mathbf{0}&\mathbf{B}\end{bmatrix} = \det\mathbf{A}\det\mathbf{B}$ | $\mathbf{A}, \mathbf{B}$ štvorcové |
 
+**Veta 2.3.1:** ak sa matice $\mathbf{A}, \mathbf{B}, \mathbf{C}$ líšia len jedným riadkom a ten riadok $\mathbf{C}$ je súčtom riadkov $\mathbf{A}$ a $\mathbf{B}$, potom $\det\mathbf{C} = \det\mathbf{A} + \det\mathbf{B}$. Nie je to $\det(\mathbf{A} + \mathbf{B})$.
+
 ::: quiz
 $\mathbf{A}$ je $3\times3$ a $\det\mathbf{A} = 4$. Čomu sa rovná $\det(2\mathbf{A})$?
 - [ ] 8
@@ -115,11 +119,11 @@ Pre aké $x$ je $\begin{vmatrix}x-3&5&-19\\0&x-1&6\\0&0&x-2\end{vmatrix} = 0$?
 
 ## Adjungovaná matica a Cramerovo pravidlo
 
-**Adjungovaná matica** je transponovaná matica kofaktorov: $\operatorname{adj}(\mathbf{A}) = [C_{ij}]^{\top}$. Platí
+**Adjungovaná matica** (adjoint, veta 2.3.6) je transponovaná matica kofaktorov: $\operatorname{adj}(\mathbf{A}) = [C_{ij}]^{\top}$. Platí
 $\mathbf{A}\operatorname{adj}(\mathbf{A}) = \det(\mathbf{A})\,\mathbf{I}$, preto
 $$\mathbf{A}^{-1} = \frac{1}{\det\mathbf{A}}\operatorname{adj}(\mathbf{A}).$$
 
-**Cramerovo pravidlo:** ak $\det\mathbf{A} \ne 0$, sústava $\mathbf{Ax} = \mathbf{b}$ má riešenie
+**Cramerovo pravidlo (veta 2.3.7):** ak $\det\mathbf{A} \ne 0$, sústava $\mathbf{Ax} = \mathbf{b}$ má riešenie
 $x_j = \dfrac{\det\mathbf{A}_j}{\det\mathbf{A}}$, kde $\mathbf{A}_j$ je $\mathbf{A}$ s $j$-tym stĺpcom nahradeným $\mathbf{b}$.
 
 ::: quiz

@@ -11,14 +11,15 @@ Stred úsečky medzi bodom a jeho obrazom leží na osi: pre $P$ je to $\left(\f
 
 ### Príklad 2
 
-$\mathbf{A} - 2\mathbf{I} = \begin{bmatrix}3&3&-3\\3&3&-3\\3&3&-3\end{bmatrix} = \mathbf{u}\mathbf{w}^{\top}$ s $\mathbf{u} = (1,1,1)$, $\mathbf{w} = (3,3,-3)$ má hodnosť 1.
-Preto je $\lambda = 2$ dvojnásobné a tretie číslo je $2 + \mathbf{w}^{\top}\mathbf{u} = 5$. Báza pre 2: riešenia $x_1 + x_2 - x_3 = 0$, napr. $(1,0,1)$, $(0,1,1)$. Pre 5: $(1,1,1)$.
-Matica je diagonalizovateľná, napr. $\mathbf{P} = \begin{bmatrix}1&1&0\\1&0&1\\1&1&1\end{bmatrix}$.
+$\mathbf{A} - 2\mathbf{I} = \mathbf{u}\mathbf{u}^{\top}$ s $\mathbf{u} = (1,1,1)$ má hodnosť 1 (každý prvok je 1).
+Preto je $\lambda = 2$ dvojnásobné a tretie číslo je $2 + \mathbf{u}^{\top}\mathbf{u} = 5$. Báza pre 2: riešenia $x_1 + x_2 + x_3 = 0$, napr. $(1,-1,0)$, $(1,0,-1)$. Pre 5: $(1,1,1)$.
+Matica je symetrická, preto diagonalizovateľná, napr. $\mathbf{P} = \begin{bmatrix}1&1&1\\1&-1&0\\1&0&-1\end{bmatrix}$.
 
-Označme $\mathbf{N} = \mathbf{A} - 2\mathbf{I}$. Platí $\mathbf{N}^2 = 3\mathbf{N}$, a preto $\mathbf{A}^n = 2^n\mathbf{I} + \frac{5^n - 2^n}{3}\mathbf{N}$. Keďže $\mathbf{N}_{13} = -3$, je $(\mathbf{A}^n)_{13} = 2^n - 5^n$.
+Označme $\mathbf{N} = \mathbf{A} - 2\mathbf{I}$. Platí $\mathbf{N}^2 = 3\mathbf{N}$, a preto $\mathbf{A}^n = 2^n\mathbf{I} + \frac{5^n - 2^n}{3}\mathbf{N}$. Keďže $\mathbf{N}_{13} = 1$, je $(\mathbf{A}^n)_{13} = \frac{5^n - 2^n}{3}$.
 
-Iterácie: $\mathbf{y}_1 = (5,3,3)$, $\mathbf{x}_1 = \left(1, \frac35, \frac35\right)$; $\mathbf{y}_2 = \left(5, \frac{21}{5}, \frac{21}{5}\right)$, $\mathbf{x}_2 = \left(1, \frac{21}{25}, \frac{21}{25}\right)$.
-Rayleighov podiel z $\mathbf{x}_2$ je $\frac{8039}{1507} \approx 5{,}334$. Vektor $(1,-1,0)$ je vlastný k číslu 2, takže metóda nikdy nepríde k číslu 5.
+Iterácie: $\mathbf{A}\mathbf{x}_0 = (3,1,1)$, $\mathbf{x}_1 = \left(1, \frac13, \frac13\right)$; $\mathbf{A}\mathbf{x}_1 = \left(\frac{11}{3}, \frac73, \frac73\right)$, $\mathbf{x}_2 = \left(1, \frac{7}{11}, \frac{7}{11}\right)$.
+Rayleighov podiel z $\mathbf{x}_2$ je $\frac{1063}{219} \approx 4.854$. Pri euklidovskom škálovaní je $\mathbf{x}_1 = \frac{1}{\sqrt{11}}(3,1,1)$ a $\lambda^{(1)} = \frac{47}{11}$.
+Vektor $(1,-1,0)$ je kolmý na $(1,1,1)$ a je vlastný k číslu 2, takže metóda nikdy nepríde k číslu 5.
 
 ### Príklad 3
 
@@ -30,9 +31,10 @@ $\mathbf{C}(x)$: 5. stĺpec po rozvoji cez riadok 5 dá faktor 3, riadky a stĺp
 
 ### Príklad 4
 
-$$\mathbf{L} = \begin{bmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ -1 & \frac{4}{3} & 1\end{bmatrix},\quad \mathbf{U} = \begin{bmatrix}2 & 1 & -1 \\ 0 & 3 & 3 \\ 0 & 0 & 2\end{bmatrix}$$
-Dopredne $\mathbf{y} = \begin{bmatrix}3 & 7 & \frac{14}{3}\end{bmatrix}^{\top}$, spätne $\mathbf{x} = \left(\frac83, 0, \frac73\right)$. Pravá strana $\mathbf{e}_3$ dá 3. stĺpec inverzie $\left(\frac12, -\frac12, \frac12\right)$.
-Crout: $\mathbf{U}_C = \mathbf{D}^{-1}\mathbf{U}$, kde $\mathbf{D}$ je diagonála $\mathbf{U}$.
+Postup z knihy: $\frac12 R_1$, $R_2 - 4R_1$, $R_3 + 2R_1$, $\frac13 R_2$, $R_3 - 4R_2$, $\frac12 R_3$. Prevrátené hodnoty násobiteľov idú na diagonálu $\mathbf{L}$, opačné čísla pod ňu:
+$$\mathbf{L} = \begin{bmatrix}2 & 0 & 0 \\ 4 & 3 & 0 \\ -2 & 4 & 2\end{bmatrix},\quad \mathbf{U} = \begin{bmatrix}1 & \frac{1}{2} & - \frac{1}{2} \\ 0 & 1 & 1 \\ 0 & 0 & 1\end{bmatrix}$$
+Dopredne $\mathbf{y} = \begin{bmatrix}\frac{3}{2} & \frac{7}{3} & \frac{7}{3}\end{bmatrix}^{\top}$, spätne $\mathbf{x} = \left(\frac83, 0, \frac73\right)$. Pravá strana $\mathbf{e}_3$ dá 3. stĺpec inverzie $\left(\frac12, -\frac12, \frac12\right)$.
+Doolittle: diagonálu presunieme do hornej matice, $\mathbf{L}' = \begin{bmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ -1 & \frac{4}{3} & 1\end{bmatrix}$.
 
 Pre $\mathbf{D}(t)$ po prvom kroku vznikne druhý pivot $t - 2$, preto pri $t = 2$ rozklad bez výmeny neexistuje, hoci $\det\mathbf{D}(2) = -24 \ne 0$.
 $\det\mathbf{D}(t) = 2(t-5)(t+2)$, singulárna je pre $t \in \{5, -2\}$. Sústavu pre $t = 2$ vyriešime výmenou riadkov 2 a 3.

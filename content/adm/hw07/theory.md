@@ -1,25 +1,30 @@
+> Zdroj: Anton, Rorres, *Elementary Linear Algebra*, 11. vydanie, kapitoly 9.1, 5.1 a 5.2. Čísla viet sú z tejto knihy.
+
 ## LU rozklad
 
-Štvorcovú maticu rozložíme na súčin **dolnej** a **hornej** trojuholníkovej matice $\mathbf{A} = \mathbf{LU}$.
-$\mathbf{U}$ je výsledok Gaussovej eliminácie (bez výmen riadkov), $\mathbf{L}$ zaznamenáva použité multiplikátory.
+Štvorcovú maticu rozložíme na súčin **dolnej** a **hornej** trojuholníkovej matice $\mathbf{A} = \mathbf{LU}$. Rozklad existuje, ak sa dá $\mathbf{A}$ upraviť na riadkový echelonový tvar **bez výmeny riadkov** (veta 9.1.1). Nie je jednoznačný.
+
+**Postup z knihy:**
+
+1. Upravte $\mathbf{A}$ na REF $\mathbf{U}$ bez výmen. Zapamätajte si násobitele, ktoré vytvorili vedúce jednotky, aj násobitele, ktoré vytvorili nuly pod nimi.
+2. Na diagonálu $\mathbf{L}$ dajte **prevrátenú hodnotu** násobiteľa, ktorý vytvoril vedúcu jednotku.
+3. Pod diagonálu $\mathbf{L}$ dajte **opačné číslo** k násobiteľu, ktorý vytvoril nulu na tom mieste.
+
+$\mathbf{U}$ má teda jednotky na diagonále a $\mathbf{L}$ pivoty. V domácej úlohe sa tento tvar volá **Crout**. Tvar **Doolittle** má jednotky na diagonále $\mathbf{L}$:
 
 | metóda | $\mathbf{L}$ | $\mathbf{U}$ |
 |---|---|---|
-| **Doolittle** | jednotky na diagonále, pod ňou multiplikátory $\ell_{ij}$ | výsledok eliminácie |
-| **Crout** | na diagonále pivoty | jednotky na diagonále |
+| **Crout** (postup z knihy) | na diagonále pivoty | jednotky na diagonále |
+| **Doolittle** | jednotky na diagonále | na diagonále pivoty |
 
-Ak pri eliminácii robíme $R_i \to R_i - \ell_{ij}R_j$, potom v Doolittlovej $\mathbf{L}$ je na pozícii $(i, j)$ práve $\ell_{ij}$:
+$$\begin{bmatrix}2&1\\6&8\end{bmatrix} \xrightarrow{\frac12 R_1} \begin{bmatrix}1&\frac12\\6&8\end{bmatrix} \xrightarrow{R_2 - 6R_1} \begin{bmatrix}1&\frac12\\0&5\end{bmatrix} \xrightarrow{\frac15 R_2} \begin{bmatrix}1&\frac12\\0&1\end{bmatrix} = \mathbf{U},\qquad \mathbf{L} = \begin{bmatrix}2&0\\6&5\end{bmatrix}$$
 
-$$\begin{bmatrix}2&1\\6&8\end{bmatrix} \xrightarrow{R_2 - 3R_1} \begin{bmatrix}2&1\\0&5\end{bmatrix}
-\;\Rightarrow\; \mathbf{L} = \begin{bmatrix}1&0\\3&1\end{bmatrix},\ \mathbf{U} = \begin{bmatrix}2&1\\0&5\end{bmatrix}$$
-
-Crout dostaneme z Doolittla presunutím diagonály: $\mathbf{L}_C = \mathbf{L}\mathbf{D}$, $\mathbf{U}_C = \mathbf{D}^{-1}\mathbf{U}$,
-kde $\mathbf{D}$ je diagonála $\mathbf{U}$.
+Medzi tvarmi sa prechádza presunutím diagonály. **Rozklad LDU:** $\mathbf{A} = \mathbf{L}'\mathbf{D}\mathbf{U}$, kde $\mathbf{L}'$ aj $\mathbf{U}$ majú jednotky na diagonále a $\mathbf{D}$ je diagonálna. Doolittle je $\mathbf{L}'(\mathbf{DU})$, Crout je $(\mathbf{L}'\mathbf{D})\mathbf{U}$.
 
 ::: drill d7-lu
 
-> Ak sa počas eliminácie objaví na pozícii pivota **0** (napr. matica s $a_{11} = 0$), LU rozklad bez výmeny riadkov
-> neexistuje — treba permutáciu $\mathbf{PA} = \mathbf{LU}$. Sústavu však vyriešite stále.
+> Ak sa počas eliminácie objaví na pozícii pivota **0**, LU rozklad bez výmeny riadkov neexistuje. Riadky vymeníme vopred:
+> **rozklad PLU**, $\mathbf{PA} = \mathbf{LU}$, kde $\mathbf{P}$ je permutačná matica. Sústava má potom tvar $\mathbf{LUx} = \mathbf{Pb}$.
 
 ## Využitie LU rozkladu
 
@@ -28,10 +33,10 @@ kde $\mathbf{D}$ je diagonála $\mathbf{U}$.
 2. vyriešime $\mathbf{Ly} = \mathbf{b}$ **dopredným dosadením** (zhora nadol),
 3. vyriešime $\mathbf{Ux} = \mathbf{y}$ **spätným dosadením** (zdola nahor).
 
-Výhoda: pri mnohých pravých stranách sa rozklad počíta len raz.
+Výhoda: rozklad oddelí $\mathbf{A}$ od $\mathbf{b}$, pri mnohých pravých stranách sa počíta len raz.
 
 - **Inverzia:** $\mathbf{A}^{-1} = (\mathbf{LU})^{-1} = \mathbf{U}^{-1}\mathbf{L}^{-1}$.
-- **Determinant:** $\det\mathbf{A} = \det\mathbf{L}\cdot\det\mathbf{U}$ = súčin diagonál; pri Doolittlovi $\det\mathbf{L} = 1$.
+- **Determinant:** $\det\mathbf{A} = \det\mathbf{L}\cdot\det\mathbf{U}$ = súčin diagonál; pri Doolittlovi $\det\mathbf{L} = 1$, pri Croutovi $\det\mathbf{U} = 1$.
 
 ::: quiz
 Doolittlov rozklad má $\mathbf{U}$ s diagonálou $2, -3, 4$. Aký je $\det\mathbf{A}$?
@@ -50,7 +55,7 @@ pre nejaké číslo $\lambda$ — **vlastné číslo**. Transformácia smer $\ma
 
 ::: drill d7-vlastny-vektor
 
-**Charakteristický polynóm** a rovnica:
+**Charakteristický polynóm** a **charakteristická rovnica** (veta 5.1.1):
 $$p(\lambda) = \det(\lambda\mathbf{I} - \mathbf{A}) = 0$$
 Korene sú vlastné čísla. Pre $2\times2$: $p(\lambda) = \lambda^2 - \operatorname{tr}(\mathbf{A})\,\lambda + \det\mathbf{A}$.
 Všeobecne: **súčet** vlastných čísel = $\operatorname{tr}\mathbf{A}$, **súčin** = $\det\mathbf{A}$.
@@ -73,8 +78,8 @@ $1 \le$ geometrická $\le$ algebraická.
 ::: drill d7-vlastny-priestor
 
 **Bez počítania:**
-- trojuholníková / diagonálna matica: vlastné čísla sú **prvky diagonály**,
-- $\lambda = 0$ je vlastné číslo $\iff$ $\det\mathbf{A} = 0$ ($\mathbf{A}$ singulárna),
+- trojuholníková / diagonálna matica: vlastné čísla sú **prvky diagonály** (veta 5.1.2),
+- $\lambda = 0$ je vlastné číslo $\iff$ $\det\mathbf{A} = 0$ ($\mathbf{A}$ singulárna, veta 5.1.4),
 - $\mathbf{A}^k$ má vlastné čísla $\lambda^k$, $\mathbf{A}^{-1}$ má $\frac1\lambda$, $\mathbf{A} - s\mathbf{I}$ má $\lambda - s$ (s tými istými vektormi),
 - geometrické transformácie: reflexia $\{1, -1\}$, projekcia $\{1, 0\}$, dilatácia $k$ $\{k, k\}$, rotácia o $\theta \ne 0, \pi$ v $\mathbb{R}^2$ nemá reálne vlastné čísla.
 
@@ -88,7 +93,7 @@ Aké vlastné čísla má ortogonálna projekcia na os $x$ v $\mathbb{R}^2$?
 
 ## Podobnosť matíc
 
-$\mathbf{B}$ je **podobná** $\mathbf{A}$, ak $\mathbf{B} = \mathbf{P}^{-1}\mathbf{AP}$ pre nejakú invertibilnú $\mathbf{P}$.
+$\mathbf{B}$ je **podobná** $\mathbf{A}$ (definícia 1 v kapitole 5.2), ak $\mathbf{B} = \mathbf{P}^{-1}\mathbf{AP}$ pre nejakú invertibilnú $\mathbf{P}$.
 Podobné matice majú rovnaký **determinant, stopu, hodnosť, charakteristický polynóm a vlastné čísla**
 (vlastné vektory sa môžu líšiť). Ak sa niektorý invariant líši, matice podobné nie sú. Rovnosť všetkých invariantov
 však podobnosť ešte nezaručuje.
@@ -105,11 +110,11 @@ $\det\mathbf{A} = -1$ a $\det\mathbf{B} = -2$. Môžu byť $\mathbf{A}$ a $\math
 
 $\mathbf{A}$ ($n\times n$) je **diagonalizovateľná**, ak je podobná diagonálnej matici:
 $$\mathbf{P}^{-1}\mathbf{AP} = \mathbf{D} = \operatorname{diag}(\lambda_1, \dots, \lambda_n)$$
-To platí **práve vtedy**, keď má $\mathbf{A}$ $n$ lineárne nezávislých vlastných vektorov — tie tvoria stĺpce $\mathbf{P}$
+To platí **práve vtedy** (veta 5.2.1), keď má $\mathbf{A}$ $n$ lineárne nezávislých vlastných vektorov — tie tvoria stĺpce $\mathbf{P}$
 (v rovnakom poradí ako vlastné čísla v $\mathbf{D}$).
 
 Postup: 1) vlastné čísla, 2) pre každé $\lambda$ báza vlastného priestoru, 3) ak je spolu $n$ vektorov →
-$\mathbf{P}$, inak diagonalizovateľná **nie je**. Stačí: **$n$ rôznych vlastných čísel ⇒ diagonalizovateľná**.
+$\mathbf{P}$, inak diagonalizovateľná **nie je**. Stačí: **$n$ rôznych vlastných čísel ⇒ diagonalizovateľná** (veta 5.2.2). Všeobecne je $\mathbf{A}$ diagonalizovateľná práve vtedy, keď sa pre každé vlastné číslo rovná geometrická a algebraická násobnosť (veta 5.2.4).
 
 ::: drill d7-diagonalizacia
 

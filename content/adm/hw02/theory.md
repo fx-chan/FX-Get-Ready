@@ -1,3 +1,5 @@
+> Zdroj: Anton, Rorres, *Elementary Linear Algebra*, 11. vydanie, kapitoly 1.1, 1.2 a veta 1.6.1. Čísla viet sú z tejto knihy.
+
 ## Lineárna rovnica a systém
 
 **Lineárna rovnica** v neznámych $x_1, \dots, x_n$ má tvar $a_1x_1 + a_2x_2 + \dots + a_nx_n = b$, kde $a_i, b$ sú
@@ -15,6 +17,8 @@ konštanty. Neznáme sú len v **prvej mocnine**, nenásobia sa navzájom a nie 
 Systém je **konzistentný**, ak má aspoň jedno riešenie, inak **nekonzistentný**. Každý systém má buď
 
 1. **žiadne** riešenie, 2. **práve jedno** riešenie, alebo 3. **nekonečne veľa** riešení — nič iné nie je možné.
+
+Geometricky pre dve neznáme: každá rovnica je priamka. Priamky sú rovnobežné (žiadne riešenie), pretínajú sa (jedno) alebo splývajú (nekonečne veľa). Pre tri neznáme je každá rovnica rovina. Výsledok, že iné možnosti neexistujú, je veta 1.6.1.
 
 ::: quiz
 Môže mať lineárny systém práve dve riešenia?
@@ -69,7 +73,7 @@ $$\underbrace{\begin{bmatrix}1&5&-3\\0&1&1\\0&0&0\end{bmatrix}}_{\text{REF}}\qqu
 \underbrace{\begin{bmatrix}1&0&3&1\\0&1&2&4\end{bmatrix}}_{\text{RREF}}\qquad
 \underbrace{\begin{bmatrix}1&2&3\\0&0&0\\0&0&1\end{bmatrix}}_{\text{ani jedno: nulový riadok nie je dole}}$$
 
-RREF danej matice je **jednoznačný**, REF nie.
+RREF danej matice je **jednoznačný**, REF nie: rôzne postupnosti úprav môžu dať rôzne REF, pozície vedúcich jednotiek však ostanú rovnaké.
 
 ::: quiz
 Je $\begin{bmatrix}1&2&0\\0&1&0\\0&0&0\end{bmatrix}$ v RREF?
@@ -88,7 +92,7 @@ Je $\begin{bmatrix}1&2&0\\0&1&0\\0&0&0\end{bmatrix}$ v RREF?
 $$\left[\begin{array}{ccc|c}1&0&2&3\\0&1&-1&1\\0&0&0&0\end{array}\right] \Rightarrow
 \begin{cases} x_1 = 3 - 2t \\ x_2 = 1 + t \\ x_3 = t \end{cases},\quad t \in \mathbb{R}$$
 
-Počet parametrov = počet neznámych − počet vedúcich jednotiek (= hodnosť).
+Počet parametrov = počet neznámych − počet vedúcich jednotiek. Množina parametrických rovníc, z ktorej dostaneme všetky riešenia, je **všeobecné riešenie** systému.
 
 ::: drill d2-rref
 
@@ -107,7 +111,7 @@ Riešenie: $x = -1$, $y = 2$.
 
 ::: drill d2-gauss
 
-**Kritérium počtu riešení** (Frobeniova veta): nech $r = h(\mathbf{A})$ je hodnosť matice systému a $n$ počet neznámych.
+**Počet riešení** prečítame z REF. Nech $r = h(\mathbf{A})$ je počet nenulových riadkov (hodnosť) a $n$ počet neznámych.
 
 | situácia | výsledok |
 |---|---|
@@ -128,6 +132,8 @@ Systém 3 rovníc s 5 neznámymi je konzistentný. Koľko má riešení?
 Systém $\mathbf{A}\mathbf{x} = \mathbf{0}$ je **vždy konzistentný** — má **triviálne riešenie** $\mathbf{x} = \mathbf{0}$.
 **Netriviálne** riešenie má práve vtedy, keď existuje voľná premenná, napr. vždy, keď je **viac neznámych než rovníc**.
 Pre štvorcovú $\mathbf{A}$: netriviálne riešenie existuje práve vtedy, keď $\det\mathbf{A} = 0$.
+
+**Veta 1.2.1 (o voľných premenných):** ak má homogénny systém $n$ neznámych a RREF má $r$ nenulových riadkov, systém má $n - r$ voľných premenných. **Veta 1.2.2:** homogénny systém s viac neznámymi než rovnicami má nekonečne veľa riešení. Pozor: nehomogénny systém s viac neznámymi než rovnicami môže byť nekonzistentný; ak je však konzistentný, má nekonečne veľa riešení.
 
 ::: drill d2-homogenny
 

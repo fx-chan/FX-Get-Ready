@@ -1,3 +1,5 @@
+> Zdroj: Anton, Rorres, *Elementary Linear Algebra*, 11. vydanie, kapitoly 4.9–4.11, 5.1, 5.2, 2.1–2.3, 9.1, 9.2 a 10.9.
+
 ## Čo bude na písomke
 
 **4 príklady, 1 h 40 min.** Plán na 100 minút: približne 25 minút na príklad a 5 minút na záverečnú kontrolu.
@@ -18,7 +20,7 @@ $$\begin{bmatrix}\mathbf{L}&\mathbf{t}\\\mathbf{0}&1\end{bmatrix},\qquad
 \mathbf{T}(a, b) = \begin{bmatrix}1&0&a\\0&1&b\\0&0&1\end{bmatrix},\qquad
 \mathbf{R}_\theta = \begin{bmatrix}\cos\theta&-\sin\theta&0\\\sin\theta&\cos\theta&0\\0&0&1\end{bmatrix}$$
 
-Teraz je posunutie obyčajný súčin matíc, a preto sa dá skladať s ostatnými zobrazeniami.
+Teraz je posunutie obyčajný súčin matíc, a preto sa dá skladať s ostatnými zobrazeniami. Kniha v kapitole 10.9 zapisuje posun aj ako sčítanie $\mathbf{P}' = \mathbf{P} + \mathbf{T}$; násobením je to jej cvičenie 7.
 
 ::: drill d8-homogenne
 
@@ -40,7 +42,7 @@ Vzor je vždy rovnaký: **presuň do počiatku, urob to, vráť späť.**
 - škálovanie so stredom v $\mathbf{c}$: $\mathbf{T}(\mathbf{c})\,\mathbf{S}\,\mathbf{T}(-\mathbf{c})$,
 - reflexia podľa priamky, ktorá neprechádza počiatkom: posuňte ľubovoľný jej bod do počiatku, zrkadlite, posuňte späť.
 
-Reflexia podľa priamky cez počiatok so smerovým vektorom $(a, b)$:
+Reflexia podľa priamky cez počiatok s uhlom $\theta$ je $\mathbf{H}_\theta$ z kapitoly 4.9; so smerovým vektorom $(a, b)$:
 $$\mathbf{H} = \frac{1}{a^2 + b^2}\begin{bmatrix}a^2 - b^2&2ab\\2ab&b^2 - a^2\end{bmatrix}$$
 Pre priamku $y = 2x$ je smer $(1, 2)$ a $\mathbf{H} = \frac15\begin{bmatrix}-3&4\\4&3\end{bmatrix}$.
 
@@ -92,22 +94,23 @@ Prečo funguje: ak $\mathbf{x}_0 = c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \dots$, p
 $$\mathbf{A}^k\mathbf{x}_0 = \lambda_1^k\left(c_1\mathbf{v}_1 + c_2\left(\frac{\lambda_2}{\lambda_1}\right)^k\mathbf{v}_2 + \dots\right)$$
 a členy s $|\lambda_i / \lambda_1| < 1$ zmiznú. Rýchlosť určuje podiel $|\lambda_2 / \lambda_1|$.
 
-**Algoritmus so škálovaním:**
+Kniha (kapitola 9.2) opisuje dve varianty. Vety 9.2.1 a 9.2.2 hovoria o **symetrickej** matici s kladným dominantným číslom a štarte, ktorý nie je kolmý na príslušný vlastný priestor.
 
-1. zvoľte $\mathbf{x}_0 \ne \mathbf{0}$,
-2. vypočítajte $\mathbf{y}_{k+1} = \mathbf{A}\mathbf{x}_k$,
-3. $\mathbf{x}_{k+1} = \mathbf{y}_{k+1} / s$, kde $s$ je zložka $\mathbf{y}_{k+1}$ s **najväčšou absolútnou hodnotou**,
-4. odhad čísla: $s$, alebo presnejšie Rayleighov podiel $\lambda \approx \dfrac{\mathbf{x}^{\top}\mathbf{A}\mathbf{x}}{\mathbf{x}^{\top}\mathbf{x}}$.
+**S euklidovským škálovaním:** $\mathbf{x}_0$ je jednotkový vektor,
+$$\mathbf{x}_k = \frac{\mathbf{A}\mathbf{x}_{k-1}}{\lVert\mathbf{A}\mathbf{x}_{k-1}\rVert},\qquad \lambda^{(k)} = \mathbf{A}\mathbf{x}_k\cdot\mathbf{x}_k$$
 
-Niekedy sa namiesto delenia najväčšou zložkou delí normou $\lVert\mathbf{y}\rVert$. Vektor sa líši len násobkom, Rayleighov podiel vyjde rovnako. Na písomke použite spôsob z prednášky.
+**S maximálnym škálovaním:** $\max(\mathbf{x})$ je najväčšia **absolútna hodnota** zložky (bez znamienka), $\mathbf{x}_0$ je ľubovoľný nenulový vektor,
+$$\mathbf{x}_k = \frac{\mathbf{A}\mathbf{x}_{k-1}}{\max(\mathbf{A}\mathbf{x}_{k-1})},\qquad \lambda^{(k)} = \frac{\mathbf{A}\mathbf{x}_k\cdot\mathbf{x}_k}{\mathbf{x}_k\cdot\mathbf{x}_k}$$
 
-$$\mathbf{A} = \begin{bmatrix}4&1\\2&3\end{bmatrix},\ \mathbf{x}_0 = \begin{bmatrix}1\\0\end{bmatrix}:\quad
-\mathbf{y}_1 = \begin{bmatrix}4\\2\end{bmatrix},\ \mathbf{x}_1 = \begin{bmatrix}1\\\frac12\end{bmatrix},\quad
-\mathbf{y}_2 = \begin{bmatrix}\frac92\\\frac72\end{bmatrix},\ \mathbf{x}_2 = \begin{bmatrix}1\\\frac79\end{bmatrix}$$
+Výraz $\frac{\mathbf{Ax}\cdot\mathbf{x}}{\mathbf{x}\cdot\mathbf{x}}$ je **Rayleighov podiel**. Nezávisí od násobku vektora, preto obe varianty dávajú rovnaké odhady $\lambda^{(k)}$, ak štartujú z rovnakého smeru. Prvá vedie k jednotkovému vlastnému vektoru, druhá k vektoru s najväčšou zložkou 1.
+
+$$\mathbf{A} = \begin{bmatrix}4&1\\1&4\end{bmatrix},\ \mathbf{x}_0 = \begin{bmatrix}1\\0\end{bmatrix}:\quad
+\mathbf{A}\mathbf{x}_0 = \begin{bmatrix}4\\1\end{bmatrix},\ \mathbf{x}_1 = \begin{bmatrix}1\\\frac14\end{bmatrix},\quad
+\mathbf{A}\mathbf{x}_1 = \begin{bmatrix}\frac{17}{4}\\2\end{bmatrix},\ \mathbf{x}_2 = \begin{bmatrix}1\\\frac{8}{17}\end{bmatrix}$$
 
 ::: drill d8-mocninova
 
-**Kedy metóda zlyhá:** dve čísla s rovnakou absolútnou hodnotou ($1$ a $-1$), komplexná dvojica, alebo $\mathbf{x}_0$ bez zložky v smere $\mathbf{v}_1$. Pri zápornom dominantnom čísle vektor v každom kroku mení znamienko, ale $s$ konverguje správne.
+**Kedy metóda zlyhá:** dve čísla s rovnakou absolútnou hodnotou ($1$ a $-1$), komplexná dvojica, alebo $\mathbf{x}_0$ bez zložky v smere $\mathbf{v}_1$. Pri zápornom dominantnom čísle vektor v každom kroku mení znamienko, ale $\lambda^{(k)}$ konverguje správne (poznámka k vete 9.2.1).
 
 ::: quiz
 Vlastné čísla sú $6$, $-3$, $1$. Približne koľkokrát sa zmenší chyba v jednej iterácii?
@@ -148,22 +151,25 @@ Matica $7\times7$ má jednotky len na vedľajšej diagonále. Aký je jej determ
 
 ## LU rozklad bez chýb
 
-1. Eliminujte **bez výmeny riadkov**: $R_i \to R_i - \ell_{ij}R_j$; čísla $\ell_{ij}$ zapíšte pod diagonálu $\mathbf{L}$, výsledok je $\mathbf{U}$.
-2. $\mathbf{Ly} = \mathbf{b}$ zhora nadol, $\mathbf{Ux} = \mathbf{y}$ zdola nahor.
-3. **Skúška:** $\mathbf{LU}$ dá $\mathbf{A}$, $\det\mathbf{A}$ = súčin diagonály $\mathbf{U}$ (Doolittle).
+1. Upravte $\mathbf{A}$ na REF **bez výmeny riadkov**. Vedúce jednotky robia z $\mathbf{U}$ maticu s jednotkami na diagonále.
+2. Do $\mathbf{L}$ zapisujte: na diagonálu prevrátenú hodnotu násobiteľa vedúcej jednotky, pod diagonálu opačné číslo k násobiteľu, ktorý vytvoril nulu.
+3. $\mathbf{Ly} = \mathbf{b}$ zhora nadol, $\mathbf{Ux} = \mathbf{y}$ zdola nahor.
+4. **Skúška:** $\mathbf{LU}$ dá $\mathbf{A}$, $\det\mathbf{A}$ = súčin diagonály $\mathbf{L}$.
+
+V domácej úlohe sa tento tvar volá Crout. Doolittle má jednotky na diagonále $\mathbf{L}$ a dostanete ho presunutím diagonály do $\mathbf{U}$.
 
 Jeden rozklad poslúži pre viac pravých strán: stĺpec $\mathbf{A}^{-1}$ dostanete z pravej strany $\mathbf{e}_j$.
 
-**Nulový pivot neznamená singulárnu maticu.** Ak druhý pivot vyjde $t - 2$, rozklad bez výmeny pri $t = 2$ neexistuje, ale matica môže byť regulárna: stačí $\mathbf{PA} = \mathbf{LU}$. Singulárna je až vtedy, keď nulový ostane pivot po všetkých možných výmenách.
+**Nulový pivot neznamená singulárnu maticu.** Ak druhý pivot vyjde $t - 2$, rozklad bez výmeny pri $t = 2$ neexistuje, ale matica môže byť regulárna: stačí rozklad PLU, $\mathbf{PA} = \mathbf{LU}$. Singulárna je až vtedy, keď nulový ostane pivot po všetkých možných výmenách.
 
 ::: drill d8-lu
 
 ::: quiz
-Pri $R_3 \to R_3 + 2R_1$ je multiplikátor v Doolittlovej $\mathbf{L}$ na pozícii $(3, 1)$
+Pri $R_3 \to R_3 + 2R_1$, ktorá robí nulu na pozícii $(3, 1)$, je prvok $\mathbf{L}$ na tej pozícii
 - [ ] $2$
 - [x] $-2$
 - [ ] $\frac12$
-> Odčítavame $\ell_{31}R_1$, teda $\ell_{31} = -2$. Znamienko je najčastejšia chyba.
+> Do $\mathbf{L}$ ide opačné číslo k násobiteľu 2. Znamienko je najčastejšia chyba.
 :::
 
 ## Pred písomkou

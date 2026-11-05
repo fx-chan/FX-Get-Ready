@@ -1,3 +1,5 @@
+> Zdroj: Anton, Rorres, *Elementary Linear Algebra*, 11. vydanie, kapitoly 1.3, 1.4, 1.7, 3.1 a 3.2. Čísla viet sú z tejto knihy.
+
 ## Vektory
 
 **Vektor** v $\mathbb{R}^n$ je usporiadaná $n$-tica čísel. Zapisujeme ho ako **riadkový** vektor
@@ -11,6 +13,8 @@ $(v_1, v_2, \dots, v_n)$ alebo ako **stĺpcový** vektor (matica $n\times 1$). V
 | dĺžka (norma) | $\lVert\mathbf{v}\rVert = \sqrt{v_1^2+\dots+v_n^2} = \sqrt{\mathbf{v}\cdot\mathbf{v}}$ | číslo $\ge 0$ |
 
 Ak $\mathbf{u}\cdot\mathbf{v} = 0$, vektory sú **kolmé (ortogonálne)**. Sčítať sa dajú len vektory rovnakej dĺžky.
+
+**Lineárna kombinácia** vektorov je $k_1\mathbf{v}_1 + \dots + k_r\mathbf{v}_r$. **Jednotkový vektor** má dĺžku 1; z nenulového $\mathbf{v}$ ho dostaneme ako $\frac{1}{\lVert\mathbf{v}\rVert}\mathbf{v}$. Vzdialenosť bodov je $d(\mathbf{u}, \mathbf{v}) = \lVert\mathbf{u} - \mathbf{v}\rVert$ a platí $\lVert k\mathbf{v}\rVert = |k|\,\lVert\mathbf{v}\rVert$.
 
 ::: quiz
 Aký je skalárny súčin $\mathbf{u} = (2, -1, 3)$ a $\mathbf{v} = (1, 4, 2)$?
@@ -49,6 +53,10 @@ Matica $\mathbf{A}$ má rozmer $3\times 4$. Koľko má prvkov a ktorý prvok **n
 | dolná trojuholníková | $a_{ij} = 0$ pre $i < j$ (nad diagonálou nuly) | $\begin{bmatrix}0&0&0\\1&0&0\\1&1&0\end{bmatrix}$ |
 | symetrická | $\mathbf{A}^{\top} = \mathbf{A}$, t.j. $a_{ij} = a_{ji}$ | $\begin{bmatrix}1&5\\5&3\end{bmatrix}$ |
 | skoseno-symetrická | $\mathbf{A}^{\top} = -\mathbf{A}$, t.j. $a_{ij} = -a_{ji}$, na diagonále 0 | $\begin{bmatrix}0&2\\-2&0\end{bmatrix}$ |
+
+Násobenie diagonálnou maticou je jednoduché: $\mathbf{DA}$ vynásobí **riadky** $\mathbf{A}$ prvkami diagonály, $\mathbf{AD}$ jej **stĺpce**, a $\mathbf{D}^k$ umocní prvky diagonály.
+
+Z viet 1.7.1 až 1.7.5: súčin dolných (horných) trojuholníkových matíc je dolný (horný) trojuholníkový; trojuholníková matica je invertibilná práve vtedy, keď má na diagonále nenulové prvky; súčin symetrických matíc je symetrický práve vtedy, keď komutujú; $\mathbf{AA}^{\top}$ a $\mathbf{A}^{\top}\mathbf{A}$ sú vždy symetrické.
 
 > Diagonálna matica je **zároveň** horná aj dolná trojuholníková a je symetrická. Nulová štvorcová matica
 > je jediná, ktorá je symetrická aj skoseno-symetrická. Nečtvorcová matica nemá žiadny z týchto typov.
@@ -134,6 +142,10 @@ $$\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}0&1\\-1&2\end{bmatrix} =
 - $i$-ty riadok $\mathbf{AB}$ = ($i$-ty riadok $\mathbf{A}$) $\cdot\,\mathbf{B}$,
 - $j$-ty stĺpec $\mathbf{AB}$ = $\mathbf{A}\,\cdot$ ($j$-ty stĺpec $\mathbf{B}$).
 
+**Súčin ako lineárna kombinácia (veta 1.3.1):** $\mathbf{Ax}$ je lineárna kombinácia stĺpcov $\mathbf{A}$ s koeficientmi zo $\mathbf{x}$:
+$$\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}5\\6\end{bmatrix} = 5\begin{bmatrix}1\\3\end{bmatrix} + 6\begin{bmatrix}2\\4\end{bmatrix}$$
+Preto je $j$-ty stĺpec $\mathbf{AB}$ lineárnou kombináciou stĺpcov $\mathbf{A}$. Celý systém rovníc sa dá zapísať jednou maticovou rovnicou $\mathbf{Ax} = \mathbf{b}$.
+
 **Mocnina** $\mathbf{A}^k = \mathbf{A}\mathbf{A}\cdots\mathbf{A}$ existuje len pre **štvorcovú** maticu; $\mathbf{A}^0 = \mathbf{I}$.
 Súčin riadkového vektora $1\times n$ a stĺpcového $n\times1$ je matica $1\times1$ (číslo), v opačnom poradí $n\times n$.
 
@@ -154,6 +166,8 @@ $\mathbf{R}$ je $1\times3$ a $\mathbf{J}$ je $3\times1$. Aké rozmery majú $\ma
 | $(\mathbf{B}+\mathbf{C})\mathbf{A} = \mathbf{BA}+\mathbf{CA}$ — pravý distributívny zákon | $\mathbf{AB} = \mathbf{0} \Rightarrow \mathbf{A}=\mathbf{0}$ alebo $\mathbf{B}=\mathbf{0}$ |
 | $k(\mathbf{AB}) = (k\mathbf{A})\mathbf{B} = \mathbf{A}(k\mathbf{B})$ | $(\mathbf{A}+\mathbf{B})^2 = \mathbf{A}^2+2\mathbf{AB}+\mathbf{B}^2$ |
 | $\mathbf{AI} = \mathbf{IA} = \mathbf{A}$, $(\mathbf{AB})^{\top} = \mathbf{B}^{\top}\mathbf{A}^{\top}$ | $(\mathbf{AB})^{\top} = \mathbf{A}^{\top}\mathbf{B}^{\top}$ |
+
+Tabuľka zhŕňa vety 1.4.1 (aritmetika matíc), 1.4.2 (nulová matica) a 1.4.8 (transpozícia). Nulová matica sa správa inak než číslo 0: z $\mathbf{AB} = \mathbf{0}$ nevyplýva, že niektorá matica je nulová.
 
 Matice sú **komutatívne**, ak $\mathbf{AB} = \mathbf{BA}$ (napr. každá matica s $\mathbf{I}$, s $\mathbf{0}$ alebo so sebou samou).
 Ak $\mathbf{AB}$ a $\mathbf{BA}$ majú rôzny rozmer, rovnať sa nemôžu.

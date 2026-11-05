@@ -6,11 +6,11 @@
 
 ### Приклад 2
 
-$\mathbf{A} - 2\mathbf{I} = \begin{bmatrix}3&3&-3\\3&3&-3\\3&3&-3\end{bmatrix} = \mathbf{u}\mathbf{w}^{\top}$ з $\mathbf{u} = (1,1,1)$, $\mathbf{w} = (3,3,-3)$ має ранг 1. Тому $\lambda = 2$ двократне, а третє число дорівнює $2 + \mathbf{w}^{\top}\mathbf{u} = 5$. Базис для 2: розв'язки $x_1 + x_2 - x_3 = 0$, напр. $(1,0,1)$, $(0,1,1)$. Для 5: $(1,1,1)$. Матриця діагоналізовна, напр. $\mathbf{P} = \begin{bmatrix}1&1&0\\1&0&1\\1&1&1\end{bmatrix}$.
+$\mathbf{A} - 2\mathbf{I} = \mathbf{u}\mathbf{u}^{\top}$ з $\mathbf{u} = (1,1,1)$ має ранг 1 (кожен елемент дорівнює 1). Тому $\lambda = 2$ двократне, а третє число дорівнює $2 + \mathbf{u}^{\top}\mathbf{u} = 5$. Базис для 2: розв'язки $x_1 + x_2 + x_3 = 0$, напр. $(1,-1,0)$, $(1,0,-1)$. Для 5: $(1,1,1)$. Матриця симетрична, отже діагоналізовна, напр. $\mathbf{P} = \begin{bmatrix}1&1&1\\1&-1&0\\1&0&-1\end{bmatrix}$.
 
-Позначмо $\mathbf{N} = \mathbf{A} - 2\mathbf{I}$. Маємо $\mathbf{N}^2 = 3\mathbf{N}$, тому $\mathbf{A}^n = 2^n\mathbf{I} + \frac{5^n - 2^n}{3}\mathbf{N}$. Оскільки $\mathbf{N}_{13} = -3$, то $(\mathbf{A}^n)_{13} = 2^n - 5^n$.
+Позначмо $\mathbf{N} = \mathbf{A} - 2\mathbf{I}$. Маємо $\mathbf{N}^2 = 3\mathbf{N}$, тому $\mathbf{A}^n = 2^n\mathbf{I} + \frac{5^n - 2^n}{3}\mathbf{N}$. Оскільки $\mathbf{N}_{13} = 1$, то $(\mathbf{A}^n)_{13} = \frac{5^n - 2^n}{3}$.
 
-Ітерації: $\mathbf{y}_1 = (5,3,3)$, $\mathbf{x}_1 = \left(1, \frac35, \frac35\right)$; $\mathbf{y}_2 = \left(5, \frac{21}{5}, \frac{21}{5}\right)$, $\mathbf{x}_2 = \left(1, \frac{21}{25}, \frac{21}{25}\right)$. Відношення Релея з $\mathbf{x}_2$ дорівнює $\frac{8039}{1507} \approx 5{,}334$. Вектор $(1,-1,0)$ — власний для числа 2, тож метод ніколи не дійде до числа 5.
+Ітерації: $\mathbf{A}\mathbf{x}_0 = (3,1,1)$, $\mathbf{x}_1 = \left(1, \frac13, \frac13\right)$; $\mathbf{A}\mathbf{x}_1 = \left(\frac{11}{3}, \frac73, \frac73\right)$, $\mathbf{x}_2 = \left(1, \frac{7}{11}, \frac{7}{11}\right)$. Відношення Релея з $\mathbf{x}_2$ дорівнює $\frac{1063}{219} \approx 4.854$. З евклідовим масштабуванням $\mathbf{x}_1 = \frac{1}{\sqrt{11}}(3,1,1)$ і $\lambda^{(1)} = \frac{47}{11}$. Вектор $(1,-1,0)$ перпендикулярний до $(1,1,1)$ і є власним для числа 2, тож метод ніколи не дійде до числа 5.
 
 ### Приклад 3
 
@@ -20,6 +20,6 @@ $\mathbf{C}(x)$: 5-й стовпець після розкладу за рядк
 
 ### Приклад 4
 
-$$\mathbf{L} = \begin{bmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ -1 & \frac{4}{3} & 1\end{bmatrix},\quad \mathbf{U} = \begin{bmatrix}2 & 1 & -1 \\ 0 & 3 & 3 \\ 0 & 0 & 2\end{bmatrix}$$ Прямою підстановкою $\mathbf{y} = \begin{bmatrix}3 & 7 & \frac{14}{3}\end{bmatrix}^{\top}$, зворотною $\mathbf{x} = \left(\frac83, 0, \frac73\right)$. Права частина $\mathbf{e}_3$ дає 3-й стовпець оберненої $\left(\frac12, -\frac12, \frac12\right)$. Краут: $\mathbf{U}_C = \mathbf{D}^{-1}\mathbf{U}$, де $\mathbf{D}$ — діагональ $\mathbf{U}$.
+Порядок дій із книжки: $\frac12 R_1$, $R_2 - 4R_1$, $R_3 + 2R_1$, $\frac13 R_2$, $R_3 - 4R_2$, $\frac12 R_3$. Обернені значення множників ідуть на діагональ $\mathbf{L}$, протилежні числа під неї: $$\mathbf{L} = \begin{bmatrix}2 & 0 & 0 \\ 4 & 3 & 0 \\ -2 & 4 & 2\end{bmatrix},\quad \mathbf{U} = \begin{bmatrix}1 & \frac{1}{2} & - \frac{1}{2} \\ 0 & 1 & 1 \\ 0 & 0 & 1\end{bmatrix}$$ Прямою підстановкою $\mathbf{y} = \begin{bmatrix}\frac{3}{2} & \frac{7}{3} & \frac{7}{3}\end{bmatrix}^{\top}$, зворотною $\mathbf{x} = \left(\frac83, 0, \frac73\right)$. Права частина $\mathbf{e}_3$ дає 3-й стовпець оберненої $\left(\frac12, -\frac12, \frac12\right)$. Дулітл: діагональ переносимо у верхню матрицю, $\mathbf{L}' = \begin{bmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ -1 & \frac{4}{3} & 1\end{bmatrix}$.
 
 Для $\mathbf{D}(t)$ після першого кроку другий півот дорівнює $t - 2$, тому при $t = 2$ розкладу без перестановки не існує, хоча $\det\mathbf{D}(2) = -24 \ne 0$. $\det\mathbf{D}(t) = 2(t-5)(t+2)$, вироджена для $t \in \{5, -2\}$. Систему для $t = 2$ розв'язуємо перестановкою рядків 2 і 3.

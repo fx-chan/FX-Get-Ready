@@ -2,22 +2,22 @@
  "parts": [
   {
    "id": "a",
-   "prompt": "$\\mathbf{A} = \\begin{bmatrix}-5 & 2 \\\\ 0 & 1\\end{bmatrix}$, $\\mathbf{x}_0 = (1, 1)$: $\\mathbf{x}_2$",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}-2 & -3 \\\\ -3 & -2\\end{bmatrix}$, $\\mathbf{x}_0 = (1, 0)$: $\\mathbf{x}_2$",
    "kind": "vector",
    "answer": [
     "1",
-    "1/17"
+    "12/13"
    ],
    "example": {
-    "value": "1, 1/17"
+    "value": "1, 12/13"
    }
   },
   {
    "id": "b",
-   "prompt": "Dominantné číslo $-5$ je záporné. Čo robí postupnosť $\\mathbf{y}_k$?",
+   "prompt": "Dominantné číslo $-5$ je záporné. Čo robí postupnosť $\\mathbf{x}_k$?",
    "kind": "choice",
    "options": [
-    "mení znamienko v každom kroku, deliaca zložka však konverguje k $-5$",
+    "v každom kroku mení znamienko, Rayleighov podiel však konverguje k $-5$",
     "diverguje, metóda nefunguje",
     "konverguje k $5$"
    ],
@@ -42,7 +42,7 @@
   },
   {
    "id": "d",
-   "prompt": "$\\mathbf{x}_0$ nemá žiadnu zložku v smere dominantného vektora. V presnej aritmetike metóda",
+   "prompt": "$\\mathbf{x}_0$ je kolmý na vlastný priestor dominantného čísla. V presnej aritmetike metóda",
    "kind": "choice",
    "options": [
     "nájde najväčšie číslo spomedzi tých, ktoré v $\\mathbf{x}_0$ zastúpené sú",
