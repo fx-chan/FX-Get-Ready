@@ -1,11 +1,15 @@
 import logging
 from datetime import timedelta
 
-from flask import Flask
+from flask import Flask, g
 
-from . import auth, db
+from . import auth, db, i18n
 from .config import Config
 from .runners import make_runner
+
+
+def set_language():
+    g.lang = i18n.pick_language()
 
 
 def create_app(overrides=None, runner=None):
@@ -23,7 +27,9 @@ def create_app(overrides=None, runner=None):
 
     db.init_app(app)
     app.before_request(auth.load_user)
-    app.jinja_env.globals["csrf_token"] = auth.csrf_token
+    app.before_request(set_language)
+    app.jinja_env.globals.update(csrf_token=auth.csrf_token, _=i18n.t, lang=i18n.current, js_strings=i18n.js_strings,
+                                 languages=i18n.LANGS)
 
     from .views import bp
     app.register_blueprint(auth.bp)

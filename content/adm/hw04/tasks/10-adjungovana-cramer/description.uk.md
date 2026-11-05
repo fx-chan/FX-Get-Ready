@@ -1,0 +1,3 @@
+Зі вступу до ДЗ 04: **приєднана матриця** $\operatorname{adj}(\mathbf{A}) = [C_{ij}]^{\top}$ (транспонована матриця алгебраїчних доповнень) і $$\mathbf{A}^{-1} = \frac{1}{\det\mathbf{A}}\operatorname{adj}(\mathbf{A}).$$ **Правило Крамера:** для $\mathbf{Ax} = \mathbf{b}$ при $\det\mathbf{A} \ne 0$ маємо $x_j = \dfrac{\det\mathbf{A}_j}{\det\mathbf{A}}$, де $\mathbf{A}_j$ утворюється заміною $j$-го стовпця вектором $\mathbf{b}$.
+
+$\mathbf{A} = \begin{bmatrix}1 & -2 & 3 \\ 6 & 7 & -1 \\ -3 & 1 & 4\end{bmatrix}$; система $\left\{\begin{aligned}x_1 + x_2 + 2x_3 &= 8 \\ -x_1 - 2x_2 + 3x_3 &= 1 \\ 3x_1 - 7x_2 + 4x_3 &= 10\end{aligned}\right.$

@@ -1,4 +1,4 @@
-## Vektory / Векторы
+## Vektory
 
 **Vektor** v $\mathbb{R}^n$ je usporiadaná $n$-tica čísel. Zapisujeme ho ako **riadkový** vektor
 $(v_1, v_2, \dots, v_n)$ alebo ako **stĺpcový** vektor (matica $n\times 1$). Vektor je špeciálny prípad matice.
@@ -13,7 +13,7 @@ $(v_1, v_2, \dots, v_n)$ alebo ako **stĺpcový** vektor (matica $n\times 1$). V
 Ak $\mathbf{u}\cdot\mathbf{v} = 0$, vektory sú **kolmé (ortogonálne)**. Sčítať sa dajú len vektory rovnakej dĺžky.
 
 ::: quiz
-Aký je skalárny súčin $\mathbf{u} = (2, -1, 3)$ a $\mathbf{v} = (1, 4, 2)$? / Скалярное произведение?
+Aký je skalárny súčin $\mathbf{u} = (2, -1, 3)$ a $\mathbf{v} = (1, 4, 2)$?
 - [ ] $(2, -4, 6)$
 - [x] $4$
 - [ ] $12$
@@ -21,7 +21,7 @@ Aký je skalárny súčin $\mathbf{u} = (2, -1, 3)$ a $\mathbf{v} = (1, 4, 2)$? 
 > $2\cdot1 + (-1)\cdot4 + 3\cdot2 = 2 - 4 + 6 = 4$. Skalárny súčin je číslo, nie vektor.
 :::
 
-## Matica — základné pojmy / Матрица — основные понятия
+## Matica — základné pojmy
 
 **Matica rozmeru $m\times n$** má $m$ riadkov a $n$ stĺpcov. Prvok v $i$-tom riadku a $j$-tom stĺpci je $a_{ij}$
 (najprv **riadok**, potom **stĺpec**).
@@ -40,7 +40,7 @@ Matica $\mathbf{A}$ má rozmer $3\times 4$. Koľko má prvkov a ktorý prvok **n
 > 3 riadky × 4 stĺpce = 12 prvkov. $a_{43}$ by bol 4. riadok — ten matica nemá.
 :::
 
-## Špeciálne štvorcové matice / Специальные матрицы
+## Špeciálne štvorcové matice
 
 | typ | podmienka | príklad |
 |---|---|---|
@@ -63,7 +63,7 @@ Je matica $\begin{bmatrix}0&0&6\\0&-6&0\\-6&0&0\end{bmatrix}$ skoseno-symetrick�
 
 ::: drill d1-typ
 
-## Sčítanie a násobenie skalárom / Сложение и умножение на число
+## Sčítanie a násobenie skalárom
 
 - $\mathbf{A}+\mathbf{B}$ — sčítame prvky na rovnakých pozíciách. **Iba pre matice rovnakého rozmeru.**
 - $k\mathbf{A}$ — každý prvok vynásobíme číslom $k$. Rozdiel: $\mathbf{A}-\mathbf{B} = \mathbf{A}+(-1)\mathbf{B}$.
@@ -76,7 +76,7 @@ $k(\mathbf{A}+\mathbf{B}) = k\mathbf{A}+k\mathbf{B}$, $\mathbf{A}-\mathbf{A} = \
 
 ::: drill d1-scitanie
 
-## Transponovaná matica / Транспонирование
+## Transponovaná matica
 
 $\mathbf{A}^{\top}$ vznikne výmenou riadkov a stĺpcov: $(\mathbf{A}^{\top})_{ij} = a_{ji}$. Matica $m\times n$ sa zmení na $n\times m$.
 
@@ -99,7 +99,7 @@ $\mathbf{C}$ má rozmer $2\times 2$ a $\mathbf{F}$ rozmer $3\times 2$. Dá sa vy
 
 ::: drill d1-transpozicia
 
-## Stopa matice / След матрицы
+## Stopa matice
 
 **Stopa** štvorcovej matice je súčet prvkov hlavnej diagonály: $\operatorname{tr}(\mathbf{A}) = a_{11} + a_{22} + \dots + a_{nn}$.
 Pre nečtvorcovú maticu stopa **nie je definovaná**.
@@ -113,7 +113,7 @@ Pre nečtvorcovú maticu stopa **nie je definovaná**.
 
 ::: drill d1-stopa
 
-## Násobenie matíc / Умножение матриц
+## Násobenie matíc
 
 Súčin $\mathbf{AB}$ existuje, iba ak **počet stĺpcov $\mathbf{A}$ = počet riadkov $\mathbf{B}$**:
 
@@ -145,7 +145,7 @@ $\mathbf{R}$ je $1\times3$ a $\mathbf{J}$ je $3\times1$. Aké rozmery majú $\ma
 > $(1\times\underline{3})(\underline{3}\times1) = 1\times1$ a $(3\times\underline{1})(\underline{1}\times3) = 3\times3$ — vnútorné čísla sa rovnajú v oboch prípadoch.
 :::
 
-## Vlastnosti násobenia / Свойства умножения
+## Vlastnosti násobenia
 
 | platí ✓ | neplatí ✗ (vo všeobecnosti) |
 |---|---|
@@ -174,7 +174,7 @@ $\mathbf{A} = \begin{bmatrix}0&1\\0&0\end{bmatrix}$. Čomu sa rovná $\mathbf{A}
 > $\mathbf{A}^2 = \begin{bmatrix}0\cdot0+1\cdot0 & 0\cdot1+1\cdot0\\0&0\end{bmatrix} = \mathbf{0}$. Súčin nenulových matíc môže byť nulový.
 :::
 
-## Na písomke / На контрольной
+## Na písomke
 
 1. Pred každým výpočtom **skontrolujte rozmery** — časť úloh sa zámerne vypočítať nedá.
 2. Transpozíciu súčinu rozpíšte: $(\mathbf{CD})^{\top} = \mathbf{D}^{\top}\mathbf{C}^{\top}$.

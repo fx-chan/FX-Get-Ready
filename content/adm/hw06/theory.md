@@ -1,4 +1,4 @@
-## Maticová (lineárna) transformácia / Матричное преобразование
+## Maticová (lineárna) transformácia
 
 Matica $\mathbf{A}$ rozmeru $m\times n$ definuje zobrazenie $T_{\mathbf{A}}:\mathbb{R}^n \to \mathbb{R}^m$,
 $T_{\mathbf{A}}(\mathbf{x}) = \mathbf{Ax}$. Ak $m = n$, hovoríme o **operátore** na $\mathbb{R}^n$.
@@ -19,7 +19,7 @@ $T(x_1, x_2) = (x_2, -x_1, x_1 + 3x_2, x_1 - x_2)$. Aký rozmer má štandardná
 > 4 výstupné súradnice (riadky), 2 vstupné (stĺpce): $T:\mathbb{R}^2 \to \mathbb{R}^4$.
 :::
 
-## Reflexie a projekcie / Отражения и проекции
+## Reflexie a projekcie
 
 | operátor v $\mathbb{R}^2$ | matica | obraz $(x, y)$ |
 |---|---|---|
@@ -42,7 +42,7 @@ Obraz vektora $(1, -2, 4)$ pri ortogonálnej projekcii na rovinu $xz$ je
 > Na rovine $xz$ ostávajú súradnice $x$ a $z$, kolmá zložka $y$ sa vynuluje.
 :::
 
-## Rotácie / Повороты
+## Rotácie
 
 V $\mathbb{R}^2$ o uhol $\theta$ okolo počiatku (kladný uhol = **proti** smeru hodinových ručičiek):
 $$\mathbf{R}_\theta = \begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}$$
@@ -72,13 +72,13 @@ Rotácia okolo osi $z$ o $90^\circ$ (proti smeru) zobrazí $(2, -3, 1)$ na
 > $x' = 0\cdot2 - 1\cdot(-3) = 3$, $y' = 1\cdot2 + 0 = 2$, $z' = 1$.
 :::
 
-## Dilatácie, kontrakcie, kompresie / Растяжения и сжатия
+## Dilatácie, kontrakcie, kompresie
 
 - **kontrakcia** ($0 < k < 1$) / **dilatácia** ($k > 1$): $\mathbf{x} \mapsto k\mathbf{x}$, matica $k\mathbf{I}$,
 - **kompresia/expanzia v smere jednej osi**: napr. v smere osi $x$ $\begin{bmatrix}k&0\\0&1\end{bmatrix}$, v smere $y$ $\begin{bmatrix}1&0\\0&k\end{bmatrix}$,
 - **sklz (shear)** v smere osi $x$: $\begin{bmatrix}1&k\\0&1\end{bmatrix}$, $(x, y) \mapsto (x + ky, y)$.
 
-## Skladanie a komutatívnosť / Композиция
+## Skladanie a komutatívnosť
 
 Ak sa najprv vykoná $T_1$ a potom $T_2$, je to $T_2 \circ T_1$ a
 $$[T_2 \circ T_1] = [T_2]\,[T_1]$$

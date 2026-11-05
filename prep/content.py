@@ -18,6 +18,10 @@ An answer task (math: "type": "answer" in metadata.json) holds instead:
 "level": "A++" in metadata.json puts a task into the block's advanced section.
 "math": true in subject.json renders $...$ and $$...$$ with KaTeX.
 
+Slovak is the source language. A translation lives next to it: theory.uk.md, description.uk.md and
+<subject>/strings.uk.json (titles, summaries, prompts and options: {"Slovak text": "translation"}).
+Anything without a translation falls back to Slovak.
+
 Directories are ordered by name, so prefix them (cv01, cv02, 01_hello, ...).
 Only folders found by scanning are reachable, so URL slugs never touch the
 filesystem directly.
@@ -35,6 +39,8 @@ import json
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
+
+from .mathcheck import public_part
 
 SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 
@@ -60,6 +66,8 @@ class Task:
     public_tests: list = field(default_factory=list)  # test names whose details are shown
     type: str = "code"  # code | answer
     level: str = ""  # "" | "A++"
+    lang: str = "sk"
+    strings: dict = field(default_factory=dict)
 
     @property
     def parts(self):
@@ -67,8 +75,22 @@ class Task:
         return _meta(self.path / "answers.json").get("parts", [])
 
     @property
+    def public_parts(self):
+        """What the page shows: no keys, texts in the current language."""
+        out = []
+        for part in self.parts:
+            shown = public_part(part)
+            for name in ("prompt", "hint"):
+                if name in shown:
+                    shown[name] = self.strings.get(shown[name], shown[name])
+            if "options" in shown:
+                shown["options"] = [self.strings.get(o, o) for o in shown["options"]]
+            out.append(shown)
+        return out
+
+    @property
     def description_md(self):
-        return _read(self.path / "description.md")
+        return _localized(self.path / "description.md", self.lang)
 
     @property
     def template(self):
@@ -96,10 +118,11 @@ class Block:
     lecture: str = ""
     tasks: list = field(default_factory=list)
     drills: list = field(default_factory=list)
+    lang: str = "sk"
 
     @property
     def theory_md(self):
-        return _read(self.path / "theory.md")
+        return _localized(self.path / "theory.md", self.lang)
 
     @property
     def basic_tasks(self):
@@ -134,6 +157,14 @@ def _read(path):
         return ""
 
 
+def _localized(path, lang):
+    if lang != "sk":
+        text = _read(path.with_suffix(f".{lang}.md"))
+        if text:
+            return text
+    return _read(path)
+
+
 def _read_files(directory):
     if not directory.is_dir():
         return {}
@@ -153,13 +184,15 @@ def _subdirs(path):
     return [p for p in sorted(path.iterdir()) if p.is_dir() and SLUG_RE.match(p.name)]
 
 
-def load_task(path, kind="task"):
+def load_task(path, kind="task", lang="sk", strings=None):
     meta = _meta(path / "metadata.json")
     limits = meta.get("limits", {})
+    strings = strings or {}
+    title = meta.get("title", path.name)
     return Task(
         slug=path.name,
         path=path,
-        title=meta.get("title", path.name),
+        title=strings.get(title, title),
         kind=kind,
         difficulty=meta.get("difficulty", "easy"),
         time_limit=float(limits.get("time", 2.0)),
@@ -168,29 +201,36 @@ def load_task(path, kind="task"):
         public_tests=list(meta.get("public_tests", [])),
         type=meta.get("type", "code"),
         level=meta.get("level", ""),
+        lang=lang,
+        strings=strings,
     )
 
 
-def load_subjects(content_dir):
+def load_subjects(content_dir, lang="sk"):
     subjects = []
     for s_dir in _subdirs(Path(content_dir)):
         s_meta = _meta(s_dir / "subject.json")
-        subject = Subject(s_dir.name, s_dir, s_meta.get("title", s_dir.name), s_meta.get("summary", ""),
+        strings = _meta(s_dir / f"strings.{lang}.json") if lang != "sk" else {}
+
+        def tr(text):
+            return strings.get(text, text)
+
+        subject = Subject(s_dir.name, s_dir, tr(s_meta.get("title", s_dir.name)), tr(s_meta.get("summary", "")),
                           math=bool(s_meta.get("math", False)), icon=s_meta.get("icon", "C"))
         for b_dir in _subdirs(s_dir):
             b_meta = _meta(b_dir / "block.json")
-            block = Block(b_dir.name, b_dir, b_meta.get("title", b_dir.name), b_meta.get("summary", ""),
-                          b_meta.get("lecture", ""))
-            block.tasks = [load_task(t) for t in _subdirs(b_dir / "tasks")]
-            block.drills = [load_task(t, "drill") for t in _subdirs(b_dir / "drills")]
+            block = Block(b_dir.name, b_dir, tr(b_meta.get("title", b_dir.name)), tr(b_meta.get("summary", "")),
+                          tr(b_meta.get("lecture", "")), lang=lang)
+            block.tasks = [load_task(t, "task", lang, strings) for t in _subdirs(b_dir / "tasks")]
+            block.drills = [load_task(t, "drill", lang, strings) for t in _subdirs(b_dir / "drills")]
             subject.blocks.append(block)
         subjects.append(subject)
     return subjects
 
 
-def find(content_dir, subject_slug, block_slug=None, task_slug=None):
+def find(content_dir, subject_slug, block_slug=None, task_slug=None, lang="sk"):
     """Return (subject, block, task); missing parts are None. task may be a drill."""
-    subject = next((s for s in load_subjects(content_dir) if s.slug == subject_slug), None)
+    subject = next((s for s in load_subjects(content_dir, lang) if s.slug == subject_slug), None)
     block = subject.block(block_slug) if subject and block_slug else None
     task = block.task(task_slug) if block and task_slug else None
     return subject, block, task

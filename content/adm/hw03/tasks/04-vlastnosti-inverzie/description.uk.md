@@ -1,0 +1,1 @@
+**Приклад 4.** Для матриць $$\mathbf{A} = \begin{bmatrix}2 & -3 \\ 4 & 4\end{bmatrix},\qquad \mathbf{B} = \begin{bmatrix}3 & 1 \\ 5 & 2\end{bmatrix},\qquad \mathbf{C} = \begin{bmatrix}2 & 0 \\ 0 & 3\end{bmatrix},\qquad \mathbf{D} = \begin{bmatrix}6 & 4 \\ -2 & -1\end{bmatrix}$$ перевірте рівності обчисленням — обчисліть вирази.

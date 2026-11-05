@@ -1,4 +1,4 @@
-## Priorita operátorov / Приоритет операторов
+## Priorita operátorov
 
 Od najvyššej po najnižšiu (výber):
 
@@ -13,7 +13,7 @@ Od najvyššej po najnižšiu (výber):
 | podmienený | `? :` |
 | priradenie | `= += -= *= /= %=` |
 
-Keď si nie ste istí — **použite zátvorky**. / Не уверены — ставьте скобки.
+Keď si nie ste istí — **použite zátvorky**.
 
 ::: quiz
 Akú hodnotu má `1 + 2 * 3 > 6 && 0`?
@@ -23,7 +23,7 @@ Akú hodnotu má `1 + 2 * 3 > 6 && 0`?
 > `2*3 = 6`, `1+6 = 7`, `7 > 6` je 1, ale `1 && 0` je 0.
 :::
 
-## Podmienený výraz `?:` / Тернарный оператор
+## Podmienený výraz `?:`
 
 ```c
 int max = (a > b) ? a : b;      // ak a > b, výsledok je a, inak b
@@ -67,7 +67,7 @@ switch (znak) {
 :::
 
 ::: drill d2-switch
-## Cykly / Циклы
+## Cykly
 
 ```c
 // while: podmienka sa testuje PRED telom (telo sa nemusí vykonať ani raz)
@@ -115,7 +115,7 @@ Koľkokrát sa vykoná telo `for (i = 0; i < 10; i += 3)`?
 
 ::: drill d2-for
 ::: drill d2-while
-## Statické jednorozmerné pole / Статический массив
+## Statické jednorozmerné pole
 
 ```c
 #define N 11
@@ -137,7 +137,7 @@ for (int i = 0; i < 3; i++) b[i] = a[i];   // správne kopírovanie
 ```
 
 ::: quiz
-`int a[5];` — ktorý prístup je chybný? / Какое обращение ошибочно?
+`int a[5];` — ktorý prístup je chybný?
 - [ ] `a[0]`
 - [ ] `a[4]`
 - [x] `a[5]`

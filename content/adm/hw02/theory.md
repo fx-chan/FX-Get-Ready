@@ -1,4 +1,4 @@
-## Lineárna rovnica a systém / Линейное уравнение и система
+## Lineárna rovnica a systém
 
 **Lineárna rovnica** v neznámych $x_1, \dots, x_n$ má tvar $a_1x_1 + a_2x_2 + \dots + a_nx_n = b$, kde $a_i, b$ sú
 konštanty. Neznáme sú len v **prvej mocnine**, nenásobia sa navzájom a nie sú v argumentoch funkcií.
@@ -17,14 +17,14 @@ Systém je **konzistentný**, ak má aspoň jedno riešenie, inak **nekonzistent
 1. **žiadne** riešenie, 2. **práve jedno** riešenie, alebo 3. **nekonečne veľa** riešení — nič iné nie je možné.
 
 ::: quiz
-Môže mať lineárny systém práve dve riešenia? / Может ли система иметь ровно два решения?
+Môže mať lineárny systém práve dve riešenia?
 - [ ] áno, napr. kvadratická rovnica
 - [x] nie — s dvoma riešeniami má nekonečne veľa
 - [ ] áno, ak má dve rovnice
 > Ak $\mathbf{X}_1, \mathbf{X}_2$ sú riešenia, tak aj $\mathbf{X}_1 + c(\mathbf{X}_2 - \mathbf{X}_1)$ pre každé $c$ (dôkaz je v A++ úlohe).
 :::
 
-## Augmentovaná matica / Расширенная матрица
+## Augmentovaná matica
 
 Systém zapíšeme maticovo $\mathbf{A}\mathbf{x} = \mathbf{b}$, kde $\mathbf{A}$ je **matica koeficientov** a $\mathbf{b}$
 **stĺpec pravých strán**. **Augmentovaná (rozšírená) matica** je $[\mathbf{A}\,|\,\mathbf{b}]$:
@@ -36,7 +36,7 @@ Chýbajúca neznáma = koeficient **0**. Každý riadok je jedna rovnica, každ�
 
 ::: drill d2-augmentovana
 
-## Elementárne riadkové operácie / Элементарные преобразования строк
+## Elementárne riadkové operácie
 
 Tieto operácie **nemenia množinu riešení**:
 
@@ -56,7 +56,7 @@ Ktorá operácia **nie je** elementárna riadková operácia?
 > Násobiť riadok smieme len **nenulovým** číslom — násobenie nulou by stratilo rovnicu.
 :::
 
-## REF a RREF / Ступенчатый вид
+## REF a RREF
 
 **Riadkový echelonový tvar (REF):**
 - nulové riadky sú na spodku,
@@ -79,7 +79,7 @@ Je $\begin{bmatrix}1&2&0\\0&1&0\\0&0&0\end{bmatrix}$ v RREF?
 > Na RREF treba $R_1 \to R_1 - 2R_2$.
 :::
 
-## Čítanie riešenia z RREF / Как прочитать решение
+## Čítanie riešenia z RREF
 
 - **Vedúce premenné** — stĺpce s vedúcou jednotkou; **voľné premenné** — ostatné stĺpce.
 - Voľné premenné položíme rovné parametrom $t, s, \dots$ a vedúce z nich vyjadríme.
@@ -92,7 +92,7 @@ Počet parametrov = počet neznámych − počet vedúcich jednotiek (= hodnosť
 
 ::: drill d2-rref
 
-## Gaussova a Gauss-Jordanova eliminácia / Метод Гаусса и Гаусса–Жордана
+## Gaussova a Gauss-Jordanova eliminácia
 
 1. **Priamy chod (Gauss):** stĺpec po stĺpci vytvoríme vedúcu jednotku a pod ňou nuly → **REF**.
 2. Potom buď **spätné dosadenie** (od poslednej rovnice nahor), alebo
@@ -123,7 +123,7 @@ Systém 3 rovníc s 5 neznámymi je konzistentný. Koľko má riešení?
 > Hodnosť je najviac 3 < 5, preto zostanú aspoň 2 voľné premenné.
 :::
 
-## Homogénne systémy / Однородные системы
+## Homogénne systémy
 
 Systém $\mathbf{A}\mathbf{x} = \mathbf{0}$ je **vždy konzistentný** — má **triviálne riešenie** $\mathbf{x} = \mathbf{0}$.
 **Netriviálne** riešenie má práve vtedy, keď existuje voľná premenná, napr. vždy, keď je **viac neznámych než rovníc**.
@@ -139,7 +139,7 @@ Homogénny systém 4 rovníc so 4 neznámymi má po eliminácii 3 vedúce jednot
 > Homogénny systém nemôže byť nekonzistentný. 4 − 3 = 1 voľná premenná.
 :::
 
-## Systémy s parametrom a konštantami / Системы с параметром
+## Systémy s parametrom a konštantami
 
 - Pri parametri ($\alpha$) robíme elimináciu normálne; problém je, keď **pivot obsahuje parameter** a môže byť 0.
   Rozoberieme prípady: pivot $\ne 0$ → jedno riešenie; pivot $= 0$ → pozrieme pravú stranu (0 = 0 → nekonečne veľa,
@@ -158,7 +158,7 @@ Po eliminácii dostaneme posledný riadok $[\,0\;\;0\;\;(\alpha-2)(\alpha+2) \,|
 > Pre $\alpha = 2$ je riadok $[0\;0\;0\,|\,0]$, rovnica zmizne a pribudne voľná premenná. Pre $\alpha = -2$ je $[0\;0\;0\,|\,-4]$ — žiadne riešenie.
 :::
 
-## Nelineárne systémy cez substitúciu / Нелинейные системы
+## Nelineárne systémy cez substitúciu
 
 Ak sa neznáme vyskytujú len vo **výrazoch rovnakého tvaru** ($\sin\alpha$, $x^2$, $\frac1x$, …), zavedieme nové
 neznáme ($u = \sin\alpha$, $X = x^2$, $u = \frac1x$), vyriešime lineárny systém a vrátime sa späť.

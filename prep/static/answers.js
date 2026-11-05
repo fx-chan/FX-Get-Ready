@@ -128,12 +128,12 @@
 
     button.addEventListener("click", function () {
       if (root.dataset.loggedIn !== "1") {
-        resultEl.innerHTML = '<div class="verdict INFO">Na kontrolu odpovedí sa prihláste. / Войдите, чтобы проверять ответы.' +
-          ' <a class="btn primary sm" href="' + esc(root.dataset.loginUrl) + '">Prihlásiť</a></div>';
+        resultEl.innerHTML = '<div class="verdict INFO">' + esc(t("Na kontrolu odpovedí sa prihláste.")) +
+          ' <a class="btn primary sm" href="' + esc(root.dataset.loginUrl) + '">' + esc(t("Prihlásiť")) + "</a></div>";
         return;
       }
       button.disabled = true;
-      resultEl.innerHTML = '<p class="pending"><span class="spinner"></span>Kontrolujem… / Проверяю…</p>';
+      resultEl.innerHTML = '<p class="pending"><span class="spinner"></span>' + esc(t("Kontrolujem…")) + "</p>";
       fetch(root.dataset.checkUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-CSRF-Token": CSRF },
@@ -159,8 +159,7 @@
       });
       var ac = data.verdict === "AC";
       resultEl.innerHTML = '<div class="verdict ' + (ac ? "AC" : "WA") + '">' +
-        (ac ? "✓ Všetko správne! / Всё верно!" : "Správne " + data.passed + " z " + data.total +
-          ". Opravte červené časti. / Верно " + data.passed + " из " + data.total + ".") + "</div>";
+        esc(ac ? "✓ " + t("Všetko správne!") : t("Správne {a} z {b}. Opravte červené časti.", { a: data.passed, b: data.total })) + "</div>";
       if (ac) {
         var drill = root.closest(".drill");
         if (drill) drill.classList.add("solved");

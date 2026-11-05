@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ subject.title }}{% endblock %}
 {% block crumbs %}
-<nav class="crumbs"><a href="{{ url_for('main.index') }}">Predmety</a><span>›</span>{{ subject.title }}</nav>
+<nav class="crumbs"><a href="{{ url_for('main.index') }}">{{ _('Predmety') }}</a><span>›</span>{{ subject.title }}</nav>
 {% endblock %}
 {% block content %}
 <header class="page-head">
@@ -19,8 +19,8 @@
         {% if b.summary %}<p>{{ b.summary }}</p>{% endif %}
         <div class="tl-meta">
           {% if b.lecture %}<span class="pill">📖 {{ b.lecture }}</span>{% endif %}
-          <span class="pill">✏️ {{ b.drills|length }} mini úloh</span>
-          <span class="pill">💻 {{ b.basic_tasks|length }} úloh</span>
+          <span class="pill">✏️ {{ b.drills|length }} {{ _('mini úloh') }}</span>
+          <span class="pill">💻 {{ b.basic_tasks|length }} {{ _('úloh') }}</span>
           {% if b.advanced_tasks %}<span class="pill aplus">🏆 {{ b.advanced_tasks|length }} × A++</span>{% endif %}
           {% if g.user %}<span class="pill accent">{{ p.done }}/{{ p.total }}</span>{% endif %}
         </div>

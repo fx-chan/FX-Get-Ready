@@ -2,11 +2,12 @@ import json
 import re
 
 import markdown as md
-from flask import Blueprint, abort, current_app, g, jsonify, make_response, render_template, request
+from flask import Blueprint, abort, current_app, g, jsonify, make_response, redirect, render_template, request
 from markupsafe import Markup, escape
 
-from . import content, db, judge, mathcheck
-from .auth import api_login_required
+from . import content, db, i18n, judge, mathcheck
+from .auth import _safe_next, api_login_required
+from .i18n import t
 
 bp = Blueprint("main", __name__)
 
@@ -77,10 +78,19 @@ def inject_helpers():
             "public_part": mathcheck.public_part}
 
 
+@bp.route("/lang/<code>")
+def set_lang(code):
+    if code not in i18n.LANGS:
+        abort(404)
+    resp = redirect(_safe_next(request.args.get("next")))
+    resp.set_cookie(i18n.COOKIE, code, max_age=365 * 24 * 3600, samesite="Lax", httponly=True)
+    return resp
+
+
 @bp.route("/")
 def index():
     solved = _solved()
-    subjects = content.load_subjects(_content_dir())
+    subjects = content.load_subjects(_content_dir(), g.lang)
     stats = {}
     for s in subjects:
         done = total = 0
@@ -93,7 +103,7 @@ def index():
 
 @bp.route("/<subject_slug>/")
 def subject(subject_slug):
-    subj, _, _ = content.find(_content_dir(), subject_slug)
+    subj, _, _ = content.find(_content_dir(), subject_slug, lang=g.lang)
     if not subj:
         abort(404)
     solved = _solved()
@@ -103,7 +113,7 @@ def subject(subject_slug):
 
 @bp.route("/<subject_slug>/<block_slug>/")
 def block(subject_slug, block_slug):
-    subj, blk, _ = content.find(_content_dir(), subject_slug, block_slug)
+    subj, blk, _ = content.find(_content_dir(), subject_slug, block_slug, lang=g.lang)
     if not blk:
         abort(404)
     segments = []
@@ -131,7 +141,7 @@ def block(subject_slug, block_slug):
 
 @bp.route("/<subject_slug>/<block_slug>/<task_slug>/")
 def task(subject_slug, block_slug, task_slug):
-    subj, blk, tsk = content.find(_content_dir(), subject_slug, block_slug, task_slug)
+    subj, blk, tsk = content.find(_content_dir(), subject_slug, block_slug, task_slug, lang=g.lang)
     if not tsk:
         abort(404)
     key = task_key(subj, blk, tsk)
@@ -160,7 +170,7 @@ def _read_source():
     data = request.get_json(silent=True) or {}
     source = data.get("source")
     if not isinstance(source, str) or not source.strip():
-        _fail("Missing source code / Chýba zdrojový kód / Нет кода", 400)
+        _fail(t("Chýba zdrojový kód."), 400)
     if len(source.encode("utf-8")) > current_app.config["MAX_SOURCE_BYTES"]:
         _fail("Source too large", 413)
     return data, source
@@ -168,7 +178,7 @@ def _read_source():
 
 def _rate_limit():
     if not current_app.extensions["rate_limiter"].allow(g.user["id"], current_app.config["USER_RUNS_PER_MINUTE"]):
-        _fail("Príliš veľa spustení, počkajte minútu. / Слишком много запусков, подождите минуту.", 429)
+        _fail(t("Príliš veľa spustení, počkajte minútu."), 429)
 
 
 @bp.post("/api/<subject_slug>/<block_slug>/<task_slug>/submit")
@@ -221,7 +231,7 @@ def check(subject_slug, block_slug, task_slug):
     data = request.get_json(silent=True) or {}
     answers = data.get("answers")
     if not isinstance(answers, dict):
-        _fail("Missing answers / Chýbajú odpovede / Нет ответов", 400)
+        _fail(t("Chýbajú odpovede."), 400)
     raw = json.dumps(answers, ensure_ascii=False)
     if len(raw.encode("utf-8")) > current_app.config["MAX_SOURCE_BYTES"]:
         _fail("Answers too large", 413)

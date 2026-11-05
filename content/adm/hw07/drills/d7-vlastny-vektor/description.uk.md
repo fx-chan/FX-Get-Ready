@@ -1,0 +1,1 @@
+$\mathbf{x} \ne \mathbf{0}$ — власний вектор $\mathbf{A}$, якщо $\mathbf{Ax} = \lambda\mathbf{x}$. Обчисліть $\mathbf{Ax}$ і знайдіть $\lambda$ для $\mathbf{A} = \begin{bmatrix}5 & -1 \\ 1 & 3\end{bmatrix}$, $\mathbf{x} = (1, 1)$.

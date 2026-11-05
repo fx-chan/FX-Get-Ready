@@ -1,6 +1,5 @@
 Načítajte celočíselný polomer kruhu a vypíšte jeho obvod na **2 desatinné miesta**. Použite `pi = 3.14`.
 
-*Считайте радиус, выведите длину окружности (2 знака, `pi = 3.14`).*
 
 ### Ukážka vstupu
 ```

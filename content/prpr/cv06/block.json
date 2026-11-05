@@ -1,5 +1,5 @@
 {
   "title": "Cvičenie 6 — Dynamická pamäť",
-  "summary": "malloc, calloc, realloc, free a ukazovateľová aritmetika. / Динамическая память.",
+  "summary": "malloc, calloc, realloc, free a ukazovateľová aritmetika.",
   "lecture": "P5 — Alokácia pamäte"
 }

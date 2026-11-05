@@ -4,12 +4,12 @@
   var CSRF = (document.querySelector('meta[name="csrf-token"]') || {}).content || "";
 
   var VERDICTS = {
-    AC: "Accepted — Správne / Принято",
-    WA: "Wrong Answer — Nesprávny výstup / Неверный ответ",
-    CE: "Compilation Error — Chyba kompilácie / Ошибка компиляции",
-    TLE: "Time Limit — Prekročený čas / Превышено время",
-    RE: "Runtime Error — Chyba za behu / Ошибка выполнения",
-    IE: "Internal Error — Skúste neskôr / Попробуйте позже"
+    AC: t("Accepted — Správne"),
+    WA: t("Wrong Answer — Nesprávny výstup"),
+    CE: t("Compilation Error — Chyba kompilácie"),
+    TLE: t("Time Limit — Prekročený čas"),
+    RE: t("Runtime Error — Chyba za behu"),
+    IE: t("Internal Error — Skúste neskôr")
   };
 
   function store(op, k, v) {
@@ -28,7 +28,7 @@
   }
 
   function pre(label, text) {
-    return "<div><h4>" + label + "</h4><pre>" + esc(text === "" ? "(prázdne / пусто)" : text) + "</pre></div>";
+    return "<div><h4>" + label + "</h4><pre>" + esc(text === "" ? t("(prázdne)") : text) + "</pre></div>";
   }
 
   function ms(t) { return t != null ? Math.round(t) + " ms" : "—"; }
@@ -57,7 +57,7 @@
     editor.on("change", function () { store("set", draftKey, editor.getValue()); });
 
     root.querySelector(".js-reset").addEventListener("click", function () {
-      if (confirm("Vrátiť pôvodnú šablónu? / Вернуть исходный шаблон?")) {
+      if (confirm(t("Vrátiť pôvodnú šablónu?"))) {
         editor.setValue(template);
         store("del", draftKey);
       }
@@ -68,14 +68,14 @@
 
     function needLogin() {
       if (root.dataset.loggedIn === "1") return false;
-      resultEl.innerHTML = '<div class="verdict INFO">Na spúšťanie kódu sa prihláste. / Войдите, чтобы запускать код.' +
-        ' <a class="btn primary sm" href="' + esc(root.dataset.loginUrl) + '">Prihlásiť</a></div>';
+      resultEl.innerHTML = '<div class="verdict INFO">' + esc(t("Na spúšťanie kódu sa prihláste.")) +
+        ' <a class="btn primary sm" href="' + esc(root.dataset.loginUrl) + '">' + esc(t("Prihlásiť")) + "</a></div>";
       return true;
     }
 
     function busy(on) {
       buttons.forEach(function (b) { b.disabled = on; });
-      if (on) resultEl.innerHTML = '<p class="pending"><span class="spinner"></span>Prebieha… / Выполняется…</p>';
+      if (on) resultEl.innerHTML = '<p class="pending"><span class="spinner"></span>' + esc(t("Prebieha…")) + "</p>";
     }
 
     function post(url, body) {
@@ -99,13 +99,13 @@
       if (needLogin()) return;
       post(root.dataset.runUrl, { source: editor.getValue(), stdin: stdinEl ? stdinEl.value : "" }).then(function (d) {
         var ok = d.status === "ok";
-        var label = { ok: "Program skončil / Программа завершилась", compile_error: VERDICTS.CE,
+        var label = { ok: t("Program skončil"), compile_error: VERDICTS.CE,
                       timeout: VERDICTS.TLE, runtime_error: VERDICTS.RE, internal_error: VERDICTS.IE }[d.status] || d.status;
         var html = '<div class="verdict ' + (ok ? "AC" : "WA") + '"><span>' + esc(label) + '</span><span class="score">' + ms(d.time_ms) + "</span></div>";
-        if (d.compile_output) html += pre("Kompilátor / Компилятор", d.compile_output);
+        if (d.compile_output) html += pre(t("Kompilátor"), d.compile_output);
         if (d.status !== "compile_error") html += pre("stdout", d.stdout);
         if (d.stderr) html += pre("stderr", d.stderr);
-        if (d.message) html += '<p class="meta">' + esc(d.message) + "</p>";
+        if (d.message) html += '<p class="meta">' + esc(t(d.message)) + "</p>";
         resultEl.innerHTML = html;
       }, function () {});
     }
@@ -115,21 +115,21 @@
       post(root.dataset.submitUrl, { source: editor.getValue() }).then(function (d) {
         var html = '<div class="verdict ' + d.verdict + '"><span>' + esc(VERDICTS[d.verdict] || d.verdict) +
           '</span><span class="score">' + d.passed + " / " + d.total + "</span></div>";
-        if (d.compile_output) html += pre("Kompilátor / Компилятор", d.compile_output);
-        if (d.message) html += '<p class="meta">' + esc(d.message) + "</p>";
+        if (d.compile_output) html += pre(t("Kompilátor"), d.compile_output);
+        if (d.message) html += '<p class="meta">' + esc(t(d.message)) + "</p>";
         if (d.tests && d.tests.length && !(compact && d.verdict === "AC")) {
-          html += '<table class="tests"><tr><th>Test</th><th>Verdikt</th><th>Čas</th></tr>';
-          d.tests.forEach(function (t) {
-            html += "<tr><td>#" + esc(t.name) + '</td><td class="v ' + t.verdict + '">' + t.verdict +
-              (t.message ? ' <span class="meta">' + esc(t.message) + "</span>" : "") + "</td><td>" + ms(t.time_ms) + "</td></tr>";
-            if (t.input != null && t.verdict !== "AC") {
-              html += '<tr><td colspan="3">' + (t.input ? pre("Vstup / Ввод", t.input) : "") +
-                '<div class="diff">' + pre("Očakávané / Ожидалось", t.expected) + pre("Váš výstup / Ваш вывод", t.actual) + "</div></td></tr>";
+          html += '<table class="tests"><tr><th>' + esc(t("Test")) + '</th><th>' + esc(t("Verdikt")) + '</th><th>' + esc(t("Čas")) + '</th></tr>';
+          d.tests.forEach(function (row) {
+            html += "<tr><td>#" + esc(row.name) + '</td><td class="v ' + row.verdict + '">' + row.verdict +
+              (row.message ? ' <span class="meta">' + esc(row.message) + "</span>" : "") + "</td><td>" + ms(row.time_ms) + "</td></tr>";
+            if (row.input != null && row.verdict !== "AC") {
+              html += '<tr><td colspan="3">' + (row.input ? pre(t("Vstup"), row.input) : "") +
+                '<div class="diff">' + pre(t("Očakávané"), row.expected) + pre(t("Váš výstup"), row.actual) + "</div></td></tr>";
             }
           });
           html += "</table>";
           if (d.tests.length < d.total && d.verdict !== "AC") {
-            html += '<p class="meta">Ďalšie testy sa nespúšťali. / Остальные тесты не запускались.</p>';
+            html += '<p class="meta">' + esc(t("Ďalšie testy sa nespúšťali.")) + "</p>";
           }
         }
         resultEl.innerHTML = html;

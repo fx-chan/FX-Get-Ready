@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="sk">
+<html lang="{{ lang() }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{% block title %}Príprava{% endblock %} · Prep</title>
+  <title>{% block title %}{{ _('Príprava') }}{% endblock %} · Prep</title>
   <script>
     // Apply the saved theme before paint to avoid a flash.
     try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -20,10 +20,16 @@
     <div class="topbar-inner">
       <a class="brand" href="{{ url_for('main.index') }}">
         <span class="brand-mark">{ }</span>
-        <span class="brand-text">Prep<small>písomky · skúšky</small></span>
+        <span class="brand-text">Prep<small>{{ _('písomky · skúšky') }}</small></span>
       </a>
       <nav class="topnav">
-        <button type="button" class="icon-btn" id="theme-toggle" title="Svetlý / tmavý režim" aria-label="Prepnúť tému">
+        <span class="lang-switch" role="group" aria-label="{{ _('Jazyk') }}">
+          {% for code, name in languages.items() %}
+          <a href="{{ url_for('main.set_lang', code=code, next=request.full_path.rstrip('?')) }}" title="{{ name }}"
+             class="{{ 'active' if code == lang() }}" lang="{{ code }}">{{ code|upper }}</a>
+          {% endfor %}
+        </span>
+        <button type="button" class="icon-btn" id="theme-toggle" title="{{ _('Svetlý / tmavý režim') }}" aria-label="{{ _('Prepnúť tému') }}">
           <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         </button>
@@ -31,12 +37,12 @@
           <span class="user-chip"><span class="avatar">{{ g.user.username[:1]|upper }}</span>{{ g.user.username }}</span>
           <form method="post" action="{{ url_for('auth.logout') }}" class="inline">
             <input type="hidden" name="csrf" value="{{ csrf_token() }}">
-            <button type="submit" class="btn ghost sm">Odhlásiť</button>
+            <button type="submit" class="btn ghost sm">{{ _('Odhlásiť') }}</button>
           </form>
         {% else %}
-          <a class="btn ghost sm" href="{{ url_for('auth.login', next=request.path) }}">Prihlásiť / Войти</a>
+          <a class="btn ghost sm" href="{{ url_for('auth.login', next=request.path) }}">{{ _('Prihlásiť') }}</a>
           {% if config.ALLOW_REGISTRATION %}
-          <a class="btn primary sm" href="{{ url_for('auth.register', next=request.path) }}">Registrácia</a>
+          <a class="btn primary sm" href="{{ url_for('auth.register', next=request.path) }}">{{ _('Registrácia') }}</a>
           {% endif %}
         {% endif %}
       </nav>
@@ -49,7 +55,13 @@
     {% endwith %}
     {% block content %}{% endblock %}
   </main>
-  <footer class="footer">PRPR · ADM · príprava na písomky a skúšky</footer>
+  <footer class="footer">PRPR · ADM · {{ _('príprava na písomky a skúšky') }}</footer>
+  <script>window.I18N = {{ js_strings()|tojson }};
+    window.t = function (s, args) {
+      var out = window.I18N[s] || s;
+      Object.keys(args || {}).forEach(function (k) { out = out.replace("{" + k + "}", args[k]); });
+      return out;
+    };</script>
   <script src="{{ url_for('static', filename='app.js') }}"></script>
   {% block scripts %}{% endblock %}
 </body>

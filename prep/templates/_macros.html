@@ -6,17 +6,17 @@
      data-logged-in="{{ '1' if g.user else '0' }}"
      data-login-url="{{ url_for('auth.login', next=request.path) }}">
   <div class="toolbar">
-    <button type="button" class="btn ghost sm js-reset" title="Vrátiť šablónu / Сбросить к шаблону">↺ Šablóna</button>
+    <button type="button" class="btn ghost sm js-reset" title="{{ _('Vrátiť šablónu') }}">↺ {{ _('Šablóna') }}</button>
     <span class="spacer"></span>
-    {% if not compact %}<button type="button" class="btn secondary js-run">▶ Spustiť <span class="ru">/ Запустить</span></button>{% endif %}
-    <button type="button" class="btn primary js-submit">{{ '✓ Skontrolovať' if compact else 'Odoslať' }} <span class="ru">/ {{ 'Проверить' if compact else 'Отправить' }}</span></button>
+    {% if not compact %}<button type="button" class="btn secondary js-run">▶ {{ _('Spustiť') }}</button>{% endif %}
+    <button type="button" class="btn primary js-submit">{{ '✓ ' ~ _('Skontrolovať') if compact else _('Odoslať') }}</button>
   </div>
   <textarea class="js-source">{{ initial if initial is not none else task.template }}</textarea>
   <textarea class="js-template" hidden>{{ task.template }}</textarea>
   {% if not compact %}
   <details class="stdin-box">
-    <summary>Vlastný vstup (stdin) <span class="ru">/ Свой ввод</span></summary>
-    <textarea class="js-stdin" rows="4" spellcheck="false" placeholder="napr. 10 8"></textarea>
+    <summary>{{ _('Vlastný vstup (stdin)') }}</summary>
+    <textarea class="js-stdin" rows="4" spellcheck="false" placeholder="{{ _('napr. 10 8') }}"></textarea>
   </details>
   {% endif %}
   <div class="result js-result" aria-live="polite"></div>
@@ -47,12 +47,11 @@
      data-check-url="{{ url_for('main.check', subject_slug=subject.slug, block_slug=block.slug, task_slug=task.slug) }}"
      data-logged-in="{{ '1' if g.user else '0' }}"
      data-login-url="{{ url_for('auth.login', next=request.path) }}">
-  {% for raw in task.parts %}
-  {% set p = public_part(raw) %}
+  {% for p in task.public_parts %}
   {% set prev = initial.get(p.id) or {} %}
   <div class="ans-part" data-id="{{ p.id }}" data-kind="{{ p.kind }}">
     <div class="ans-label">
-      {% if task.parts|length > 1 %}<span class="ans-id">{{ p.id }})</span>{% endif %}
+      {% if task.public_parts|length > 1 %}<span class="ans-id">{{ p.id }})</span>{% endif %}
       <span class="ans-prompt">{{ md(p.prompt or "", subject.math, True) }}</span>
       <span class="ans-mark" aria-hidden="true"></span>
     </div>
@@ -71,36 +70,36 @@
           {{ 'checked' if loop.index0|string in chosen }}> <span>{{ md(opt, subject.math, True) }}</span></label>
       {% endfor %}
       </div>
-      <p class="ans-hint">Označte všetky platné možnosti. / Отметьте все верные варианты.</p>
+      <p class="ans-hint">{{ _('Označte všetky platné možnosti.') }}</p>
     {% elif p.kind in MULTILINE %}
       <textarea class="ans-input js-value mono" rows="{{ 3 if compact else 4 }}" spellcheck="false"
-                placeholder="{{ PLACEHOLDERS[p.kind] }}">{{ prev.value if prev.value is string }}</textarea>
+                placeholder="{{ _(PLACEHOLDERS[p.kind]) }}">{{ prev.value if prev.value is string }}</textarea>
       <div class="ans-preview" aria-hidden="true"></div>
     {% else %}
       <input type="text" class="ans-input js-value mono" spellcheck="false" autocomplete="off"
-             placeholder="{{ PLACEHOLDERS[p.kind] }}" value="{{ prev.value if prev.value is string }}">
+             placeholder="{{ _(PLACEHOLDERS[p.kind]) }}" value="{{ prev.value if prev.value is string }}">
       {% if p.kind in ["vector", "system"] %}<div class="ans-preview" aria-hidden="true"></div>{% endif %}
     {% endif %}
     {% if p.kind in none_labels %}
-      <label class="ans-none"><input type="checkbox" class="js-none" {{ 'checked' if prev.none }}> {{ none_labels[p.kind] }}</label>
+      <label class="ans-none"><input type="checkbox" class="js-none" {{ 'checked' if prev.none }}> {{ _(none_labels[p.kind]) }}</label>
     {% endif %}
-    {% if p.vars %}<p class="ans-hint">Premenné / переменные: {{ p.vars|join(", ") }}</p>{% endif %}
+    {% if p.vars %}<p class="ans-hint">{{ _('Premenné') }}: {{ p.vars|join(", ") }}</p>{% endif %}
     {% if p.hint %}<p class="ans-hint">{{ md(p.hint, subject.math, True) }}</p>{% endif %}
     <p class="ans-msg" aria-live="polite"></p>
   </div>
   {% endfor %}
   <div class="toolbar ans-toolbar">
     <details class="ans-help">
-      <summary>Ako zapisovať odpovede? <span class="ru">/ Как записывать?</span></summary>
+      <summary>{{ _('Ako zapisovať odpovede?') }}</summary>
       <ul>
-        <li>Zlomky a odmocniny: <code>-7/2</code>, <code>sqrt(2)/2</code> alebo <code>√2/2</code>, mocnina <code>2^3</code>, <code>pi</code>, komplexná jednotka <code>i</code>.</li>
-        <li>Matica: riadky na samostatné riadky (alebo oddelené <code>;</code>), prvky medzerou alebo čiarkou.</li>
-        <li>Vektor: <code>1, -2, 3</code>. Nekonečne veľa riešení: parametre <code>t, s, u</code>, napr. <code>1+2t, t, 3</code>.</li>
-        <li>Desatinné čísla stačia na 2–3 miesta, presný tvar je vždy správny.</li>
+        <li>{{ _('Zlomky a odmocniny:') }} <code>-7/2</code>, <code>sqrt(2)/2</code> {{ _('alebo') }} <code>√2/2</code>, {{ _('mocnina') }} <code>2^3</code>, <code>pi</code>, {{ _('komplexná jednotka') }} <code>i</code>.</li>
+        <li>{{ _('Matica: riadky na samostatné riadky (alebo oddelené') }} <code>;</code>{{ _('), prvky medzerou alebo čiarkou.') }}</li>
+        <li>{{ _('Vektor:') }} <code>1, -2, 3</code>. {{ _('Nekonečne veľa riešení: parametre') }} <code>t, s, u</code>, {{ _('napr.') }} <code>1+2t, t, 3</code>.</li>
+        <li>{{ _('Desatinné čísla stačia na 2–3 miesta, presný tvar je vždy správny.') }}</li>
       </ul>
     </details>
     <span class="spacer"></span>
-    <button type="button" class="btn primary js-check">✓ Skontrolovať <span class="ru">/ Проверить</span></button>
+    <button type="button" class="btn primary js-check">✓ {{ _('Skontrolovať') }}</button>
   </div>
   <div class="result js-result" aria-live="polite"></div>
 </div>

@@ -1,0 +1,1 @@
+Для $\mathbf{A} = \begin{bmatrix}a&b\\c&d\end{bmatrix}$ при $ad - bc \ne 0$ маємо $\mathbf{A}^{-1} = \frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$. Знайдіть обернену до $\begin{bmatrix}3 & 1 \\ 5 & 2\end{bmatrix}$ та $\begin{bmatrix}4&1\\8&2\end{bmatrix}$.

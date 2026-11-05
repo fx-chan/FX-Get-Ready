@@ -1,6 +1,6 @@
 {
   "title": "ADM — Algebra a diskrétna matematika",
-  "summary": "Matice, sústavy rovníc, inverzná matica, determinanty, maticové transformácie, LU rozklad a vlastné čísla. / Матрицы, СЛАУ, обратная матрица, определители, преобразования, собственные числа.",
+  "summary": "Matice, sústavy rovníc, inverzná matica, determinanty, maticové transformácie, LU rozklad a vlastné čísla.",
   "math": true,
   "icon": "∑"
 }

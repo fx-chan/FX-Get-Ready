@@ -1,0 +1,1 @@
+**Приклад 7.** Для $\mathbf{A} = \begin{bmatrix}a&b\\c&d\end{bmatrix}$, $\mathbf{B} = \begin{bmatrix}0&1\\0&0\end{bmatrix}$, $\mathbf{C} = \begin{bmatrix}0&0\\1&0\end{bmatrix}$ порівняйте $\mathbf{AB}$ і $\mathbf{BA}$ поелементно.

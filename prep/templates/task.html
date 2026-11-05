@@ -7,7 +7,7 @@
 {% endblock %}
 {% block crumbs %}
 <nav class="crumbs">
-  <a href="{{ url_for('main.index') }}">Predmety</a><span>›</span>
+  <a href="{{ url_for('main.index') }}">{{ _('Predmety') }}</a><span>›</span>
   <a href="{{ url_for('main.subject', subject_slug=subject.slug) }}">{{ subject.title }}</a><span>›</span>
   <a href="{{ url_for('main.block', subject_slug=subject.slug, block_slug=block.slug) }}">{{ block.title }}</a><span>›</span>
   {{ task.title }}
@@ -21,19 +21,18 @@
       <div class="tl-meta">
         <span class="badge {{ task.difficulty }}">{{ task.difficulty }}</span>
         <span class="pill">⏱ {{ task.time_limit|round(1) }} s</span>
-        {% if key in solved %}<span class="pill ok">✓ Vyriešené</span>{% endif %}
+        {% if key in solved %}<span class="pill ok">✓ {{ _('Vyriešené') }}</span>{% endif %}
       </div>
     </div>
     <div class="prose">{{ description }}</div>
     {% if not g.user %}
-    <div class="flash info">Na spustenie a odoslanie kódu sa <a href="{{ url_for('auth.login', next=request.path) }}">prihláste</a>. /
-      Чтобы запускать код, <a href="{{ url_for('auth.login', next=request.path) }}">войдите</a>.</div>
+    <div class="flash info">{{ _('Na spustenie a odoslanie kódu sa') }} <a href="{{ url_for('auth.login', next=request.path) }}">{{ _('prihláste') }}</a>.</div>
     {% endif %}
   </section>
   <section class="workspace">
     {{ code_widget(subject, block, task, initial=last_source) }}
     {% if next_task %}
-    <p class="next-link"><a href="{{ url_for('main.task', subject_slug=subject.slug, block_slug=block.slug, task_slug=next_task.slug) }}">Ďalšia úloha / Следующая: {{ next_task.title }} →</a></p>
+    <p class="next-link"><a href="{{ url_for('main.task', subject_slug=subject.slug, block_slug=block.slug, task_slug=next_task.slug) }}">{{ _('Ďalšia úloha') }}: {{ next_task.title }} →</a></p>
     {% endif %}
   </section>
 </div>

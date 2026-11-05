@@ -70,8 +70,7 @@ class OnlineCompilerRunner:
                     break
                 self.sleep(1.5 * (attempt + 1))
             if resp.status_code == 429:
-                return RunResult(INTERNAL_ERROR, message="Kompilátor je preťažený, skúste o chvíľu. / "
-                                                         "Компилятор перегружен, попробуйте позже.")
+                return RunResult(INTERNAL_ERROR, message="Kompilátor je preťažený, skúste o chvíľu.")
             resp.raise_for_status()
             data = resp.json()
         except (requests.RequestException, ValueError) as exc:

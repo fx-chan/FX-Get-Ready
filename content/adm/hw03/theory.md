@@ -1,4 +1,4 @@
-## Vlastnosti maticových operácií / Свойства операций
+## Vlastnosti maticových operácií
 
 Pre matice vhodných rozmerov a skaláry $a, b$ platí:
 
@@ -12,7 +12,7 @@ Pre matice vhodných rozmerov a skaláry $a, b$ platí:
 Nulová matica: $\mathbf{A}+\mathbf{0} = \mathbf{A}$, $\mathbf{A0} = \mathbf{0}$. Jednotková: $\mathbf{AI} = \mathbf{IA} = \mathbf{A}$.
 **Neplatí** komutatívnosť $\mathbf{AB} = \mathbf{BA}$ ani krátenie ($\mathbf{AB} = \mathbf{AC} \not\Rightarrow \mathbf{B} = \mathbf{C}$).
 
-## Inverzná matica / Обратная матрица
+## Inverzná matica
 
 Štvorcová matica $\mathbf{A}$ je **invertibilná (regulárna)**, ak existuje $\mathbf{A}^{-1}$ s
 $\mathbf{A}\mathbf{A}^{-1} = \mathbf{A}^{-1}\mathbf{A} = \mathbf{I}$. Inak je **singulárna**. Inverzia je jednoznačná.
@@ -54,7 +54,7 @@ Z rovnice $\mathbf{AXB} = \mathbf{C}$ ($\mathbf{A}, \mathbf{B}$ invertibilné) v
 > Zľava vynásobíme $\mathbf{A}^{-1}$ a sprava $\mathbf{B}^{-1}$: $\mathbf{A}^{-1}\mathbf{AXB}\mathbf{B}^{-1} = \mathbf{X}$.
 :::
 
-## Polynóm matice / Многочлен от матрицы
+## Polynóm matice
 
 Pre $p(x) = a_0 + a_1x + \dots + a_mx^m$ definujeme $p(\mathbf{A}) = a_0\mathbf{I} + a_1\mathbf{A} + \dots + a_m\mathbf{A}^m$
 — **konštantu násobíme maticou $\mathbf{I}$**. Lebo mocniny $\mathbf{A}$ navzájom komutujú, platí
@@ -68,7 +68,7 @@ $p(x) = x^2 - 2x + 3$. Čomu sa rovná $p(\mathbf{A})$?
 > K matici nemožno pripočítať číslo — konštanta 3 sa zmení na $3\mathbf{I}$.
 :::
 
-## Elementárne matice / Элементарные матрицы
+## Elementárne matice
 
 **Elementárna matica** vznikne z $\mathbf{I}_n$ **jednou** elementárnou riadkovou operáciou. Vynásobenie
 $\mathbf{EA}$ (zľava) urobí s $\mathbf{A}$ tú istú operáciu.
@@ -92,7 +92,7 @@ Je $\begin{bmatrix}-5&1\\1&0\end{bmatrix}$ elementárna?
 > Výmena dá $\begin{bmatrix}0&1\\1&0\end{bmatrix}$; prvok $-5$ by vyžadoval ešte ďalšiu operáciu.
 :::
 
-## Výpočet inverzie elimináciou / Обратная матрица методом Гаусса–Жордана
+## Výpočet inverzie elimináciou
 
 Upravujeme $[\mathbf{A}\,|\,\mathbf{I}]$ riadkovými operáciami, kým vľavo nie je $\mathbf{I}$:
 $$[\mathbf{A}\,|\,\mathbf{I}] \longrightarrow [\mathbf{I}\,|\,\mathbf{A}^{-1}]$$
@@ -121,7 +121,7 @@ Pri úprave $[\mathbf{A}\,|\,\mathbf{I}]$ vyšiel vľavo riadok $[0\;0\;0]$. Čo
 > Nulový riadok znamená, že RREF$(\mathbf{A}) \ne \mathbf{I}$.
 :::
 
-## Sústavy cez inverznú maticu / Решение систем через обратную матрицу
+## Sústavy cez inverznú maticu
 
 Ak je $\mathbf{A}$ **štvorcová a invertibilná**, sústava $\mathbf{Ax} = \mathbf{b}$ má jediné riešenie
 $$\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}.$$

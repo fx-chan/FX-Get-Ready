@@ -1,0 +1,1 @@
+$p(\lambda) = \det(\lambda\mathbf{I} - \mathbf{A}) = \lambda^2 - \operatorname{tr}(\mathbf{A})\lambda + \det\mathbf{A}$. Для $\mathbf{A} = \begin{bmatrix}1 & 4 \\ 2 & 3\end{bmatrix}$ знайдіть многочлен (змінна `lambda` або `λ`) і власні числа.

@@ -1,0 +1,1 @@
+Власні вектори для $\lambda$ = ненульові розв'язки $(\lambda\mathbf{I} - \mathbf{A})\mathbf{x} = \mathbf{0}$. Введіть **базис** власного підпростору (один вектор у рядку) для $\mathbf{A} = \begin{bmatrix}1 & 4 \\ 2 & 3\end{bmatrix}$.

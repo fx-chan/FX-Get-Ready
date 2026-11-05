@@ -1,4 +1,4 @@
-## Algoritmus a paradigmy / Алгоритм и парадигмы
+## Algoritmus a paradigmy
 
 **Algoritmus** je presný postup, ktorý po konečnom počte krokov vyrieši úlohu. Požadované vlastnosti:
 
@@ -23,10 +23,9 @@ Ktorá vlastnosť algoritmu hovorí, že po konečnom počte krokov musí prís�
 > Determinovanosť = ďalší krok je jednoznačne daný; efektívnosť = šetrí čas a pamäť.
 :::
 
-## Od zdrojáku k programu / От исходника к программе
+## Od zdrojáku k programu
 
 Jazyk C je **kompilovaný**: zdrojový kód (`.c`) sa najprv preloží do strojového kódu a až potom sa spúšťa.
-Си — компилируемый язык: исходник сначала переводится в машинный код, потом запускается.
 
 | krok | čo robí | `gcc` prepínač | výsledok |
 |---|---|---|---|
@@ -42,16 +41,15 @@ gcc -v hello.c                 # -v vypíše, čo gcc robí v každom kroku
 ```
 
 > Na tejto stránke kód kompiluje server (GCC 15) — stačí stlačiť **Skontrolovať** / **Odoslať**.
-> Здесь код компилирует сервер (GCC 15) — просто нажмите кнопку проверки.
 
-## Štruktúra programu / Структура программы
+## Štruktúra programu
 
 ```c
 #include <stdio.h>   // printf, scanf
 
 int main(void) {
     printf("Hello world!\n");
-    return 0;        // 0 = program skončil úspešne / программа завершилась успешно
+    return 0;        // 0 = program skončil úspešne
 }
 ```
 
@@ -62,7 +60,7 @@ int main(void) {
   `/* a /* b */ c */` skončí pri prvom `*/` a `c */` je chyba.
 
 ::: quiz
-Čo musí byť na konci (takmer) každého príkazu v C? / Чем заканчивается почти каждая инструкция?
+Čo musí byť na konci (takmer) každého príkazu v C?
 - [ ] dvojbodka `:`
 - [x] bodkočiarka `;`
 - [ ] nový riadok
@@ -70,7 +68,7 @@ int main(void) {
 :::
 
 ::: drill d1-hello
-## Premenné a typy / Переменные и типы
+## Premenné a typy
 
 Premenná má **typ**, **meno** a **hodnotu**. Pred použitím ju treba deklarovať.
 
@@ -111,7 +109,7 @@ int main(void) {
 ```
 
 ::: quiz
-Ktoré meno premennej je **neplatné**? / Какое имя переменной недопустимо?
+Ktoré meno premennej je **neplatné**?
 - [ ] `_pom`
 - [ ] `pocet2`
 - [x] `2pocet`
@@ -120,7 +118,7 @@ Ktoré meno premennej je **neplatné**? / Какое имя переменной
 :::
 
 ::: quiz
-Akým formátom načítame `double` cez `scanf`? / Каким форматом читать `double`?
+Akým formátom načítame `double` cez `scanf`?
 - [ ] `%f`
 - [x] `%lf`
 - [ ] `%d`
@@ -128,7 +126,7 @@ Akým formátom načítame `double` cez `scanf`? / Каким форматом �
 > `scanf` potrebuje vedieť presnú veľkosť: `%f` je pre `float`, `%lf` pre `double`. (V `printf` funguje pre `double` aj `%f`.)
 :::
 
-## Vstup a výstup / Ввод и вывод
+## Vstup a výstup
 
 `scanf` potrebuje **adresu** premennej — preto `&`. `printf` dostáva **hodnotu**.
 
@@ -138,7 +136,7 @@ scanf("%d %d", &a, &b);          // načíta dve celé čísla
 printf("Sucet: %d\n", a + b);    // výraz rovno v printf, bez pomocnej premennej
 ```
 
-Formátovanie čísel / форматирование:
+Formátovanie čísel
 
 ```c
 double x = 3.14159;
@@ -162,7 +160,7 @@ Escape sekvencie: `\n` nový riadok, `\t` tabulátor, `\\` spätné lomítko, `\
 
 ::: drill d1-scanf
 ::: drill d1-format
-## Operátory / Операторы
+## Operátory
 
 - aritmetické: `+ - * / %` — pozor: `/` medzi dvoma `int` je **celočíselné delenie**: `7 / 2 == 3`, `7 % 2 == 1`
 - `7 / 2.0 == 3.5` — stačí, aby jeden operand bol reálny
@@ -171,7 +169,7 @@ Escape sekvencie: `\n` nový riadok, `\t` tabulátor, `\\` spätné lomítko, `\
 - relačné `< <= > >= == !=` a logické `&& || !` vracajú `1` (pravda) alebo `0` (nepravda)
 
 ::: quiz
-Akú hodnotu má výraz `7 / 2 * 2`? / Чему равно `7 / 2 * 2`?
+Akú hodnotu má výraz `7 / 2 * 2`?
 - [ ] 7
 - [x] 6
 - [ ] 7.0
@@ -187,7 +185,7 @@ Platí `int i = 5; int k = i++ + 1;`. Aké sú hodnoty?
 > `i++` vráti pôvodnú hodnotu 5 a až potom zvýši `i` na 6.
 :::
 
-### Bitové operátory / Битовые операторы
+### Bitové operátory
 
 Pracujú s jednotlivými bitmi čísla (nepliesť si s logickými `&&`, `||`, `!`):
 
@@ -208,7 +206,7 @@ n = n & ~(1u << k);             // vynuluj k-ty bit
 ```
 
 ::: quiz
-Akú hodnotu má `6 & 3`? / Чему равно `6 & 3`?
+Akú hodnotu má `6 & 3`?
 - [x] 2
 - [ ] 1
 - [ ] 7
@@ -218,7 +216,7 @@ Akú hodnotu má `6 & 3`? / Чему равно `6 & 3`?
 
 ::: drill d1-bits
 
-## Podmienka if / Условие if
+## Podmienka if
 
 ```c
 char c;

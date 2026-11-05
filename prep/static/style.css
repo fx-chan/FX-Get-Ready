@@ -65,8 +65,6 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -.01em; }
 h1 small, h2 small, h3 small { color: var(--muted); font-weight: 500; font-size: .6em; }
 pre, code, textarea.js-stdin, .CodeMirror { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
 pre, code, textarea.js-stdin { font-family: "JetBrains Mono", ui-monospace, Consolas, monospace; font-size: 13.5px; }
-.ru { color: var(--muted); font-weight: 400; }
-.btn .ru { color: inherit; opacity: .75; }
 .meta { color: var(--muted); font-size: 13px; }
 .meta.strong { font-weight: 600; color: var(--text); }
 .center { text-align: center; }
@@ -373,3 +371,9 @@ body.wide .wrap { max-width: 1480px; }
 .ans-help ul { margin: 6px 0 0; padding-left: 18px; }
 .answer-widget.compact .ans-part { padding: 10px 12px; }
 .answer-page .workspace { min-width: 0; }
+
+/* --- language switch --- */
+.lang-switch { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.lang-switch a { padding: 4px 8px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.lang-switch a:hover { color: var(--accent); text-decoration: none; }
+.lang-switch a.active { background: var(--accent-soft); color: var(--accent); }

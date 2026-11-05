@@ -11,6 +11,7 @@ from flask import (Blueprint, abort, current_app, flash, g, jsonify, make_respon
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from .db import get_db
+from .i18n import t
 
 bp = Blueprint("auth", __name__)
 
@@ -41,7 +42,7 @@ def api_login_required(view):
     @functools.wraps(view)
     def wrapped(*args, **kwargs):
         if g.user is None:
-            abort(make_response(jsonify(error="Prihláste sa, prosím. / Пожалуйста, войдите.", login=True), 401))
+            abort(make_response(jsonify(error=t("Prihláste sa, prosím."), login=True), 401))
         check_csrf()
         return view(*args, **kwargs)
     return wrapped
@@ -79,11 +80,11 @@ def register():
         password = request.form.get("password", "")
         error = None
         if not USERNAME_RE.match(username):
-            error = "Meno: 3–32 znakov (písmená, čísla, _ . -). / Логин: 3–32 символа."
+            error = t("Meno: 3–32 znakov (písmená, čísla, _ . -).")
         elif len(password) < MIN_PASSWORD:
-            error = f"Heslo musí mať aspoň {MIN_PASSWORD} znakov. / Пароль минимум {MIN_PASSWORD} символов."
+            error = t("Heslo musí mať aspoň {n} znakov.", n=MIN_PASSWORD)
         elif password != request.form.get("password2", ""):
-            error = "Heslá sa nezhodujú. / Пароли не совпадают."
+            error = t("Heslá sa nezhodujú.")
         if error is None:
             try:
                 db = get_db()
@@ -91,7 +92,7 @@ def register():
                                  (username, generate_password_hash(password)))
                 db.commit()
             except sqlite3.IntegrityError:
-                error = "Toto meno je obsadené. / Этот логин занят."
+                error = t("Toto meno je obsadené.")
             else:
                 session.clear()
                 session["user_id"] = cur.lastrowid
@@ -111,7 +112,7 @@ def login():
             session.permanent = True
             session["user_id"] = user["id"]
             return redirect(_safe_next(request.args.get("next")))
-        flash("Nesprávne meno alebo heslo. / Неверный логин или пароль.", "error")
+        flash(t("Nesprávne meno alebo heslo."), "error")
     return render_template("auth.html", mode="login")
 
 

@@ -1,4 +1,4 @@
-## Viacrozmerné polia / Многомерные массивы
+## Viacrozmerné polia
 
 ```c
 #define N 20
@@ -55,7 +55,7 @@ Prečo pri `int **p` treba najprv uvoľniť `p[i]` a až potom `p`?
 :::
 
 ::: drill d7-diagonal
-## Rekurzia / Рекурсия
+## Rekurzia
 
 Rekurzívna funkcia volá samu seba. Potrebuje **ukončovaciu podmienku** — inak pretečie zásobník.
 
@@ -108,7 +108,7 @@ Koľkokrát sa zavolá `fib_r` pri výpočte `fib_r(4)` (vrátane prvého volani
 :::
 
 ::: drill d7-recursion
-## Konštantné premenné / Константы
+## Konštantné premenné
 
 ```c
 const double PI = 3.14159;      // hodnotu nemožno meniť

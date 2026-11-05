@@ -3,7 +3,6 @@ Načítajte celé číslo (cenu bez dane) a vypíšte ju aj s 20% daňou. Skúst
 - prvý riadok: `Cena bez dane: ` a načítané číslo,
 - druhý riadok: `Predajna cena s danou 20%: ` a cena s DPH na **1 desatinné miesto**.
 
-*Подсказка: символ `%` в `printf` пишется как `%%`.*
 
 ### Ukážka vstupu
 ```

@@ -1,4 +1,4 @@
-## LU rozklad / LU-разложение
+## LU rozklad
 
 Štvorcovú maticu rozložíme na súčin **dolnej** a **hornej** trojuholníkovej matice $\mathbf{A} = \mathbf{LU}$.
 $\mathbf{U}$ je výsledok Gaussovej eliminácie (bez výmen riadkov), $\mathbf{L}$ zaznamenáva použité multiplikátory.
@@ -21,7 +21,7 @@ kde $\mathbf{D}$ je diagonála $\mathbf{U}$.
 > Ak sa počas eliminácie objaví na pozícii pivota **0** (napr. matica s $a_{11} = 0$), LU rozklad bez výmeny riadkov
 > neexistuje — treba permutáciu $\mathbf{PA} = \mathbf{LU}$. Sústavu však vyriešite stále.
 
-## Využitie LU rozkladu / Применение
+## Využitie LU rozkladu
 
 **Sústava** $\mathbf{Ax} = \mathbf{b}$ ↔ $\mathbf{LUx} = \mathbf{b}$:
 1. označíme $\mathbf{y} = \mathbf{Ux}$,
@@ -41,7 +41,7 @@ Doolittlov rozklad má $\mathbf{U}$ s diagonálou $2, -3, 4$. Aký je $\det\math
 > $\det\mathbf{L} = 1$ (jednotky na diagonále), $\det\mathbf{U} = 2\cdot(-3)\cdot4 = -24$.
 :::
 
-## Vlastné čísla a vlastné vektory / Собственные числа и векторы
+## Vlastné čísla a vlastné vektory
 
 Nenulový vektor $\mathbf{x}$ je **vlastný vektor** štvorcovej matice $\mathbf{A}$, ak
 $$\mathbf{Ax} = \lambda\mathbf{x}$$
@@ -86,7 +86,7 @@ Aké vlastné čísla má ortogonálna projekcia na os $x$ v $\mathbb{R}^2$?
 > Vektor na osi $x$ sa nezmení ($\lambda = 1$), vektor na osi $y$ sa zobrazí na nulu ($\lambda = 0$).
 :::
 
-## Podobnosť matíc / Подобие матриц
+## Podobnosť matíc
 
 $\mathbf{B}$ je **podobná** $\mathbf{A}$, ak $\mathbf{B} = \mathbf{P}^{-1}\mathbf{AP}$ pre nejakú invertibilnú $\mathbf{P}$.
 Podobné matice majú rovnaký **determinant, stopu, hodnosť, charakteristický polynóm a vlastné čísla**
@@ -101,7 +101,7 @@ $\det\mathbf{A} = -1$ a $\det\mathbf{B} = -2$. Môžu byť $\mathbf{A}$ a $\math
 > $\det(\mathbf{P}^{-1}\mathbf{AP}) = \det\mathbf{P}^{-1}\det\mathbf{A}\det\mathbf{P} = \det\mathbf{A}$.
 :::
 
-## Diagonalizácia / Диагонализация
+## Diagonalizácia
 
 $\mathbf{A}$ ($n\times n$) je **diagonalizovateľná**, ak je podobná diagonálnej matici:
 $$\mathbf{P}^{-1}\mathbf{AP} = \mathbf{D} = \operatorname{diag}(\lambda_1, \dots, \lambda_n)$$
@@ -121,7 +121,7 @@ $\mathbf{A} = \begin{bmatrix}5&0&0\\1&5&0\\0&1&5\end{bmatrix}$ má vlastné čí
 > Potrebovali by sme 3 nezávislé vlastné vektory, máme len 1.
 :::
 
-## Mocniny matice / Степени матрицы
+## Mocniny matice
 
 Ak $\mathbf{A} = \mathbf{PDP}^{-1}$, potom
 $$\mathbf{A}^k = \mathbf{P}\mathbf{D}^k\mathbf{P}^{-1},\qquad \mathbf{D}^k = \operatorname{diag}(\lambda_1^k, \dots, \lambda_n^k),$$

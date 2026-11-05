@@ -7,7 +7,7 @@ inicializacia;                 // to isté cez while
 while (podmienka) { telo; krok; }
 ```
 
-## Návratová hodnota scanf / Возвращаемое значение scanf
+## Návratová hodnota scanf
 
 `scanf` vráti **počet úspešne načítaných položiek**, alebo `EOF` na konci vstupu.
 Vďaka tomu vieme čítať, kým sú dáta — aj keď vopred nevieme, koľko ich je.
@@ -37,7 +37,7 @@ do {
 } while (n < 0);        // opakuj, kým nie je n nezáporné
 ```
 
-## Vnorené cykly / Вложенные циклы
+## Vnorené cykly
 
 ```c
 for (int r = 1; r <= n; r++) {        // riadky
@@ -48,7 +48,7 @@ for (int r = 1; r <= n; r++) {        // riadky
 ```
 
 ::: drill d3-triangle
-## Funkcie / Функции
+## Funkcie
 
 Funkcia má **návratový typ**, **meno**, **parametre** a **telo**. Ak sa definuje až za `main`,
 treba ju vopred **deklarovať** (prototyp).
@@ -73,7 +73,7 @@ double obvod(double r) {           // definícia
 - lokálne premenné existujú len počas volania (okrem `static`).
 
 ::: quiz
-Čo vypíše program? / Что выведет программа?
+Čo vypíše program?
 
 ```c
 void zvys(int x) { x = x + 1; }
@@ -85,7 +85,7 @@ int main(void) { int a = 5; zvys(a); printf("%d", a); }
 > Funkcia dostala kópiu hodnoty. Na zmenu originálu treba ukazovateľ (Cvičenie 5).
 :::
 
-### Bloky a rozsah platnosti / Блоки и область видимости
+### Bloky a rozsah platnosti
 
 Blok je časť kódu v `{ }`. Premenná definovaná v bloku platí **od miesta definície po koniec
 bloku**. Vnútorný blok môže definovať premennú s rovnakým menom — tá potom **zakryje** vonkajšiu.

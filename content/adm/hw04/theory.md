@@ -1,4 +1,4 @@
-## Determinant 2×2 a 3×3 / Определители 2×2 и 3×3
+## Determinant 2×2 a 3×3
 
 Determinant je **číslo** priradené **štvorcovej** matici. Pre nečtvorcovú maticu nie je definovaný.
 
@@ -22,7 +22,7 @@ Dá sa Sarrusovo pravidlo použiť pre maticu $4\times4$?
 > Pre $4\times4$ má determinant 24 členov, Sarrus by dal len 8.
 :::
 
-## Minory, kofaktory a rozvoj / Миноры, алгебраические дополнения, разложение
+## Minory, kofaktory a rozvoj
 
 - **Minor** $M_{ij}$ = determinant matice, ktorá vznikne vyškrtnutím $i$-teho riadku a $j$-teho stĺpca.
 - **Kofaktor** (algebraický doplnok) $C_{ij} = (-1)^{i+j}M_{ij}$ — znamienka podľa šachovnice
@@ -44,7 +44,7 @@ Pri rozvoji podľa 2. riadku matice $3\times3$ majú kofaktory $C_{21}, C_{22}, 
 > $(-1)^{2+1} = -1$, $(-1)^{2+2} = +1$, $(-1)^{2+3} = -1$.
 :::
 
-## Špeciálne prípady — spamäti / Особые случаи
+## Špeciálne prípady — spamäti
 
 - **trojuholníková** (aj diagonálna) matica: $\det$ = súčin prvkov na diagonále, $\det\mathbf{I} = 1$,
 - **nulový riadok/stĺpec** → $\det = 0$,
@@ -53,7 +53,7 @@ Pri rozvoji podľa 2. riadku matice $3\times3$ majú kofaktory $C_{21}, C_{22}, 
 
 ::: drill d4-trojuholnikova
 
-## Riadkové operácie a determinant / Элементарные преобразования
+## Riadkové operácie a determinant
 
 | operácia | čo sa stane s $\det$ |
 |---|---|
@@ -77,7 +77,7 @@ $\det\mathbf{A} = -6$ ($3\times3$). Akú hodnotu má determinant, ak prvý riado
 > Presun prvého riadku na koniec = dve výmeny, znamienko sa zmení dvakrát.
 :::
 
-## Ďalšie vlastnosti / Свойства определителя
+## Ďalšie vlastnosti
 
 Pre štvorcové matice $n\times n$:
 
@@ -98,7 +98,7 @@ $\mathbf{A}$ je $3\times3$ a $\det\mathbf{A} = 4$. Čomu sa rovná $\det(2\mathb
 > $2^3\cdot 4 = 32$ — násobí sa každý z troch riadkov.
 :::
 
-## Determinant s parametrom / Определитель с параметром
+## Determinant s parametrom
 
 Pri $\det(\mathbf{A}) = 0$ s neznámou $\lambda$ alebo $x$ dostaneme **polynomickú rovnicu**. Napr.
 $\begin{vmatrix}\lambda-2&1\\-5&\lambda+4\end{vmatrix} = (\lambda-2)(\lambda+4)+5 = \lambda^2+2\lambda-3 = (\lambda+3)(\lambda-1)$,
@@ -113,7 +113,7 @@ Pre aké $x$ je $\begin{vmatrix}x-3&5&-19\\0&x-1&6\\0&0&x-2\end{vmatrix} = 0$?
 > Matica je horná trojuholníková: $\det = (x-3)(x-1)(x-2)$.
 :::
 
-## Adjungovaná matica a Cramerovo pravidlo / Присоединённая матрица и правило Крамера
+## Adjungovaná matica a Cramerovo pravidlo
 
 **Adjungovaná matica** je transponovaná matica kofaktorov: $\operatorname{adj}(\mathbf{A}) = [C_{ij}]^{\top}$. Platí
 $\mathbf{A}\operatorname{adj}(\mathbf{A}) = \det(\mathbf{A})\,\mathbf{I}$, preto

@@ -1,0 +1,1 @@
+Поворот на кут $\theta$ проти годинникової стрілки: $\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}$. Поверніть $\mathbf{x} = (2, 0)$. Результат запишіть як `a, b` (або `a, b, c`); корені як `sqrt(3)/2` або `√3/2`.

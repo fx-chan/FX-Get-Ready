@@ -1,0 +1,1 @@
+**Приклади 14, 15, 17, 20 (A++).** Використайте: $p(\lambda) = \det(\lambda\mathbf{I} - \mathbf{A})$, тому $p(0) = \det(-\mathbf{A}) = (-1)^n\det\mathbf{A}$; добуток власних чисел = $\det\mathbf{A}$, сума = $\operatorname{tr}\mathbf{A}$.

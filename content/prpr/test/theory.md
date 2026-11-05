@@ -1,4 +1,4 @@
-## Ako vyzerá počítačový test / Как выглядит компьютерный тест
+## Ako vyzerá počítačový test
 
 Test (napr. skupina A_1_1) nadväzuje na **projekt č. 1**: do svojho odovzdaného projektu
 doprogramujete nové funkcie, ktoré sa aktivujú stlačením klávesy (napr. `j`, `x`).
@@ -18,10 +18,8 @@ void x(double *hodnota, int velkost_pola);
 Tu sú obe úlohy upravené ako **samostatné programy**: `main` načíta dáta, ktoré by inak mal projekt
 v pamäti, a zavolá vašu funkciu. Hodnotí sa rovnako — presný výstup.
 
-> Здесь обе задачи сделаны самостоятельными программами: `main` загружает данные, которые иначе
-> были бы в памяти проекта, и вызывает вашу функцию.
 
-## Na čo si dať pozor / На что обратить внимание
+## Na čo si dať pozor
 
 1. **Presný formát výstupu** — počet desatinných miest (`%.4f`), medzery, bodky na konci viet.
 2. **Ošetrenie vstupu** — „načítaj k, kým nie je kladné“: `scanf` môže vrátiť 0 (nečíselný vstup),

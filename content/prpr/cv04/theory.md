@@ -1,4 +1,4 @@
-## Štandardný vstup a výstup / Стандартный ввод-вывод
+## Štandardný vstup a výstup
 
 Každý program má tri otvorené prúdy: `stdin` (klávesnica), `stdout` (obrazovka), `stderr` (chyby).
 
@@ -16,14 +16,14 @@ while ((c = getchar()) != EOF)   // klasický cyklus: čítaj až do konca vstup
 ```
 
 ::: quiz
-Prečo sa výsledok `getchar()` ukladá do `int`? / Почему результат `getchar()` хранят в `int`?
+Prečo sa výsledok `getchar()` ukladá do `int`?
 - [ ] je to rýchlejšie
 - [x] aby sa dalo rozlíšiť `EOF` od bežných znakov
 - [ ] `char` sa nedá porovnávať
 > `EOF` je hodnota mimo rozsahu znakov (obvykle -1).
 :::
 
-## Práca so súbormi / Работа с файлами
+## Práca so súbormi
 
 ```c
 FILE *f = fopen("data.txt", "r");     // "r" čítanie, "w" zápis (prepíše), "a" pripisovanie
@@ -93,7 +93,7 @@ Ako zistíme veľkosť súboru `f` v bajtoch?
 ::: drill d4-fopen
 ::: drill d4-getc
 ::: drill d4-fscanf
-## Funkcie v praxi / Функции на практике
+## Funkcie v praxi
 
 Rozdeľte program na malé funkcie s jednou úlohou — napr. `zisti_prvocislo`, `reverzne_cislo`.
 Funkcia, ktorá „odpovedá áno/nie“, zvyčajne vracia `1`/`0` (alebo podľa zadania `1`/`-1`).

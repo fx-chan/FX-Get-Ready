@@ -1,4 +1,4 @@
-## Typová konverzia / Приведение типов
+## Typová konverzia
 
 - **implicitná**: v `int + double` sa `int` automaticky prevedie na `double`,
 - pri priradení do „menšieho“ typu sa môže stratiť informácia: `int i = 3.99;` → `i == 3`,
@@ -12,7 +12,7 @@
 > Zátvorka sa vyhodnotí najprv: `7 / 2 == 3` (celočíselne), až potom sa 3 prevedie na `3.0`. Správne: `(double)a / b`.
 :::
 
-## Ukazovateľ / Указатель
+## Ukazovateľ
 
 Ukazovateľ je premenná, ktorá uchováva **adresu** inej premennej.
 
@@ -69,7 +69,7 @@ Viac ukazovateľov môže ukazovať na to isté miesto — zmena cez jeden je vi
 > `*pp` je ukazovateľ `p` (priradenie by zmenilo adresu), `**pp` je až samotné `x`.
 :::
 
-### Ukazovateľ na funkciu / Указатель на функцию
+### Ukazovateľ na funkciu
 
 Meno funkcie je jej adresa. Ukazovateľ na funkciu umožní vybrať, ktorá funkcia sa zavolá, až za behu.
 
@@ -92,7 +92,7 @@ int *g(int, int);      // POZOR: toto je funkcia, ktorá vracia int *
 :::
 
 ::: drill d5-funcptr
-## Odovzdanie odkazom / Передача по указателю
+## Odovzdanie odkazom
 
 Funkcia môže zmeniť premennú volajúceho, ak dostane jej adresu — tak „vráti“ viac hodnôt naraz.
 
@@ -110,7 +110,7 @@ vymen(&x, &y);
 
 ::: drill d5-swap
 ::: drill d5-two-results
-## Reťazce / Строки
+## Reťazce
 
 Reťazec je pole `char` ukončené znakom `'\0'`. `"ahoj"` zaberá **5** bajtov.
 
@@ -133,7 +133,7 @@ fgets(meno, sizeof meno, stdin);   // celý riadok vrátane '\n'
 `ctype.h`: `isdigit`, `isalpha`, `isspace`, `toupper`, `tolower`.
 
 ::: quiz
-Ako správne porovnať dva reťazce `a` a `b`? / Как сравнить строки?
+Ako správne porovnať dva reťazce `a` a `b`?
 - [ ] `a == b`
 - [x] `strcmp(a, b) == 0`
 - [ ] `strlen(a) == strlen(b)`

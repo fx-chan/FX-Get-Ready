@@ -19,6 +19,23 @@ Subjects: **PRPR** (procedural programming in C) and **ADM** (algebra and discre
   server by `prep/mathcheck.py`: a small safe expression parser plus numeric comparison, so equivalent
   forms (`1/2`, `0.5`, `sqrt(2)/2`, any parametrization of a solution set) are accepted.
 
+## Languages
+
+The site is available in **Slovak** and **Ukrainian** (switch in the top bar, stored in the `lang` cookie;
+the default follows the browser's `Accept-Language`). Slovak is the source language.
+
+- interface: `prep/i18n.py` (a Slovak string is its own key; `_()` in templates, `t()` in Python and JS),
+- content: `theory.uk.md`, `description.uk.md` next to the Slovak files and `<subject>/strings.uk.json`
+  for titles, prompts and options; anything missing falls back to Slovak,
+- code stays as it is: `template.c`, expected program output and names in code are the same in both languages.
+
+After changing Slovak content, update the translations (local tooling, not committed):
+
+```bash
+.venv/Scripts/python -X utf8 tools/i18n/units.py extract   # numbered units, math and code masked as @0@
+.venv/Scripts/python -X utf8 tools/i18n/units.py apply     # rebuild *.uk.md and strings.uk.json
+```
+
 ## Run locally
 
 ```bash

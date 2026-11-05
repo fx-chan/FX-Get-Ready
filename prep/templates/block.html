@@ -7,7 +7,7 @@
 {% endblock %}
 {% block crumbs %}
 <nav class="crumbs">
-  <a href="{{ url_for('main.index') }}">Predmety</a><span>›</span>
+  <a href="{{ url_for('main.index') }}">{{ _('Predmety') }}</a><span>›</span>
   <a href="{{ url_for('main.subject', subject_slug=subject.slug) }}">{{ subject.title }}</a><span>›</span>
   {{ block.title }}
 </nav>
@@ -21,7 +21,7 @@
       {% if block.summary %}<p class="lead">{{ block.summary }}</p>{% endif %}
       <div class="tl-meta">
         {% if block.lecture %}<span class="pill">📖 {{ block.lecture }}</span>{% endif %}
-        <a class="pill accent" href="#ulohy">💻 {{ block.basic_tasks|length }} úloh <span class="ru">/ задач</span> ↓</a>
+        <a class="pill accent" href="#ulohy">💻 {{ block.basic_tasks|length }} {{ _('úloh') }} ↓</a>
         {% if block.advanced_tasks %}<a class="pill aplus" href="#aplus">🏆 {{ block.advanced_tasks|length }} × A++ ↓</a>{% endif %}
       </div>
     </header>
@@ -31,7 +31,7 @@
         <div class="prose">{{ item }}</div>
       {% elif kind == "quiz" %}
         <div class="quiz" data-quiz>
-          <div class="quiz-label">❓ Otázka <span class="ru">/ Вопрос</span></div>
+          <div class="quiz-label">❓ {{ _('Otázka') }}</div>
           <div class="prose quiz-q">{{ item.question }}</div>
           <div class="quiz-options">
             {% for text, ok in item.options %}
@@ -44,9 +44,9 @@
         {% set solved_drill = task_key(subject, block, item) in solved %}
         <section class="drill{{ ' solved' if solved_drill }}" id="{{ item.slug }}">
           <div class="drill-head">
-            <span class="drill-label">✏️ Mini úloha <span class="ru">/ Мини-задание</span></span>
+            <span class="drill-label">✏️ {{ _('Mini úloha') }}</span>
             <h3>{{ item.title }}</h3>
-            <span class="drill-done" title="Vyriešené">✓</span>
+            <span class="drill-done" title="{{ _('Vyriešené') }}">✓</span>
           </div>
           <div class="prose drill-desc">{{ render_md(item.description_md) }}</div>
           {% if item.type == "answer" %}
@@ -60,9 +60,8 @@
 
     {% if block.advanced_tasks %}
     <section class="aplus-section" id="aplus-intro">
-      <h2>🏆 A++ — úlohy vyššej úrovne <span class="ru">/ задачи повышенной сложности</span></h2>
-      <p>Úlohy označené v domácej úlohe ako <strong>A++</strong>: dôkazy, konštrukcie a analýza všetkých prípadov.
-        <span class="ru">Задачи уровня A++ из домашнего задания: доказательства, построения, разбор всех случаев.</span></p>
+      <h2>🏆 {{ _('A++ — úlohy vyššej úrovne') }}</h2>
+      <p>{{ _('Úlohy označené v domácej úlohe ako') }} <strong>A++</strong>: {{ _('dôkazy, konštrukcie a analýza všetkých prípadov.') }}</p>
       <ul class="aplus-cards">
         {% for t in block.advanced_tasks %}
         <li class="{{ 'solved' if task_key(subject, block, t) in solved }}">
@@ -83,22 +82,22 @@
 
   <aside class="side" id="ulohy">
     <div class="side-card">
-      <h2>Úlohy <small>/ Задачи</small></h2>
+      <h2>{{ _('Úlohy') }}</h2>
       {% if g.user %}
-      <div class="progress-line"><span>{{ progress.done }} / {{ progress.total }} hotovo</span><span>{{ progress.pct }}%</span></div>
+      <div class="progress-line"><span>{{ progress.done }} / {{ progress.total }} {{ _('hotovo') }}</span><span>{{ progress.pct }}%</span></div>
       <div class="bar"><span style="width: {{ progress.pct }}%"></span></div>
       {% endif %}
       <ul class="task-list">
         {% for t in block.basic_tasks %}{{ task_item(t) }}{% endfor %}
       </ul>
       {% if block.advanced_tasks %}
-      <h3 class="side-sub aplus-title" id="aplus">🏆 A++ <small>vyššia úroveň / повышенный уровень</small></h3>
+      <h3 class="side-sub aplus-title" id="aplus">🏆 A++ <small>{{ _('vyššia úroveň') }}</small></h3>
       <ul class="task-list aplus-list">
         {% for t in block.advanced_tasks %}{{ task_item(t) }}{% endfor %}
       </ul>
       {% endif %}
       {% if block.drills %}
-      <h3 class="side-sub">Mini úlohy v lekcii</h3>
+      <h3 class="side-sub">{{ _('Mini úlohy v lekcii') }}</h3>
       <ul class="task-list mini">
         {% for d in block.drills %}
         <li class="{{ 'solved' if task_key(subject, block, d) in solved }}">

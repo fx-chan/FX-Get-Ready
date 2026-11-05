@@ -1,4 +1,4 @@
-## Statická vs. dynamická alokácia / Статическая и динамическая память
+## Statická vs. dynamická alokácia
 
 | | statická (`int a[100];`) | dynamická (`malloc`) |
 |---|---|---|
@@ -64,7 +64,7 @@ Koľko bajtov alokuje `malloc(10 * sizeof(double))`, ak `sizeof(double) == 8`?
 :::
 
 ::: drill d6-malloc
-## Ukazovateľová aritmetika / Адресная арифметика
+## Ukazovateľová aritmetika
 
 Pripočítanie `1` k ukazovateľu ho posunie o **jeden prvok** (nie o jeden bajt).
 
@@ -126,7 +126,7 @@ slova[0] = malloc(10);    // každý prvok má vlastnú pamäť (a vlastný free
 :::
 
 ::: drill d6-ptr-arith
-## Časté chyby / Частые ошибки
+## Časté chyby
 
 - **memory leak** — zabudnutý `free` (alebo stratená adresa bloku),
 - **dangling pointer** — použitie pamäte po `free`,

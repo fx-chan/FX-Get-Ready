@@ -1,0 +1,1 @@
+$$\mathbf{A} = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix},\qquad \mathbf{B} = \begin{bmatrix}0 & 1 \\ -1 & 2\end{bmatrix}$$ Елемент $c_{ij}$ добутку — це скалярний добуток $i$-го рядка $\mathbf{A}$ та $j$-го стовпця $\mathbf{B}$.

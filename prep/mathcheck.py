@@ -34,6 +34,8 @@ import random
 import re
 from fractions import Fraction
 
+from .i18n import t
+
 FUNCS = {
     "sqrt": cmath.sqrt, "sin": cmath.sin, "cos": cmath.cos, "tan": cmath.tan, "exp": cmath.exp,
     "ln": cmath.log, "sinh": cmath.sinh, "cosh": cmath.cosh, "abs": lambda z: complex(abs(z)),
@@ -44,19 +46,26 @@ PARAMS = ["t", "s", "u", "r", "p", "q", "t1", "t2", "t3", "t4"]  # free paramete
 KINDS = {"number", "matrix", "vector", "dims", "choice", "multi", "set", "multiset", "system", "eigbasis",
          "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares"}
 NONE_LABELS = {
-    "number": "nedá sa vypočítať / нельзя вычислить",
-    "matrix": "nedá sa vypočítať / нельзя вычислить",
-    "vector": "nedá sa vypočítať / нельзя вычислить",
-    "dims": "nedá sa vypočítať / нельзя вычислить",
-    "set": "žiadna hodnota / нет таких значений",
-    "system": "systém nemá riešenie / нет решений",
-    "diagonalize": "nie je diagonalizovateľná / не диагонализуема",
+    "number": "nedá sa vypočítať",
+    "matrix": "nedá sa vypočítať",
+    "vector": "nedá sa vypočítať",
+    "dims": "nedá sa vypočítať",
+    "set": "žiadna hodnota",
+    "system": "systém nemá riešenie",
+    "diagonalize": "nie je diagonalizovateľná",
 }
 MAX_INPUT = 4000
 
 
 class ParseError(ValueError):
-    pass
+    """Message is a Slovak UI string (translated by i18n when shown)."""
+
+    def __init__(self, message, **args):
+        super().__init__(message)
+        self.message, self.args_ = message, args
+
+    def text(self, lang=None):
+        return t(self.message, lang, **self.args_)
 
 
 class EvalError(ArithmeticError):
@@ -88,7 +97,7 @@ def _split_ident(word, names):
             continue
         head = next((word[:n] for n in range(len(word), 0, -1) if word[:n] in names), None)
         if head is None:
-            raise ParseError(f"neznámy symbol „{word}“")
+            raise ParseError("neznámy symbol „{x}“", x=word)
         out.append(("id", head))
         word = word[len(head):]
     return out
@@ -103,7 +112,7 @@ def tokenize(text, names):
             tokens.extend(_split_ident(ident, names))
         elif op.strip():
             if op not in "+-*/^()":
-                raise ParseError(f"neznámy znak „{op}“")
+                raise ParseError("neznámy znak „{x}“", x=op)
             tokens.append(("op", op))
     return tokens
 
@@ -122,7 +131,7 @@ class _Parser:
 
     def expect(self, op):
         if self.take() != ("op", op):
-            raise ParseError(f"chýba „{op}“")
+            raise ParseError("chýba „{x}“", x=op)
 
     def parse(self):
         if not self.t:
@@ -647,9 +656,9 @@ def check_part(part, ans):
         if kind == "pair_not_diff_squares":
             return _check_pair(text), ""
     except ParseError as exc:
-        return INVALID, f"Nerozumiem zápisu: {exc}. / Не понимаю запись."
+        return INVALID, t("Nerozumiem zápisu: {detail}.", detail=exc.text())
     except (EvalError, TypeError, ValueError):
-        return INVALID, "Nerozumiem zápisu. / Не понимаю запись."
+        return INVALID, t("Nerozumiem zápisu.")
     return INVALID, "Neznámy typ úlohy."
 
 
