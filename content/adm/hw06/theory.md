@@ -78,6 +78,30 @@ Rotácia okolo osi $z$ o $90^\circ$ (proti smeru) zobrazí $(2, -3, 1)$ na
 - **kompresia/expanzia v smere jednej osi**: napr. v smere osi $x$ $\begin{bmatrix}k&0\\0&1\end{bmatrix}$, v smere $y$ $\begin{bmatrix}1&0\\0&k\end{bmatrix}$,
 - **sklz (shear)** v smere osi $x$: $\begin{bmatrix}1&k\\0&1\end{bmatrix}$, $(x, y) \mapsto (x + ky, y)$.
 
+## Posun
+
+**Posun (posunutie, translácia)** o vektor $\mathbf{t} = (a, b)$ pripočíta ku každému bodu ten istý vektor:
+$$T(\mathbf{x}) = \mathbf{x} + \mathbf{t},\qquad x' = x + a,\quad y' = y + b$$
+
+Posun **nie je lineárny**: pre $\mathbf{t} \ne \mathbf{0}$ je $T(\mathbf{0}) = \mathbf{t} \ne \mathbf{0}$, preto ho nemožno zapísať maticou $2\times2$.
+Používame **homogénne súradnice**: bod $(x, y)$ zapíšeme ako $(x, y, 1)$ a posun je súčin s maticou $3\times3$:
+$$\begin{bmatrix}x'\\y'\\1\end{bmatrix} = \begin{bmatrix}1&0&a\\0&1&b\\0&0&1\end{bmatrix}\begin{bmatrix}x\\y\\1\end{bmatrix} = \begin{bmatrix}x+a\\y+b\\1\end{bmatrix}$$
+
+Napríklad posun o $(3, -1)$ zobrazí bod $(2, 5)$ na $(5, 4)$.
+
+- spätný posun: $\mathbf{T}(a, b)^{-1} = \mathbf{T}(-a, -b)$,
+- dva posuny sa sčítajú a komutujú: $\mathbf{T}(a, b)\,\mathbf{T}(c, d) = \mathbf{T}(a + c, b + d)$,
+- posun a rotácia vo všeobecnosti nekomutujú, záleží na poradí,
+- v $\mathbb{R}^3$ je to rovnaké s maticou $4\times4$: $x' = x + a$, $y' = y + b$, $z' = z + c$.
+
+::: quiz
+Bod $(1, 2)$ sa posunie o $(4, -3)$ a výsledok ešte o $(-1, 1)$. Kde skončí?
+- [x] $(4, 0)$
+- [ ] $(5, -1)$
+- [ ] $(3, 0)$
+> Posuny sa sčítajú: celkový posun je $(3, -2)$ a $(1, 2) + (3, -2) = (4, 0)$.
+:::
+
 ## Skladanie a komutatívnosť
 
 Ak sa najprv vykoná $T_1$ a potom $T_2$, je to $T_2 \circ T_1$ a

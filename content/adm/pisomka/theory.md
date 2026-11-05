@@ -11,7 +11,7 @@
 
 ## Homogénne súradnice
 
-Rotácia, reflexia a škálovanie sú lineárne: $\mathbf{x} \mapsto \mathbf{Lx}$. **Posunutie lineárne nie je**, lebo posúva aj počiatok.
+Rotácia, reflexia a škálovanie sú lineárne: $\mathbf{x} \mapsto \mathbf{Lx}$. **Posun (posunutie) o $(a, b)$** je $x' = x + a$, $y' = y + b$ a lineárny nie je, lebo posúva aj počiatok.
 Riešenie: bod $(x, y)$ zapíšeme ako $(x, y, 1)$ a každé zobrazenie $\mathbf{x} \mapsto \mathbf{Lx} + \mathbf{t}$ ako maticu $3\times3$:
 
 $$\begin{bmatrix}\mathbf{L}&\mathbf{t}\\\mathbf{0}&1\end{bmatrix},\qquad
