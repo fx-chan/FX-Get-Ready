@@ -105,10 +105,27 @@
     if (none && input) input.disabled = none.checked;
   }
 
+  function startTimer(onEnd) {
+    var el = document.getElementById("exam-timer");
+    if (!el) return;
+    var end = Date.now() + Number(el.dataset.remaining) * 1000;
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function tick() {
+      var left = Math.max(0, Math.round((end - Date.now()) / 1000));
+      el.textContent = pad(Math.floor(left / 3600)) + ":" + pad(Math.floor(left / 60) % 60) + ":" + pad(left % 60);
+      el.classList.toggle("soon", left <= 600);
+      el.classList.toggle("last", left <= 60);
+      if (left === 0) { clearInterval(timer); onEnd(); }
+    }
+    var timer = setInterval(tick, 1000);
+    tick();
+  }
+
   function init(root) {
     var draftKey = "answers:" + root.dataset.key;
     var resultEl = root.querySelector(".js-result");
     var button = root.querySelector(".js-check");
+    var finishUrl = root.dataset.finishUrl;
 
     try { restore(root, JSON.parse(store("get", draftKey) || "{}")); } catch (e) { /* bad draft */ }
 
@@ -125,6 +142,35 @@
       });
       syncNone(part);
     });
+
+    if (finishUrl) {
+      // Timed exam: one submit, nothing is graded before it. It also runs by itself at 00:00.
+      var sent = false;
+      var finish = function () {
+        if (sent) return;
+        sent = true;
+        button.disabled = true;
+        resultEl.innerHTML = '<p class="pending"><span class="spinner"></span>' + esc(t("Kontrolujem…")) + "</p>";
+        fetch(finishUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": CSRF },
+          body: JSON.stringify({ answers: collect(root) })
+        }).then(function (r) {
+          if (!r.ok && r.status !== 409) throw new Error("HTTP " + r.status);
+          try { localStorage.removeItem(draftKey); } catch (e) { /* nothing to clear */ }
+          location.reload();
+        }).catch(function (err) {
+          sent = false;
+          button.disabled = false;
+          resultEl.innerHTML = '<div class="verdict IE">' + esc(err.message) + "</div>";
+        });
+      };
+      button.addEventListener("click", function () {
+        if (confirm(t("Naozaj odovzdať písomku?"))) finish();
+      });
+      startTimer(finish);
+      return;
+    }
 
     button.addEventListener("click", function () {
       if (root.dataset.loggedIn !== "1") {
@@ -169,4 +215,13 @@
 
   renderMath(document);
   document.querySelectorAll(".answer-widget").forEach(init);
+
+  var startBtn = document.getElementById("exam-start");
+  if (startBtn) {
+    startBtn.addEventListener("click", function () {
+      if (!confirm(t("Spustiť písomku? Čas sa začne odpočítavať a nedá sa zastaviť."))) return;
+      startBtn.disabled = true;
+      fetch(startBtn.dataset.url, { method: "POST", headers: { "X-CSRF-Token": CSRF } }).then(function () { location.reload(); });
+    });
+  }
 })();

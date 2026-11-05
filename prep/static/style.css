@@ -377,3 +377,22 @@ body.wide .wrap { max-width: 1480px; }
 .lang-switch a { padding: 4px 8px; font-size: 12px; font-weight: 600; color: var(--muted); }
 .lang-switch a:hover { color: var(--accent); text-decoration: none; }
 .lang-switch a.active { background: var(--accent-soft); color: var(--accent); }
+
+/* --- timed exam --- */
+.exam-card { margin: 28px 0 8px; padding: 18px 20px; border-radius: var(--radius); border: 2px solid var(--accent);
+  background: var(--accent-soft); }
+.exam-card h2 { margin: 0 0 6px; font-size: 18px; }
+.exam-card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+.exam-bar { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; padding: 10px 16px; margin-bottom: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: var(--surface); box-shadow: var(--shadow); }
+.exam-time { font-family: "JetBrains Mono", monospace; font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.exam-time.soon { color: var(--warn); }
+.exam-time.last { color: var(--bad); }
+.exam-score { font-size: 40px; font-weight: 800; margin: 4px 0; }
+.exam-problem { margin: 16px 0; }
+.exam-problem h3 { display: flex; justify-content: space-between; margin: 0 0 8px; }
+.exam-row { display: grid; grid-template-columns: 22px 1fr; gap: 8px; padding: 6px 0; border-top: 1px dashed var(--border); }
+.exam-row .mark.ok { color: var(--ok); font-weight: 800; }
+.exam-row .mark.bad { color: var(--bad); font-weight: 800; }
+.exam-given { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--muted); white-space: pre-wrap; }

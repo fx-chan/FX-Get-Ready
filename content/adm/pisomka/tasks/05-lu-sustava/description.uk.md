@@ -1,0 +1,1 @@
+$$\mathbf{A} = \begin{bmatrix}1 & 2 & 1 \\ 2 & 6 & 1 \\ 1 & -2 & 4\end{bmatrix},\qquad \mathbf{Z} = \begin{bmatrix}0 & 2 & 1 \\ 1 & 1 & 0 \\ 2 & 0 & 3\end{bmatrix}$$ Запам'ятайте: **Дулітл** має одиниці на діагоналі $\mathbf{L}$, **Краут** — на діагоналі $\mathbf{U}$. Матриця $\mathbf{Z}$ має нульовий півот, спочатку треба переставити рядки ($\mathbf{PZ} = \mathbf{LU}$).

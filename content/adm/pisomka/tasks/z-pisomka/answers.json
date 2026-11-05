@@ -1,0 +1,444 @@
+{
+ "parts": [
+  {
+   "id": "1a",
+   "prompt": "matica $\\mathbf{M}$ celého zobrazenia ($3\\times3$)",
+   "kind": "matrix",
+   "answer": [
+    [
+     "-4/5",
+     "-3/5",
+     "4"
+    ],
+    [
+     "-3/5",
+     "4/5",
+     "4"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "-4/5 -3/5 4\n-3/5 4/5 4\n0 0 1"
+   }
+  },
+  {
+   "id": "1b",
+   "prompt": "obraz bodu $P = (2, -1)$",
+   "kind": "vector",
+   "answer": [
+    "3",
+    "2"
+   ],
+   "example": {
+    "value": "3, 2"
+   }
+  },
+  {
+   "id": "1c",
+   "prompt": "bod, ktorý sa zobrazí do počiatku",
+   "kind": "vector",
+   "answer": [
+    "28/5",
+    "-4/5"
+   ],
+   "example": {
+    "value": "28/5, -4/5"
+   }
+  },
+  {
+   "id": "1d",
+   "prompt": "Čo je $f$?",
+   "kind": "choice",
+   "options": [
+    "rotácia",
+    "reflexia",
+    "kĺzavá reflexia",
+    "posunutie"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "1e",
+   "prompt": "vektor posunutia pozdĺž osi (polovica posunutia z $f \\circ f$)",
+   "kind": "vector",
+   "answer": [
+    "-4/5",
+    "12/5"
+   ],
+   "example": {
+    "value": "-4/5, 12/5"
+   }
+  },
+  {
+   "id": "1f",
+   "prompt": "os zobrazenia má rovnicu $3x + y = c$; $c =$",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  },
+  {
+   "id": "2a",
+   "prompt": "vlastné čísla (s násobnosťou)",
+   "kind": "multiset",
+   "answer": [
+    "5",
+    "2",
+    "2"
+   ],
+   "example": {
+    "value": "5, 2, 2"
+   }
+  },
+  {
+   "id": "2b",
+   "prompt": "báza vlastného priestoru pre $\\lambda = 2$",
+   "kind": "eigbasis",
+   "A": [
+    [
+     "5",
+     "3",
+     "-3"
+    ],
+    [
+     "3",
+     "5",
+     "-3"
+    ],
+    [
+     "3",
+     "3",
+     "-1"
+    ]
+   ],
+   "lambda": "2",
+   "example": {
+    "value": "-1, 1, 0\n1, 0, 1"
+   }
+  },
+  {
+   "id": "2c",
+   "prompt": "matica $\\mathbf{P}$",
+   "kind": "diagonalize",
+   "A": [
+    [
+     "5",
+     "3",
+     "-3"
+    ],
+    [
+     "3",
+     "5",
+     "-3"
+    ],
+    [
+     "3",
+     "3",
+     "-1"
+    ]
+   ],
+   "diagonalizable": true,
+   "example": {
+    "value": "-1 1 1\n1 0 1\n0 1 1"
+   }
+  },
+  {
+   "id": "2d",
+   "prompt": "prvok $(\\mathbf{A}^n)_{13}$ (premenná `n`)",
+   "kind": "number",
+   "answer": "2^n - 5^n",
+   "example": {
+    "value": "2^n - 5^n"
+   },
+   "vars": [
+    "n"
+   ],
+   "hint": "Využite, že $\\mathbf{A} - 2\\mathbf{I}$ má hodnosť 1."
+  },
+  {
+   "id": "2e",
+   "prompt": "$\\mathbf{x}_1$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "3/5",
+    "3/5"
+   ],
+   "example": {
+    "value": "1, 3/5, 3/5"
+   }
+  },
+  {
+   "id": "2f",
+   "prompt": "$\\mathbf{x}_2$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "21/25",
+    "21/25"
+   ],
+   "example": {
+    "value": "1, 21/25, 21/25"
+   }
+  },
+  {
+   "id": "2g",
+   "prompt": "Rayleighov podiel z $\\mathbf{x}_2$ (stačia 3 desatinné miesta)",
+   "kind": "number",
+   "answer": "8039/1507",
+   "example": {
+    "value": "8039/1507"
+   }
+  },
+  {
+   "id": "2h",
+   "prompt": "K akému číslu sa dostane metóda so štartom $\\mathbf{x}_0 = (1, -1, 0)$?",
+   "kind": "choice",
+   "options": [
+    "k číslu 5",
+    "k číslu 2, tento vektor nemá zložku v smere dominantného vektora",
+    "metóda skončí chybou"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "3a",
+   "prompt": "$\\det \\mathbf{B}$",
+   "kind": "number",
+   "answer": "-10",
+   "example": {
+    "value": "-10"
+   }
+  },
+  {
+   "id": "3b",
+   "prompt": "kofaktor $C_{77}$ matice $\\mathbf{B}$",
+   "kind": "number",
+   "answer": "-5",
+   "example": {
+    "value": "-5"
+   }
+  },
+  {
+   "id": "3c",
+   "prompt": "$\\det(2\\mathbf{B}^{-1}\\mathbf{B}^{\\top})$",
+   "kind": "number",
+   "answer": "128",
+   "example": {
+    "value": "128"
+   }
+  },
+  {
+   "id": "3d",
+   "prompt": "$\\det(\\operatorname{adj} \\mathbf{B})$",
+   "kind": "number",
+   "answer": "1000000",
+   "example": {
+    "value": "1000000"
+   }
+  },
+  {
+   "id": "3e",
+   "prompt": "$\\det \\mathbf{C}(x)$",
+   "kind": "number",
+   "answer": "3*(x - 1)^2*(x + 1)^2",
+   "example": {
+    "value": "3*(x - 1)^2*(x + 1)^2"
+   },
+   "vars": [
+    "x"
+   ]
+  },
+  {
+   "id": "3f",
+   "prompt": "hodnoty $x$, pre ktoré je $\\mathbf{C}(x)$ singulárna",
+   "kind": "set",
+   "answer": [
+    "-1",
+    "1"
+   ],
+   "example": {
+    "value": "-1, 1"
+   }
+  },
+  {
+   "id": "4a",
+   "prompt": "Doolittle: $\\mathbf{L}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "2",
+     "1",
+     "0"
+    ],
+    [
+     "-1",
+     "4/3",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0 0\n2 1 0\n-1 4/3 1"
+   }
+  },
+  {
+   "id": "4b",
+   "prompt": "Doolittle: $\\mathbf{U}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "2",
+     "1",
+     "-1"
+    ],
+    [
+     "0",
+     "3",
+     "3"
+    ],
+    [
+     "0",
+     "0",
+     "2"
+    ]
+   ],
+   "example": {
+    "value": "2 1 -1\n0 3 3\n0 0 2"
+   }
+  },
+  {
+   "id": "4c",
+   "prompt": "$\\mathbf{y}$ z $\\mathbf{Ly} = \\mathbf{b}$",
+   "kind": "vector",
+   "answer": [
+    "3",
+    "7",
+    "14/3"
+   ],
+   "example": {
+    "value": "3, 7, 14/3"
+   }
+  },
+  {
+   "id": "4d",
+   "prompt": "$\\mathbf{x}$ z $\\mathbf{Ux} = \\mathbf{y}$",
+   "kind": "vector",
+   "answer": [
+    "8/3",
+    "0",
+    "7/3"
+   ],
+   "example": {
+    "value": "8/3, 0, 7/3"
+   }
+  },
+  {
+   "id": "4e",
+   "prompt": "3. stĺpec $\\mathbf{A}^{-1}$",
+   "kind": "vector",
+   "answer": [
+    "1/2",
+    "-1/2",
+    "1/2"
+   ],
+   "example": {
+    "value": "1/2, -1/2, 1/2"
+   }
+  },
+  {
+   "id": "4f",
+   "prompt": "Crout: $\\mathbf{U}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "1/2",
+     "-1/2"
+    ],
+    [
+     "0",
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 1/2 -1/2\n0 1 1\n0 0 1"
+   }
+  },
+  {
+   "id": "4g",
+   "prompt": "$\\mathbf{D}(t)$: hodnoty $t$, pri ktorých rozklad **bez výmeny riadkov** neexistuje",
+   "kind": "set",
+   "answer": [
+    "2"
+   ],
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "4h",
+   "prompt": "$\\mathbf{D}(t)$: hodnoty $t$, pri ktorých je matica singulárna",
+   "kind": "set",
+   "answer": [
+    "5",
+    "-2"
+   ],
+   "example": {
+    "value": "5, -2"
+   }
+  },
+  {
+   "id": "4i",
+   "prompt": "$\\mathbf{D}(2)\\,\\mathbf{x} = (1, 1, 1)$",
+   "kind": "system",
+   "A": [
+    [
+     "2",
+     "1",
+     "-1"
+    ],
+    [
+     "4",
+     "2",
+     "1"
+    ],
+    [
+     "-2",
+     "3",
+     "2"
+    ]
+   ],
+   "b": [
+    "1",
+    "1",
+    "1"
+   ],
+   "example": {
+    "value": "1/24, 7/12, -1/3"
+   },
+   "solutions": "unique"
+  }
+ ]
+}

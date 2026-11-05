@@ -1,0 +1,72 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}-5 & 2 \\\\ 0 & 1\\end{bmatrix}$, $\\mathbf{x}_0 = (1, 1)$: $\\mathbf{x}_2$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "1/17"
+   ],
+   "example": {
+    "value": "1, 1/17"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Dominantné číslo $-5$ je záporné. Čo robí postupnosť $\\mathbf{y}_k$?",
+   "kind": "choice",
+   "options": [
+    "mení znamienko v každom kroku, deliaca zložka však konverguje k $-5$",
+    "diverguje, metóda nefunguje",
+    "konverguje k $5$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\mathbf{A} = \\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}$, $\\mathbf{x}_0 = (1, 0)$",
+   "kind": "choice",
+   "options": [
+    "$\\mathbf{x}_k$ strieda $(1, 0)$ a $(0, 1)$: čísla $1$ a $-1$ majú rovnakú absolútnu hodnotu",
+    "konverguje k $(1, 1)$",
+    "konverguje k nule"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{x}_0$ nemá žiadnu zložku v smere dominantného vektora. V presnej aritmetike metóda",
+   "kind": "choice",
+   "options": [
+    "nájde najväčšie číslo spomedzi tých, ktoré v $\\mathbf{x}_0$ zastúpené sú",
+    "skončí chybou",
+    "aj tak nájde dominantné číslo"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Matica s vlastnými číslami $2 \\pm 3i$ a $1$",
+   "kind": "choice",
+   "options": [
+    "nemá jediné dominantné reálne číslo, postupnosť nekonverguje",
+    "konverguje k $2$",
+    "konverguje k $1$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

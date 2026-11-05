@@ -1,0 +1,13 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det$",
+   "kind": "number",
+   "answer": "-120",
+   "example": {
+    "value": "-120"
+   }
+  }
+ ]
+}

@@ -58,6 +58,14 @@
       {% endif %}
     {% endfor %}
 
+    {% for ex in block.exams %}
+    <section class="exam-card" id="pisomka">
+      <h2>⏱ {{ ex.title }}</h2>
+      <p>{{ ex.exam_minutes }} {{ _('minút') }} · {{ _('odpovede sa vyhodnotia až po odovzdaní') }}</p>
+      <a class="btn primary" href="{{ url_for('main.task', subject_slug=subject.slug, block_slug=block.slug, task_slug=ex.slug) }}">{{ _('Otvoriť písomku') }}</a>
+    </section>
+    {% endfor %}
+
     {% if block.advanced_tasks %}
     <section class="aplus-section" id="aplus-intro">
       <h2>🏆 {{ _('A++ — úlohy vyššej úrovne') }}</h2>

@@ -1,0 +1,30 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{y}$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "2",
+    "-5"
+   ],
+   "example": {
+    "value": "1, 2, -5"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{x}$",
+   "kind": "vector",
+   "answer": [
+    "27/8",
+    "-9/2",
+    "-5/4"
+   ],
+   "example": {
+    "value": "27/8, -9/2, -5/4"
+   }
+  }
+ ]
+}

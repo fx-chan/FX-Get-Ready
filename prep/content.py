@@ -16,6 +16,8 @@ A code task or drill folder holds:
 An answer task (math: "type": "answer" in metadata.json) holds instead:
     metadata.json  description.md  answers.json (parts + key, never served; see mathcheck.py)
 "level": "A++" in metadata.json puts a task into the block's advanced section.
+"exam_minutes": N in metadata.json makes an answer task a timed exam: its statement is shown only after
+the student starts, answers are graded once on submit, solution.md is shown only afterwards.
 "math": true in subject.json renders $...$ and $$...$$ with KaTeX.
 
 Slovak is the source language. A translation lives next to it: theory.uk.md, description.uk.md and
@@ -66,6 +68,7 @@ class Task:
     public_tests: list = field(default_factory=list)  # test names whose details are shown
     type: str = "code"  # code | answer
     level: str = ""  # "" | "A++"
+    exam_minutes: int = 0  # > 0: timed exam
     lang: str = "sk"
     strings: dict = field(default_factory=dict)
 
@@ -91,6 +94,10 @@ class Task:
     @property
     def description_md(self):
         return _localized(self.path / "description.md", self.lang)
+
+    @property
+    def solution_md(self):
+        return _localized(self.path / "solution.md", self.lang)
 
     @property
     def template(self):
@@ -126,11 +133,15 @@ class Block:
 
     @property
     def basic_tasks(self):
-        return [t for t in self.tasks if t.level != "A++"]
+        return [t for t in self.tasks if t.level != "A++" and not t.exam_minutes]
 
     @property
     def advanced_tasks(self):
-        return [t for t in self.tasks if t.level == "A++"]
+        return [t for t in self.tasks if t.level == "A++" and not t.exam_minutes]
+
+    @property
+    def exams(self):
+        return [t for t in self.tasks if t.exam_minutes]
 
     def task(self, slug):
         return next((t for t in self.tasks + self.drills if t.slug == slug), None)
@@ -201,6 +212,7 @@ def load_task(path, kind="task", lang="sk", strings=None):
         public_tests=list(meta.get("public_tests", [])),
         type=meta.get("type", "code"),
         level=meta.get("level", ""),
+        exam_minutes=int(meta.get("exam_minutes", 0)),
         lang=lang,
         strings=strings,
     )

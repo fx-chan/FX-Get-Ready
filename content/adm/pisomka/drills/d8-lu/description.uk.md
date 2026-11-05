@@ -1,0 +1,1 @@
+$\mathbf{A} = \mathbf{LU}$, де $\mathbf{L} = \begin{bmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ -1 & 3 & 1\end{bmatrix}$, $\mathbf{U} = \begin{bmatrix}2 & 1 & 1 \\ 0 & -1 & 2 \\ 0 & 0 & 4\end{bmatrix}$, $\mathbf{b} = (1, 4, 0)$. Спочатку $\mathbf{Ly} = \mathbf{b}$, потім $\mathbf{Ux} = \mathbf{y}$.

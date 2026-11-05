@@ -1,0 +1,57 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det \\mathbf{G}$",
+   "kind": "number",
+   "answer": "-240",
+   "example": {
+    "value": "-240"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\det \\mathbf{H}$",
+   "kind": "number",
+   "answer": "-64",
+   "example": {
+    "value": "-64"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\det \\mathbf{K}(x)$",
+   "kind": "number",
+   "answer": "-10*x^4 + 50*x^2 - 40",
+   "example": {
+    "value": "-10*x^4 + 50*x^2 - 40"
+   },
+   "vars": [
+    "x"
+   ]
+  },
+  {
+   "id": "d",
+   "prompt": "hodnoty $x$, pre ktoré je $\\mathbf{K}(x)$ singulárna",
+   "kind": "set",
+   "answer": [
+    "-2",
+    "-1",
+    "1",
+    "2"
+   ],
+   "example": {
+    "value": "-2, -1, 1, 2"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\det(2\\mathbf{G}^{-1}\\mathbf{G}^{\\top})$",
+   "kind": "number",
+   "answer": "128",
+   "example": {
+    "value": "128"
+   }
+  }
+ ]
+}

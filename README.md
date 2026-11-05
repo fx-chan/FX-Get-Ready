@@ -15,6 +15,9 @@ Subjects: **PRPR** (procedural programming in C) and **ADM** (algebra and discre
 
 - lessons with formulas (KaTeX), quizzes and mini exercises, practice tasks taken from the homework sheets,
 - every block has a separate **A++** section with the advanced tasks (`"level": "A++"`),
+- block `pisomka` prepares for the written test and ends with a **timed mock exam** (`"exam_minutes": 100` in
+  metadata.json): the clock runs on the server, the statement is hidden until start, answers are graded once
+  on submit (automatically at 00:00), then points per problem and `solution.md` are shown,
 - answers (numbers, matrices, vectors, solution sets of systems, eigenvectors, …) are checked on the
   server by `prep/mathcheck.py`: a small safe expression parser plus numeric comparison, so equivalent
   forms (`1/2`, `0.5`, `sqrt(2)/2`, any parametrization of a solution set) are accepted.

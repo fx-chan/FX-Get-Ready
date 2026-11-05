@@ -21,6 +21,7 @@
           {% if b.lecture %}<span class="pill">📖 {{ b.lecture }}</span>{% endif %}
           <span class="pill">✏️ {{ b.drills|length }} {{ _('mini úloh') }}</span>
           <span class="pill">💻 {{ b.basic_tasks|length }} {{ _('úloh') }}</span>
+          {% if b.exams %}<span class="pill accent">⏱ {{ b.exams[0].exam_minutes }} {{ _('minút') }}</span>{% endif %}
           {% if b.advanced_tasks %}<span class="pill aplus">🏆 {{ b.advanced_tasks|length }} × A++</span>{% endif %}
           {% if g.user %}<span class="pill accent">{{ p.done }}/{{ p.total }}</span>{% endif %}
         </div>

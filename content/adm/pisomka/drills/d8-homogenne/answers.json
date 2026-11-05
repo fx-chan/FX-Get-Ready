@@ -1,0 +1,41 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "matica posunutia",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0",
+     "3"
+    ],
+    [
+     "0",
+     "1",
+     "-2"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0 3\n0 1 -2\n0 0 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "obraz bodu $(1, 1)$",
+   "kind": "vector",
+   "answer": [
+    "4",
+    "-1"
+   ],
+   "example": {
+    "value": "4, -1"
+   }
+  }
+ ]
+}

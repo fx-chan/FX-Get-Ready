@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% from "_macros.html" import answer_widget with context %}
+{% block title %}{{ task.title }}{% endblock %}
+{% block body_class %}{{ 'wide' if running }}{% endblock %}
+{% block head %}{% include "_math_head.html" %}{% endblock %}
+{% block crumbs %}
+<nav class="crumbs">
+  <a href="{{ url_for('main.index') }}">{{ _('Predmety') }}</a><span>›</span>
+  <a href="{{ url_for('main.subject', subject_slug=subject.slug) }}">{{ subject.title }}</a><span>›</span>
+  <a href="{{ url_for('main.block', subject_slug=subject.slug, block_slug=block.slug) }}">{{ block.title }}</a><span>›</span>
+  {{ task.title }}
+</nav>
+{% endblock %}
+{% block content %}
+{% set start_url = url_for('main.exam_start', subject_slug=subject.slug, block_slug=block.slug, task_slug=task.slug) %}
+{% if running %}
+<div class="exam-bar">
+  <strong>{{ task.title }}</strong>
+  <span>{{ _('Zostáva') }} <span class="exam-time" id="exam-timer" data-remaining="{{ remaining }}">--:--:--</span></span>
+</div>
+<div class="ide answer-page">
+  <section class="statement"><div class="prose">{{ description }}</div></section>
+  <section class="workspace">{{ answer_widget(subject, block, task, exam=True) }}</section>
+</div>
+{% elif result %}
+<header class="page-head">
+  <h1>{{ task.title }}</h1>
+  <p class="meta">{{ _('Výsledok') }}</p>
+  <div class="exam-score">{{ result.points }} / 100 {{ _('bodov') }}</div>
+  <p class="meta">{{ _('Čas riešenia') }}: {{ result.minutes }} {{ _('min') }}</p>
+  {% if result.late %}<div class="flash error">{{ _('Odovzdané po čase, body berte s rezervou.') }}</div>{% endif %}
+  <button type="button" class="btn primary" id="exam-start" data-url="{{ start_url }}">{{ _('Skúsiť znova') }}</button>
+</header>
+{% for p in result.problems %}
+<section class="exam-problem side-card">
+  <h3><span>{{ _('Príklad') }} {{ p.name }}</span><span>{{ p.points|round(1) }} / {{ (100 / result.problems|length)|round(1) }}</span></h3>
+  <p class="meta">{{ p.ok }} / {{ p.total }} {{ _('správne') }}</p>
+  {% for part in p.parts %}
+  <div class="exam-row">
+    <span class="mark {{ 'ok' if part.status == 'ok' else 'bad' }}">{{ '✓' if part.status == 'ok' else '✗' }}</span>
+    <div>
+      <div>{{ part.id }}) {{ md(part.prompt or "", subject.math, True) }}</div>
+      {% set v = part.given.value %}
+      <div class="exam-given">{{ _('Vaša odpoveď') }}: {% if part.given.none %}{{ _(none_labels.get(part.kind, 'nedá sa vypočítať')) }}{% elif part.options is defined and v is string and v.isdigit() and v|int < part.options|length %}{{ md(part.options[v|int], subject.math, True) }}{% elif part.options is defined and v is sequence and v is not string %}{% for i in v %}{{ md(part.options[i|int], subject.math, True) }}{{ '; ' if not loop.last }}{% endfor %}{% elif v %}{{ v }}{% else %}{{ _('bez odpovede') }}{% endif %}</div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}
+<h2 class="section-title">{{ _('Riešenie krok za krokom') }}</h2>
+<div class="prose">{{ solution }}</div>
+{% else %}
+<div class="exam-card">
+  <h2>⏱ {{ task.title }}</h2>
+  <h3>{{ _('Pravidlá') }}</h3>
+  <ul>
+    <li>{{ _('Na písomku máte {n} minút. Čas beží na serveri, obnovenie stránky ho nezastaví.', n=task.exam_minutes) }}</li>
+    <li>{{ _('Zadanie uvidíte až po spustení.') }}</li>
+    <li>{{ _('Výsledky ani správne odpovede sa počas písomky nezobrazujú.') }}</li>
+    <li>{{ _('Keď čas vyprší, písomka sa odovzdá automaticky.') }}</li>
+    <li>{{ _('Pripravte si papier a pero, kalkulačka nie je potrebná.') }}</li>
+  </ul>
+  {% if g.user %}
+  <button type="button" class="btn primary" id="exam-start" data-url="{{ start_url }}">{{ _('Spustiť písomku') }}</button>
+  {% else %}
+  <p>{{ _('Na písomku sa') }} <a href="{{ url_for('auth.login', next=request.path) }}">{{ _('prihláste') }}</a>.</p>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}
+{% block scripts %}{% include "_math_scripts.html" %}{% endblock %}

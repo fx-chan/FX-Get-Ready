@@ -21,6 +21,17 @@ CREATE TABLE IF NOT EXISTS submissions (
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 CREATE INDEX IF NOT EXISTS submissions_user_task ON submissions(user_id, task_key);
+CREATE TABLE IF NOT EXISTS exam_attempts (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    task_key TEXT NOT NULL,
+    started_at REAL NOT NULL,
+    finished_at REAL,
+    late INTEGER NOT NULL DEFAULT 0,
+    answers TEXT,
+    results TEXT
+);
+CREATE INDEX IF NOT EXISTS exam_attempts_user_task ON exam_attempts(user_id, task_key);
 """
 
 
@@ -49,6 +60,25 @@ def record_submission(user_id, task_key, report, source):
     db = get_db()
     db.execute("INSERT INTO submissions (user_id, task_key, verdict, passed, total, source) VALUES (?,?,?,?,?,?)",
                (user_id, task_key, report.verdict, report.passed, report.total, source))
+    db.commit()
+
+
+def exam_attempt(user_id, task_key):
+    """The newest attempt, finished or not."""
+    return get_db().execute("SELECT * FROM exam_attempts WHERE user_id = ? AND task_key = ? ORDER BY id DESC LIMIT 1",
+                            (user_id, task_key)).fetchone()
+
+
+def start_exam(user_id, task_key, now):
+    db = get_db()
+    db.execute("INSERT INTO exam_attempts (user_id, task_key, started_at) VALUES (?,?,?)", (user_id, task_key, now))
+    db.commit()
+
+
+def finish_exam(attempt_id, now, late, answers, results):
+    db = get_db()
+    db.execute("UPDATE exam_attempts SET finished_at = ?, late = ?, answers = ?, results = ? WHERE id = ?",
+               (now, int(late), answers, results, attempt_id))
     db.commit()
 
 

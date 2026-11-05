@@ -1,0 +1,1 @@
+Mocninová metóda: $\mathbf{y}_{k+1} = \mathbf{A}\mathbf{x}_k$, $\mathbf{x}_{k+1}$ = $\mathbf{y}_{k+1}$ vydelený zložkou s najväčšou absolútnou hodnotou. Odhad čísla: Rayleighov podiel $\dfrac{\mathbf{x}^{\top}\mathbf{A}\mathbf{x}}{\mathbf{x}^{\top}\mathbf{x}}$. Pre $\mathbf{A} = \begin{bmatrix}4 & 1 \\ 2 & 3\end{bmatrix}$ a $\mathbf{x}_0 = (1, 0)$:

@@ -1,0 +1,110 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "reflexia podľa $y = x$, potom reflexia podľa $y = x + 2$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0",
+     "-2"
+    ],
+    [
+     "0",
+     "1",
+     "2"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0 -2\n0 1 2\n0 0 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "o aký vektor posúva zobrazenie z časti a)?",
+   "kind": "vector",
+   "answer": [
+    "-2",
+    "2"
+   ],
+   "example": {
+    "value": "-2, 2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "rotácia o $90^\\circ$ okolo $(1, 0)$, potom o $90^\\circ$ okolo $(0, 1)$: stred výslednej rotácie",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "1"
+   ],
+   "example": {
+    "value": "1, 1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "pevný bod zobrazenia $\\begin{bmatrix}0 & -1 & 3 \\\\ 1 & 0 & 1 \\\\ 0 & 0 & 1\\end{bmatrix}$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "2"
+   ],
+   "example": {
+    "value": "1, 2"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\begin{bmatrix}1 & 0 & 3 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "posunutie",
+    "rotácia",
+    "reflexia",
+    "kĺzavá reflexia"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\begin{bmatrix}1 & 0 & 0 \\\\ 0 & -1 & 4 \\\\ 0 & 0 & 1\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "posunutie",
+    "rotácia",
+    "reflexia",
+    "kĺzavá reflexia"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$\\begin{bmatrix}-1 & 0 & 2 \\\\ 0 & -1 & 4 \\\\ 0 & 0 & 1\\end{bmatrix}$",
+   "kind": "choice",
+   "options": [
+    "posunutie",
+    "rotácia",
+    "reflexia",
+    "kĺzavá reflexia"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

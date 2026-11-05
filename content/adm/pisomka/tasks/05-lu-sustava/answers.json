@@ -1,0 +1,163 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Doolittle: $\\mathbf{L}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "2",
+     "1",
+     "0"
+    ],
+    [
+     "1",
+     "-2",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 0 0\n2 1 0\n1 -2 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Doolittle: $\\mathbf{U}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "2",
+     "1"
+    ],
+    [
+     "0",
+     "2",
+     "-1"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 2 1\n0 2 -1\n0 0 1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Crout: $\\mathbf{U}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1",
+     "2",
+     "1"
+    ],
+    [
+     "0",
+     "1",
+     "-1/2"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "example": {
+    "value": "1 2 1\n0 1 -1/2\n0 0 1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\mathbf{Ax} = (4, 9, 3)$",
+   "kind": "system",
+   "A": [
+    [
+     "1",
+     "2",
+     "1"
+    ],
+    [
+     "2",
+     "6",
+     "1"
+    ],
+    [
+     "1",
+     "-2",
+     "4"
+    ]
+   ],
+   "b": [
+    "4",
+    "9",
+    "3"
+   ],
+   "example": {
+    "value": "1, 1, 1"
+   },
+   "solutions": "unique"
+  },
+  {
+   "id": "e",
+   "prompt": "1. stĺpec $\\mathbf{A}^{-1}$ (pravá strana $\\mathbf{e}_1$)",
+   "kind": "vector",
+   "answer": [
+    "13",
+    "-7/2",
+    "-5"
+   ],
+   "example": {
+    "value": "13, -7/2, -5"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "$\\det \\mathbf{A}$",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "$\\mathbf{Zx} = (3, 2, 5)$",
+   "kind": "system",
+   "A": [
+    [
+     "0",
+     "2",
+     "1"
+    ],
+    [
+     "1",
+     "1",
+     "0"
+    ],
+    [
+     "2",
+     "0",
+     "3"
+    ]
+   ],
+   "b": [
+    "3",
+    "2",
+    "5"
+   ],
+   "example": {
+    "value": "1, 1, 1"
+   },
+   "solutions": "unique"
+  }
+ ]
+}

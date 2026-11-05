@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\det \\mathbf{T}$",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\det$ cyklickej permutačnej matice $7\\times7$ (jednotky nad diagonálou a v ľavom dolnom rohu)",
+   "kind": "number",
+   "answer": "1",
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\det$ matice $7\\times7$ s jednotkami na vedľajšej diagonále",
+   "kind": "number",
+   "answer": "-1",
+   "example": {
+    "value": "-1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$\\det$ matice $7\\times7$ s číslom 3 na diagonále a 1 všade inde",
+   "kind": "number",
+   "answer": "576",
+   "example": {
+    "value": "576"
+   }
+  }
+ ]
+}

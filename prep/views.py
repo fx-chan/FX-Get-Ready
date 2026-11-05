@@ -1,5 +1,6 @@
 import json
 import re
+import time
 
 import markdown as md
 from flask import Blueprint, abort, current_app, g, jsonify, make_response, redirect, render_template, request
@@ -12,6 +13,7 @@ from .i18n import t
 bp = Blueprint("main", __name__)
 
 MD_EXTENSIONS = ["fenced_code", "tables", "sane_lists"]
+EXAM_GRACE_SECONDS = 60  # the automatic submit at 00:00 still has to reach the server
 _MATH_RE = re.compile(r"\$\$(.+?)\$\$|(?<![\\$])\$(?!\s)([^$\n]+?)(?<!\s)\$", re.S)
 
 
@@ -145,6 +147,8 @@ def task(subject_slug, block_slug, task_slug):
     if not tsk:
         abort(404)
     key = task_key(subj, blk, tsk)
+    if tsk.exam_minutes:
+        return _exam_page(subj, blk, tsk, key)
     last = db.last_source(g.user["id"], key) if g.user else None
     idx = blk.tasks.index(tsk) if tsk in blk.tasks else -1
     page = "answer_task.html" if tsk.type == "answer" else "task.html"
@@ -152,6 +156,40 @@ def task(subject_slug, block_slug, task_slug):
                            last_answers=last_answers(last) if tsk.type == "answer" else None,
                            description=render_md(tsk.description_md, subj.math), solved=_solved(),
                            next_task=blk.tasks[idx + 1] if 0 <= idx < len(blk.tasks) - 1 else None)
+
+
+def _exam_page(subj, blk, tsk, key):
+    attempt = db.exam_attempt(g.user["id"], key) if g.user else None
+    running = attempt is not None and attempt["finished_at"] is None
+    finished = attempt is not None and not running
+    args = {"subject": subj, "block": blk, "task": tsk, "key": key, "running": running, "attempt": attempt,
+            "remaining": 0, "description": "", "result": None, "solution": ""}
+    if running:
+        args["remaining"] = max(0, round(attempt["started_at"] + tsk.exam_minutes * 60 - time.time()))
+        args["description"] = render_md(tsk.description_md, subj.math)
+    elif finished:
+        args["result"] = exam_result(tsk, attempt)
+        args["solution"] = render_md(tsk.solution_md, subj.math)
+        args["description"] = render_md(tsk.description_md, subj.math)
+    return render_template("exam.html", **args)
+
+
+def exam_result(tsk, attempt):
+    """Points per problem (each problem has the same weight; part ids start with the problem number)."""
+    results = json.loads(attempt["results"])
+    answers = json.loads(attempt["answers"])
+    problems = {}
+    for part in tsk.public_parts:
+        status = results.get(part["id"], {}).get("status", mathcheck.WRONG)
+        given = answers.get(part["id"]) or {}
+        problems.setdefault(part["id"][0], []).append(dict(part, status=status, given=given))
+    weight = 100 / len(problems)
+    rows = []
+    for name, parts in problems.items():
+        ok = sum(p["status"] == mathcheck.OK for p in parts)
+        rows.append({"name": name, "parts": parts, "ok": ok, "total": len(parts), "points": weight * ok / len(parts)})
+    return {"problems": rows, "points": round(sum(r["points"] for r in rows)), "late": bool(attempt["late"]),
+            "minutes": round((attempt["finished_at"] - attempt["started_at"]) / 60)}
 
 
 def last_answers(source):
@@ -226,8 +264,18 @@ def run(subject_slug, block_slug, task_slug):
 def check(subject_slug, block_slug, task_slug):
     """Answer tasks: compare typed answers with the key in answers.json."""
     subj, blk, tsk = content.find(_content_dir(), subject_slug, block_slug, task_slug)
-    if not tsk or tsk.type != "answer":
+    if not tsk or tsk.type != "answer" or tsk.exam_minutes:
         abort(404)
+    answers, raw = _read_answers()
+    report = mathcheck.check_task(tsk.parts, answers)
+    key = task_key(subj, blk, tsk)
+    db.record_submission(g.user["id"], key, report, raw)
+    current_app.logger.info("check %s by %s -> %s (%d/%d)", key, g.user["username"],
+                            report.verdict, report.passed, report.total)
+    return jsonify(report.to_dict())
+
+
+def _read_answers():
     data = request.get_json(silent=True) or {}
     answers = data.get("answers")
     if not isinstance(answers, dict):
@@ -235,12 +283,42 @@ def check(subject_slug, block_slug, task_slug):
     raw = json.dumps(answers, ensure_ascii=False)
     if len(raw.encode("utf-8")) > current_app.config["MAX_SOURCE_BYTES"]:
         _fail("Answers too large", 413)
+    return answers, raw
+
+
+def _exam_or_404(subject_slug, block_slug, task_slug):
+    subj, blk, tsk = content.find(_content_dir(), subject_slug, block_slug, task_slug)
+    if not tsk or not tsk.exam_minutes:
+        abort(404)
+    return tsk, task_key(subj, blk, tsk)
+
+
+@bp.post("/api/<subject_slug>/<block_slug>/<task_slug>/exam/start")
+@api_login_required
+def exam_start(subject_slug, block_slug, task_slug):
+    """The clock lives on the server, so reloading the page does not reset it."""
+    tsk, key = _exam_or_404(subject_slug, block_slug, task_slug)
+    attempt = db.exam_attempt(g.user["id"], key)
+    if attempt is None or attempt["finished_at"] is not None:
+        db.start_exam(g.user["id"], key, time.time())
+    return jsonify(ok=True)
+
+
+@bp.post("/api/<subject_slug>/<block_slug>/<task_slug>/exam/finish")
+@api_login_required
+def exam_finish(subject_slug, block_slug, task_slug):
+    tsk, key = _exam_or_404(subject_slug, block_slug, task_slug)
+    attempt = db.exam_attempt(g.user["id"], key)
+    if attempt is None or attempt["finished_at"] is not None:
+        _fail(t("Písomka nebeží."), 409)
+    answers, raw = _read_answers()
     report = mathcheck.check_task(tsk.parts, answers)
-    key = task_key(subj, blk, tsk)
+    now = time.time()
+    late = now > attempt["started_at"] + tsk.exam_minutes * 60 + EXAM_GRACE_SECONDS
+    db.finish_exam(attempt["id"], now, late, raw, json.dumps(report.to_dict()["parts"], ensure_ascii=False))
     db.record_submission(g.user["id"], key, report, raw)
-    current_app.logger.info("check %s by %s -> %s (%d/%d)", key, g.user["username"],
-                            report.verdict, report.passed, report.total)
-    return jsonify(report.to_dict())
+    current_app.logger.info("exam %s by %s -> %d/%d late=%s", key, g.user["username"], report.passed, report.total, late)
+    return jsonify(ok=True)
 
 
 @bp.app_errorhandler(404)

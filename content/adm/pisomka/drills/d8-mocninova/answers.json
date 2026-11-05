@@ -1,0 +1,37 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\mathbf{x}_1$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "1/2"
+   ],
+   "example": {
+    "value": "1, 1/2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{x}_2$",
+   "kind": "vector",
+   "answer": [
+    "1",
+    "7/9"
+   ],
+   "example": {
+    "value": "1, 7/9"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "presné dominantné vlastné číslo",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\lambda = 3$ s vektorom $(1, 2)$, $\\lambda = -1$ s vektorom $(1, -1)$: matica $\\mathbf{A}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "1/3",
+     "4/3"
+    ],
+    [
+     "8/3",
+     "5/3"
+    ]
+   ],
+   "example": {
+    "value": "1/3 4/3\n8/3 5/3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\mathbf{A}^4$ pre túto maticu",
+   "kind": "matrix",
+   "answer": [
+    [
+     "83/3",
+     "80/3"
+    ],
+    [
+     "160/3",
+     "163/3"
+    ]
+   ],
+   "example": {
+    "value": "83/3 80/3\n160/3 163/3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\lambda = 2$ s vektormi $(1, 1, 0)$ a $(0, 0, 1)$, $\\lambda = 5$ s vektorom $(1, -1, 0)$: matica $\\mathbf{A}$",
+   "kind": "matrix",
+   "answer": [
+    [
+     "7/2",
+     "-3/2",
+     "0"
+    ],
+    [
+     "-3/2",
+     "7/2",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "2"
+    ]
+   ],
+   "example": {
+    "value": "7/2 -3/2 0\n-3/2 7/2 0\n0 0 2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Táto matica $3\\times3$ je symetrická, lebo",
+   "kind": "choice",
+   "options": [
+    "vlastné vektory k rôznym číslam sú kolmé",
+    "má dvojnásobné vlastné číslo",
+    "$\\det\\mathbf{A} = 20$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

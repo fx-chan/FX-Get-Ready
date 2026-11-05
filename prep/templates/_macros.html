@@ -40,11 +40,12 @@
 } %}
 {% set MULTILINE = ["matrix", "eigbasis", "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares"] %}
 
-{% macro answer_widget(subject, block, task, compact=False, initial=None) -%}
+{% macro answer_widget(subject, block, task, compact=False, initial=None, exam=False) -%}
 {% set initial = initial or {} %}
 <div class="answer-widget{{ ' compact' if compact }}"
      data-key="{{ task_key(subject, block, task) }}"
-     data-check-url="{{ url_for('main.check', subject_slug=subject.slug, block_slug=block.slug, task_slug=task.slug) }}"
+     {% if exam %}data-finish-url="{{ url_for('main.exam_finish', subject_slug=subject.slug, block_slug=block.slug, task_slug=task.slug) }}"
+     {% else %}data-check-url="{{ url_for('main.check', subject_slug=subject.slug, block_slug=block.slug, task_slug=task.slug) }}"{% endif %}
      data-logged-in="{{ '1' if g.user else '0' }}"
      data-login-url="{{ url_for('auth.login', next=request.path) }}">
   {% for p in task.public_parts %}
@@ -99,7 +100,7 @@
       </ul>
     </details>
     <span class="spacer"></span>
-    <button type="button" class="btn primary js-check">✓ {{ _('Skontrolovať') }}</button>
+    <button type="button" class="btn primary js-check">✓ {{ _('Odovzdať písomku') if exam else _('Skontrolovať') }}</button>
   </div>
   <div class="result js-result" aria-live="polite"></div>
 </div>

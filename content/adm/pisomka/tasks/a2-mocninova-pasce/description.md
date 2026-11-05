@@ -1,0 +1,1 @@
+Mocninová metóda: $\mathbf{y}_{k+1} = \mathbf{A}\mathbf{x}_k$, $\mathbf{x}_{k+1}$ = $\mathbf{y}_{k+1}$ vydelený zložkou s najväčšou absolútnou hodnotou. Odhad čísla: Rayleighov podiel $\dfrac{\mathbf{x}^{\top}\mathbf{A}\mathbf{x}}{\mathbf{x}^{\top}\mathbf{x}}$. Hľadajte, čo sa s postupnosťou naozaj stane.
