@@ -1,0 +1,82 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "premenlivá dĺžka inštrukcie",
+   "kind": "choice",
+   "options": [
+    "CISC",
+    "RISC"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "jeden až dva takty na inštrukciu",
+   "kind": "choice",
+   "options": [
+    "CISC",
+    "RISC"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "viac inštrukcií na ten istý program",
+   "kind": "choice",
+   "options": [
+    "CISC",
+    "RISC"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "veľa spôsobov adresovania",
+   "kind": "choice",
+   "options": [
+    "CISC",
+    "RISC"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "riadiaca časť je mikroprogram",
+   "kind": "choice",
+   "options": [
+    "CISC",
+    "RISC"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "malá sada jednoduchých operácií",
+   "kind": "choice",
+   "options": [
+    "CISC",
+    "RISC"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "PO-JK: $Q^+(J, K, Q)$",
+   "kind": "boolexpr",
+   "vars": [
+    "J",
+    "K",
+    "Q"
+   ],
+   "answer": "01001110",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "JQ' + K'Q"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "PO-T: $Q^+(T, Q)$",
+   "kind": "boolexpr",
+   "vars": [
+    "T",
+    "Q"
+   ],
+   "answer": "0110",
+   "example": {
+    "value": "T'Q + TQ'"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "PO-SR: $Q^+(S, R, Q)$; kombinácia $S = R = 1$ nenastane (x)",
+   "kind": "boolexpr",
+   "vars": [
+    "S",
+    "R",
+    "Q"
+   ],
+   "answer": "010011xx",
+   "form": "dnf",
+   "max_literals": 3,
+   "max_terms": 2,
+   "example": {
+    "value": "S + R'Q"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "PO-D: $Q^+(D, Q)$",
+   "kind": "boolexpr",
+   "vars": [
+    "D",
+    "Q"
+   ],
+   "answer": "0011",
+   "max_literals": 1,
+   "example": {
+    "value": "D"
+   }
+  }
+ ]
+}

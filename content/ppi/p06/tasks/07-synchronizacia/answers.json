@@ -1,0 +1,45 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$t_{PO} = 3$ ns, $t_K = 15$ ns, $t_s = 2$ ns: najkratšia perióda v ns",
+   "kind": "number",
+   "answer": "20",
+   "example": {
+    "value": "20"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "najvyššia frekvencia v MHz",
+   "kind": "number",
+   "answer": "50",
+   "example": {
+    "value": "50"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Kombinačná časť má dva stupne po 6 ns; $t_{PO} = 5$ ns, $t_s = 3$ ns. Najkratšia perióda v ns",
+   "kind": "number",
+   "answer": "20",
+   "example": {
+    "value": "20"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Prečo sa používajú PO reagujúce na hranu (alebo master-slave)?",
+   "kind": "choice",
+   "options": [
+    "aby nová hodnota stavu v tom istom takte znova neprešla do PO",
+    "aby boli lacnejšie",
+    "aby nepotrebovali hodiny"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

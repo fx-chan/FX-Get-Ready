@@ -1,0 +1,89 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$D_2$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q2",
+    "Q1",
+    "Q0"
+   ],
+   "answer": "00010xxx",
+   "form": "dnf",
+   "max_literals": 2,
+   "max_terms": 1,
+   "example": {
+    "value": "Q1·Q0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$D_1$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q2",
+    "Q1",
+    "Q0"
+   ],
+   "answer": "01100xxx",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "Q1'·Q0 + Q1·Q0'"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$D_0$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q2",
+    "Q1",
+    "Q0"
+   ],
+   "answer": "10100xxx",
+   "form": "dnf",
+   "max_literals": 2,
+   "max_terms": 1,
+   "example": {
+    "value": "Q2'·Q0'"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "s PO-JK: $J_0$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q2",
+    "Q1",
+    "Q0"
+   ],
+   "answer": "1x1x0xxx",
+   "form": "dnf",
+   "max_literals": 1,
+   "max_terms": 1,
+   "example": {
+    "value": "Q2'"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "s PO-JK: $K_2$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q2",
+    "Q1",
+    "Q0"
+   ],
+   "answer": "xxxx1xxx",
+   "form": "dnf",
+   "max_literals": 0,
+   "max_terms": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

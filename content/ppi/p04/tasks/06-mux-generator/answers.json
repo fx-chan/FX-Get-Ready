@@ -1,0 +1,73 @@
+{
+ "parts": [
+  {
+   "id": "d0",
+   "prompt": "$D_0$ (adresa $00$)",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$c$",
+    "$\\overline{c}$"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d1",
+   "prompt": "$D_1$ (adresa $01$)",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$c$",
+    "$\\overline{c}$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d2",
+   "prompt": "$D_2$ (adresa $10$)",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$c$",
+    "$\\overline{c}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d3",
+   "prompt": "$D_3$ (adresa $11$)",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$c$",
+    "$\\overline{c}$"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "koľko adresových vstupov by mal MUX, keby sme naň dali všetky tri premenné?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

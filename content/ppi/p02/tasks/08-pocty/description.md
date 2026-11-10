@@ -1,0 +1,1 @@
+Počítajte bez vypisovania.

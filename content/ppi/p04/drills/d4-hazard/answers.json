@@ -1,0 +1,19 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "BDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00110101",
+   "form": "bdnf",
+   "example": {
+    "value": "a'b + ac + bc"
+   }
+  }
+ ]
+}

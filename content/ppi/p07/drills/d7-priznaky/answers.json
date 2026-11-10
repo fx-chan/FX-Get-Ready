@@ -1,0 +1,22 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "výsledok (4 bity)",
+   "kind": "bits",
+   "answer": "1001",
+   "example": {
+    "value": "1001"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "0011",
+   "example": {
+    "value": "0011"
+   }
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$a + ab$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00001111",
+   "max_literals": 1,
+   "example": {
+    "value": "a"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$a(\\overline{a} + b)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00000011",
+   "max_literals": 2,
+   "example": {
+    "value": "ab"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\overline{\\overline{a}\\,\\overline{b}}$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00111111",
+   "max_literals": 2,
+   "example": {
+    "value": "a + b"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$ab + a\\overline{b}$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00001111",
+   "max_literals": 1,
+   "example": {
+    "value": "a"
+   }
+  }
+ ]
+}

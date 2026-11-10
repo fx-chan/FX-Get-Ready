@@ -1,0 +1,48 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Pevná logika (hardwired)",
+   "kind": "multi",
+   "options": [
+    "je rýchlejšia",
+    "sa ľahko mení po výrobe",
+    "je stavový automat s kombinačnou logikou",
+    "je typická pre CISC"
+   ],
+   "answer": [
+    0,
+    2
+   ],
+   "example": {
+    "value": [
+     "0",
+     "2"
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Mikroprogramové riadenie",
+   "kind": "multi",
+   "options": [
+    "číta v každom takte z pamäte mikroprogramov",
+    "má prehľadný a systematický návrh",
+    "ťažko realizuje zložité inštrukcie",
+    "umožní opraviť riadenie prepísaním pamäte"
+   ],
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "3"
+    ]
+   }
+  }
+ ]
+}

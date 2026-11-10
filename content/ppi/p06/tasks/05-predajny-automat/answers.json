@@ -1,0 +1,54 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "počet stavov automatu",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "počet PO pri minimálnom kódovaní",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Zo stavu 2 € príde minca 2 €. Automat",
+   "kind": "choice",
+   "options": [
+    "vydá tovar",
+    "vydá tovar a 1 €",
+    "čaká na ďalšiu mincu"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Mince prichádzajú v poradí 2, 2, 1, 1, 1, 2. Koľkokrát automat vydá tovar?",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Koľko eur ostane v automate (rozpracovaný nákup) po tejto postupnosti?",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

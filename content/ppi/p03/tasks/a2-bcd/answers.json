@@ -1,0 +1,49 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "vektor funkcie (neurčené body píšte ako 0)",
+   "kind": "bits",
+   "answer": "0000011111000000",
+   "example": {
+    "value": "0000011111000000"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MDNF s využitím neurčených bodov",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0000011111xxxxxx",
+   "form": "dnf",
+   "max_literals": 5,
+   "max_terms": 3,
+   "example": {
+    "value": "a + bc + bd"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "MKNF s využitím neurčených bodov",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0000011111xxxxxx",
+   "form": "knf",
+   "max_literals": 5,
+   "max_terms": 2,
+   "example": {
+    "value": "(a + b)(a + c + d)"
+   }
+  }
+ ]
+}

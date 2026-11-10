@@ -1,0 +1,49 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Koľko stavov má minimálny ekvivalentný automat?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Ktoré dvojice stavov sú ekvivalentné?",
+   "kind": "multi",
+   "options": [
+    "$s_1, s_2$",
+    "$s_2, s_4$",
+    "$s_1, s_3$",
+    "$s_4, s_5$",
+    "$s_3, s_5$"
+   ],
+   "answer": [
+    1,
+    4
+   ],
+   "example": {
+    "value": [
+     "1",
+     "4"
+    ]
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Čo automat robí?",
+   "kind": "choice",
+   "options": [
+    "$y = 1$, keď prídu aspoň dva rovnaké bity za sebou",
+    "$y = 1$ po každej nule",
+    "$y = 1$, keď prídu tri jednotky"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

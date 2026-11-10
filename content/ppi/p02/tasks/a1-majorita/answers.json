@@ -1,0 +1,47 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "vektor funkcie $f$",
+   "kind": "bits",
+   "answer": "00010111",
+   "example": {
+    "value": "00010111"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "najkratší výraz pre $f$ (súčet súčinov)",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00010111",
+   "form": "dnf",
+   "max_literals": 6,
+   "max_terms": 3,
+   "example": {
+    "value": "ab + ac + bc"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Ako sa zmení, ak porotca $a$ má právo veta (bez jeho áno to neprejde)? Najkratší výraz.",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00000111",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "ab + ac"
+   }
+  }
+ ]
+}

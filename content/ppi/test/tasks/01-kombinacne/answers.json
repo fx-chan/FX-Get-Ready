@@ -1,0 +1,70 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "10101010x1010101",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "a'd' + ad"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MKNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "10101010x1010101",
+   "form": "knf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "(a + d')(a' + d)"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "NOR/NOR",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "10101010x1010101",
+   "form": "nor",
+   "max_literals": 4,
+   "example": {
+    "value": "(a↓d')↓(a'↓d)"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Má MDNF statický hazard?",
+   "kind": "choice",
+   "options": [
+    "nie, jej dva súčiny nepokrývajú susedné jednotky",
+    "áno, treba pridať konsenzus"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "takty CISC",
+   "kind": "number",
+   "answer": "600",
+   "example": {
+    "value": "600"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "takty RISC",
+   "kind": "number",
+   "answer": "300",
+   "example": {
+    "value": "300"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "čas CISC v mikrosekundách",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "čas RISC v mikrosekundách",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Prečo RISC zvládne viac inštrukcií rýchlejšie?",
+   "kind": "choice",
+   "options": [
+    "inštrukcie sú jednoduché a riadenie pevné, takže stačí málo taktov na inštrukciu",
+    "RISC má vždy vyššiu frekvenciu",
+    "RISC nemá pamäť"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

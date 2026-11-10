@@ -1,0 +1,63 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "hodnota $1101$",
+   "kind": "number",
+   "answer": "-3",
+   "example": {
+    "value": "-3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "hodnota $1000$",
+   "kind": "number",
+   "answer": "-8",
+   "example": {
+    "value": "-8"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "zápis čísla $-6$",
+   "kind": "bits",
+   "answer": "1010",
+   "example": {
+    "value": "1010"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "zápis čísla $-1$",
+   "kind": "bits",
+   "answer": "1111",
+   "example": {
+    "value": "1111"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "najväčšie kladné 4-bitové číslo so znamienkom",
+   "kind": "number",
+   "answer": "7",
+   "example": {
+    "value": "7"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "Pri ktorom súčte nastane pretečenie V?",
+   "kind": "choice",
+   "options": [
+    "$0011 + 0100$",
+    "$0101 + 0100$",
+    "$1111 + 0001$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

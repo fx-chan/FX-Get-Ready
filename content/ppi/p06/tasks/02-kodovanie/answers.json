@@ -1,0 +1,62 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Ktoré dvojice by mali byť susedné podľa **pravidla 1** (rovnaký nasledujúci stav pri rovnakom vstupe)?",
+   "kind": "multi",
+   "options": [
+    "$s_1, s_3$",
+    "$s_2, s_4$",
+    "$s_2, s_3$",
+    "$s_1, s_2$"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "2"
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Ktoré dvojice by mali byť susedné podľa **pravidla 2** (nasledujúce stavy toho istého stavu)?",
+   "kind": "multi",
+   "options": [
+    "$s_1, s_2$",
+    "$s_3, s_4$",
+    "$s_2, s_4$",
+    "$s_1, s_3$"
+   ],
+   "answer": [
+    0,
+    1
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1"
+    ]
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Čo sa stane, ak pravidlá nedodržíme?",
+   "kind": "choice",
+   "options": [
+    "obvod bude správny, len pravdepodobne zložitejší",
+    "obvod nebude fungovať",
+    "treba viac PO"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

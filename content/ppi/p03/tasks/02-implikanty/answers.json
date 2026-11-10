@@ -1,0 +1,71 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Ktoré súčiny sú **implikanty** funkcie $f$?",
+   "kind": "multi",
+   "options": [
+    "$c$",
+    "$\\overline{a}c$",
+    "$a\\overline{b}$",
+    "$a\\overline{b}\\overline{c}$",
+    "$bc$",
+    "$a$",
+    "$\\overline{b}\\overline{c}$",
+    "$a\\overline{b}c$"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "7"
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Ktoré súčiny sú **prosté** implikanty?",
+   "kind": "multi",
+   "options": [
+    "$c$",
+    "$\\overline{a}c$",
+    "$a\\overline{b}$",
+    "$a\\overline{b}\\overline{c}$",
+    "$bc$",
+    "$a$",
+    "$\\overline{b}\\overline{c}$",
+    "$a\\overline{b}c$"
+   ],
+   "answer": [
+    0,
+    2
+   ],
+   "example": {
+    "value": [
+     "0",
+     "2"
+    ]
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Koľko prostých implikantov má $f$ (koľko členov má SDNF)?",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

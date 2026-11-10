@@ -1,0 +1,60 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "PO-D: $D =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x (na hodnote nezáleží)"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "PO-T: $T =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x (na hodnote nezáleží)"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "PO-JK: $J =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x (na hodnote nezáleží)"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "PO-JK: $K =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x (na hodnote nezáleží)"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

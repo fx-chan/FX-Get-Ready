@@ -1,0 +1,72 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$f(a, b, c) = \\sum(0, 2, 4, 6)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "10101010",
+   "form": "dnf",
+   "max_literals": 1,
+   "max_terms": 1,
+   "example": {
+    "value": "c'"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$f(a, b, c) = \\sum(1, 2, 3, 5, 7)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "01110101",
+   "form": "dnf",
+   "max_literals": 3,
+   "max_terms": 2,
+   "example": {
+    "value": "a'b + c"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$f(a, b, c) = \\sum(0, 1, 3, 7)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11010001",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "a'b' + bc"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$f(a, b, c) = \\sum(0, 1, 2, 4, 5)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11101100",
+   "form": "dnf",
+   "max_literals": 3,
+   "max_terms": 2,
+   "example": {
+    "value": "a'c' + b'"
+   }
+  }
+ ]
+}

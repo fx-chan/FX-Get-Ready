@@ -1,0 +1,74 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Prechodová funkcia je zobrazenie",
+   "kind": "choice",
+   "options": [
+    "$S \\times X \\to S$",
+    "$S \\to Y$",
+    "$X \\to Y$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Výstupná funkcia Mealyho automatu je",
+   "kind": "choice",
+   "options": [
+    "$S \\to Y$",
+    "$S \\times X \\to Y$",
+    "$Y \\to S$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "O koľko taktov oneskoruje Moorov automat výstup oproti Mealymu?",
+   "kind": "choice",
+   "options": [
+    "o 0",
+    "o 1",
+    "o 2"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "V prechodovom grafe sú stavy",
+   "kind": "choice",
+   "options": [
+    "hrany",
+    "vrcholy",
+    "vstupy"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Prečo musí mať sekvenčný obvod pamäť?",
+   "kind": "choice",
+   "options": [
+    "uchováva stav, teda informáciu o minulých vstupoch",
+    "na uloženie programu",
+    "kvôli hodinám"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

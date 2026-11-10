@@ -1,0 +1,46 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Čo vznikne ako prvé z vyčisteného kremíka?",
+   "kind": "choice",
+   "options": [
+    "plátok (wafer)",
+    "kremíková tyč (ingot)",
+    "puzdro"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Kedy sa vyraďujú chybné čipy?",
+   "kind": "choice",
+   "options": [
+    "pred rezaním ingotu",
+    "po otestovaní plátku, pri rozlámaní na čipy",
+    "až po zapuzdrení u zákazníka"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Čo sú čiplety?",
+   "kind": "choice",
+   "options": [
+    "viac menších čipov spojených v jednom puzdre",
+    "čipy bez tranzistorov",
+    "lacné kópie procesorov"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

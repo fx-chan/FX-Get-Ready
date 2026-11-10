@@ -1,0 +1,59 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "vektor výstupu $S$ (8 bitov)",
+   "kind": "bits",
+   "answer": "01101001",
+   "example": {
+    "value": "01101001"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "vektor výstupu $C_{out}$",
+   "kind": "bits",
+   "answer": "00010111",
+   "example": {
+    "value": "00010111"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$S$ (ľubovoľný správny výraz)",
+   "kind": "boolexpr",
+   "vars": [
+    "A",
+    "B",
+    "Cin"
+   ],
+   "answer": "01101001",
+   "example": {
+    "value": "A'·B'·Cin + A'·B·Cin' + A·B'·Cin' + A·B·Cin"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "z koľkých hradiel sa skladá (2 polovičné sčítačky + OR)?",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$C_{out} = 1$ práve vtedy, keď",
+   "kind": "choice",
+   "options": [
+    "sú na vstupe aspoň dve jednotky",
+    "je na vstupe nepárny počet jednotiek",
+    "sú všetky vstupy 1"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

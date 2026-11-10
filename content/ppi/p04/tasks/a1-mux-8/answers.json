@@ -1,0 +1,124 @@
+{
+ "parts": [
+  {
+   "id": "d0",
+   "prompt": "$D_0$",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$d$",
+    "$\\overline{d}$"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "d1",
+   "prompt": "$D_1$",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$d$",
+    "$\\overline{d}$"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d2",
+   "prompt": "$D_2$",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$d$",
+    "$\\overline{d}$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d3",
+   "prompt": "$D_3$",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$d$",
+    "$\\overline{d}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d4",
+   "prompt": "$D_4$",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$d$",
+    "$\\overline{d}$"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d5",
+   "prompt": "$D_5$",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$d$",
+    "$\\overline{d}$"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "d6",
+   "prompt": "$D_6$",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$d$",
+    "$\\overline{d}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d7",
+   "prompt": "$D_7$",
+   "kind": "choice",
+   "options": [
+    "$0$",
+    "$1$",
+    "$d$",
+    "$\\overline{d}$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

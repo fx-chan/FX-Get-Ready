@@ -1,0 +1,49 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Koľko taktov trvá vykonanie (bez výberu)? Postup: MAR ← IR.ADR; MBR ← Pamäť[MAR]; MBR ← ACC + MBR; Pamäť[MAR] ← MBR.",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Koľko taktov spolu s výberom?",
+   "kind": "number",
+   "answer": "7",
+   "example": {
+    "value": "7"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Dajú sa niektoré dva z týchto krokov spojiť do jedného taktu?",
+   "kind": "choice",
+   "options": [
+    "nie, každý potrebuje výsledok predchádzajúceho",
+    "áno, prvý a druhý",
+    "áno, posledné dva"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Pridať ju je lacnejšie pri riadení",
+   "kind": "choice",
+   "options": [
+    "pevnou logikou",
+    "mikroprogramom"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

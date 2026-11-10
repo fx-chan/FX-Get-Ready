@@ -1,0 +1,51 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "vektor funkcie $a \\oplus b \\oplus c$",
+   "kind": "bits",
+   "answer": "01101001",
+   "example": {
+    "value": "01101001"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "v koľkých zo 16 bodov je $a \\oplus b \\oplus c \\oplus d = 1$?",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Napíšte $\\overline{a \\oplus b}$ ako súčet súčinov.",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b"
+   ],
+   "answer": "1001",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "a'b' + ab"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Paritný bit k slovu $1011\\,0010$ (doplní počet jednotiek na párny) je",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

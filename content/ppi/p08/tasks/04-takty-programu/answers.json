@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "LDA 0 ; ADD 1 ; STA 2 ; JMP 3",
+   "kind": "number",
+   "answer": "21",
+   "example": {
+    "value": "21"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "LDA 0 ; ADD 1 ; ADD 2 ; STA 3",
+   "kind": "number",
+   "answer": "23",
+   "example": {
+    "value": "23"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "LDA 0 ; STA 1 ; STA 2 ; JMP 3",
+   "kind": "number",
+   "answer": "20",
+   "example": {
+    "value": "20"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "O koľko taktov je to viac, než ukazoval zjednodušený model (3 takty na inštrukciu), pre program a)?",
+   "kind": "number",
+   "answer": "9",
+   "example": {
+    "value": "9"
+   }
+  }
+ ]
+}

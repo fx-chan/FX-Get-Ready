@@ -1,0 +1,5 @@
+{
+  "title": "08 — Ako procesor vykonáva inštrukciu",
+  "summary": "Trojstavové hradlo a zbernica, MAR a MBR, mikrooperácie v RTL, mikroinštrukcie, inštrukčný cyklus po taktoch, pevná logika verzus mikroprogram, CISC a RISC.",
+  "lecture": "Prednáška „Ako procesor skutočne vykonáva inštrukciu“"
+}

@@ -1,0 +1,54 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "DEMUX 1 → 4, $D = 1$, adresa $A_1A_0 = 01$: výstupy $Y_0Y_1Y_2Y_3$",
+   "kind": "bits",
+   "answer": "0100",
+   "example": {
+    "value": "0100"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "DEMUX 1 → 4, $D = 0$, adresa $A_1A_0 = 11$: výstupy",
+   "kind": "bits",
+   "answer": "0000",
+   "example": {
+    "value": "0000"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "binárny dekodér 3 → 8, vstup $X_2X_1X_0 = 101$: výstupy $Y_0 \\dots Y_7$",
+   "kind": "bits",
+   "answer": "00000100",
+   "example": {
+    "value": "00000100"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "koľko výstupov má binárny dekodér so 4 vstupmi?",
+   "kind": "number",
+   "answer": "16",
+   "example": {
+    "value": "16"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Čím sa líši DEMUX od MUX na úrovni hradiel?",
+   "kind": "choice",
+   "options": [
+    "DEMUX nemá na konci člen OR",
+    "DEMUX nemá invertory",
+    "DEMUX používa iba NOR"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

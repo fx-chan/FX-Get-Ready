@@ -1,0 +1,76 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1111000011110000",
+   "form": "dnf",
+   "max_literals": 1,
+   "max_terms": 1,
+   "example": {
+    "value": "b'"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0011001100100010",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "a'c + cd'"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1000110110001101",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "bd + c'd'"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0101010101011100",
+   "form": "dnf",
+   "max_literals": 7,
+   "max_terms": 3,
+   "example": {
+    "value": "a'd + abc' + b'd"
+   }
+  }
+ ]
+}

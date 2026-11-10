@@ -1,0 +1,46 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "ACC po každom takte (modulo 16)",
+   "kind": "vector",
+   "answer": [
+    "6",
+    "11",
+    "11",
+    "13",
+    "13"
+   ],
+   "example": {
+    "value": "6, 11, 11, 13, 13"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Čo sa stane v takte s WRITE = 0?",
+   "kind": "choice",
+   "options": [
+    "register si nechá starú hodnotu",
+    "register sa vynuluje",
+    "ALU nič nepočíta"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "WRITE a CLK sú",
+   "kind": "choice",
+   "options": [
+    "údaje",
+    "riadiace signály"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

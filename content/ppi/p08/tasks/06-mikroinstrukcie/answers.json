@@ -1,0 +1,82 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "zapne riadiace signály a pokračuje na MPC + 1",
+   "kind": "choice",
+   "options": [
+    "výkonná",
+    "skoková",
+    "testovacia",
+    "dekódovacia"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MPC ← výstup mapovacej logiky",
+   "kind": "choice",
+   "options": [
+    "výkonná",
+    "skoková",
+    "testovacia",
+    "dekódovacia"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "podľa príznaku pokračuje na MPC + 1 alebo skočí",
+   "kind": "choice",
+   "options": [
+    "výkonná",
+    "skoková",
+    "testovacia",
+    "dekódovacia"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "MPC ← adresové pole bez podmienky",
+   "kind": "choice",
+   "options": [
+    "výkonná",
+    "skoková",
+    "testovacia",
+    "dekódovacia"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Mikrorutina inštrukcie s kódom OC začína na adrese $4 \\cdot OC + 8$. Kde začína JMP (OC = 3)?",
+   "kind": "number",
+   "answer": "20",
+   "example": {
+    "value": "20"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "Koľko riadkov mikroprogramu zodpovedá celej fáze dekódovania?",
+   "kind": "number",
+   "answer": "1",
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

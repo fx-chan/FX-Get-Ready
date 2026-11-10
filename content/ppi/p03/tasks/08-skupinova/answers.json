@@ -1,0 +1,62 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MDNF $f_1$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00100011",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "ab + bc'"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MDNF $f_2$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "01010011",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "a'c + ab"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Ktorý súčin môžu obe funkcie zdieľať (jeden člen AND pre oba výstupy)?",
+   "kind": "choice",
+   "options": [
+    "$ab$",
+    "$b\\overline{c}$",
+    "$\\overline{a}c$",
+    "žiadny"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Koľko rôznych členov AND potrebuje spoločný obvod?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

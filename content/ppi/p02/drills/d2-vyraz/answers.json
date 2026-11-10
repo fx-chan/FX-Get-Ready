@@ -1,0 +1,18 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$f =$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "10010100",
+   "example": {
+    "value": "a'b'c' + a'bc + ab'c"
+   }
+  }
+ ]
+}

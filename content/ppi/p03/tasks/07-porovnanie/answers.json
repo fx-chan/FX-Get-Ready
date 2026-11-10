@@ -1,0 +1,67 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1011000110110001",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "b'd' + cd"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MKNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1011000110110001",
+   "form": "knf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "(b' + d)(c + d')"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "počet písmen MDNF",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "počet písmen MKNF",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "počet prostých implikantov (členov SDNF)",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

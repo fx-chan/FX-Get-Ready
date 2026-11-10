@@ -1,0 +1,55 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "ACC po každej zo štyroch inštrukcií (napr. `1, 2, 3, 4`)",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "8",
+    "8",
+    "0"
+   ],
+   "example": {
+    "value": "2, 8, 8, 0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "pamäť $M[0], M[1], M[2], M[3]$ po štyroch inštrukciách",
+   "kind": "vector",
+   "answer": [
+    "8",
+    "2",
+    "6",
+    "0"
+   ],
+   "example": {
+    "value": "8, 2, 6, 0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "koľko taktov trvajú štyri inštrukcie (výber, dekódovanie, vykonanie)?",
+   "kind": "number",
+   "answer": "12",
+   "example": {
+    "value": "12"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Ktorá inštrukcia sa vykoná ako piata?",
+   "kind": "choice",
+   "options": [
+    "LDA 1",
+    "ADD 0",
+    "žiadna, procesor stojí"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

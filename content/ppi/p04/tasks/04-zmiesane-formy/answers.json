@@ -1,0 +1,62 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "OR / NAND",
+   "kind": "choice",
+   "options": [
+    "$(\\overline{a} + \\overline{b}) \\uparrow (c + \\overline{d})$",
+    "$(a + b) \\uparrow (\\overline{c} + d)$",
+    "$(a \\uparrow b) + (c \\uparrow d)$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "NOR / OR",
+   "kind": "choice",
+   "options": [
+    "$(a \\downarrow b) + (\\overline{c} \\downarrow d)$",
+    "$(\\overline{a} \\downarrow \\overline{b}) + (c \\downarrow \\overline{d})$",
+    "$(\\overline{a} \\downarrow \\overline{b}) \\downarrow (c \\downarrow \\overline{d})$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Zapíšte funkciu $g = (a + b)(\\overline{c} + d)$ vo forme NOR/NOR.",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0000110111011101",
+   "form": "nor",
+   "example": {
+    "value": "(a↓b)↓(c'↓d)"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Prečo sú dvojstupňové obvody najrýchlejšie?",
+   "kind": "choice",
+   "options": [
+    "signál prejde najviac dvoma členmi",
+    "majú najmenej vodičov",
+    "nepoužívajú negácie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

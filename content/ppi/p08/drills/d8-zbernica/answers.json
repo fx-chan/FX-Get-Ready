@@ -1,0 +1,57 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$EN = (0, 1, 0)$, $d = (1, 0, 1)$. Na vodiči je",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "skrat",
+    "vysoká impedancia"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$EN = (0, 0, 0)$. Na vodiči je",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "skrat",
+    "vysoká impedancia"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$EN = (1, 0, 1)$, $d = (1, 0, 0)$. Čo hrozí?",
+   "kind": "choice",
+   "options": [
+    "nič",
+    "skrat — vysielajú dva zdroje",
+    "vysoká impedancia"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "dekodér povoľuje hradlá; adresa zdroja je 2 (číslujeme 0, 1, 2). Výstupy $EN_0EN_1EN_2$",
+   "kind": "bits",
+   "answer": "001",
+   "example": {
+    "value": "001"
+   }
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(0110)$",
+   "kind": "choice",
+   "options": [
+    "AND",
+    "OR",
+    "NAND",
+    "NOR",
+    "XOR",
+    "XNOR (ekvivalencia)",
+    "implikácia $x \\to y$"
+   ],
+   "answer": 4,
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(1110)$",
+   "kind": "choice",
+   "options": [
+    "AND",
+    "OR",
+    "NAND",
+    "NOR",
+    "XOR",
+    "XNOR (ekvivalencia)",
+    "implikácia $x \\to y$"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$(1101)$",
+   "kind": "choice",
+   "options": [
+    "AND",
+    "OR",
+    "NAND",
+    "NOR",
+    "XOR",
+    "XNOR (ekvivalencia)",
+    "implikácia $x \\to y$"
+   ],
+   "answer": 6,
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$(1000)$",
+   "kind": "choice",
+   "options": [
+    "AND",
+    "OR",
+    "NAND",
+    "NOR",
+    "XOR",
+    "XNOR (ekvivalencia)",
+    "implikácia $x \\to y$"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

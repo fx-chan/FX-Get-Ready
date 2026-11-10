@@ -1,0 +1,62 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$x \\uparrow x =$",
+   "kind": "choice",
+   "options": [
+    "$x$",
+    "$\\overline{x}$",
+    "$1$",
+    "$0$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$ab$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b"
+   ],
+   "answer": "0001",
+   "form": "nand",
+   "example": {
+    "value": "(a↑b)↑(a↑b)"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$a + b$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b"
+   ],
+   "answer": "0111",
+   "form": "nand",
+   "example": {
+    "value": "a'↑b'"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$ab + \\overline{c}$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "10101011",
+   "form": "nand",
+   "example": {
+    "value": "(a↑b)↑c"
+   }
+  }
+ ]
+}

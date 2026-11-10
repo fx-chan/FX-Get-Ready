@@ -1,0 +1,60 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Dva spínače zapojené **sériovo** realizujú",
+   "kind": "choice",
+   "options": [
+    "súčin (AND)",
+    "súčet (OR)",
+    "negáciu"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Dva spínače zapojené **paralelne** realizujú",
+   "kind": "choice",
+   "options": [
+    "súčin (AND)",
+    "súčet (OR)",
+    "negáciu"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Spínač $a$ je sériovo s paralelnou dvojicou $b$, $c$. Zapíšte $y$.",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00000111",
+   "example": {
+    "value": "ab + ac"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Čo v tranzistore MOS rozhoduje o tom, či je otvorený?",
+   "kind": "choice",
+   "options": [
+    "napätie na hradle G",
+    "teplota puzdra",
+    "počet vývodov"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

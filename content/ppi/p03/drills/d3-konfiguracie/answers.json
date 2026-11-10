@@ -1,0 +1,44 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Mapa 4 premenných, konfigurácia s 8 políčkami: rád súčinu",
+   "kind": "number",
+   "answer": "1",
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Mapa 3 premenných, konfigurácia s 2 políčkami: rád súčinu",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Mapa 4 premenných, súčin $\\overline{a}c$ pokrýva koľko políčok?",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Tvoria body 0, 2, 8, 10 v mape 4 premenných pravidelnú konfiguráciu?",
+   "kind": "choice",
+   "options": [
+    "áno, sú to štyri rohy mapy ($\\overline{b}\\,\\overline{d}$)",
+    "nie, nie sú vedľa seba"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

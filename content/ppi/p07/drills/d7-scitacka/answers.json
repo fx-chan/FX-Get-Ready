@@ -1,0 +1,39 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "polovičná sčítačka, $A = 1, B = 1$: výstupy $C\\,S$",
+   "kind": "bits",
+   "answer": "10",
+   "example": {
+    "value": "10"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "úplná sčítačka, $A = 1, B = 0, C_{in} = 1$: výstupy $C_{out}\\,S$",
+   "kind": "bits",
+   "answer": "10",
+   "example": {
+    "value": "10"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$C_{out}$ úplnej sčítačky ako MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "A",
+    "B",
+    "Cin"
+   ],
+   "answer": "00010111",
+   "form": "dnf",
+   "max_literals": 6,
+   "max_terms": 3,
+   "example": {
+    "value": "A·B + A·Cin + B·Cin"
+   }
+  }
+ ]
+}

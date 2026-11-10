@@ -1,0 +1,79 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Klasický jednoprocesorový počítač je",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Výpočty na grafickej karte sú typicky",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Viacjadrový procesor, kde každé jadro vykonáva iné vlákno",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Ktorá trieda sa používa najmä kvôli spoľahlivosti (viac výpočtov nad tými istými dátami)?",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Maticový (poľový) počítač patrí do triedy",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

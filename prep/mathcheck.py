@@ -24,6 +24,12 @@ Kinds and their fields:
                 (an Euler circuit or trail), or "no such trail"
     graph       degrees {vertex: deg}, exists, simple, connected: an edge list (AB, BC, CC = loop)
                 realising the degrees, or "no such graph"
+    boolexpr    vars, answer: truth vector ("01x1...", row i = binary i, first variable highest, x = don't care);
+                optional form (dnf | knf | udnf | uknf | bdnf | nand | nor), max_literals, max_terms.
+                The student gives a Boolean expression (syntax in boolcheck.py).
+    bits        answer: string of 0/1; spaces, commas and | in the input are ignored
+    cpu4        tests: [{"memory": [m0..m3], "expect": {"adr": value}}]: a program for the 4-bit CPU
+                (LDA/ADD/STA/JMP adr, at most 4 words) that leaves the expected values in data memory
 
 Optional per part: "vars" (names the student may use, e.g. ["a", "b"]).
 
@@ -38,6 +44,7 @@ import random
 import re
 from fractions import Fraction
 
+from . import boolcheck as bc
 from .i18n import t
 
 FUNCS = {
@@ -48,7 +55,8 @@ CONSTS = {"pi": cmath.pi, "e": cmath.e, "i": 1j}
 PARAMS = ["t", "s", "u", "r", "p", "q", "t1", "t2", "t3", "t4"]  # free parameters of a solution set
 
 KINDS = {"number", "matrix", "vector", "dims", "choice", "multi", "set", "multiset", "system", "eigbasis",
-         "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares", "trail", "graph"}
+         "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares", "trail", "graph",
+         "boolexpr", "bits", "cpu4"}
 NONE_LABELS = {
     "number": "nedá sa vypočítať",
     "matrix": "nedá sa vypočítať",
@@ -671,6 +679,72 @@ def _check_graph(part, ans):
     return OK
 
 
+FORM_MESSAGES = {
+    "dnf": "Funkcia je správna, ale výraz nie je v tvare DNF (súčet súčinov).",
+    "bdnf": "Funkcia je správna, ale výraz nie je v tvare DNF (súčet súčinov).",
+    "knf": "Funkcia je správna, ale výraz nie je v tvare KNF (súčin súčtov).",
+    "udnf": "Funkcia je správna, ale v UDNF musí byť každý súčin úplný (všetky premenné) a žiadny dvakrát.",
+    "uknf": "Funkcia je správna, ale v UKNF musí byť každý súčet úplný (všetky premenné) a žiadny dvakrát.",
+    "nand": "Funkcia je správna, ale použite iba členy NAND (↑) a premenné s negáciou alebo bez nej.",
+    "nor": "Funkcia je správna, ale použite iba členy NOR (↓) a premenné s negáciou alebo bez nej.",
+}
+
+
+def _form_ok(form, node, variables, expected):
+    if node[0] == "const":          # a constant function: 0 or 1 is its normal form
+        return True
+    if form in ("dnf", "bdnf", "udnf", "knf", "uknf"):
+        outer = "and" if form in ("knf", "uknf") else "or"
+        tms = bc.terms(node, outer)
+        if tms is None:
+            return False
+        if form in ("udnf", "uknf"):
+            keys = [frozenset(bc._lit(x) for x in lits) for lits in tms]
+            if any(len({v for v, _ in k}) != len(variables) or len(k) != len(variables) for k in keys):
+                return False
+            if len(set(keys)) != len(keys):
+                return False
+        return True
+    if form in ("nand", "nor"):
+        return bc.only_gate(node, form)
+    return True
+
+
+def _check_boolexpr(part, text):
+    variables = part["vars"]
+    node = bc.parse(text, variables)
+    if not bc.matches(bc.vector(node, variables), part["answer"]):
+        return WRONG, ""
+    form = part.get("form")
+    if form and not _form_ok(form, node, variables, part["answer"]):
+        return WRONG, t(FORM_MESSAGES[form])
+    if form == "bdnf" and not bc.hazard_free(node, variables, part["answer"]):
+        return WRONG, t("Funkcia je správna, ale dve susedné jednotky nepokrýva spoločný súčin (hazard).")
+    if part.get("max_terms") and form in ("dnf", "knf", "bdnf") and node[0] != "const" and len(bc.terms(node, "and" if form == "knf" else "or")) > part["max_terms"]:
+        return WRONG, t("Funkcia je správna, ale dá sa zapísať s menším počtom členov ({n}).", n=part["max_terms"])
+    if part.get("max_literals") and bc.literal_count(node) > part["max_literals"]:
+        return WRONG, t("Funkcia je správna, ale výraz nie je minimálny (minimálny tvar má {n} písmen).", n=part["max_literals"])
+    return OK, ""
+
+
+def _check_bits(part, text):
+    bits = re.sub(r"[\s,|_;]+", "", text)
+    if not re.fullmatch(r"[01]+", bits):
+        raise ParseError("zapíšte iba 0 a 1")
+    if len(bits) != len(part["answer"]):
+        return WRONG, t("Počet bitov má byť {n}.", n=len(part["answer"]))
+    return (OK if bits == part["answer"] else WRONG), ""
+
+
+def _check_cpu4(part, text):
+    words = bc.parse_program(text)
+    for case in part["tests"]:
+        mem = bc.run_program(words, case["memory"])
+        if any(mem[int(a)] != v for a, v in case["expect"].items()):
+            return WRONG
+    return OK
+
+
 def check_part(part, ans):
     """Return (status, message). ans = {"value": ..., "none": bool}."""
     ans = ans if isinstance(ans, dict) else {}
@@ -692,6 +766,15 @@ def check_part(part, ans):
             return _check_trail(part, ans), ""
         if kind == "graph":
             return _check_graph(part, ans), ""
+        if kind in ("boolexpr", "bits", "cpu4"):
+            if ans.get("none"):
+                return WRONG, ""
+            text = _text(ans.get("value"))
+            if kind == "boolexpr":
+                return _check_boolexpr(part, text)
+            if kind == "bits":
+                return _check_bits(part, text)
+            return _check_cpu4(part, text), ""
         expected = part.get("answer")
         if ans.get("none"):
             if kind == "set":
@@ -739,7 +822,7 @@ def check_part(part, ans):
             return _check_power_identity(part, text), ""
         if kind == "pair_not_diff_squares":
             return _check_pair(text), ""
-    except ParseError as exc:
+    except (ParseError, bc.BoolParseError) as exc:
         return INVALID, t("Nerozumiem zápisu: {detail}.", detail=exc.text())
     except (EvalError, TypeError, ValueError):
         return INVALID, t("Nerozumiem zápisu.")

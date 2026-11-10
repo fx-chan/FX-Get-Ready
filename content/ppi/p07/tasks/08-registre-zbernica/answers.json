@@ -1,0 +1,76 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Koľko stupňov musí prejsť prenos v 32-bitovej sčítačke s postupným prenosom?",
+   "kind": "number",
+   "answer": "32",
+   "example": {
+    "value": "32"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "V poli 4 registrov vyberá register na **čítanie**",
+   "kind": "choice",
+   "options": [
+    "multiplexor",
+    "demultiplexor",
+    "sčítačka"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "… a register na **zápis**",
+   "kind": "choice",
+   "options": [
+    "multiplexor",
+    "demultiplexor",
+    "komparátor"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Koľko zdrojov smie naraz vysielať na zbernicu?",
+   "kind": "choice",
+   "options": [
+    "jeden",
+    "dva",
+    "ľubovoľne veľa"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Čo sú vstupy riadiacej jednotky ako automatu?",
+   "kind": "multi",
+   "options": [
+    "operačný kód z IR",
+    "príznaky z ALU",
+    "obsah pamäte údajov",
+    "riadiace signály"
+   ],
+   "answer": [
+    0,
+    1
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1"
+    ]
+   }
+  }
+ ]
+}

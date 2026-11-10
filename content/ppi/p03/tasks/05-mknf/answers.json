@@ -1,0 +1,57 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$f(a, b, c) = \\sum(0, 1, 2, 3, 4, 6)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11111010",
+   "form": "knf",
+   "max_literals": 2,
+   "max_terms": 1,
+   "example": {
+    "value": "(a' + c')"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$f(a, b, c, d) = \\sum(1, 3, 5, 7, 8, 9, 10, 11, 13, 15)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0101010111110101",
+   "form": "knf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "(a + d)(b' + d)"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$f(a, b, c, d) = \\sum(0, 2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 15)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1011111110101111",
+   "form": "knf",
+   "max_literals": 6,
+   "max_terms": 2,
+   "example": {
+    "value": "(a' + b + d')(b + c + d')"
+   }
+  }
+ ]
+}

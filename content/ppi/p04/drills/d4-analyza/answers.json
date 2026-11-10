@@ -1,0 +1,28 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "vektor funkcie $f(a, b, c)$",
+   "kind": "bits",
+   "answer": "11111100",
+   "example": {
+    "value": "11111100"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "najkratší výraz pre $f$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11111100",
+   "max_literals": 2,
+   "example": {
+    "value": "a' + b'"
+   }
+  }
+ ]
+}

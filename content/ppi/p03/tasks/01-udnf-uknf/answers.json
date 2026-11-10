@@ -1,0 +1,52 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "UDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11000010",
+   "form": "udnf",
+   "example": {
+    "value": "a'b'c' + a'b'c + abc'"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "UKNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11000010",
+   "form": "uknf",
+   "example": {
+    "value": "(a + b' + c)(a + b' + c')(a' + b + c)(a' + b + c')(a' + b' + c')"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "koľko písmen má UDNF?",
+   "kind": "number",
+   "answer": "9",
+   "example": {
+    "value": "9"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "koľko písmen má UKNF?",
+   "kind": "number",
+   "answer": "15",
+   "example": {
+    "value": "15"
+   }
+  }
+ ]
+}

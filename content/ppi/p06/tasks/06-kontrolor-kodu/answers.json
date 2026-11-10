@@ -1,0 +1,45 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "výstup pre vstup $101110011111$ (štyri trojice)",
+   "kind": "bits",
+   "answer": "000001000001",
+   "example": {
+    "value": "000001000001"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Koľko stavov má automat bez zlučovania (začiatok, po 1. bite 2 stavy, po 2. bite 4 stavy)?",
+   "kind": "number",
+   "answer": "7",
+   "example": {
+    "value": "7"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Ktoré stavy po druhom bite sa dajú zlúčiť?",
+   "kind": "choice",
+   "options": [
+    "prečítal som 00, 01 a 10 (trojica bude platná)",
+    "prečítal som 11 a 10",
+    "žiadne"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Koľko stavov má zlúčený automat (začiatok, po 1. bite 2, po 2. bite 2)?",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  }
+ ]
+}

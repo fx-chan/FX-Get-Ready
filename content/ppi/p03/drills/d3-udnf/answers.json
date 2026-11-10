@@ -1,0 +1,28 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "UDNF (súčet úplných súčinov pre jednotky)",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00110001",
+   "form": "udnf",
+   "example": {
+    "value": "a'bc' + a'bc + abc"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "koľko súčtov bude mať UKNF?",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  }
+ ]
+}

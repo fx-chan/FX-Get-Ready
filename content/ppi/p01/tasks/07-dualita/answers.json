@@ -1,0 +1,63 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "duál k $a + 0 = a$ je $a \\cdot 1 = \\;?$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00001111",
+   "max_literals": 1,
+   "example": {
+    "value": "a"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "duál k $a + \\overline{a}b = a + b$: $a(\\overline{a} + b) = \\;?$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00000011",
+   "max_literals": 2,
+   "example": {
+    "value": "ab"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "duál k $ab + \\overline{a}b = b$: $(a + b)(\\overline{a} + b) = \\;?$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00110011",
+   "max_literals": 1,
+   "example": {
+    "value": "b"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Duál k $a + 1 = 1$ je",
+   "kind": "choice",
+   "options": [
+    "$a \\cdot 0 = 0$",
+    "$a \\cdot 1 = 1$",
+    "$a + 0 = 0$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "V kladnej logike (H = 1) obvod realizuje",
+   "kind": "choice",
+   "options": [
+    "AND",
+    "OR",
+    "NAND",
+    "NOR"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "V zápornej logike (H = 0) ten istý obvod realizuje",
+   "kind": "choice",
+   "options": [
+    "AND",
+    "OR",
+    "NAND",
+    "NOR"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Kombinačný obvod je taký, ktorého výstup závisí",
+   "kind": "choice",
+   "options": [
+    "iba od aktuálnych vstupov",
+    "aj od predchádzajúcich vstupov",
+    "len od hodinového signálu"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Obvod s pamäťou, ktorý reaguje len pri hrane hodinového signálu, je",
+   "kind": "choice",
+   "options": [
+    "kombinačný",
+    "sekvenčný asynchrónny",
+    "sekvenčný synchrónny"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

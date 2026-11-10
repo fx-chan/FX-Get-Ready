@@ -1,0 +1,54 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "NAND/NAND",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "01010011",
+   "form": "nand",
+   "max_literals": 4,
+   "example": {
+    "value": "(a'↑c)↑(a↑b)"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "NAND/NAND",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1010010110100101",
+   "form": "nand",
+   "max_literals": 4,
+   "example": {
+    "value": "(b'↑d')↑(b↑d)"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "NAND/NAND",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0101111100001111",
+   "form": "nand",
+   "max_literals": 3,
+   "example": {
+    "value": "(a'↑d)↑b'"
+   }
+  }
+ ]
+}

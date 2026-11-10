@@ -1,0 +1,56 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MAR ← PC a PC ← PC + 1",
+   "kind": "choice",
+   "options": [
+    "áno, môžu byť v jednej mikroinštrukcii",
+    "nie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MBR ← Pamäť[MAR] a IR ← MBR",
+   "kind": "choice",
+   "options": [
+    "áno, môžu byť v jednej mikroinštrukcii",
+    "nie"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "MAR ← IR.ADR a MBR ← ACC",
+   "kind": "choice",
+   "options": [
+    "áno, môžu byť v jednej mikroinštrukcii",
+    "nie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "MAR ← PC a MAR ← IR.ADR",
+   "kind": "choice",
+   "options": [
+    "áno, môžu byť v jednej mikroinštrukcii",
+    "nie"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

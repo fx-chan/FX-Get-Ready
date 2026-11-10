@@ -1,0 +1,56 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "signály vznikajú priamo v hradlách, bez čítania pamäte",
+   "kind": "choice",
+   "options": [
+    "pevná logika",
+    "mikroprogram"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "nová inštrukcia = pár riadkov v pamäti",
+   "kind": "choice",
+   "options": [
+    "pevná logika",
+    "mikroprogram"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "typické pre RISC",
+   "kind": "choice",
+   "options": [
+    "pevná logika",
+    "mikroprogram"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "dekódovanie je jedna dekódovacia mikroinštrukcia",
+   "kind": "choice",
+   "options": [
+    "pevná logika",
+    "mikroprogram"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

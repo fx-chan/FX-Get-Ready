@@ -1,0 +1,55 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "vektor funkcie NOR",
+   "kind": "bits",
+   "answer": "1000",
+   "example": {
+    "value": "1000"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "vektor implikácie $x \\to y$",
+   "kind": "bits",
+   "answer": "1101",
+   "example": {
+    "value": "1101"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "vektor inhibície $x\\overline{y}$",
+   "kind": "bits",
+   "answer": "0010",
+   "example": {
+    "value": "0010"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Ktorá funkcia je negáciou XOR?",
+   "kind": "choice",
+   "options": [
+    "NOR",
+    "ekvivalencia (XNOR)",
+    "NAND",
+    "implikácia"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Koľko funkcií dvoch premenných má v bode $00$ hodnotu 1?",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "vektor funkcie",
+   "kind": "bits",
+   "answer": "00100101",
+   "example": {
+    "value": "00100101"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00100101",
+   "form": "dnf",
+   "max_literals": 5,
+   "max_terms": 2,
+   "example": {
+    "value": "a'bc' + ac"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "BDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00100101",
+   "form": "bdnf",
+   "example": {
+    "value": "a'bc' + ac"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "MKNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00100101",
+   "form": "knf",
+   "max_literals": 6,
+   "max_terms": 3,
+   "example": {
+    "value": "(a + b)(a + c')(a' + c)"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Dátové vstupy MUX 4 → 1 s adresou $ab$ ($D_0D_1D_2D_3$)",
+   "kind": "choice",
+   "options": [
+    "$0, \\overline{c}, c, c$",
+    "$0, c, \\overline{c}, 1$",
+    "$c, 0, c, \\overline{c}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

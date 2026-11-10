@@ -1,0 +1,64 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(a + \\overline{b})(\\overline{a} + b)(a + b)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00000011",
+   "max_literals": 2,
+   "example": {
+    "value": "ab"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$a\\overline{b}c + \\overline{a}bc + abc + ab\\overline{c}$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00010111",
+   "max_literals": 6,
+   "example": {
+    "value": "ab + ac + bc"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$\\overline{\\overline{a + b} + \\overline{\\overline{a} + c}}$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00110101",
+   "max_literals": 4,
+   "example": {
+    "value": "a'b + ac"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$(ab + c)(\\overline{a} + \\overline{b}c) + \\overline{a}\\overline{c}$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11110100",
+   "max_literals": 3,
+   "example": {
+    "value": "a' + b'c"
+   }
+  }
+ ]
+}

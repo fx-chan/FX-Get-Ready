@@ -1,0 +1,5 @@
+{
+  "title": "06 — Syntéza sekvenčných obvodov",
+  "summary": "Abstraktná a štruktúrna syntéza synchrónnych obvodov, kódovanie stavov, budiace funkcie pre PO-D a PO-JK, synchronizácia, fundamentálny automat, súbehy a hazardy.",
+  "lecture": "5.–6. prednáška · syntéza SSO a asynchrónnych sekvenčných obvodov"
+}

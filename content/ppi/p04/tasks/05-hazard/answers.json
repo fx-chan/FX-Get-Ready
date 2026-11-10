@@ -1,0 +1,49 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$f = a\\overline{b} + bc$, BDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00011101",
+   "form": "bdnf",
+   "example": {
+    "value": "ab' + ac + bc"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$f = \\overline{a}\\overline{b}d + bc + a\\overline{b}$, BDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0101001111110011",
+   "form": "bdnf",
+   "example": {
+    "value": "ab' + ac + b'd + bc + cd"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$f = ab + \\overline{a}\\,\\overline{b}$: má statický hazard pri zmene jednej premennej?",
+   "kind": "choice",
+   "options": [
+    "nie, jej jednotky (00 a 11) nie sú susedné",
+    "áno, pri zmene $a$",
+    "áno, pri zmene $b$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

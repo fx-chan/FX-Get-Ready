@@ -1,0 +1,1 @@
+Doplňte správny pojem.

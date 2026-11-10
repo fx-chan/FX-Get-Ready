@@ -1,0 +1,64 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "starý jednojadrový počítač, ktorý vykonáva jednu inštrukciu za druhou",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "klaster serverov, kde každý uzol beží vlastný program nad vlastnými dátami",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "vektorová inštrukcia sčíta naraz 8 dvojíc čísel",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "tri rôzne riadiace počítače družice spracúvajú ten istý údaj zo senzora a porovnajú výsledky",
+   "kind": "choice",
+   "options": [
+    "SISD",
+    "SIMD",
+    "MISD",
+    "MIMD"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

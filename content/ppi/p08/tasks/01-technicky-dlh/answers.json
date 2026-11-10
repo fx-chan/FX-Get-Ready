@@ -1,0 +1,60 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Zjednodušenie „pamäť je vnútri procesora“ splatíme",
+   "kind": "choice",
+   "options": [
+    "registrami MAR a MBR",
+    "trojstavovým hradlom",
+    "širším formátom inštrukcie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "„Na zbernici vysiela len jeden“ vynúti obvodovo",
+   "kind": "choice",
+   "options": [
+    "registrami MAR a MBR",
+    "trojstavové hradlo s dekodérom",
+    "akumulátor"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Cyklus s podmienkou umožní",
+   "kind": "choice",
+   "options": [
+    "podmienený skok v širšom formáte inštrukcie",
+    "ďalší register",
+    "rýchlejšia ALU"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Čo je podľa prednášky skutočná chyba?",
+   "kind": "choice",
+   "options": [
+    "mať technický dlh",
+    "zabudnúť na technický dlh",
+    "splácať dlh priskoro"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

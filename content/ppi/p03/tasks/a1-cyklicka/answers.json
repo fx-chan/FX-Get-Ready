@@ -1,0 +1,47 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "počet prostých implikantov",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11100111",
+   "form": "dnf",
+   "max_literals": 6,
+   "max_terms": 3,
+   "example": {
+    "value": "a'b' + ac + bc'"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "MKNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11100111",
+   "form": "knf",
+   "max_literals": 6,
+   "max_terms": 2,
+   "example": {
+    "value": "(a + b' + c')(a' + b + c)"
+   }
+  }
+ ]
+}

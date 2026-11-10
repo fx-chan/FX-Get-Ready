@@ -1,0 +1,57 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MDNF segmentu e",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1010001010xxxxxx",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "b'd' + cd'"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MDNF segmentu g",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0011111011xxxxxx",
+   "form": "dnf",
+   "max_literals": 7,
+   "max_terms": 4,
+   "example": {
+    "value": "a + b'c + bc' + bd'"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "segment e v tvare NAND/NAND",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1010001010xxxxxx",
+   "form": "nand",
+   "max_literals": 4,
+   "example": {
+    "value": "(b'↑d')↑(c↑d')"
+   }
+  }
+ ]
+}

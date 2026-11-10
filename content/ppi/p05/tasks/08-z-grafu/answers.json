@@ -1,0 +1,41 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Je to automat typu",
+   "kind": "choice",
+   "options": [
+    "Mealy",
+    "Moore"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "výstup pre vstup $x = 00101001$",
+   "kind": "bits",
+   "answer": "00010100",
+   "example": {
+    "value": "00010100"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Ktorú postupnosť rozpoznáva?",
+   "kind": "choice",
+   "options": [
+    "$010$",
+    "$001$",
+    "$100$",
+    "$101$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

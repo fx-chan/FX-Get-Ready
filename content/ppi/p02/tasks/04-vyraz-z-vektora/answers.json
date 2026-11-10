@@ -1,0 +1,59 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$f(a, b) = (0100)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b"
+   ],
+   "answer": "0100",
+   "example": {
+    "value": "a'b"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$f(a, b, c) = (00010001)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00010001",
+   "example": {
+    "value": "bc"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$f(a, b, c) = (11110000)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11110000",
+   "example": {
+    "value": "a'"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$f(a, b, c) = (01101001)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "01101001",
+   "example": {
+    "value": "a^b^c"
+   }
+  }
+ ]
+}

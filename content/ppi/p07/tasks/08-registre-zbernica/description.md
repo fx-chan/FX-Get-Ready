@@ -1,0 +1,1 @@
+Doplňte, čo platí.

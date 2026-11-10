@@ -1,0 +1,74 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Operácia sa vykoná vtedy, keď sú k dispozícii všetky jej operandy.",
+   "kind": "choice",
+   "options": [
+    "riadenie tokom inštrukcií",
+    "riadenie tokom údajov",
+    "riadenie tokom požiadaviek"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Poradie operácií určuje program (počítadlo inštrukcií).",
+   "kind": "choice",
+   "options": [
+    "riadenie tokom inštrukcií",
+    "riadenie tokom údajov",
+    "riadenie tokom požiadaviek"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Výpočet sa spustí, až keď si niekto vyžiada jeho výsledok.",
+   "kind": "choice",
+   "options": [
+    "riadenie tokom inštrukcií",
+    "riadenie tokom údajov",
+    "riadenie tokom požiadaviek"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Procesor s malým počtom jednoduchých inštrukcií",
+   "kind": "choice",
+   "options": [
+    "CISC",
+    "RISC",
+    "NISC"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Procesor bez pevnej inštrukčnej sady",
+   "kind": "choice",
+   "options": [
+    "CISC",
+    "RISC",
+    "NISC"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

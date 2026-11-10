@@ -1,0 +1,39 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "vektor funkcie $f(a, b, c)$",
+   "kind": "bits",
+   "answer": "00101010",
+   "example": {
+    "value": "00101010"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MDNF funkcie $f$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00101010",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "ac' + bc'"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "koľko členov má najdlhšia cesta zo vstupu na výstup?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

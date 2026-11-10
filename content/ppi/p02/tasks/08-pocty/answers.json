@@ -1,0 +1,49 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "počet rôznych B-funkcií štyroch premenných",
+   "kind": "number",
+   "answer": "65536",
+   "example": {
+    "value": "65536"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "počet políčok mapy funkcie 5 premenných",
+   "kind": "number",
+   "answer": "32",
+   "example": {
+    "value": "32"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "počet susedov políčka v mape 5 premenných",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "funkcia má 3 body s hodnotou x; koľkými spôsobmi ju možno dodefinovať?",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "obvod má 6 vstupov a 2 výstupy; koľko riadkov má jeho pravdivostná tabuľka?",
+   "kind": "number",
+   "answer": "64",
+   "example": {
+    "value": "64"
+   }
+  }
+ ]
+}

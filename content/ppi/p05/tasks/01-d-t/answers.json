@@ -1,0 +1,45 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "PO-D, vstupy $D = 110100$",
+   "kind": "bits",
+   "answer": "110100",
+   "example": {
+    "value": "110100"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "PO-T, vstupy $T = 101101$",
+   "kind": "bits",
+   "answer": "110110",
+   "example": {
+    "value": "110110"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "PO-T so vstupom stále $T = 1$, šesť impulzov",
+   "kind": "bits",
+   "answer": "101010",
+   "example": {
+    "value": "101010"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "PO-T s trvalým $T = 1$ delí frekvenciu hodín",
+   "kind": "choice",
+   "options": [
+    "dvoma",
+    "štyrmi",
+    "nedelí"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

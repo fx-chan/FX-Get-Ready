@@ -1,0 +1,79 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$\\overline{a}b + ab + a\\overline{b}$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00111111",
+   "max_literals": 2,
+   "example": {
+    "value": "a + b"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$(a + b)(a + \\overline{b})$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00001111",
+   "max_literals": 1,
+   "example": {
+    "value": "a"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$ab + \\overline{a}c + bc$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "01010011",
+   "max_literals": 4,
+   "example": {
+    "value": "a'c + ab"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$a + \\overline{a}b + \\overline{a}\\overline{b}c$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "01111111",
+   "max_literals": 3,
+   "example": {
+    "value": "a + b + c"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$\\overline{\\overline{a}b}(a + b)$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "00001111",
+   "max_literals": 1,
+   "example": {
+    "value": "a"
+   }
+  }
+ ]
+}

@@ -38,9 +38,12 @@
   "power_identity": "a b\nc d",
   "pair_not_diff_squares": "matica A\n\nmatica B   (oddeľte prázdnym riadkom)",
   "trail": "postupnosť vrcholov, napr. A B C A",
-  "graph": "zoznam hrán, napr. AB, BC, CC (slučka)"
+  "graph": "zoznam hrán, napr. AB, BC, CC (slučka)",
+  "boolexpr": "napr. a'b + c",
+  "bits": "napr. 0110",
+  "cpu4": "jedna inštrukcia na riadok, napr.\nLDA 0\nADD 1"
 } %}
-{% set MULTILINE = ["matrix", "eigbasis", "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares"] %}
+{% set MULTILINE = ["matrix", "eigbasis", "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares", "cpu4"] %}
 
 {% macro answer_widget(subject, block, task, compact=False, initial=None, exam=False) -%}
 {% set initial = initial or {} %}
@@ -95,6 +98,10 @@
     <details class="ans-help">
       <summary>{{ _('Ako zapisovať odpovede?') }}</summary>
       <ul>
+        {% set kinds = task.public_parts|map(attribute='kind')|list %}
+        {% if "boolexpr" in kinds %}<li>{{ _('Logický výraz: negácia') }} <code>a'</code> / <code>!a</code>, {{ _('súčin') }} <code>ab</code> / <code>a*b</code>, {{ _('súčet') }} <code>a+b</code>, XOR <code>a^b</code>, NAND <code>a↑b</code>, NOR <code>a↓b</code>, {{ _('zátvorky') }} <code>(a+b)'</code>.</li>{% endif %}
+        {% if "bits" in kinds %}<li>{{ _('Bity píšte za sebou, medzery sa ignorujú:') }} <code>0110 1001</code>.</li>{% endif %}
+        {% if "cpu4" in kinds %}<li>{{ _('Program: jedna inštrukcia na riadok,') }} <code>LDA 0</code> {{ _('alebo binárne') }} <code>0000</code>.</li>{% endif %}
         <li>{{ _('Zlomky a odmocniny:') }} <code>-7/2</code>, <code>sqrt(2)/2</code> {{ _('alebo') }} <code>√2/2</code>, {{ _('mocnina') }} <code>2^3</code>, <code>pi</code>, {{ _('komplexná jednotka') }} <code>i</code>.</li>
         <li>{{ _('Matica: riadky na samostatné riadky (alebo oddelené') }} <code>;</code>{{ _('), prvky medzerou alebo čiarkou.') }}</li>
         <li>{{ _('Vektor:') }} <code>1, -2, 3</code>. {{ _('Nekonečne veľa riešení: parametre') }} <code>t, s, u</code>, {{ _('napr.') }} <code>1+2t, t, 3</code>.</li>

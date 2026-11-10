@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$f = a + bc$",
+   "kind": "bits",
+   "answer": "00011111",
+   "example": {
+    "value": "00011111"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$f = (a + b)\\overline{c}$",
+   "kind": "bits",
+   "answer": "00101010",
+   "example": {
+    "value": "00101010"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$f = a \\oplus b \\oplus c$",
+   "kind": "bits",
+   "answer": "01101001",
+   "example": {
+    "value": "01101001"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$f = \\overline{a}\\overline{b} + bc$",
+   "kind": "bits",
+   "answer": "11010001",
+   "example": {
+    "value": "11010001"
+   }
+  }
+ ]
+}

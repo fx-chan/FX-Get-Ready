@@ -1,0 +1,57 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Označte dvojice, ktoré **môžu** byť v jednom takte.",
+   "kind": "multi",
+   "options": [
+    "MAR ← PC a PC ← PC + 1",
+    "MBR ← Pamäť[MAR] a IR ← MBR",
+    "MAR ← IR.ADR a MBR ← ACC",
+    "MAR ← PC a MAR ← IR.ADR",
+    "ACC ← MBR a ACC ← ACC + MBR",
+    "ACC ← ACC + MBR a PC ← PC + 1"
+   ],
+   "answer": [
+    0,
+    2,
+    5
+   ],
+   "example": {
+    "value": [
+     "0",
+     "2",
+     "5"
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Prečo nie MBR ← Pamäť[MAR] a IR ← MBR?",
+   "kind": "choice",
+   "options": [
+    "IR potrebuje hodnotu, ktorú MBR ešte len dostane",
+    "oba zapisujú do IR",
+    "pamäť je pomalá"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Prečo nie ACC ← MBR a ACC ← ACC + MBR?",
+   "kind": "choice",
+   "options": [
+    "dva zdroje pre jeden cieľový register",
+    "ACC nevie čítať z MBR",
+    "dá sa to"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

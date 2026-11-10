@@ -1,0 +1,65 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Ktorá jednotka vyberá inštrukcie z pamäte?",
+   "kind": "choice",
+   "options": [
+    "aritmetická",
+    "riadiaca",
+    "vstupná",
+    "pamäť"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Kde je uložený program počas behu?",
+   "kind": "choice",
+   "options": [
+    "v riadiacej jednotke",
+    "v tej istej pamäti ako údaje",
+    "vo vstupnej jednotke"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Ktoré tvrdenia o von Neumannovej architektúre platia?",
+   "kind": "multi",
+   "options": [
+    "používa dvojkovú sústavu",
+    "inštrukcie a údaje majú rovnaký spôsob prístupu",
+    "pre program a údaje sú oddelené adresové priestory",
+    "spracovanie riadi postupnosť inštrukcií"
+   ],
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "3"
+    ]
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Koľko základných jednotiek má von Neumannov počítač?",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  }
+ ]
+}

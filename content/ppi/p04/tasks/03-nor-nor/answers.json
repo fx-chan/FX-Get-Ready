@@ -1,0 +1,37 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "NOR/NOR",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c"
+   ],
+   "answer": "11110100",
+   "form": "nor",
+   "max_literals": 4,
+   "example": {
+    "value": "(a'↓b')↓(a'↓c)"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "NOR/NOR",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1111101011110000",
+   "form": "nor",
+   "max_literals": 4,
+   "example": {
+    "value": "(a'↓b')↓(b'↓d')"
+   }
+  }
+ ]
+}

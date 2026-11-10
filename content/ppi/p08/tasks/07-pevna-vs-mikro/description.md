@@ -1,0 +1,1 @@
+Označte všetky platné tvrdenia.

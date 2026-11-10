@@ -1,0 +1,26 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "výstupná postupnosť $y$",
+   "kind": "bits",
+   "answer": "0010011",
+   "example": {
+    "value": "0010011"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "v ktorom stave automat skončí?",
+   "kind": "choice",
+   "options": [
+    "$s_1$",
+    "$s_2$"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

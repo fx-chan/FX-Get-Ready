@@ -1,0 +1,59 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "poradie čísel riadkov v taktoch 1, 2, 3 (napr. `3, 1, 2`)",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "3",
+    "1"
+   ],
+   "example": {
+    "value": "2, 3, 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Čo znamená zápis ACC ← ACC + MBR?",
+   "kind": "choice",
+   "options": [
+    "ALU sčíta ACC a MBR a výsledok zapíše do ACC",
+    "ACC sa porovná s MBR",
+    "MBR dostane hodnotu ACC"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Mikrooperácia je",
+   "kind": "choice",
+   "options": [
+    "jeden medziregistrový prenos vyvolaný jedným riadiacim signálom",
+    "jedna inštrukcia programu",
+    "jeden takt hodín"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "RTL je",
+   "kind": "choice",
+   "options": [
+    "programovací jazyk procesora",
+    "spôsob zápisu medziregistrových prenosov",
+    "typ zbernice"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

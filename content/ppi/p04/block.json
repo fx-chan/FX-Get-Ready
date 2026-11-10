@@ -1,0 +1,5 @@
+{
+  "title": "04 — Kombinačné obvody a funkčné bloky",
+  "summary": "Analýza a syntéza dvojstupňových obvodov, NAND/NAND a NOR/NOR, statický hazard a BDNF, multiplexor, demultiplexor, dekodér a komparátor.",
+  "lecture": "3., 4. a 6. prednáška · analýza, syntéza, zmiešané NF, hazardy, funkčné bloky"
+}

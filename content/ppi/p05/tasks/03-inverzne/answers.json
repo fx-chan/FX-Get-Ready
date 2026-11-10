@@ -1,0 +1,200 @@
+{
+ "parts": [
+  {
+   "id": "t1",
+   "prompt": "prechod $0 → 1$: $T =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "t2",
+   "prompt": "prechod $1 → 0$: $T =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "j1",
+   "prompt": "prechod $0 → 1$: $J =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "j2",
+   "prompt": "prechod $1 → 0$: $J =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "j3",
+   "prompt": "prechod $1 → 1$: $J =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "k0",
+   "prompt": "prechod $0 → 0$: $K =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "k1",
+   "prompt": "prechod $0 → 1$: $K =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "k2",
+   "prompt": "prechod $1 → 0$: $K =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "s0",
+   "prompt": "prechod $0 → 0$: $S =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "s1",
+   "prompt": "prechod $0 → 1$: $S =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "s2",
+   "prompt": "prechod $1 → 0$: $S =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "r1",
+   "prompt": "prechod $0 → 1$: $R =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "r2",
+   "prompt": "prechod $1 → 0$: $R =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "r3",
+   "prompt": "prechod $1 → 1$: $R =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

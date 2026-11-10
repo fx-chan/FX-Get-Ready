@@ -1,0 +1,181 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "1a) MDNF funkcie $f$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0101010110101111",
+   "form": "dnf",
+   "max_literals": 6,
+   "max_terms": 3,
+   "example": {
+    "value": "a'd + ab + ad'"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "1b) MKNF funkcie $f$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0101010110101111",
+   "form": "knf",
+   "max_literals": 5,
+   "max_terms": 2,
+   "example": {
+    "value": "(a + d)(a' + b + d')"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "1c) $f$ vo forme NAND/NAND",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0101010110101111",
+   "form": "nand",
+   "max_literals": 6,
+   "example": {
+    "value": "(a'↑d)↑(a↑b)↑(a↑d')"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "2a) výstup automatu pre vstup $x = 1001000100$",
+   "kind": "bits",
+   "answer": "0010010001",
+   "example": {
+    "value": "0010010001"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "2b) budiaca funkcia $D_1$ (PO-D)",
+   "kind": "boolexpr",
+   "vars": [
+    "Q1",
+    "Q0",
+    "x"
+   ],
+   "answer": "001000xx",
+   "form": "dnf",
+   "max_literals": 2,
+   "max_terms": 1,
+   "example": {
+    "value": "Q0·x'"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "2c) výstupná funkcia $y$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q1",
+    "Q0",
+    "x"
+   ],
+   "answer": "000010xx",
+   "form": "dnf",
+   "max_literals": 2,
+   "max_terms": 1,
+   "example": {
+    "value": "Q1·x'"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "3a) $0101 + 0110$: výsledok",
+   "kind": "bits",
+   "answer": "1011",
+   "example": {
+    "value": "1011"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "3b) príznaky C Z N V",
+   "kind": "bits",
+   "answer": "0011",
+   "example": {
+    "value": "0011"
+   }
+  },
+  {
+   "id": "i",
+   "prompt": "3c) desiatková hodnota výsledku ako čísla so znamienkom",
+   "kind": "number",
+   "answer": "-5",
+   "example": {
+    "value": "-5"
+   }
+  },
+  {
+   "id": "j",
+   "prompt": "4a) program, ktorý uloží $M[0] + M[0] + M[1]$ do $M[2]$",
+   "kind": "cpu4",
+   "tests": [
+    {
+     "memory": [
+      2,
+      3,
+      0,
+      0
+     ],
+     "expect": {
+      "2": 7
+     }
+    },
+    {
+     "memory": [
+      7,
+      5,
+      1,
+      1
+     ],
+     "expect": {
+      "2": 3
+     }
+    }
+   ],
+   "example": {
+    "value": "LDA 0\nADD 0\nADD 1\nSTA 2"
+   }
+  },
+  {
+   "id": "k",
+   "prompt": "4b) koľko taktov trvá váš program, ak má inštrukcie LDA, ADD, ADD, STA (výber 3 takty)?",
+   "kind": "number",
+   "answer": "23",
+   "example": {
+    "value": "23"
+   }
+  },
+  {
+   "id": "l",
+   "prompt": "4c) Riadiaca jednotka s mikroprogramom je typická pre",
+   "kind": "choice",
+   "options": [
+    "RISC",
+    "CISC"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

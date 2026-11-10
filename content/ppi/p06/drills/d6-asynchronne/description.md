@@ -1,0 +1,1 @@
+Pojmy asynchrónnych obvodov.

@@ -188,6 +188,47 @@ UK = {
     "neznámy vrchol „{x}“": "невідома вершина «{x}»",
     "zapíšte postupnosť vrcholov, napr. A B C A": "запишіть послідовність вершин, напр. A B C A",
     "hrana „{x}“ nemá dva konce": "ребро «{x}» не має двох кінців",
+    # boolcheck (PPI)
+    "Funkcia je správna, ale výraz nie je v tvare DNF (súčet súčinov).":
+        "Функція правильна, але вираз не у формі DNF (сума добутків).",
+    "Funkcia je správna, ale výraz nie je v tvare KNF (súčin súčtov).":
+        "Функція правильна, але вираз не у формі KNF (добуток сум).",
+    "Funkcia je správna, ale v UDNF musí byť každý súčin úplný (všetky premenné) a žiadny dvakrát.":
+        "Функція правильна, але в UDNF кожен добуток має містити всі змінні й не повторюватися.",
+    "Funkcia je správna, ale v UKNF musí byť každý súčet úplný (všetky premenné) a žiadny dvakrát.":
+        "Функція правильна, але в UKNF кожна сума має містити всі змінні й не повторюватися.",
+    "Funkcia je správna, ale použite iba členy NAND (↑) a premenné s negáciou alebo bez nej.":
+        "Функція правильна, але використовуйте лише елементи NAND (↑) і змінні із запереченням або без нього.",
+    "Funkcia je správna, ale použite iba členy NOR (↓) a premenné s negáciou alebo bez nej.":
+        "Функція правильна, але використовуйте лише елементи NOR (↓) і змінні із запереченням або без нього.",
+    "Funkcia je správna, ale dve susedné jednotky nepokrýva spoločný súčin (hazard).":
+        "Функція правильна, але дві сусідні одиниці не покриває спільний добуток (газард).",
+    "Funkcia je správna, ale dá sa zapísať s menším počtom členov ({n}).":
+        "Функція правильна, але її можна записати з меншою кількістю членів ({n}).",
+    "Funkcia je správna, ale výraz nie je minimálny (minimálny tvar má {n} písmen).":
+        "Функція правильна, але вираз не мінімальний (мінімальна форма має {n} літер).",
+    "Počet bitov má byť {n}.": "Кількість бітів має бути {n}.",
+    "zapíšte iba 0 a 1": "пишіть лише 0 і 1",
+    "neznáma premenná „{x}“": "невідома змінна «{x}»",
+    "nadbytočný znak „{x}“": "зайвий знак «{x}»",
+    "nečakaný znak „{x}“": "неочікуваний знак «{x}»",
+    "chýba zatváracia zátvorka": "бракує закривальної дужки",
+    "výraz je neúplný": "вираз неповний",
+    "pri kombinácii {op} s inými operátormi použite zátvorky": "поєднуючи {op} з іншими операторами, ставте дужки",
+    "neznáma inštrukcia „{x}“": "невідома інструкція «{x}»",
+    "adresa musí byť 0 až 3: „{x}“": "адреса має бути від 0 до 3: «{x}»",
+    "prázdny program": "порожня програма",
+    "pamäť programu má len 4 slová": "пам'ять програми має лише 4 слова",
+    "napr. a'b + c": "напр. a'b + c",
+    "napr. 0110": "напр. 0110",
+    "jedna inštrukcia na riadok, napr.\nLDA 0\nADD 1": "одна інструкція на рядок, напр.\nLDA 0\nADD 1",
+    "Logický výraz: negácia": "Логічний вираз: заперечення",
+    "súčin": "добуток",
+    "súčet": "сума",
+    "zátvorky": "дужки",
+    "Bity píšte za sebou, medzery sa ignorujú:": "Біти пишіть підряд, пробіли ігноруються:",
+    "Program: jedna inštrukcia na riadok,": "Програма: одна інструкція на рядок,",
+    "alebo binárne": "або двійково",
 }
 CATALOG = {"uk": UK}
 

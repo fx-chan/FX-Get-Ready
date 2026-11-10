@@ -1,0 +1,5 @@
+{
+  "title": "07 — Od sčítačky k procesoru",
+  "summary": "Polovičná a úplná sčítačka, sčítačka s postupným prenosom, dvojkový doplnok a odčítanie, ALU a príznaky Z, C, N, V, register, akumulátor, zbernica a 4-bitový procesor s inštrukciami LDA, ADD, STA, JMP.",
+  "lecture": "Prednáška „Od sčítačky k procesoru“"
+}

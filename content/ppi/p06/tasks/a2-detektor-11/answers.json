@@ -1,0 +1,73 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "s PO-D: $D$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q",
+    "x"
+   ],
+   "answer": "0101",
+   "max_literals": 1,
+   "example": {
+    "value": "x"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "s PO-JK: $J$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q",
+    "x"
+   ],
+   "answer": "01xx",
+   "max_literals": 1,
+   "example": {
+    "value": "x"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "s PO-JK: $K$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q",
+    "x"
+   ],
+   "answer": "xx10",
+   "max_literals": 1,
+   "example": {
+    "value": "x'"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "výstup $y$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q",
+    "x"
+   ],
+   "answer": "0001",
+   "max_literals": 2,
+   "example": {
+    "value": "Qx"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Je s PO-D vôbec potrebná kombinačná časť pre budenie?",
+   "kind": "choice",
+   "options": [
+    "nie, $D = x$",
+    "áno, $D = Qx$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

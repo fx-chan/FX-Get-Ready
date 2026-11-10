@@ -1,0 +1,55 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$D_1$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q1",
+    "Q0",
+    "x"
+   ],
+   "answer": "001000xx",
+   "form": "dnf",
+   "max_literals": 2,
+   "max_terms": 1,
+   "example": {
+    "value": "Q0·x'"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$D_0$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q1",
+    "Q0",
+    "x"
+   ],
+   "answer": "010101xx",
+   "form": "dnf",
+   "max_literals": 1,
+   "max_terms": 1,
+   "example": {
+    "value": "x"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$y$",
+   "kind": "boolexpr",
+   "vars": [
+    "Q1",
+    "Q0",
+    "x"
+   ],
+   "answer": "000001xx",
+   "form": "dnf",
+   "max_literals": 2,
+   "max_terms": 1,
+   "example": {
+    "value": "Q1·x"
+   }
+  }
+ ]
+}

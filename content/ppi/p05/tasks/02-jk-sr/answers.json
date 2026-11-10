@@ -1,0 +1,37 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "PO-JK zo stavu $Q = 1$, $JK = 01, 10, 00, 11, 11, 01, 10$",
+   "kind": "bits",
+   "answer": "0110101",
+   "example": {
+    "value": "0110101"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "PO-SR zo stavu $Q = 0$, $SR = 10, 00, 01, 00, 10, 10$",
+   "kind": "bits",
+   "answer": "110011",
+   "example": {
+    "value": "110011"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Ktorý PO sa nazýva univerzálny?",
+   "kind": "choice",
+   "options": [
+    "D",
+    "T",
+    "JK",
+    "SR"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

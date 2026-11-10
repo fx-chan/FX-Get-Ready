@@ -1,0 +1,39 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MDNF",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1111010100000101",
+   "form": "dnf",
+   "max_literals": 4,
+   "max_terms": 2,
+   "example": {
+    "value": "a'b' + bd"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "NAND/NAND",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "1111010100000101",
+   "form": "nand",
+   "max_literals": 4,
+   "example": {
+    "value": "(a'↑b')↑(b↑d)"
+   }
+  }
+ ]
+}

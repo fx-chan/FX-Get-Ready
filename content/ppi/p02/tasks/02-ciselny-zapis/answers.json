@@ -1,0 +1,44 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$f = \\overline{a}c + ab$",
+   "kind": "set",
+   "answer": [
+    "1",
+    "3",
+    "6",
+    "7"
+   ],
+   "example": {
+    "value": "1, 3, 6, 7"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$f = \\overline{b}(a + \\overline{c})$",
+   "kind": "set",
+   "answer": [
+    "0",
+    "4",
+    "5"
+   ],
+   "example": {
+    "value": "0, 4, 5"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$f = (a \\oplus b)c + \\overline{a}\\overline{b}\\overline{c}$",
+   "kind": "set",
+   "answer": [
+    "0",
+    "3",
+    "5"
+   ],
+   "example": {
+    "value": "0, 3, 5"
+   }
+  }
+ ]
+}

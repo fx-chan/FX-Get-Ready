@@ -1,0 +1,49 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "3 stavov",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "5 stavov",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "8 stavov",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "9 stavov",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Koľko kódov ostane nepoužitých pri 5 stavoch?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

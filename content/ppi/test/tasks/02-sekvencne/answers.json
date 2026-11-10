@@ -1,0 +1,60 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "PO-JK zo stavu 0, vstupy $JK = 10, 11, 00, 11, 01, 11$: stav po každom impulze",
+   "kind": "bits",
+   "answer": "100101",
+   "example": {
+    "value": "100101"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "počet PO pre automat s 12 stavmi",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "PO-T, prechod $1 \\to 0$: $T =$",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1",
+    "x"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "PO-SR, prechod $1 \\to 1$: $S\\,R =$",
+   "kind": "choice",
+   "options": [
+    "x 0",
+    "0 x",
+    "1 0",
+    "0 1"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$t_{PO} = 2$ ns, $t_K = 10$ ns, $t_s = 3$ ns: najvyššia frekvencia hodín v MHz (zaokrúhlite nadol)",
+   "kind": "number",
+   "answer": "66",
+   "example": {
+    "value": "66"
+   }
+  }
+ ]
+}

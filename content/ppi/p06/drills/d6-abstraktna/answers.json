@@ -1,0 +1,31 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Koľko stavov potrebuje Mealyho automat?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "výstup pre $x = 0111011110$",
+   "kind": "bits",
+   "answer": "0001000110",
+   "example": {
+    "value": "0001000110"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Koľko PO treba na zakódovanie stavov?",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

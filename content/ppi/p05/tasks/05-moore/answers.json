@@ -1,0 +1,39 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "čísla stavov po každom takte",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "2",
+    "3",
+    "4",
+    "3",
+    "4",
+    "3"
+   ],
+   "example": {
+    "value": "2, 2, 3, 4, 3, 4, 3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "výstup $y$",
+   "kind": "bits",
+   "answer": "0001010",
+   "example": {
+    "value": "0001010"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "koľko stavov má Moorov automat navyše oproti Mealyho detektoru z predchádzajúcej úlohy?",
+   "kind": "number",
+   "answer": "1",
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

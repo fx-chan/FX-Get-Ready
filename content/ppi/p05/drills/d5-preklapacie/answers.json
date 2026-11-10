@@ -1,0 +1,28 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "stav $Q$ po každom impulze",
+   "kind": "bits",
+   "answer": "110101",
+   "example": {
+    "value": "110101"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "správanie pri $JK = 11$",
+   "kind": "choice",
+   "options": [
+    "pamätaj (P)",
+    "nastav (1)",
+    "nuluj (0)",
+    "preklop (K)"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

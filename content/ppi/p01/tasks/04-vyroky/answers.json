@@ -1,0 +1,55 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Označte všetky výroky.",
+   "kind": "multi",
+   "options": [
+    "$2 \\cdot 3 > 5$",
+    "Pondelok je posledný deň týždňa.",
+    "Prečítaj si zadanie!",
+    "Je číslo 91 prvočíslo?",
+    "Obvod kruhu s polomerom $r$ je $2\\pi r$.",
+    "Ahoj."
+   ],
+   "answer": [
+    0,
+    1,
+    4
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "4"
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Aká je pravdivostná hodnota výroku „Pondelok je posledný deň týždňa.“?",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Aká je pravdivostná hodnota výroku $2 \\cdot 3 > 5$?",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

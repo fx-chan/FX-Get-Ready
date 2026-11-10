@@ -1,0 +1,46 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MDNF výstupu $A > B$",
+   "kind": "boolexpr",
+   "vars": [
+    "a1",
+    "a0",
+    "b1",
+    "b0"
+   ],
+   "answer": "0000100011001110",
+   "form": "dnf",
+   "max_literals": 8,
+   "max_terms": 3,
+   "example": {
+    "value": "a1·a0·b0' + a1·b1' + a0·b1'·b0'"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "v koľkých zo 16 bodov je $A = B$?",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "výstup $A = B$ (ľubovoľný správny výraz)",
+   "kind": "boolexpr",
+   "vars": [
+    "a1",
+    "a0",
+    "b1",
+    "b0"
+   ],
+   "answer": "1000010000100001",
+   "example": {
+    "value": "(a1^b1)'(a0^b0)'"
+   }
+  }
+ ]
+}

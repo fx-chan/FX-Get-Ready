@@ -1,0 +1,72 @@
+{
+ "parts": [
+  {
+   "id": "a1",
+   "prompt": "$0111 - 0011$: výsledok",
+   "kind": "bits",
+   "answer": "0100",
+   "example": {
+    "value": "0100"
+   }
+  },
+  {
+   "id": "a2",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "1000",
+   "example": {
+    "value": "1000"
+   }
+  },
+  {
+   "id": "b1",
+   "prompt": "$0011 - 0101$: výsledok",
+   "kind": "bits",
+   "answer": "1110",
+   "example": {
+    "value": "1110"
+   }
+  },
+  {
+   "id": "b2",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "0010",
+   "example": {
+    "value": "0010"
+   }
+  },
+  {
+   "id": "c1",
+   "prompt": "$1000 - 0001$: výsledok",
+   "kind": "bits",
+   "answer": "0111",
+   "example": {
+    "value": "0111"
+   }
+  },
+  {
+   "id": "c2",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "1001",
+   "example": {
+    "value": "1001"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Pri odčítaní ako $A + \\overline{B} + 1$ znamená $C = 1$, že",
+   "kind": "choice",
+   "options": [
+    "nevznikla výpožička ($A \\ge B$ bez znamienka)",
+    "výsledok je záporný",
+    "vzniklo pretečenie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

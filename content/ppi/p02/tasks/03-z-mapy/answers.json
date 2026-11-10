@@ -1,0 +1,56 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "čísla bodov s hodnotou 1",
+   "kind": "set",
+   "answer": [
+    "1",
+    "3",
+    "4",
+    "6",
+    "9",
+    "11",
+    "12",
+    "14"
+   ],
+   "example": {
+    "value": "1, 3, 4, 6, 9, 11, 12, 14"
+   },
+   "hint": "Čísla bodov oddeľte čiarkou, napr. `1, 3, 6`."
+  },
+  {
+   "id": "b",
+   "prompt": "vektor funkcie (16 bitov)",
+   "kind": "bits",
+   "answer": "0101101001011010",
+   "example": {
+    "value": "0101101001011010"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "koľko susedov má v tejto mape každé políčko?",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "čísla bodov susedných s bodom 5",
+   "kind": "set",
+   "answer": [
+    "1",
+    "4",
+    "7",
+    "13"
+   ],
+   "example": {
+    "value": "1, 4, 7, 13"
+   },
+   "hint": "Čísla bodov oddeľte čiarkou, napr. `1, 3, 6`."
+  }
+ ]
+}

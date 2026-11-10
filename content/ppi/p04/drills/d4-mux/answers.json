@@ -1,0 +1,39 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "počet adresových vstupov MUX 16 → 1",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MUX 2 → 1: $s = 1$, $D_0 = 0$, $D_1 = 1$. Výstup $Y$ =",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "MUX 4 → 1: adresa $A_1A_0 = 11$, $D_0D_1D_2D_3 = 1100$. Výstup $Y$ =",
+   "kind": "choice",
+   "options": [
+    "0",
+    "1"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "program",
+   "kind": "cpu4",
+   "tests": [
+    {
+     "memory": [
+      3,
+      4,
+      2,
+      0
+     ],
+     "expect": {
+      "3": 9
+     }
+    },
+    {
+     "memory": [
+      8,
+      8,
+      1,
+      5
+     ],
+     "expect": {
+      "3": 1
+     }
+    },
+    {
+     "memory": [
+      0,
+      0,
+      0,
+      9
+     ],
+     "expect": {
+      "3": 0
+     }
+    }
+   ],
+   "example": {
+    "value": "LDA 0\nADD 1\nADD 2\nSTA 3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "koľko taktov trvá jeden prechod programom?",
+   "kind": "number",
+   "answer": "12",
+   "example": {
+    "value": "12"
+   }
+  }
+ ]
+}

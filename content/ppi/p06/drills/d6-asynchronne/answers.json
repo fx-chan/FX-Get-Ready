@@ -1,0 +1,41 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Stav $s$ je pri vstupe $x$ stabilný, ak",
+   "kind": "choice",
+   "options": [
+    "$p(s, x) = s$",
+    "$v(s, x) = 1$",
+    "$p(s, x) \\ne s$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Vo fundamentálnom režime sa naraz smie zmeniť",
+   "kind": "choice",
+   "options": [
+    "jedna vstupná premenná",
+    "ľubovoľne veľa vstupov",
+    "len hodinový signál"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Najdlhší reťazec nestabilných stavov má dĺžku 2. Aký je rád automatu?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

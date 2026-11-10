@@ -1,0 +1,48 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "výstup $y$",
+   "kind": "bits",
+   "answer": "0001010010",
+   "example": {
+    "value": "0001010010"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "čísla stavov po každom takte (napr. `2, 3, 1, …`)",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "2",
+    "3",
+    "2",
+    "3",
+    "2",
+    "2",
+    "3",
+    "2",
+    "3"
+   ],
+   "example": {
+    "value": "2, 2, 3, 2, 3, 2, 2, 3, 2, 3"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Akú postupnosť automat rozpoznáva?",
+   "kind": "choice",
+   "options": [
+    "$101$",
+    "$110$",
+    "$011$",
+    "$111$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

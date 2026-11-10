@@ -1,0 +1,63 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Koľko je stabilných políčok (stav, vstup)?",
+   "kind": "number",
+   "answer": "9",
+   "example": {
+    "value": "9"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Stav 1 pri vstupe $01$ je",
+   "kind": "choice",
+   "options": [
+    "stabilný",
+    "nestabilný, prejde do 2"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Rád automatu (každý prechod ide najviac cez jeden nestabilný stav)",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Kódy $1 = 00$, $2 = 01$, $3 = 11$, $4 = 10$. Pri prechode $1 \\to 3$ sa menia",
+   "kind": "choice",
+   "options": [
+    "dve stavové premenné naraz — hrozí súbeh",
+    "jedna premenná",
+    "žiadna"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Ako odstrániť kritický súbeh bez zmeny kódov?",
+   "kind": "choice",
+   "options": [
+    "nepriamym kódom — prechod cez medzistav, napr. $00 \\to 01 \\to 11$",
+    "pridaním konsenzu",
+    "zvýšením frekvencie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

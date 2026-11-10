@@ -1,0 +1,21 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$f =$",
+   "kind": "boolexpr",
+   "vars": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "answer": "0100010001001111",
+   "form": "nand",
+   "max_literals": 4,
+   "example": {
+    "value": "(a↑b)↑(c'↑d)"
+   }
+  }
+ ]
+}

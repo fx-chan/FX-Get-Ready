@@ -1,0 +1,56 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Inštrukcie aj údaje sa čítajú z jednej pamäte po tej istej zbernici.",
+   "kind": "choice",
+   "options": [
+    "von Neumannova",
+    "harvardská"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Počítač MARK I (1944) mal pre program a údaje oddelené pamäte.",
+   "kind": "choice",
+   "options": [
+    "von Neumannova",
+    "harvardská"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Procesor môže v jednom kroku prečítať inštrukciu aj operand.",
+   "kind": "choice",
+   "options": [
+    "von Neumannova",
+    "harvardská"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Program sa dá načítať do pamäte ako bežné údaje a hneď spustiť.",
+   "kind": "choice",
+   "options": [
+    "von Neumannova",
+    "harvardská"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

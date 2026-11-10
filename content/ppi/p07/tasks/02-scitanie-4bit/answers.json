@@ -1,0 +1,76 @@
+{
+ "parts": [
+  {
+   "id": "a1",
+   "prompt": "$0101 + 0010$: výsledok",
+   "kind": "bits",
+   "answer": "0111",
+   "example": {
+    "value": "0111"
+   }
+  },
+  {
+   "id": "a2",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "0000",
+   "example": {
+    "value": "0000"
+   }
+  },
+  {
+   "id": "b1",
+   "prompt": "$1001 + 0111$: výsledok",
+   "kind": "bits",
+   "answer": "0000",
+   "example": {
+    "value": "0000"
+   }
+  },
+  {
+   "id": "b2",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "1100",
+   "example": {
+    "value": "1100"
+   }
+  },
+  {
+   "id": "c1",
+   "prompt": "$0110 + 0101$: výsledok",
+   "kind": "bits",
+   "answer": "1011",
+   "example": {
+    "value": "1011"
+   }
+  },
+  {
+   "id": "c2",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "0011",
+   "example": {
+    "value": "0011"
+   }
+  },
+  {
+   "id": "d1",
+   "prompt": "$1100 + 1010$: výsledok",
+   "kind": "bits",
+   "answer": "0110",
+   "example": {
+    "value": "0110"
+   }
+  },
+  {
+   "id": "d2",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "1001",
+   "example": {
+    "value": "1001"
+   }
+  }
+ ]
+}

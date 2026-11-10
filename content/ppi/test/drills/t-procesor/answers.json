@@ -1,0 +1,31 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$1011 + 0110$: výsledok",
+   "kind": "bits",
+   "answer": "0001",
+   "example": {
+    "value": "0001"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "príznaky C Z N V",
+   "kind": "bits",
+   "answer": "1000",
+   "example": {
+    "value": "1000"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "takty programu LDA, ADD, STA, JMP (s MAR a MBR)",
+   "kind": "number",
+   "answer": "21",
+   "example": {
+    "value": "21"
+   }
+  }
+ ]
+}

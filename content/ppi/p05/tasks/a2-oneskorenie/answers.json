@@ -1,0 +1,45 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "výstup Mealyho automatu",
+   "kind": "bits",
+   "answer": "0001010",
+   "example": {
+    "value": "0001010"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "výstup Moorovho automatu (pre stav po takte)",
+   "kind": "bits",
+   "answer": "0001010",
+   "example": {
+    "value": "0001010"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Ako sa obe postupnosti zmenia, ak výstup Moorovho automatu čítame až v nasledujúcom takte (ako to robí skutočný obvod)?",
+   "kind": "choice",
+   "options": [
+    "Moore bude o jeden takt neskôr než Mealy",
+    "budú totožné",
+    "Moore bude o takt skôr"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Najmenší počet stavov Moorovho automatu, ktorý rozpozná $101$ s prekrývaním",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  }
+ ]
+}

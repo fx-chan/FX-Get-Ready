@@ -1,0 +1,31 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Označte platné rovnosti.",
+   "kind": "multi",
+   "options": [
+    "$a + bc = (a + b)(a + c)$",
+    "$\\overline{a \\oplus b} = ab + \\overline{a}\\,\\overline{b}$",
+    "$a(b + c) = ab + c$",
+    "$ab + \\overline{a}c = (a + c)(\\overline{a} + b)$",
+    "$\\overline{a + b} = \\overline{a} + \\overline{b}$",
+    "$a \\oplus b \\oplus b = a$"
+   ],
+   "answer": [
+    0,
+    1,
+    3,
+    5
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "3",
+     "5"
+    ]
+   }
+  }
+ ]
+}

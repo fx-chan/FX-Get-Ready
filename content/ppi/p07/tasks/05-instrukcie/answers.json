@@ -1,0 +1,70 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "kód inštrukcie ADD 3",
+   "kind": "bits",
+   "answer": "0111",
+   "example": {
+    "value": "0111"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "kód inštrukcie STA 0",
+   "kind": "bits",
+   "answer": "1000",
+   "example": {
+    "value": "1000"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Inštrukcia $1110$ je",
+   "kind": "choice",
+   "options": [
+    "JMP 2",
+    "STA 2",
+    "ADD 2",
+    "JMP 3"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Inštrukcia $0010$ je",
+   "kind": "choice",
+   "options": [
+    "LDA 2",
+    "ADD 2",
+    "STA 2",
+    "LDA 0"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Koľko rôznych operácií by šlo zakódovať, keby mal OC 3 bity?",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "… a koľko adries by potom ostalo?",
+   "kind": "number",
+   "answer": "2",
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

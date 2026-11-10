@@ -1,0 +1,78 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "MAR drží",
+   "kind": "choice",
+   "options": [
+    "adresu",
+    "slovo z pamäte alebo do pamäte",
+    "inštrukciu"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "MBR je",
+   "kind": "choice",
+   "options": [
+    "len vstupný",
+    "len výstupný",
+    "obojsmerný"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Koľko taktov trvá výber inštrukcie?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Prečo sú MAR a MBR potrebné?",
+   "kind": "multi",
+   "options": [
+    "adresa a údaje nejdú po zbernici naraz",
+    "pamäť odpovedá s oneskorením",
+    "adresu aj odpoveď treba počas prenosu podržať",
+    "ALU nevie sčítať bez nich"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "2"
+    ]
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Znak # v názve MEMRD# znamená",
+   "kind": "choice",
+   "options": [
+    "signál je aktívny v nule",
+    "signál je zbernica",
+    "signál je hodinový"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}
