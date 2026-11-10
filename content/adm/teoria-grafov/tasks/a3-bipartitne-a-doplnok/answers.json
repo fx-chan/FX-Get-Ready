@@ -1,0 +1,80 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Najviac koľko hrán má jednoduchý bipartitný graf s 10 vrcholmi?",
+   "kind": "number",
+   "answer": "25",
+   "example": {
+    "value": "25"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Jednoduchý graf so 6 vrcholmi má o 3 hrany viac ako jeho doplnok. Koľko hrán má?",
+   "kind": "number",
+   "answer": "9",
+   "example": {
+    "value": "9"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Koľko rôznych jednoduchých grafov existuje na 4 pevne označených vrcholoch?",
+   "kind": "number",
+   "answer": "64",
+   "example": {
+    "value": "64"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Ktoré grafy sú bipartitné?",
+   "kind": "multi",
+   "options": [
+    "cyklus $C_7$",
+    "kocka (8 vrcholov, 12 hrán)",
+    "hviezda $K_{1,5}$",
+    "$K_3$"
+   ],
+   "answer": [
+    1,
+    2
+   ],
+   "example": {
+    "value": [
+     "1",
+     "2"
+    ]
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Doplnok cyklu $C_5$ je",
+   "kind": "choice",
+   "options": [
+    "opäť $C_5$",
+    "$K_5$",
+    "dva trojuholníky",
+    "$K_{2,3}$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "Je $K_{2,n}$ planárny pre každé $n$?",
+   "kind": "choice",
+   "options": [
+    "áno",
+    "nie, od $n = 3$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

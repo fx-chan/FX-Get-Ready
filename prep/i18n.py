@@ -70,6 +70,8 @@ UK = {
     "E1\n\nE2   (matice oddeľte prázdnym riadkom)": "E1\n\nE2   (матриці розділяйте порожнім рядком)",
     "matica C, napr.\n1 0 0\n0 1 0\n0 0 1": "матриця C, напр.\n1 0 0\n0 1 0\n0 0 1",
     "matica A\n\nmatica B   (oddeľte prázdnym riadkom)": "матриця A\n\nматриця B   (розділяйте порожнім рядком)",
+    "postupnosť vrcholov, napr. A B C A": "послідовність вершин, напр. A B C A",
+    "zoznam hrán, napr. AB, BC, CC (slučka)": "список ребер, напр. AB, BC, CC (петля)",
     "Označte všetky platné možnosti.": "Позначте всі правильні варіанти.",
     "Premenné": "Змінні",
     "Ako zapisovať odpovede?": "Як записувати відповіді?",
@@ -88,6 +90,8 @@ UK = {
     "žiadna hodnota": "немає таких значень",
     "systém nemá riešenie": "система не має розв'язків",
     "nie je diagonalizovateľná": "не діагоналізовна",
+    "taký ťah neexistuje": "такого ланцюга не існує",
+    "taký graf neexistuje": "такого графа не існує",
     # auth
     "Prihlásenie": "Вхід",
     "Stačí meno a heslo, žiadny e-mail.": "Досить імені та пароля, без електронної пошти.",
@@ -181,6 +185,9 @@ UK = {
     "chýba odpoveď": "немає відповіді",
     "príliš dlhá odpoveď": "задовга відповідь",
     "zapíšte rozmer v tvare 3x2": "запишіть розмір у вигляді 3x2",
+    "neznámy vrchol „{x}“": "невідома вершина «{x}»",
+    "zapíšte postupnosť vrcholov, napr. A B C A": "запишіть послідовність вершин, напр. A B C A",
+    "hrana „{x}“ nemá dva konce": "ребро «{x}» не має двох кінців",
 }
 CATALOG = {"uk": UK}
 

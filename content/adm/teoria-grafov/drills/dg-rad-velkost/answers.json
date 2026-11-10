@@ -1,0 +1,37 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "rád grafu",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "veľkosť grafu",
+   "kind": "number",
+   "answer": "7",
+   "example": {
+    "value": "7"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Typ grafu",
+   "kind": "choice",
+   "options": [
+    "jednoduchý graf",
+    "multigraf (bez slučiek)",
+    "pseudograf",
+    "triviálny graf"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  }
+ ]
+}

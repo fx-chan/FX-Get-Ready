@@ -1,0 +1,110 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$A, B, D, E$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$A, C, D, A, B$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$A, B, D, C, A$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 4,
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$C, D, E, C, A, D, B, C$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$A, C, A, B$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "Platí: každá cesta je ťah.",
+   "kind": "choice",
+   "options": [
+    "áno",
+    "nie"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "Platí: každý ťah je cesta.",
+   "kind": "choice",
+   "options": [
+    "áno",
+    "nie"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

@@ -1,0 +1,145 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(\\deg v, \\deg x, \\deg y, \\deg z, \\deg u, \\deg w)$",
+   "kind": "vector",
+   "answer": [
+    "4",
+    "4",
+    "4",
+    "2",
+    "2",
+    "2"
+   ],
+   "example": {
+    "value": "4, 4, 4, 2, 2, 2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Graf z prednášky je",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "eulerovský okruh grafu z prednášky so štartom vo $v$",
+   "kind": "trail",
+   "edges": [
+    [
+     "v",
+     "x"
+    ],
+    [
+     "x",
+     "y"
+    ],
+    [
+     "y",
+     "x"
+    ],
+    [
+     "x",
+     "z"
+    ],
+    [
+     "z",
+     "y"
+    ],
+    [
+     "y",
+     "v"
+    ],
+    [
+     "v",
+     "w"
+    ],
+    [
+     "w",
+     "u"
+    ],
+    [
+     "u",
+     "v"
+    ]
+   ],
+   "exists": true,
+   "start": [
+    "v"
+   ],
+   "example": {
+    "value": "v x y x z y v w u v"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "ťah cez všetky hrany domčeka",
+   "kind": "trail",
+   "edges": [
+    [
+     "A",
+     "B"
+    ],
+    [
+     "A",
+     "C"
+    ],
+    [
+     "B",
+     "D"
+    ],
+    [
+     "C",
+     "D"
+    ],
+    [
+     "A",
+     "D"
+    ],
+    [
+     "B",
+     "C"
+    ],
+    [
+     "C",
+     "E"
+    ],
+    [
+     "D",
+     "E"
+    ]
+   ],
+   "exists": true,
+   "start": [
+    "A",
+    "B"
+   ],
+   "example": {
+    "value": "A B D C A D E C B"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Most (hranu, ktorej odstránenie rozpojí zvyšok grafu) Fleuryho algoritmus použije",
+   "kind": "choice",
+   "options": [
+    "len vtedy, keď z aktuálneho vrchola nevedie iná nepoužitá hrana",
+    "vždy ako prvý",
+    "nikdy"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

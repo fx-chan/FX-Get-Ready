@@ -1,0 +1,98 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "jednoduchý graf, stupne $4, 4, 3, 3, 2, 2$",
+   "kind": "graph",
+   "degrees": {
+    "A": 4,
+    "B": 4,
+    "C": 3,
+    "D": 3,
+    "E": 2,
+    "F": 2
+   },
+   "exists": true,
+   "simple": true,
+   "connected": false,
+   "example": {
+    "value": "AB, AC, AD, AE, BC, BD, BE, CF, DF"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "jednoduchý graf, stupne $5, 5, 4, 3, 2, 1$",
+   "kind": "graph",
+   "degrees": {
+    "A": 5,
+    "B": 5,
+    "C": 4,
+    "D": 3,
+    "E": 2,
+    "F": 1
+   },
+   "exists": false,
+   "simple": true,
+   "connected": false,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "jednoduchý graf, stupne $3, 3, 3, 3, 3, 3$",
+   "kind": "graph",
+   "degrees": {
+    "A": 3,
+    "B": 3,
+    "C": 3,
+    "D": 3,
+    "E": 3,
+    "F": 3
+   },
+   "exists": true,
+   "simple": true,
+   "connected": true,
+   "example": {
+    "value": "AB, AC, AD, BC, BE, CF, DE, DF, EF"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "jednoduchý graf, stupne $4, 4, 4, 1, 1$",
+   "kind": "graph",
+   "degrees": {
+    "A": 4,
+    "B": 4,
+    "C": 4,
+    "D": 1,
+    "E": 1
+   },
+   "exists": false,
+   "simple": true,
+   "connected": false,
+   "example": {
+    "none": true
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "jednoduchý graf, stupne $5, 3, 3, 3, 3, 1$",
+   "kind": "graph",
+   "degrees": {
+    "A": 5,
+    "B": 3,
+    "C": 3,
+    "D": 3,
+    "E": 3,
+    "F": 1
+   },
+   "exists": true,
+   "simple": true,
+   "connected": false,
+   "example": {
+    "value": "AB, AC, AD, AE, AF, BC, BD, CE, DE"
+   }
+  }
+ ]
+}

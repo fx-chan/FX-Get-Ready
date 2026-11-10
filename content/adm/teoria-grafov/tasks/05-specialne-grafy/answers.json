@@ -1,0 +1,107 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$|E(K_8)|$",
+   "kind": "number",
+   "answer": "28",
+   "example": {
+    "value": "28"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$|E(K_{4,5})|$",
+   "kind": "number",
+   "answer": "20",
+   "example": {
+    "value": "20"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Graf má 8 vrcholov a 10 hrán. Koľko hrán má jeho doplnok?",
+   "kind": "number",
+   "answer": "18",
+   "example": {
+    "value": "18"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Ktorý graf **nie je** planárny?",
+   "kind": "choice",
+   "options": [
+    "$K_4$",
+    "$K_{2,3}$",
+    "$K_{3,3}$",
+    "$C_6$"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Ktoré grafy sú bipartitné?",
+   "kind": "multi",
+   "options": [
+    "$C_4$",
+    "$C_5$",
+    "$K_{2,3}$",
+    "$K_3$"
+   ],
+   "answer": [
+    0,
+    2
+   ],
+   "example": {
+    "value": [
+     "0",
+     "2"
+    ]
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "Šesťuholník s uhlopriečkou $AD$ je",
+   "kind": "choice",
+   "options": [
+    "bipartitný",
+    "nie je bipartitný"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "Šesťuholník s uhlopriečkou $AC$ je",
+   "kind": "choice",
+   "options": [
+    "bipartitný",
+    "nie je bipartitný"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "Graf a jeho doplnok spolu tvoria",
+   "kind": "choice",
+   "options": [
+    "úplný graf $K_n$",
+    "bipartitný graf",
+    "cyklus $C_n$"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

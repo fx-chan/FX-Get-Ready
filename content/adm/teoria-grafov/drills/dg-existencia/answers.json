@@ -1,0 +1,35 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Koľko hrán má 4-pravidelný graf s 9 vrcholmi?",
+   "kind": "number",
+   "answer": "18",
+   "example": {
+    "value": "18"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Graf má 12 hrán a každý vrchol stupňa 3. Koľko má vrcholov?",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Existuje graf so stupňami $3, 3, 2, 1$?",
+   "kind": "choice",
+   "options": [
+    "áno",
+    "nie"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  }
+ ]
+}

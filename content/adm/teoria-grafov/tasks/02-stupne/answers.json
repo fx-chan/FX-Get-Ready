@@ -1,0 +1,65 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(\\deg A, \\deg B, \\deg C, \\deg D, \\deg E, \\deg F)$",
+   "kind": "vector",
+   "answer": [
+    "3",
+    "4",
+    "0",
+    "3",
+    "3",
+    "1"
+   ],
+   "example": {
+    "value": "3, 4, 0, 3, 3, 1"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\sum \\deg v$",
+   "kind": "number",
+   "answer": "14",
+   "example": {
+    "value": "14"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "vrcholy nepárneho stupňa",
+   "kind": "multi",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "answer": [
+    0,
+    1,
+    3,
+    4
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1",
+     "3",
+     "4"
+    ]
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "stupeň $C$, ak by sme slučku nahradili hranou $CF$",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  }
+ ]
+}

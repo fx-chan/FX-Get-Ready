@@ -1,0 +1,143 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$K_5$, štart v $A$",
+   "kind": "trail",
+   "edges": [
+    [
+     "A",
+     "B"
+    ],
+    [
+     "A",
+     "C"
+    ],
+    [
+     "A",
+     "D"
+    ],
+    [
+     "A",
+     "E"
+    ],
+    [
+     "B",
+     "C"
+    ],
+    [
+     "B",
+     "D"
+    ],
+    [
+     "B",
+     "E"
+    ],
+    [
+     "C",
+     "D"
+    ],
+    [
+     "C",
+     "E"
+    ],
+    [
+     "D",
+     "E"
+    ]
+   ],
+   "exists": true,
+   "start": [
+    "A"
+   ],
+   "example": {
+    "value": "A B C A D B E C D E A"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "graf z obrázka, štart v $A$",
+   "kind": "trail",
+   "edges": [
+    [
+     "A",
+     "B"
+    ],
+    [
+     "B",
+     "C"
+    ],
+    [
+     "C",
+     "A"
+    ],
+    [
+     "A",
+     "G"
+    ],
+    [
+     "G",
+     "F"
+    ],
+    [
+     "F",
+     "A"
+    ],
+    [
+     "G",
+     "C"
+    ],
+    [
+     "C",
+     "D"
+    ],
+    [
+     "D",
+     "G"
+    ],
+    [
+     "D",
+     "F"
+    ],
+    [
+     "F",
+     "E"
+    ],
+    [
+     "E",
+     "D"
+    ]
+   ],
+   "exists": true,
+   "start": [
+    "A"
+   ],
+   "example": {
+    "value": "A B C A G F D C G D E F A"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Koľko hrán má okruh v časti b)?",
+   "kind": "number",
+   "answer": "12",
+   "example": {
+    "value": "12"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Prečo je Hierholzer rýchlejší ako Fleury?",
+   "kind": "choice",
+   "options": [
+    "netreba v každom kroku kontrolovať, či hrana nie je most",
+    "funguje aj pre nesúvislé grafy",
+    "nájde najkratší okruh"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

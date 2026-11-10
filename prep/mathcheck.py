@@ -20,6 +20,10 @@ Kinds and their fields:
     row_equiv   A, B: the student gives an invertible C with C A = B
     power_identity n, p, exclude ("diagonal" | "identity"): a matrix with A^p = I
     pair_not_diff_squares: two 2x2 matrices with (A+B)(A-B) != A^2 - B^2
+    trail       edges, exists, start (optional): a sequence of vertices that uses every edge exactly once
+                (an Euler circuit or trail), or "no such trail"
+    graph       degrees {vertex: deg}, exists, simple, connected: an edge list (AB, BC, CC = loop)
+                realising the degrees, or "no such graph"
 
 Optional per part: "vars" (names the student may use, e.g. ["a", "b"]).
 
@@ -44,7 +48,7 @@ CONSTS = {"pi": cmath.pi, "e": cmath.e, "i": 1j}
 PARAMS = ["t", "s", "u", "r", "p", "q", "t1", "t2", "t3", "t4"]  # free parameters of a solution set
 
 KINDS = {"number", "matrix", "vector", "dims", "choice", "multi", "set", "multiset", "system", "eigbasis",
-         "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares"}
+         "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares", "trail", "graph"}
 NONE_LABELS = {
     "number": "nedá sa vypočítať",
     "matrix": "nedá sa vypočítať",
@@ -53,6 +57,8 @@ NONE_LABELS = {
     "set": "žiadna hodnota",
     "system": "systém nemá riešenie",
     "diagonalize": "nie je diagonalizovateľná",
+    "trail": "taký ťah neexistuje",
+    "graph": "taký graf neexistuje",
 }
 MAX_INPUT = 4000
 
@@ -591,6 +597,80 @@ def _check_pair(text):
     return WRONG if _all_close(matmul(s, d), [[a2[i][j] - b2[i][j] for j in range(2)] for i in range(2)]) else OK
 
 
+# --- graphs ----------------------------------------------------------------------
+
+_VERTEX = re.compile(r"[A-Za-z][0-9]*")
+
+
+def _vertices(text, known):
+    """'A B C', 'A-B-C', 'A → B → C' and 'ABC' all give [A, B, C]."""
+    names = _VERTEX.findall(text)
+    for v in names:
+        if v not in known:
+            raise ParseError("neznámy vrchol „{x}“", x=v)
+    return names
+
+
+def _edge_key(u, v):
+    return (u, v) if u <= v else (v, u)
+
+
+def _check_trail(part, ans):
+    if ans.get("none"):
+        return OK if not part["exists"] else WRONG
+    edges = [_edge_key(u, v) for u, v in part["edges"]]
+    known = {x for e in edges for x in e}
+    seq = _vertices(_text(ans.get("value")), known)
+    if len(seq) < 2:
+        raise ParseError("zapíšte postupnosť vrcholov, napr. A B C A")
+    if not part["exists"] or len(seq) != len(edges) + 1:
+        return WRONG
+    if part.get("start") and seq[0] not in part["start"]:
+        return WRONG
+    left = list(edges)
+    for u, v in zip(seq, seq[1:]):
+        k = _edge_key(u, v)
+        if k not in left:
+            return WRONG
+        left.remove(k)
+    return OK
+
+
+def _check_graph(part, ans):
+    if ans.get("none"):
+        return OK if not part["exists"] else WRONG
+    degrees = part["degrees"]
+    items = [x for x in re.split(r"[,;\s]+", _text(ans.get("value")).strip()) if x]
+    edges = []
+    for item in items:
+        ends = _vertices(item, degrees)
+        if len(ends) != 2:
+            raise ParseError("hrana „{x}“ nemá dva konce", x=item)
+        edges.append(ends)
+    if not part["exists"]:
+        return WRONG
+    got = {v: 0 for v in degrees}
+    for u, v in edges:
+        got[u] += 1
+        got[v] += 1                      # a loop counts twice
+    if got != degrees:
+        return WRONG
+    if part.get("simple"):
+        keys = [_edge_key(u, v) for u, v in edges]
+        if any(u == v for u, v in edges) or len(keys) != len(set(keys)):
+            return WRONG
+    if part.get("connected"):
+        seen, todo = set(), [next(iter(degrees))]
+        while todo:
+            x = todo.pop()
+            if x not in seen:
+                seen.add(x)
+                todo += [b if a == x else a for a, b in edges if x in (a, b)]
+        if len(seen) != len(degrees):
+            return WRONG
+    return OK
+
+
 def check_part(part, ans):
     """Return (status, message). ans = {"value": ..., "none": bool}."""
     ans = ans if isinstance(ans, dict) else {}
@@ -608,6 +688,10 @@ def check_part(part, ans):
             return _check_system(part, ans), ""
         if kind == "diagonalize":
             return _check_diagonalize(part, ans), ""
+        if kind == "trail":
+            return _check_trail(part, ans), ""
+        if kind == "graph":
+            return _check_graph(part, ans), ""
         expected = part.get("answer")
         if ans.get("none"):
             if kind == "set":

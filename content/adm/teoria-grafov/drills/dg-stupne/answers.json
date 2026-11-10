@@ -1,0 +1,28 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$(\\deg A, \\deg B, \\deg C, \\deg D, \\deg E)$",
+   "kind": "vector",
+   "answer": [
+    "2",
+    "2",
+    "3",
+    "3",
+    "4"
+   ],
+   "example": {
+    "value": "2, 2, 3, 3, 4"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$\\sum \\deg v$",
+   "kind": "number",
+   "answer": "14",
+   "example": {
+    "value": "14"
+   }
+  }
+ ]
+}

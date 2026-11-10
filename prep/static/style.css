@@ -396,3 +396,20 @@ body.wide .wrap { max-width: 1480px; }
 .exam-row .mark.ok { color: var(--ok); font-weight: 800; }
 .exam-row .mark.bad { color: var(--bad); font-weight: 800; }
 .exam-given { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--muted); white-space: pre-wrap; }
+
+/* ---------- graph pictures (tools/adm/graphsvg.py) ---------- */
+.graph { display: flex; flex-wrap: wrap; gap: 14px 22px; justify-content: center; align-items: center; margin: 14px 0; }
+.graph svg { max-width: 100%; height: auto; overflow: visible; }
+.graph .ed { fill: none; stroke: var(--muted); stroke-width: 2; }
+.graph .ed.c1 { stroke: var(--accent); stroke-width: 2.4; }
+.graph .ed.c2 { stroke: var(--ok); stroke-width: 2.4; }
+.graph .ed.c3 { stroke: var(--warn); }
+.graph .ed.dim { stroke: var(--border); stroke-dasharray: 4 4; }
+.graph .ed.bad { stroke: var(--bad); stroke-dasharray: 5 4; }
+.graph .arrow { fill: var(--text); }
+.graph .nd circle { fill: var(--surface); stroke: var(--text); stroke-width: 2; }
+.graph .nd.on circle { fill: var(--accent-soft); stroke: var(--accent); }
+.graph .nd.iso circle { stroke-dasharray: 3 3; }
+.graph text { fill: var(--text); font: 600 13px Inter, system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; }
+.graph .el { fill: var(--accent); font-size: 11px; }
+.graph .dg { fill: var(--warn); font-size: 12px; }

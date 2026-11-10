@@ -1,0 +1,124 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Königsberg (obrázok, stupne $5, 3, 3, 3$)",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$K_4$",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$K_5$",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$K_{2,4}$",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$K_{2,3}$",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "cesta $P_5$ (5 vrcholov za sebou)",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "domček z príkladu 6",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "V ktorých vrcholoch môže začať ťah cez všetky hrany domčeka?",
+   "kind": "multi",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+   ],
+   "answer": [
+    0,
+    1
+   ],
+   "example": {
+    "value": [
+     "0",
+     "1"
+    ]
+   }
+  }
+ ]
+}

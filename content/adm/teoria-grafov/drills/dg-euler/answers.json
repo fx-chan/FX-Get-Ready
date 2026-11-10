@@ -1,0 +1,84 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "stupne $4, 2, 2, 2, 2$",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "stupne $3, 3, 2, 2$",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "stupne $3, 3, 3, 3, 2$",
+   "kind": "choice",
+   "options": [
+    "eulerovský",
+    "semieulerovský",
+    "ani jedno"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "eulerovský okruh so štartom v $A$",
+   "kind": "trail",
+   "edges": [
+    [
+     "A",
+     "B"
+    ],
+    [
+     "B",
+     "C"
+    ],
+    [
+     "C",
+     "A"
+    ],
+    [
+     "A",
+     "D"
+    ],
+    [
+     "D",
+     "E"
+    ],
+    [
+     "E",
+     "A"
+    ]
+   ],
+   "exists": true,
+   "start": [
+    "A"
+   ],
+   "example": {
+    "value": "A B C A D E A"
+   }
+  }
+ ]
+}

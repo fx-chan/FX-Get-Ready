@@ -1,0 +1,84 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$B, C, A, D, E$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$B, C, A, D, E, A$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$A, B, C, A, D, E, A$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 3,
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$A, D, E, A$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 4,
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "$B, A, C, A, D$",
+   "kind": "choice",
+   "options": [
+    "prechádzka, ale nie ťah",
+    "ťah, ale nie cesta",
+    "cesta",
+    "okruh, ale nie cyklus",
+    "cyklus"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}

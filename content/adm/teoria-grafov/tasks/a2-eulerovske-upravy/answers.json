@@ -1,0 +1,68 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Najmenej koľko hrán treba z $K_6$ odobrať, aby vznikol eulerovský graf?",
+   "kind": "number",
+   "answer": "3",
+   "example": {
+    "value": "3"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Najmenej koľko hrán treba z $K_8$ odobrať, aby vznikol eulerovský graf?",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "$K_{m,n}$ je eulerovský práve vtedy, keď",
+   "kind": "choice",
+   "options": [
+    "$m$ aj $n$ sú párne",
+    "$m + n$ je párne",
+    "$mn$ je párne"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "$K_n$ ($n \\ge 2$) je eulerovský práve vtedy, keď",
+   "kind": "choice",
+   "options": [
+    "$n$ je nepárne",
+    "$n$ je párne",
+    "nikdy"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Súvislý graf má 10 vrcholov nepárneho stupňa. Najmenej koľkými ťahmi ho nakreslíme?",
+   "kind": "number",
+   "answer": "5",
+   "example": {
+    "value": "5"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "Najmenej koľkými ťahmi nakreslíme hrany kocky (8 vrcholov, každý stupňa 3)?",
+   "kind": "number",
+   "answer": "4",
+   "example": {
+    "value": "4"
+   }
+  }
+ ]
+}

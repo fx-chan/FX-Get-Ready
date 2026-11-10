@@ -1,0 +1,40 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "$|E(K_7)|$",
+   "kind": "number",
+   "answer": "21",
+   "example": {
+    "value": "21"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "$|E(K_{3,4})|$",
+   "kind": "number",
+   "answer": "12",
+   "example": {
+    "value": "12"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Graf so 7 vrcholmi má 9 hrán. Koľko hrán má jeho doplnok?",
+   "kind": "number",
+   "answer": "12",
+   "example": {
+    "value": "12"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Stupeň každého vrchola v $K_9$",
+   "kind": "number",
+   "answer": "8",
+   "example": {
+    "value": "8"
+   }
+  }
+ ]
+}

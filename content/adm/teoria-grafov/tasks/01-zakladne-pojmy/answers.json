@@ -1,0 +1,124 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "rád grafu",
+   "kind": "number",
+   "answer": "6",
+   "example": {
+    "value": "6"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "veľkosť grafu",
+   "kind": "number",
+   "answer": "7",
+   "example": {
+    "value": "7"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "izolované vrcholy",
+   "kind": "multi",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "answer": [
+    5
+   ],
+   "example": {
+    "value": [
+     "5"
+    ]
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "vrcholy susedné s $D$",
+   "kind": "multi",
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+   ],
+   "answer": [
+    0,
+    2,
+    4
+   ],
+   "example": {
+    "value": [
+     "0",
+     "2",
+     "4"
+    ]
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "typ grafu",
+   "kind": "choice",
+   "options": [
+    "jednoduchý graf",
+    "multigraf (bez slučiek)",
+    "pseudograf",
+    "triviálny graf"
+   ],
+   "answer": 2,
+   "example": {
+    "value": "2"
+   }
+  },
+  {
+   "id": "f",
+   "prompt": "Ak odstránime slučku, graf bude",
+   "kind": "choice",
+   "options": [
+    "jednoduchý graf",
+    "multigraf (bez slučiek)",
+    "pseudograf",
+    "triviálny graf"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "g",
+   "prompt": "Je graf súvislý?",
+   "kind": "choice",
+   "options": [
+    "áno",
+    "nie"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "h",
+   "prompt": "Je $G = (\\{A\\}, \\emptyset)$ graf?",
+   "kind": "choice",
+   "options": [
+    "áno, graf môže nemať hrany",
+    "nie, chýbajú hrany"
+   ],
+   "answer": 0,
+   "example": {
+    "value": "0"
+   }
+  }
+ ]
+}
