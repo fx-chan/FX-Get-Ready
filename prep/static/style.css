@@ -416,3 +416,14 @@ body.wide .wrap { max-width: 1480px; }
 .cpusim-data { margin: 12px 0; }
 .cpusim-data summary { cursor: pointer; color: var(--muted); }
 .cpusim-data pre { max-height: 16rem; overflow: auto; }
+.cpusim-editor { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 10px; }
+@media (max-width: 720px) { .cpusim-editor { grid-template-columns: minmax(0, 1fr); } }
+.cs-title { font-size: 12px; font-weight: 700; letter-spacing: .03em; color: var(--muted); margin-bottom: 4px; }
+.cs-title span { font-weight: 500; }
+.cs-box { display: flex; border: 1px solid var(--border); border-radius: 8px; background: var(--code-bg); overflow: hidden; }
+.cs-box:focus-within { outline: 2px solid var(--accent); outline-offset: 1px; }
+.cs-gutter, .cs-text { font: 13.5px/20px "JetBrains Mono", ui-monospace, Consolas, monospace; tab-size: 8; padding: 8px 0; margin: 0; }
+.cs-gutter { flex: none; min-width: 3.4em; padding-left: 6px; padding-right: 8px; text-align: right; color: var(--muted);
+  background: var(--surface-2); border-right: 1px solid var(--border); overflow: hidden; user-select: none; white-space: pre; }
+.cs-text { flex: 1; min-width: 0; padding-left: 8px; padding-right: 8px; border: 0; outline: none; resize: vertical;
+  background: transparent; color: var(--text); white-space: pre; overflow: auto; }

@@ -78,8 +78,23 @@
       {% endfor %}
       </div>
       <p class="ans-hint">{{ _('Označte všetky platné možnosti.') }}</p>
+    {% elif p.kind == "cpusim" %}
+      <textarea class="js-value" hidden>{{ prev.value if prev.value is string }}</textarea>
+      <div class="cpusim-editor" data-example="{{ p.data or '' }}">
+        <div class="cs-pane cs-pane-prog">
+          <div class="cs-title">{{ _('PAMÄŤ INŠTRUKCIÍ') }} <span>0–1023</span></div>
+          <div class="cs-box"><pre class="cs-gutter" aria-hidden="true"></pre><textarea class="cs-text cs-prog" wrap="off" spellcheck="false" rows="20"
+            placeholder="{{ _(PLACEHOLDERS[p.kind]) }}"></textarea></div>
+        </div>
+        <div class="cs-pane cs-pane-data">
+          <div class="cs-title">{{ _('PAMÄŤ ČÍSELNÝCH ÚDAJOV') }} <span>1024–2047</span></div>
+          <div class="cs-box"><pre class="cs-gutter" aria-hidden="true"></pre><textarea class="cs-text cs-data" wrap="off" spellcheck="false" rows="20"
+            placeholder="{{ _('jedna hodnota na riadok, napr.\n5\nkoniec: 0') }}"></textarea></div>
+        </div>
+      </div>
+      <p class="ans-hint">{{ _('Čísla vľavo sú adresy buniek ako v CPUSime: riadok s iba komentárom bunku nezaberá, prázdny riadok áno. Pri kontrole sa vstup každého testu zapíše do pamäte údajov cez vaše hodnoty.') }}</p>
     {% elif p.kind in MULTILINE %}
-      <textarea class="ans-input js-value mono" rows="{{ 18 if p.kind == 'cpusim' else 3 if compact else 4 }}" spellcheck="false"
+      <textarea class="ans-input js-value mono" rows="{{ 3 if compact else 4 }}" spellcheck="false"
                 placeholder="{{ _(PLACEHOLDERS[p.kind]) }}">{{ prev.value if prev.value is string }}</textarea>
       <div class="ans-preview" aria-hidden="true"></div>
     {% else %}
@@ -102,7 +117,7 @@
         {% set kinds = task.public_parts|map(attribute='kind')|list %}
         {% if "boolexpr" in kinds %}<li>{{ _('Logický výraz: negácia') }} <code>a'</code> / <code>!a</code>, {{ _('súčin') }} <code>ab</code> / <code>a*b</code>, {{ _('súčet') }} <code>a+b</code>, XOR <code>a^b</code>, NAND <code>a↑b</code>, NOR <code>a↓b</code>, {{ _('zátvorky') }} <code>(a+b)'</code>.</li>{% endif %}
         {% if "bits" in kinds %}<li>{{ _('Bity píšte za sebou, medzery sa ignorujú:') }} <code>0110 1001</code>.</li>{% endif %}
-        {% if "cpusim" in kinds %}<li>{{ _('Program CPUSimu: skopírujte obsah poľa PAMÄŤ INŠTRUKCIÍ z textového editora (Ctrl+E) alebo celý export z Riešenia na odovzdanie. Stránka ho spustí na teste zo zadania aj na skrytých testoch.') }}</li>{% endif %}
+        {% if "cpusim" in kinds %}<li>{{ _('Program CPUSimu: ľavé pole je PAMÄŤ INŠTRUKCIÍ, pravé PAMÄŤ ČÍSELNÝCH ÚDAJOV, ako v textovom editore CPUSimu (Ctrl+E). Do ľavého poľa môžete vložiť aj celý export z Riešenia na odovzdanie, rozdelí sa sám. Stránka program spustí na teste zo zadania aj na skrytých testoch.') }}</li>{% endif %}
         {% if "cpu4" in kinds %}<li>{{ _('Program: jedna inštrukcia na riadok,') }} <code>LDA 0</code> {{ _('alebo binárne') }} <code>0000</code>.</li>{% endif %}
         <li>{{ _('Zlomky a odmocniny:') }} <code>-7/2</code>, <code>sqrt(2)/2</code> {{ _('alebo') }} <code>√2/2</code>, {{ _('mocnina') }} <code>2^3</code>, <code>pi</code>, {{ _('komplexná jednotka') }} <code>i</code>.</li>
         <li>{{ _('Matica: riadky na samostatné riadky (alebo oddelené') }} <code>;</code>{{ _('), prvky medzerou alebo čiarkou.') }}</li>

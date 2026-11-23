@@ -70,7 +70,7 @@ NONE_LABELS = {
     "graph": "taký graf neexistuje",
 }
 MAX_INPUT = 4000
-MAX_PROGRAM = 40000
+MAX_PROGRAM = 60000
 
 
 class ParseError(ValueError):
@@ -444,7 +444,10 @@ OK, WRONG, INVALID = "ok", "wrong", "invalid"
 
 def public_part(part):
     """What the page may show: everything except the key."""
-    return {k: v for k, v in part.items() if k in ("id", "prompt", "kind", "options", "vars", "hint")}
+    out = {k: v for k, v in part.items() if k in ("id", "prompt", "kind", "options", "vars", "hint")}
+    if part.get("kind") == "cpusim" and part.get("tests"):
+        out["data"] = cpusim.data_text(part["tests"][0]["memory"])   # the example input, shown in the statement
+    return out
 
 
 def _text(value, limit=MAX_INPUT):
@@ -749,14 +752,15 @@ def _check_cpu4(part, text):
 
 def _check_cpusim(part, text):
     try:
-        words = cpusim.assemble(cpusim.strip_export(text))
+        program, data = cpusim.split_answer(text)
+        words = cpusim.assemble(program, data)
     except cpusim.AsmError as exc:
         return INVALID, t("Chyba v programe: {detail}.", detail=exc.text())
-    if not words:
+    if not any(a < cpusim.INSTR_SIZE for a in words):
         return INVALID, t("Program je prázdny.")
     for i, case in enumerate(part["tests"], 1):
-        memory = {int(a): v for a, v in case["memory"].items()}
-        memory.update(words)
+        memory = dict(words)                     # own data first, the test input is written over it
+        memory.update({int(a): v for a, v in case["memory"].items()})
         res = cpusim.run(memory)
         if res.status == "error":
             return WRONG, t("Test {i}: simulácia skončila chybou – {detail}.", i=i, detail=res.error.text())

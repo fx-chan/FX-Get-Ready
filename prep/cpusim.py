@@ -315,7 +315,23 @@ def run(memory, budget=BUDGET):
         return Result(mem, "error", error=exc, steps=steps, instructions=instructions)
 
 
+def split_answer(text):
+    """(program, data) from the code editor text, or from 'PROGRAM … DATA … END' (the page's two-field
+    editor and the 'Riešenie na odovzdanie' export both look like that)."""
+    m = re.search(r"^[ \t]*PROGRAM[ \t]*\n(.*?)(?:^[ \t]*DATA[ \t]*\n(.*?))?^[ \t]*END[ \t]*$", text,
+                  re.M | re.S | re.I)
+    if not m:
+        return text, ""
+    return (m.group(1) or "").rstrip("\n"), (m.group(2) or "").rstrip("\n")
+
+
 def strip_export(text):
-    """Accept the code editor text or the whole 'Riešenie na odovzdanie' export: keep the PROGRAM part."""
-    m = re.search(r"^\s*PROGRAM\s*$(.*?)^\s*(DATA|END)\s*$", text, re.M | re.S | re.I)
-    return m.group(1).strip("\n") if m else text
+    return split_answer(text)[0]
+
+
+def data_text(memory):
+    """Data area from 1024 up to the last given cell, one value per line (as in the CPUSim editor)."""
+    cells = {int(a): v for a, v in memory.items() if int(a) >= INSTR_SIZE}
+    if not cells:
+        return ""
+    return "\n".join(str(cells.get(a, 0)) for a in range(INSTR_SIZE, max(cells) + 1))

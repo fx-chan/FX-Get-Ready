@@ -105,6 +105,63 @@
     if (none && input) input.disabled = none.checked;
   }
 
+  // CPUSim-like editor: two fields (instructions from 0, data from 1024) with a gutter of cell addresses.
+  // The answer sent to the server is "PROGRAM\n…\nDATA\n…\nEND", the format of the CPUSim export.
+  function splitCpusim(text) {
+    var m = /^[ \t]*PROGRAM[ \t]*\r?\n([\s\S]*?)(?:^[ \t]*DATA[ \t]*\r?\n([\s\S]*?))?^[ \t]*END[ \t]*$/im.exec(text || "");
+    if (!m) return null;
+    return { prog: (m[1] || "").replace(/\n+$/, ""), data: (m[2] || "").replace(/\n+$/, "") };
+  }
+
+  function gutterText(text, start) {
+    var addr = start;
+    return text.replace(/\r/g, "").split("\n").map(function (row) {
+      return /^\s*;/.test(row) ? "" : String(addr++);
+    }).join("\n");
+  }
+
+  function setupCpusim(part) {
+    var editor = part.querySelector(".cpusim-editor");
+    if (!editor) return;
+    var value = part.querySelector(".js-value");
+    var prog = editor.querySelector(".cs-prog");
+    var data = editor.querySelector(".cs-data");
+    var parts = splitCpusim(value.value);
+    prog.value = parts ? parts.prog : value.value;
+    data.value = parts ? parts.data : "";
+    if (!data.value) data.value = editor.dataset.example || "";
+
+    function gutter(area, start) {
+      var g = area.parentNode.querySelector(".cs-gutter");
+      g.textContent = gutterText(area.value, start) + "\n";
+      g.scrollTop = area.scrollTop;
+    }
+    function compose() {
+      value.value = "PROGRAM\n" + prog.value + "\nDATA\n" + data.value + "\nEND";
+    }
+    [[prog, 0], [data, 1024]].forEach(function (pair) {
+      var area = pair[0], start = pair[1];
+      area.addEventListener("input", function () {
+        if (area === prog) {
+          var pasted = splitCpusim(prog.value);      // a whole export pasted into the program field
+          if (pasted) { prog.value = pasted.prog; if (pasted.data) data.value = pasted.data; gutter(data, 1024); }
+        }
+        gutter(area, start);
+        compose();
+      });
+      area.addEventListener("scroll", function () { area.parentNode.querySelector(".cs-gutter").scrollTop = area.scrollTop; });
+      area.addEventListener("keydown", function (e) {
+        if (e.key !== "Tab" || e.ctrlKey || e.altKey || e.metaKey) return;
+        e.preventDefault();                          // Tab indents like in the CPUSim editor
+        var s = area.selectionStart;
+        area.setRangeText("\t", s, area.selectionEnd, "end");
+        area.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+      gutter(area, start);
+    });
+    compose();
+  }
+
   function startTimer(onEnd) {
     var el = document.getElementById("exam-timer");
     if (!el) return;
@@ -130,6 +187,7 @@
     try { restore(root, JSON.parse(store("get", draftKey) || "{}")); } catch (e) { /* bad draft */ }
 
     root.querySelectorAll(".ans-part").forEach(function (part) {
+      setupCpusim(part);
       updatePreview(part);
       part.addEventListener("input", function () {
         updatePreview(part);

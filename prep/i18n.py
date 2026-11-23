@@ -256,8 +256,13 @@ UK = {
     "delenie nulou": "ділення на нуль",
     "program z textového editora CPUSimu, napr.\nslucka: LOAD 1025\n        JNZ #slucka\n        HALT":
         "програма з текстового редактора CPUSim, напр.\nslucka: LOAD 1025\n        JNZ #slucka\n        HALT",
-    "Program CPUSimu: skopírujte obsah poľa PAMÄŤ INŠTRUKCIÍ z textového editora (Ctrl+E) alebo celý export z Riešenia na odovzdanie. Stránka ho spustí na teste zo zadania aj na skrytých testoch.":
-        "Програма CPUSim: скопіюйте вміст поля PAMÄŤ INŠTRUKCIÍ з текстового редактора (Ctrl+E) або весь експорт із «Riešenie na odovzdanie». Сторінка запустить її на тесті із завдання та на прихованих тестах.",
+    "Program CPUSimu: ľavé pole je PAMÄŤ INŠTRUKCIÍ, pravé PAMÄŤ ČÍSELNÝCH ÚDAJOV, ako v textovom editore CPUSimu (Ctrl+E). Do ľavého poľa môžete vložiť aj celý export z Riešenia na odovzdanie, rozdelí sa sám. Stránka program spustí na teste zo zadania aj na skrytých testoch.":
+        "Програма CPUSim: ліве поле — пам'ять інструкцій (PAMÄŤ INŠTRUKCIÍ), праве — пам'ять даних (PAMÄŤ ČÍSELNÝCH ÚDAJOV), як у текстовому редакторі CPUSim (Ctrl+E). У ліве поле можна вставити й увесь експорт із «Riešenie na odovzdanie», він розділиться сам. Сторінка запустить програму на тесті із завдання та на прихованих тестах.",
+    "PAMÄŤ INŠTRUKCIÍ": "ПАМ'ЯТЬ ІНСТРУКЦІЙ",
+    "PAMÄŤ ČÍSELNÝCH ÚDAJOV": "ПАМ'ЯТЬ ДАНИХ",
+    "jedna hodnota na riadok, napr.\n5\nkoniec: 0": "одне значення на рядок, напр.\n5\nkoniec: 0",
+    "Čísla vľavo sú adresy buniek ako v CPUSime: riadok s iba komentárom bunku nezaberá, prázdny riadok áno. Pri kontrole sa vstup každého testu zapíše do pamäte údajov cez vaše hodnoty.":
+        "Числа ліворуч — адреси комірок, як у CPUSim: рядок лише з коментарем комірки не займає, порожній рядок займає. Під час перевірки вхід кожного тесту записується в пам'ять даних поверх ваших значень.",
 }
 CATALOG = {"uk": UK}
 
