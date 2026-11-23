@@ -413,3 +413,6 @@ body.wide .wrap { max-width: 1480px; }
 .graph text { fill: var(--text); font: 600 13px Inter, system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; }
 .graph .el { fill: var(--accent); font-size: 11px; }
 .graph .dg { fill: var(--warn); font-size: 12px; }
+.cpusim-data { margin: 12px 0; }
+.cpusim-data summary { cursor: pointer; color: var(--muted); }
+.cpusim-data pre { max-height: 16rem; overflow: auto; }

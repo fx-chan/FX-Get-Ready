@@ -45,6 +45,7 @@ import re
 from fractions import Fraction
 
 from . import boolcheck as bc
+from . import cpusim
 from .i18n import t
 
 FUNCS = {
@@ -56,7 +57,7 @@ PARAMS = ["t", "s", "u", "r", "p", "q", "t1", "t2", "t3", "t4"]  # free paramete
 
 KINDS = {"number", "matrix", "vector", "dims", "choice", "multi", "set", "multiset", "system", "eigbasis",
          "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares", "trail", "graph",
-         "boolexpr", "bits", "cpu4"}
+         "boolexpr", "bits", "cpu4", "cpusim"}
 NONE_LABELS = {
     "number": "nedá sa vypočítať",
     "matrix": "nedá sa vypočítať",
@@ -69,6 +70,7 @@ NONE_LABELS = {
     "graph": "taký graf neexistuje",
 }
 MAX_INPUT = 4000
+MAX_PROGRAM = 40000
 
 
 class ParseError(ValueError):
@@ -445,10 +447,10 @@ def public_part(part):
     return {k: v for k, v in part.items() if k in ("id", "prompt", "kind", "options", "vars", "hint")}
 
 
-def _text(value):
+def _text(value, limit=MAX_INPUT):
     if not isinstance(value, str):
         raise ParseError("chýba odpoveď")
-    if len(value) > MAX_INPUT:
+    if len(value) > limit:
         raise ParseError("príliš dlhá odpoveď")
     if not value.strip():
         raise ParseError("chýba odpoveď")
@@ -745,6 +747,29 @@ def _check_cpu4(part, text):
     return OK
 
 
+def _check_cpusim(part, text):
+    try:
+        words = cpusim.assemble(cpusim.strip_export(text))
+    except cpusim.AsmError as exc:
+        return INVALID, t("Chyba v programe: {detail}.", detail=exc.text())
+    if not words:
+        return INVALID, t("Program je prázdny.")
+    for i, case in enumerate(part["tests"], 1):
+        memory = {int(a): v for a, v in case["memory"].items()}
+        memory.update(words)
+        res = cpusim.run(memory)
+        if res.status == "error":
+            return WRONG, t("Test {i}: simulácia skončila chybou – {detail}.", i=i, detail=res.error.text())
+        if res.status == "budget":
+            return WRONG, t("Test {i}: program sa nezastavil ani po {n} mikroinštrukciách (nekonečný cyklus?).",
+                            i=i, n="1 000 000")
+        for addr, want in case["expect"].items():
+            got = res.get(int(addr))
+            if got != want:
+                return WRONG, t("Test {i}: na adrese {addr} je {got}, má byť {want}.", i=i, addr=addr, got=got, want=want)
+    return OK, t("Prešlo všetkých {n} testov.", n=len(part["tests"]))
+
+
 def check_part(part, ans):
     """Return (status, message). ans = {"value": ..., "none": bool}."""
     ans = ans if isinstance(ans, dict) else {}
@@ -766,6 +791,10 @@ def check_part(part, ans):
             return _check_trail(part, ans), ""
         if kind == "graph":
             return _check_graph(part, ans), ""
+        if kind == "cpusim":
+            if ans.get("none"):
+                return WRONG, ""
+            return _check_cpusim(part, _text(ans.get("value"), MAX_PROGRAM))
         if kind in ("boolexpr", "bits", "cpu4"):
             if ans.get("none"):
                 return WRONG, ""

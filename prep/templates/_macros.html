@@ -41,9 +41,10 @@
   "graph": "zoznam hrán, napr. AB, BC, CC (slučka)",
   "boolexpr": "napr. a'b + c",
   "bits": "napr. 0110",
-  "cpu4": "jedna inštrukcia na riadok, napr.\nLDA 0\nADD 1"
+  "cpu4": "jedna inštrukcia na riadok, napr.\nLDA 0\nADD 1",
+  "cpusim": "program z textového editora CPUSimu, napr.\nslucka: LOAD 1025\n        JNZ #slucka\n        HALT"
 } %}
-{% set MULTILINE = ["matrix", "eigbasis", "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares", "cpu4"] %}
+{% set MULTILINE = ["matrix", "eigbasis", "diagonalize", "elem_product", "row_equiv", "power_identity", "pair_not_diff_squares", "cpu4", "cpusim"] %}
 
 {% macro answer_widget(subject, block, task, compact=False, initial=None, exam=False) -%}
 {% set initial = initial or {} %}
@@ -78,7 +79,7 @@
       </div>
       <p class="ans-hint">{{ _('Označte všetky platné možnosti.') }}</p>
     {% elif p.kind in MULTILINE %}
-      <textarea class="ans-input js-value mono" rows="{{ 3 if compact else 4 }}" spellcheck="false"
+      <textarea class="ans-input js-value mono" rows="{{ 18 if p.kind == 'cpusim' else 3 if compact else 4 }}" spellcheck="false"
                 placeholder="{{ _(PLACEHOLDERS[p.kind]) }}">{{ prev.value if prev.value is string }}</textarea>
       <div class="ans-preview" aria-hidden="true"></div>
     {% else %}
@@ -101,6 +102,7 @@
         {% set kinds = task.public_parts|map(attribute='kind')|list %}
         {% if "boolexpr" in kinds %}<li>{{ _('Logický výraz: negácia') }} <code>a'</code> / <code>!a</code>, {{ _('súčin') }} <code>ab</code> / <code>a*b</code>, {{ _('súčet') }} <code>a+b</code>, XOR <code>a^b</code>, NAND <code>a↑b</code>, NOR <code>a↓b</code>, {{ _('zátvorky') }} <code>(a+b)'</code>.</li>{% endif %}
         {% if "bits" in kinds %}<li>{{ _('Bity píšte za sebou, medzery sa ignorujú:') }} <code>0110 1001</code>.</li>{% endif %}
+        {% if "cpusim" in kinds %}<li>{{ _('Program CPUSimu: skopírujte obsah poľa PAMÄŤ INŠTRUKCIÍ z textového editora (Ctrl+E) alebo celý export z Riešenia na odovzdanie. Stránka ho spustí na teste zo zadania aj na skrytých testoch.') }}</li>{% endif %}
         {% if "cpu4" in kinds %}<li>{{ _('Program: jedna inštrukcia na riadok,') }} <code>LDA 0</code> {{ _('alebo binárne') }} <code>0000</code>.</li>{% endif %}
         <li>{{ _('Zlomky a odmocniny:') }} <code>-7/2</code>, <code>sqrt(2)/2</code> {{ _('alebo') }} <code>√2/2</code>, {{ _('mocnina') }} <code>2^3</code>, <code>pi</code>, {{ _('komplexná jednotka') }} <code>i</code>.</li>
         <li>{{ _('Matica: riadky na samostatné riadky (alebo oddelené') }} <code>;</code>{{ _('), prvky medzerou alebo čiarkou.') }}</li>

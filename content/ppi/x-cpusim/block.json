@@ -1,0 +1,5 @@
+{
+  "title": "10 — CPUSim: priebežný test",
+  "summary": "Programovanie v assembleri CPUSimu: adresovanie, cykly, matice a simulácie hier zo starších priebežných testov (Sokoban, Tetris, Hadík) a test nanečisto na 100 minút.",
+  "lecture": "CPUSim (cpusim.ail-lab.fiit.stuba.sk), varianty priebežných testov"
+}

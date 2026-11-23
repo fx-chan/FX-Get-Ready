@@ -1,0 +1,123 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Program pre CPUSim (obsah poľa PAMÄŤ INŠTRUKCIÍ)",
+   "kind": "cpusim",
+   "tests": [
+    {
+     "memory": {
+      "1025": 17,
+      "1026": 25
+     },
+     "expect": {
+      "1040": 25
+     }
+    },
+    {
+     "memory": {
+      "1025": 25,
+      "1026": 17
+     },
+     "expect": {
+      "1040": 25
+     }
+    },
+    {
+     "memory": {
+      "1025": -4,
+      "1026": -9
+     },
+     "expect": {
+      "1040": -4
+     }
+    },
+    {
+     "memory": {
+      "1025": 3,
+      "1026": 3
+     },
+     "expect": {
+      "1040": 3
+     }
+    },
+    {
+     "memory": {
+      "1025": 637,
+      "1026": 324
+     },
+     "expect": {
+      "1040": 637
+     }
+    },
+    {
+     "memory": {
+      "1025": 27,
+      "1026": 430
+     },
+     "expect": {
+      "1040": 430
+     }
+    },
+    {
+     "memory": {
+      "1025": -20,
+      "1026": 648
+     },
+     "expect": {
+      "1040": 648
+     }
+    },
+    {
+     "memory": {
+      "1025": 811,
+      "1026": -177
+     },
+     "expect": {
+      "1040": 811
+     }
+    },
+    {
+     "memory": {
+      "1025": -114,
+      "1026": -586
+     },
+     "expect": {
+      "1040": -114
+     }
+    },
+    {
+     "memory": {
+      "1025": -398,
+      "1026": 703
+     },
+     "expect": {
+      "1040": 703
+     }
+    },
+    {
+     "memory": {
+      "1025": -450,
+      "1026": -982
+     },
+     "expect": {
+      "1040": -450
+     }
+    },
+    {
+     "memory": {
+      "1025": -933,
+      "1026": -694
+     },
+     "expect": {
+      "1040": -694
+     }
+    }
+   ],
+   "example": {
+    "value": "; max(a, b): ak je a - b zaporne, vacsie je b\n        LOAD 1025\n        SUB 1026\n        AND #-8388608   ; nenulove prave vtedy, ked je rozdiel zaporny\n        JNZ #bvacsie\n        LOAD 1025\n        JMP #zapis\nbvacsie: LOAD 1026\nzapis:  STORE 1040\n        HALT\n"
+   },
+   "hint": "Rozdiel a − b je záporný, keď má nastavený najvyšší bit; AND s #-8388608 ho vyberie."
+  }
+ ]
+}

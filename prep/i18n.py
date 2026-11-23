@@ -229,6 +229,35 @@ UK = {
     "Bity píšte za sebou, medzery sa ignorujú:": "Біти пишіть підряд, пробіли ігноруються:",
     "Program: jedna inštrukcia na riadok,": "Програма: одна інструкція на рядок,",
     "alebo binárne": "або двійково",
+    "Chyba v programe: {detail}.": "Помилка в програмі: {detail}.",
+    "Program je prázdny.": "Програма порожня.",
+    "Test {i}: simulácia skončila chybou – {detail}.": "Тест {i}: симуляція завершилася помилкою – {detail}.",
+    "Test {i}: program sa nezastavil ani po {n} mikroinštrukciách (nekonečný cyklus?).":
+        "Тест {i}: програма не зупинилася навіть після {n} мікроінструкцій (нескінченний цикл?).",
+    "Test {i}: na adrese {addr} je {got}, má byť {want}.": "Тест {i}: за адресою {addr} є {got}, має бути {want}.",
+    "Prešlo všetkých {n} testov.": "Усі тести ({n}) пройдено.",
+    "riadok {line}: program sa nezmestí do pamäte": "рядок {line}: програма не вміщується в пам'ять",
+    "riadok {line}: návestie {label} je definované viackrát": "рядок {line}: мітку {label} визначено кілька разів",
+    "riadok {line}: neznáma inštrukcia {name}": "рядок {line}: невідома інструкція {name}",
+    "riadok {line}: inštrukcia {name} nemá operand": "рядок {line}: інструкція {name} не має операнда",
+    "riadok {line}: inštrukcii {name} chýba operand": "рядок {line}: інструкції {name} бракує операнда",
+    "riadok {line}: inštrukcia {name} nepovoľuje tento spôsob adresovania":
+        "рядок {line}: інструкція {name} не допускає такого способу адресації",
+    "riadok {line}: neznámy operand {x}": "рядок {line}: невідомий операнд {x}",
+    "riadok {line}: okamžitý operand je mimo rozsahu": "рядок {line}: безпосередній операнд поза діапазоном",
+    "riadok {line}: adresa musí byť od 0 do {max}": "рядок {line}: адреса має бути від 0 до {max}",
+    "údaje, riadok {line}: neplatná hodnota {x}": "дані, рядок {line}: недійсне значення {x}",
+    "údaje, riadok {line}: hodnota je mimo rozsahu": "дані, рядок {line}: значення поза діапазоном",
+    "adresa {addr} je mimo pamäte": "адреса {addr} поза пам'яттю",
+    "PC = {addr} je mimo programovej oblasti": "PC = {addr} поза областю програми",
+    "procesor narazil na prázdnu bunku {addr} (chýba HALT?)": "процесор натрапив на порожню комірку {addr} (бракує HALT?)",
+    "neznámy operačný kód {code}": "невідомий код операції {code}",
+    "inštrukcia {name} nepovoľuje tento spôsob adresovania": "інструкція {name} не допускає такого способу адресації",
+    "delenie nulou": "ділення на нуль",
+    "program z textového editora CPUSimu, napr.\nslucka: LOAD 1025\n        JNZ #slucka\n        HALT":
+        "програма з текстового редактора CPUSim, напр.\nslucka: LOAD 1025\n        JNZ #slucka\n        HALT",
+    "Program CPUSimu: skopírujte obsah poľa PAMÄŤ INŠTRUKCIÍ z textového editora (Ctrl+E) alebo celý export z Riešenia na odovzdanie. Stránka ho spustí na teste zo zadania aj na skrytých testoch.":
+        "Програма CPUSim: скопіюйте вміст поля PAMÄŤ INŠTRUKCIÍ з текстового редактора (Ctrl+E) або весь експорт із «Riešenie na odovzdanie». Сторінка запустить її на тесті із завдання та на прихованих тестах.",
 }
 CATALOG = {"uk": UK}
 

@@ -1,0 +1,54 @@
+{
+ "parts": [
+  {
+   "id": "a",
+   "prompt": "Hodnota v ACC po `LOAD #1030`",
+   "kind": "number",
+   "answer": "1030",
+   "example": {
+    "value": "1030"
+   }
+  },
+  {
+   "id": "b",
+   "prompt": "Hodnota v ACC po `LOAD 1030`",
+   "kind": "number",
+   "answer": "1100",
+   "example": {
+    "value": "1100"
+   }
+  },
+  {
+   "id": "c",
+   "prompt": "Hodnota v ACC po `LOAD [1030]`",
+   "kind": "number",
+   "answer": "7",
+   "example": {
+    "value": "7"
+   }
+  },
+  {
+   "id": "d",
+   "prompt": "Ktorý riadok skočí na inštrukciu s návestím `koniec`?",
+   "kind": "choice",
+   "options": [
+    "`JMP koniec`",
+    "`JMP #koniec`",
+    "`JMP [koniec]`"
+   ],
+   "answer": 1,
+   "example": {
+    "value": "1"
+   }
+  },
+  {
+   "id": "e",
+   "prompt": "Matica $5 \\times 7$ od adresy 1100, políčko $(r, c)$ na adrese $1100 + (r-1) \\cdot C + (c-1)$. Adresa políčka $(3, 4)$",
+   "kind": "number",
+   "answer": "1117",
+   "example": {
+    "value": "1117"
+   }
+  }
+ ]
+}
